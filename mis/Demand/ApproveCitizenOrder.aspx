@@ -31,7 +31,7 @@
                             <span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
 
                         </button>
-                        <h4 class="modal-title" id="myModalLabel">Confirmation</h4>
+                        <h4 class="modal-title" id="myModalLabel">Confirmation10</h4>
                     </div>
                     <div class="clearfix"></div>
                     <div class="modal-body">
