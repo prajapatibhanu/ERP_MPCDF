@@ -1,0 +1,603 @@
+﻿<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>
+        MPCDF - ERP
+    </title>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport" />
+    <link href="../css/bootstrap.css" rel="stylesheet" />
+    <link href="../css/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link href="../css/Ionicons/css/ionicons.css" rel="stylesheet" />
+    <link href="../css/select2.css" rel="stylesheet" />
+    <link href="../css/AdminLTE.css" rel="stylesheet" />
+    <link href="../css/skin-green-light.css" rel="stylesheet" />
+    <link href="../css/daterangepicker.css" rel="stylesheet" />
+    <link href="../css/bootstrap-datepicker.css" rel="stylesheet" />
+    <link href="../css/StyleSheet.css" rel="stylesheet" />
+    <link href="../css/jquery.datetimepicker.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic" />
+    <style>
+        li.header {
+            font-size: 14px !important;
+            color: #F44336 !important;
+        }
+
+        span#ctl00_spnUsername {
+            text-transform: uppercase;
+            color: white;
+            font-weight: 600;
+            font-size: 16px;
+        }
+
+        li.dropdown.tasks-menu.classhide a {
+            padding: 4px 10px 0px 0px;
+        }
+
+        a.btn.btn-default.buttons-excel.buttons-html5 {
+            background: #ff5722c2;
+            color: white;
+            border-radius: unset;
+            box-shadow: 2px 2px 2px #808080;
+            margin-left: 6px;
+            border: none;
+        }
+
+        a.btn.btn-default.buttons-pdf.buttons-html5 {
+            background: #009688c9;
+            color: white;
+            border-radius: unset;
+            box-shadow: 2px 2px 2px #808080;
+            margin-left: 6px;
+            border: none;
+        }
+
+        a.btn.btn-default.buttons-print {
+            background: #e91e639e;
+            color: white;
+            border-radius: unset;
+            box-shadow: 2px 2px 2px #808080;
+            border: none;
+        }
+
+        .navbar {
+            background: #0f62ac !important;
+        }
+
+        .skin-green-light .main-header .logo {
+            background: #0f62ac !important;
+            border-right: 1px solid #929292;
+        }
+
+        .skin-green-light .main-header .navbar .sidebar-toggle:hover {
+            background-color: #1d7ce0;
+        }
+
+        a.btn.btn-default.buttons-print:hover, a.btn.btn-default.buttons-pdf.buttons-html5:hover, a.btn.btn-default.buttons-excel.buttons-html5:hover {
+            box-shadow: 1px 1px 1px #808080;
+        }
+
+        a.btn.btn-default.buttons-print:active, a.btn.btn-default.buttons-pdf.buttons-html5:active, a.btn.btn-default.buttons-excel.buttons-html5:active {
+            box-shadow: 1px 1px 1px #808080;
+        }
+
+        .btn-success {
+            background-color: #1d7ce0;
+            border-color: #1d7ce0;
+        }
+
+            .btn-success:hover, .btn-success:active, .btn-success.hover, .btn-success:focus, .btn-success.focus, .btn-success:active:focus {
+                background-color: #1d7ce0;
+                border-color: #1d7ce0;
+            }
+
+            .btn-success:hover {
+                color: #fff;
+                background-color: #1d7ce0;
+                border-color: #1d7ce0;
+            }
+
+        fieldset {
+            border: 1px solid #c7c7c7;
+            padding: .35em .625em .75em;
+            margin-bottom: 10px;
+            padding-bottom: 0.5em;
+            padding-bottom: 2px;
+        }
+
+        legend {
+            width: initial;
+            padding: 0px 10px;
+            margin: 0;
+            font-size: 12px;
+            font-weight: bold;
+            color: #003FF7;
+            text-transform: uppercase;
+            background-color: #FFFF00;
+            border: 1px solid #ddd;
+        }
+
+
+        /*table tr td:nth-child(3), table tr th:nth-child(3) {
+            background: #ccc;
+        }*/
+
+        .table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td {
+            padding: 5px;
+            border-top: 1px solid #ddd;
+        }
+
+        thead th, tfoot th, tbody td, tbody th {
+            border: 1px solid #d2d1d1 !important;
+        }
+
+        /*.opening {
+            background: #add8e6c7 !important;
+        }
+
+        .production {
+            background: #00800038 !important;
+        }
+
+        .qc {
+            background: #ffa5004d !important;
+        }
+
+        .dispatch {
+            background: #ff000030 !important;
+        }
+
+        .closing {
+            background: #0000ff2e !important;
+        }
+        .ml1000 {
+            background: #f44336c7 !important;
+        }
+        .ml500 {
+            background: #42a5f5a3 !important;
+        }
+        .ml200 {
+            background: #ffff008a !important;
+        }
+        .firstpack{
+            background:pink !important;
+        }*/
+    </style>
+
+
+</head>
+<body class="sidebar-mini wysihtml5-supported skin-green-light" style="height: auto; min-height: 100%;" onkeydown="return (event.keyCode != 116)">
+
+    <div class="wrapper">
+        <header class="main-header">
+            <!-- Logo -->
+            <a href="#" class="logo">
+
+
+                <img style="height:47px;" src="../image/MPCDFlogo.png" />
+            </a>
+            <!-- Header Navbar: style can be found in header.less -->
+            <nav class="navbar navbar-static-top">
+
+                <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button"></a>
+
+                <span class="top-logo-line hidden-sm hidden-xs">&nbsp; एम. पी. स्टेट को ऑपरेटिव डेयरी फेडरेशन</span>
+
+                <div class="navbar-custom-menu">
+                    <ul class="nav navbar-nav">
+                        <li class="dropdown tasks-menu classhide">
+                            <a>
+                                <span style="color: white;"><b>WELCOME : </b></span>
+                                <span id="ctl00_spnUsername" style="text-transform: uppercase">Manish</span>
+                            </a>
+                        </li>
+
+
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <!-- Left side column. contains the logo and sidebar -->
+        <aside class="main-sidebar">
+            <!-- sidebar: style can be found in sidebar.less -->
+            <section id="ctl00_Navigation" class="sidebar">
+                <ul class='sidebar-menu' data-widget='tree'>
+                    <li class='header' style='text-align: center;'>Monday, February 24, 2020</li>
+                    <li><hr style='margin: 0' /></li>
+                    <li><a href='../../mis/Dashboard/Home.aspx?IsMainPage=1'><i class='fa fa-home'></i><span>&nbsp;Main Page</span></a></li>
+                    <li><a href='dailyplan.html'><i class='fa fa-hand-o-right'></i><span>Daily Production Plan</span></a></li>
+                    <li class="treeview">
+                        <a href="#">
+                            <i class="fa fa-hand-o-right"></i><span>Daily Production</span><span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu" style="display: none;">
+                            <li><a href="productionplan.html"><i class="fa fa-hand-o-right"></i><span>Production Plan</span></a></li>
+                            <li><a href="receive.html"><i class="fa fa-hand-o-right"></i><span>Receive Inventory</span></a></li>
+                            <li><a href="production.html"><i class="fa fa-hand-o-right"></i><span>Production</span></a></li>
+                            <li><a href="qc.html"><i class="fa fa-hand-o-right"></i><span>Quality Test Report</span></a></li>
+                            <li><a href="dispatch.html"><i class="fa fa-hand-o-right"></i><span>Dispatch</span></a></li>
+                        </ul>
+                    </li>
+                    <li><a href='dailyproduction.html'><i class='fa fa-hand-o-right'></i><span>Daily Production Report</span></a></li>
+                </ul>
+            </section>
+            <!-- /.sidebar -->
+        </aside>
+        <!-- Content Wrapper. Contains page content -->
+
+        <div class="content-wrapper">
+            <section class="content">
+                <div class="box box-success">
+                    <div class="box-header">
+                        <h3 class="box-title">
+                            Daily Production Report / दैनिक उत्पादन रिपोर्ट
+                        </h3>
+                    </div>
+                    <span id="ctl00_ContentBody_lblMsg"></span>
+                    <div class="box-body">
+                        <div class="row">
+
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label>तारीख / Date<span style="color: red;">*</span></label>
+                                    <div class="input-group date">
+                                        <div class="input-group-addon">
+                                            <i class="fa fa-calendar"></i>
+                                        </div>
+                                        <input name="" type="text" id="txtOrderDate" placeholder="Select Date..." class="form-control DateAdd" data-date-start-date="-60d" data-date-end-date="0d" autocomplete="off" onpaste="return false" readonly="readonly" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label>Shift /  पारी<span style="color: red;">*</span></label>
+                                    <select name="" id="" class="form-control select2">
+                                        <option value="0">Select</option>
+                                        <option value="1">Shift 1</option>
+                                        <option value="2">Shift 2</option>
+                                        <option value="3">Shift 3</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label>Product section / उत्पाद अनुभाग<span style="color: red;">*</span></label>
+                                    <select name="" id="ctl00_ContentBody_ddlOldOffice" class="form-control select2">
+                                        <option value="0">Select</option>
+                                        <option value="1">Milk section</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="table table-responsive">
+                                    <div>
+                                        <table style="width:100%;" class="table">
+                                            <thead>
+                                                <tr>
+                                                    <th rowspan="2">Sno.</th>
+                                                    <th rowspan="2">Particular</th>
+                                                    <th colspan="5" class="ml1000">1 Litre Packet(s)</th>
+                                                    <th colspan="5" class="ml500">500 ml Packet(s)</th>
+                                                    <th colspan="5" class="ml200">200 ml Packet(s)</th>
+                                                </tr>
+                                                <tr>
+                                                    <th class="opening firstpack">Opening</th>
+                                                    <th class="production firstpack">Production</th>
+                                                    <th class="qc firstpack">QC</th>
+                                                    <th class="dispatch firstpack">Dispatch</th>
+                                                    <th class="closing firstpack">Closing</th>
+
+                                                    <th class="opening">Opening</th>
+                                                    <th class="production">Production</th>
+                                                    <th class="qc">QC</th>
+                                                    <th class="dispatch">Dispatch</th>
+                                                    <th class="closing">Closing</th>
+
+                                                    <th class="opening">Opening</th>
+                                                    <th class="production">Production</th>
+                                                    <th class="qc">QC</th>
+                                                    <th class="dispatch">Dispatch</th>
+                                                    <th class="closing">Closing</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <th>1</th>
+                                                    <th>सांची गोल्ड</th>
+                                                    <td class="opening firstpack">10</td>
+                                                    <td class="production firstpack">10</td>
+                                                    <td class="qc firstpack">10</td>
+                                                    <td class="dispatch firstpack">10</td>
+                                                    <td class="closing firstpack">10</td>
+
+                                                    <td class="opening">10</td>
+                                                    <td class="production">10</td>
+                                                    <td class="qc">10</td>
+                                                    <td class="dispatch">10</td>
+                                                    <td class="closing">10</td>
+
+                                                    <td class="opening">10</td>
+                                                    <td class="production">10</td>
+                                                    <td class="qc">10</td>
+                                                    <td class="dispatch">10</td>
+                                                    <td class="closing">10</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>2</th>
+                                                    <th>साँची शक्ति</th>
+                                                    <td class="opening">10</td>
+                                                    <td class="production">10</td>
+                                                    <td class="qc">10</td>
+                                                    <td class="dispatch">10</td>
+                                                    <td class="closing">10</td>
+
+                                                    <td class="opening">10</td>
+                                                    <td class="production">10</td>
+                                                    <td class="qc">10</td>
+                                                    <td class="dispatch">10</td>
+                                                    <td class="closing">10</td>
+
+                                                    <td class="opening">10</td>
+                                                    <td class="production">10</td>
+                                                    <td class="qc">10</td>
+                                                    <td class="dispatch">10</td>
+                                                    <td class="closing">10</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>3</th>
+                                                    <th>साँची स्मार्ट</th>
+                                                    <td class="opening">10</td>
+                                                    <td class="production">10</td>
+                                                    <td class="qc">10</td>
+                                                    <td class="dispatch">10</td>
+                                                    <td class="closing">10</td>
+
+                                                    <td class="opening">10</td>
+                                                    <td class="production">10</td>
+                                                    <td class="qc">10</td>
+                                                    <td class="dispatch">10</td>
+                                                    <td class="closing">10</td>
+
+                                                    <td class="opening">10</td>
+                                                    <td class="production">10</td>
+                                                    <td class="qc">10</td>
+                                                    <td class="dispatch">10</td>
+                                                    <td class="closing">10</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>4</th>
+                                                    <th>साँची गाय का दूध</th>
+                                                    <td class="opening">10</td>
+                                                    <td class="production">10</td>
+                                                    <td class="qc">10</td>
+                                                    <td class="dispatch">10</td>
+                                                    <td class="closing">10</td>
+
+                                                    <td class="opening">10</td>
+                                                    <td class="production">10</td>
+                                                    <td class="qc">10</td>
+                                                    <td class="dispatch">10</td>
+                                                    <td class="closing">10</td>
+
+                                                    <td class="opening">10</td>
+                                                    <td class="production">10</td>
+                                                    <td class="qc">10</td>
+                                                    <td class="dispatch">10</td>
+                                                    <td class="closing">10</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>5</th>
+                                                    <th>साँची लाइट ( स्किम्ड मिल्क )</th>
+                                                    <td class="opening">10</td>
+                                                    <td class="production">10</td>
+                                                    <td class="qc">10</td>
+                                                    <td class="dispatch">10</td>
+                                                    <td class="closing">10</td>
+
+                                                    <td class="opening">10</td>
+                                                    <td class="production">10</td>
+                                                    <td class="qc">10</td>
+                                                    <td class="dispatch">10</td>
+                                                    <td class="closing">10</td>
+
+                                                    <td class="opening">10</td>
+                                                    <td class="production">10</td>
+                                                    <td class="qc">10</td>
+                                                    <td class="dispatch">10</td>
+                                                    <td class="closing">10</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>6</th>
+                                                    <th>साँची चाह दूध</th>
+                                                    <td class="opening">10</td>
+                                                    <td class="production">10</td>
+                                                    <td class="qc">10</td>
+                                                    <td class="dispatch">10</td>
+                                                    <td class="closing">10</td>
+
+                                                    <td class="opening">10</td>
+                                                    <td class="production">10</td>
+                                                    <td class="qc">10</td>
+                                                    <td class="dispatch">10</td>
+                                                    <td class="closing">10</td>
+
+                                                    <td class="opening">10</td>
+                                                    <td class="production">10</td>
+                                                    <td class="qc">10</td>
+                                                    <td class="dispatch">10</td>
+                                                    <td class="closing">10</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>7</th>
+                                                    <th>साँची चाय</th>
+                                                    <td class="opening">10</td>
+                                                    <td class="production">10</td>
+                                                    <td class="qc">10</td>
+                                                    <td class="dispatch">10</td>
+                                                    <td class="closing">10</td>
+
+                                                    <td class="opening">10</td>
+                                                    <td class="production">10</td>
+                                                    <td class="qc">10</td>
+                                                    <td class="dispatch">10</td>
+                                                    <td class="closing">10</td>
+
+                                                    <td class="opening">10</td>
+                                                    <td class="production">10</td>
+                                                    <td class="qc">10</td>
+                                                    <td class="dispatch">10</td>
+                                                    <td class="closing">10</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>8</th>
+                                                    <th>स्पेशल दूध</th>
+                                                    <td class="opening">10</td>
+                                                    <td class="production">10</td>
+                                                    <td class="qc">10</td>
+                                                    <td class="dispatch">10</td>
+                                                    <td class="closing">10</td>
+
+                                                    <td class="opening">10</td>
+                                                    <td class="production">10</td>
+                                                    <td class="qc">10</td>
+                                                    <td class="dispatch">10</td>
+                                                    <td class="closing">10</td>
+
+                                                    <td class="opening">10</td>
+                                                    <td class="production">10</td>
+                                                    <td class="qc">10</td>
+                                                    <td class="dispatch">10</td>
+                                                    <td class="closing">10</td>
+                                                </tr>
+                                            </tbody>
+                                            <tfoot>
+                                                <tr>
+                                                    <th colspan="2">Total Quantity (Packets)</th>
+                                                    <th class="opening">80</th>
+                                                    <th class="production">80</th>
+                                                    <th class="qc">80</th>
+                                                    <th class="dispatch">80</th>
+                                                    <th class="closing">80</th>
+
+                                                    <th class="opening">80</th>
+                                                    <th class="production">80</th>
+                                                    <th class="qc">80</th>
+                                                    <th class="dispatch">80</th>
+                                                    <th class="closing">80</th>
+
+                                                    <th class="opening">80</th>
+                                                    <th class="production">80</th>
+                                                    <th class="qc">80</th>
+                                                    <th class="dispatch">80</th>
+                                                    <th class="closing">80</th>
+                                                </tr>
+                                                <tr>
+                                                    <th colspan="2">Total Quantity (Litre)</th>
+                                                    <th class="opening">80</th>
+                                                    <th class="production">80</th>
+                                                    <th class="qc">80</th>
+                                                    <th class="dispatch">80</th>
+                                                    <th class="closing">80</th>
+
+                                                    <th class="opening">80</th>
+                                                    <th class="production">80</th>
+                                                    <th class="qc">80</th>
+                                                    <th class="dispatch">80</th>
+                                                    <th class="closing">80</th>
+
+                                                    <th class="opening">80</th>
+                                                    <th class="production">80</th>
+                                                    <th class="qc">80</th>
+                                                    <th class="dispatch">80</th>
+                                                    <th class="closing">80</th>
+                                                </tr>
+                                                <tr>
+                                                    <th colspan="2">Total FAT (KG)</th>
+                                                    <th class="opening">8</th>
+                                                    <th class="production">8</th>
+                                                    <th class="qc">8</th>
+                                                    <th class="dispatch">8</th>
+                                                    <th class="closing">8</th>
+
+                                                    <th class="opening">8</th>
+                                                    <th class="production">8</th>
+                                                    <th class="qc">8</th>
+                                                    <th class="dispatch">8</th>
+                                                    <th class="closing">8</th>
+
+                                                    <th class="opening">8</th>
+                                                    <th class="production">8</th>
+                                                    <th class="qc">8</th>
+                                                    <th class="dispatch">8</th>
+                                                    <th class="closing">8</th>
+                                                </tr>
+                                                <tr>
+                                                    <th colspan="2">Total SNF (KG)</th>
+                                                    <th class="opening">8</th>
+                                                    <th class="production">8</th>
+                                                    <th class="qc">8</th>
+                                                    <th class="dispatch">8</th>
+                                                    <th class="closing">8</th>
+
+                                                    <th class="opening">8</th>
+                                                    <th class="production">8</th>
+                                                    <th class="qc">8</th>
+                                                    <th class="dispatch">8</th>
+                                                    <th class="closing">8</th>
+
+                                                    <th class="opening">8</th>
+                                                    <th class="production">8</th>
+                                                    <th class="qc">8</th>
+                                                    <th class="dispatch">8</th>
+                                                    <th class="closing">8</th>
+                                                </tr>
+                                            </tfoot>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <footer class="main-footer">
+            <div class="pull-right hidden-xs">
+                <b>Version</b> 1.0.0
+            </div>
+            <strong>Designed and Developed by : <a target="_blank" href=""></a></strong>All rights reserved.
+        </footer>
+        <div class="control-sidebar-bg"></div>
+    </div>
+    <script src="../js/jquery-2.2.4.js"></script>
+    <script src="../js/bootstrap.js"></script>
+    <script src="../js/Script.js"></script>
+    <script src="../js/adminlte.js"></script>
+    <script src="../js/moment.js"></script>
+    <script src="../js/daterangepicker.js"></script>
+    <script src="../js/bootstrap-datepicker.js"></script>
+    <script src="../js/select2.full.js"></script>
+    <script src="../js/jquery.datetimepicker.js"></script>
+    <script>
+        $('.select2').select2()
+
+        $('.DateAdd').datepicker({
+            autoclose: true,
+            format: 'dd/mm/yyyy'
+        })
+        function myModal() {
+            $("#myModal").modal('show');
+        }
+    </script>
+
+    <div>
+    </div>
+</body>
+</html>
+

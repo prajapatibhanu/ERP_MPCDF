@@ -1,0 +1,72 @@
+﻿
+.pagebreak {
+    margin: 10px auto;
+    background-image: url(../image/card_bg.png);
+    position: relative;
+    background-size: auto;
+    background-position: left bottom;
+    background-repeat: no-repeat;
+    width: 3.586in;
+    height: 2.306in;
+    padding:10px;
+    font-size: 13px;
+    border: 3px solid #8de1ff;
+    border-radius: 10px;
+    line-height: 20px;
+    font-weight:600;
+}
+ol li {
+        font-size: 10px;
+        margin-left: 5px;
+    }
+
+@media print {
+    @page {
+        size: 3.370in 2.125in;
+        size: landscape;
+    }
+}
+
+
+@media print {
+    body {
+        font-size: 13px;
+        font-family: arial;
+        color: #000;
+        font-stretch: condensed;
+        margin:0px;
+        padding:0;
+    }
+
+    .pagebreak {
+        clear: both;
+        page-break-after: always;
+        background-image: url(../image/card_bg.png);
+        position: relative;
+        background-size: auto;
+        background-position: left bottom;
+        background-repeat: no-repeat;
+        padding: 5px 5px;
+        font-size: 13px;
+        border: 3px solid #8de1ff;
+        border-radius: 10px;
+        height: 2.090in;
+        width: 3.370in; 
+        margin: 0px;
+        font-weight:600;
+    }
+
+    table td {
+        color: #000;
+        line-height: 22px;
+    }
+
+    /*span {
+        font-size: 13px;
+    }*/
+
+    .pagebreak ol li {
+        font-size: 10px;
+        margin-left: 5px;
+    }
+}

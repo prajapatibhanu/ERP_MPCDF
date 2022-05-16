@@ -1,0 +1,38 @@
+﻿
+body {
+    font-size: 14pt !important;
+    color: #000;
+    margin: 0;
+}
+
+@page {
+    /*width: 2480px;
+    height: 3508px;*/
+    margin: 0;
+}
+
+@media print {
+    body {
+        color: #000;
+        margin: 0;
+    }
+
+    .pagebreak {
+        clear: both;
+        page-break-after: always;
+    }
+
+    p{font-size: 19px;
+    font-weight: 600;}
+
+    b, strong {
+    font-weight: bold;
+    font-size: 19px;
+    font-weight: 600;
+}
+    span{font-size: 19px;
+    font-weight: 600;}
+    ul li{font-size: 19px;
+    font-weight: 600;}
+
+}

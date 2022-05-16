@@ -1,0 +1,144 @@
+[
+  {
+    "Version": "1.1",
+    "TranDtls": {
+      "TaxSch": "GST",
+      "SupTyp": "B2B",
+      "IgstOnIntra": "N",
+      "RegRev": null,
+      "EcmGstin": null
+    },
+    "DocDtls": {
+      "Typ": "INV",
+      "No": "123",
+      "Dt": "15/09/2020"
+    },
+    "SellerDtls": {
+      "Gstin": "23AACCM0330Q1ZM",
+      "LglNm": "AGRO",
+      "TrdNm": null,
+      "Addr1": "BHOPAL",
+      "Addr2": null,
+      "Loc": "BHOPAL",
+      "Pin": 462010,
+      "Stcd": "23",
+      "Ph": null,
+      "Em": null
+    },
+    "BuyerDtls": {
+      "Gstin": "23AACCM0330Q1ZM",
+      "LglNm": "MPAGRO",
+      "TrdNm": null,
+      "Pos": "23",
+      "Addr1": "Bhopal",
+      "Addr2": null,
+      "Loc": "Bhopal",
+      "Pin": 462010,
+      "Stcd": "23",
+      "Ph": null,
+      "Em": null
+    },
+    "DispDtls": null,
+    "ShipDtls": null,
+    "ValDtls": {
+      "AssVal": 25,
+      "IgstVal": 0,
+      "CgstVal": 0,
+      "SgstVal": 0,
+      "CesVal": 0,
+      "StCesVal": 0,
+      "Discount": 0,
+      "OthChrg": 0,
+      "RndOffAmt": 0,
+      "TotInvVal": 25,
+      "TotInvValFc": 0
+    },
+    "ExpDtls": null,
+    "EwbDtls": null,
+    "PayDtls": null,
+    "RefDtls": null,
+    "AddlDocDtls": [
+      {
+        "Url": null,
+        "Docs": null,
+        "Info": null
+      }
+    ],
+    "ItemList": [
+      {
+        "SlNo": "1",
+        "PrdDesc": null,
+        "IsServc": "N",
+        "HsnCd": "455152",
+        "Barcde": null,
+        "Qty": 1,
+        "FreeQty": 0,
+        "Unit": "BOX",
+        "UnitPrice": 10,
+        "TotAmt": 10,
+        "Discount": 0,
+        "PreTaxVal": 0,
+        "AssAmt": 10,
+        "GstRt": 0,
+        "IgstAmt": 0,
+        "CgstAmt": 0,
+        "SgstAmt": 0,
+        "CesRt": 0,
+        "CesAmt": 0,
+        "CesNonAdvlAmt": 0,
+        "StateCesRt": 0,
+        "StateCesAmt": 0,
+        "StateCesNonAdvlAmt": 0,
+        "OthChrg": 0,
+        "TotItemVal": 10,
+        "OrdLineRef": null,
+        "OrgCntry": null,
+        "PrdSlNo": null,
+        "BchDtls": null,
+        "AttribDtls": [
+          {
+            "Nm": null,
+            "Val": null
+          }
+        ]
+      },
+      {
+        "SlNo": "2",
+        "PrdDesc": null,
+        "IsServc": "N",
+        "HsnCd": "455152",
+        "Barcde": null,
+        "Qty": 1,
+        "FreeQty": 0,
+        "Unit": "BOX",
+        "UnitPrice": 15,
+        "TotAmt": 15,
+        "Discount": 0,
+        "PreTaxVal": 0,
+        "AssAmt": 15,
+        "GstRt": 0,
+        "IgstAmt": 0,
+        "CgstAmt": 0,
+        "SgstAmt": 0,
+        "CesRt": 0,
+        "CesAmt": 0,
+        "CesNonAdvlAmt": 0,
+        "StateCesRt": 0,
+        "StateCesAmt": 0,
+        "StateCesNonAdvlAmt": 0,
+        "OthChrg": 0,
+        "TotItemVal": 15,
+        "OrdLineRef": null,
+        "OrgCntry": null,
+        "PrdSlNo": null,
+        "BchDtls": null,
+        "AttribDtls": [
+          {
+            "Nm": null,
+            "Val": null
+          }
+        ]
+      }
+    ]
+  }
+]

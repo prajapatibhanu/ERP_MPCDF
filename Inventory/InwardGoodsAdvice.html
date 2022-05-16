@@ -1,0 +1,483 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>MPCDF - ERP</title>
+
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <!-- Bootstrap 3.3.6 -->
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <!-- DataTables -->
+    <link rel="stylesheet" href="../assets/plugins/datatables/dataTables.bootstrap.css">
+    <!-- Date Picker -->
+    <link rel="stylesheet" href="../assets/plugins/datepicker/datepicker3.css">
+    <link rel="stylesheet" href="../assets/plugins/select2/select2.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="../assets/css/AdminLTE.min.css">
+    <!-- AdminLTE Skins. Choose a skin from the css/skins
+         folder instead of downloading all of them to reduce the load. -->
+    <link rel="stylesheet" href="../assets/css/_all-skins.min.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style>
+        .rotateimg90 {
+            -webkit-transform: rotate(90deg);
+            -moz-transform: rotate(90deg);
+            -ms-transform: rotate(90deg);
+            -o-transform: rotate(90deg);
+            transform: rotate(90deg);
+        }
+
+        fieldset {
+            border: 1px solid #c7c7c7;
+            padding: .35em .625em .75em;
+            margin-bottom: 10px;
+            padding-bottom: 0.5em;
+            padding-bottom: 2px;
+        }
+
+        legend {
+            width: initial;
+            padding: 0px 10px;
+            margin: 0;
+            font-size: 12px;
+            font-weight: bold;
+            color: #1d1e1f;
+            text-transform: uppercase;
+            /*background-color: #FFFF00;*/
+            border: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body class="sidebar-mini wysihtml5-supported skin-green-light" style="height: auto; min-height: 100%; " onkeydown="return (event.keyCode != 116)">
+
+
+    <div class="wrapper">
+        <header class="main-header">
+            <!-- Logo -->
+            <a href="#" class="logo">
+
+                <span class="logo-lg"><b>MPCDF - ERP</b></span>
+            </a>
+            <!-- Header Navbar: style can be found in header.less -->
+            <nav class="navbar navbar-static-top">
+
+                <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button"></a>
+                <span class="top-logo-line hidden-sm hidden-xs">&nbsp; M P State Cooperative Dairy Federation Ltd  </span>
+
+                <div class="navbar-custom-menu">
+                    <ul class="nav navbar-nav">
+                        <li class="dropdown tasks-menu classhide">
+                            <a>
+                                <span style="color:white;"><b>WELCOME : </b></span>
+                                <span id="spnUsername" style="text-transform:uppercase"></span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <!-- Left side column. contains the logo and sidebar -->
+        <aside class="main-sidebar">
+            <!-- sidebar: style can be found in sidebar.less -->
+            <section class="sidebar" id="Navigation">
+                <ul class='sidebar-menu' data-widget='tree'>
+                    <li><hr style='margin: 0' /></li>
+                    <li><a href='../Inventory/Index.html'><i class='fa fa-home'></i><span>&nbsp;Main Page</span></a></li>
+                    <li class='treeview'>
+                        <a href='#'><i class='fa fa fa-hand-o-right'></i><span>Inventory</span><span class='pull-right-container'><i class='fa fa-angle-left pull-right'></i></span></a>
+                        <ul class='treeview-menu'>
+                            <li><a href='../Inventory/IndentForm.html'><i class='fa fa fa-hand-o-right'></i><span>&nbsp;Indent Form</span></a></li>
+                            <li><a href='../Inventory/PurchaseRequisition.html'><i class='fa fa fa-hand-o-right'></i><span>&nbsp;Purchase Requisition</span></a></li>
+                            <li><a href='../Inventory/InwardGoodsAdvice.html'><i class='fa fa fa-hand-o-right'></i><span>&nbsp;Inward Goods Advice</span></a></li>
+                            <li><a href='../Inventory/EntryPermit.html'><i class='fa fa fa-hand-o-right'></i><span>&nbsp;Entry Permit</span></a></li>
+                            <li><a href='../Inventory/DeliveryChallan.html'><i class='fa fa fa-hand-o-right'></i><span>&nbsp;Delivery Challan</span></a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </section>
+            <!-- /.sidebar -->
+        </aside>
+
+        <div class="content-wrapper">
+
+            <section class="content">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="box box-primary">
+                            <div class="box-header">
+                                <h3 class="box-title">INWARD GOODS ADVICE</h3>
+                                <span id="ctl00_ContentBody_lblmsg"></span>
+                            </div>
+                            <div class="box-body">
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label>Date</label>
+                                            <span style="color: red"> *</span>
+                                            <span class="pull-right">
+                                                <span id="ctl00_ContentBody_rfv1" style="color:Red;display:none;"><i class='fa fa-exclamation-circle' title='Please Enter Date !'></i></span>
+                                                <span id="ctl00_ContentBody_revdate" style="color:Red;display:none;"><i class='fa fa-exclamation-circle' title='Invalid Date !'></i></span>
+                                            </span>
+                                            <div class="input-group date">
+                                                <div class="input-group-addon">
+                                                    <i class="fa fa-calendar"></i>
+                                                </div>
+                                                <input name="ctl00$ContentBody$txtTransactionDt" type="text" maxlength="10" id="txtTransactionDt" class="form-control" onkeypress="javascript: return false;" onpaste="return false;" placeholder="Select Date" autocomplete="off" data-provide="datepicker" data-date-format="dd/mm/yyyy" data-date-autoclose="true" style="width:100%;" />
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label>PO No.</label><span style="color: red"> *</span>
+                                            <input name="ctl00$ContentBody$txtTransactionDt" type="text" maxlength="10" id="txtTransactionDt" class="form-control" onkeypress="javascript: return false;" onpaste="return false;" placeholder="Select PO No." autocomplete="off" style="width:100%;" />
+
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label>PO Date</label>
+                                            <span style="color: red"> *</span>
+                                            <span class="pull-right">
+                                                <span id="ctl00_ContentBody_rfv1" style="color:Red;display:none;"><i class='fa fa-exclamation-circle' title='Please Enter Date !'></i></span>
+                                                <span id="ctl00_ContentBody_revdate" style="color:Red;display:none;"><i class='fa fa-exclamation-circle' title='Invalid Date !'></i></span>
+                                            </span>
+                                            <div class="input-group date">
+                                                <div class="input-group-addon">
+                                                    <i class="fa fa-calendar"></i>
+                                                </div>
+                                                <input name="ctl00$ContentBody$txtTransactionDt" type="text" maxlength="10" id="txtTransactionDt" class="form-control" onkeypress="javascript: return false;" onpaste="return false;" placeholder="Select PO Date" autocomplete="off" data-provide="datepicker" data-date-format="dd/mm/yyyy" data-date-autoclose="true" style="width:100%;" />
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label>Supplier</label><span style="color: red"> *</span>
+                                            <select name="ctl00$ContentBody$ddlstate" id="ctl00_ContentBody_ddlstate" class="form-control Select2">
+                                                <option value="0">Select</option>
+                                                <option value="1">Supplier 1</option>
+                                                <option value="2">Supplier 2</option>
+                                                <option value="3">Supplier 3</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label>Dispatch</label><span style="color: red"> *</span>
+                                            <input name="ctl00$ContentBody$txtTransactionDt" type="text" maxlength="10" id="txtTransactionDt" class="form-control" onkeypress="javascript: return false;" onpaste="return false;" placeholder="Dispatch" autocomplete="off" style="width:100%;" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label>Particular</label>
+                                            <input name="ctl00$ContentBody$txtTransactionDt" type="text" maxlength="10" id="txtTransactionDt" class="form-control" onkeypress="javascript: return false;" onpaste="return false;" placeholder="Particular" autocomplete="off" style="width:100%;" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <fieldset>
+                                    <legend>
+                                        Item Detail's
+                                    </legend>
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <label>Item Name</label><span style="color: red"> *</span>
+                                                <select name="ctl00$ContentBody$ddlstate" id="ctl00_ContentBody_ddlstate" class="form-control Select2">
+                                                    <option value="0">Select</option>
+                                                    <option value="1" selected>Item 1</option>
+                                                    <option value="2">Item 2</option>
+                                                    <option value="3">Item 3</option>
+                                                    <option value="4">Item 4</option>
+                                                </select>
+                                                <small><span id="valddlstate" class="text-danger"></span></small>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <label>Unit</label><span style="color: red"> *</span>
+                                                <input name="ctl00$ContentBody$txtemail" readonly="readonly" type="text" value="KG" disabled maxlength="50" id="ctl00_ContentBody_txtemail" class="form-control" placeholder="KG" />
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <label>Recived Qty.</label><span style="color: red"> *</span>
+                                                <input name="ctl00$ContentBody$txtemail" type="text" maxlength="50" id="ctl00_ContentBody_txtemail" class="form-control" placeholder="Recived Qty." onkeypress="return ValidateNum(event);" />
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <label>Passed Qty.</label><span style="color: red"> *</span>
+                                                <input name="ctl00$ContentBody$txtmobno" type="text" maxlength="10" id="ctl00_ContentBody_txtmobno" class="form-control" placeholder="Passed Qty." onkeypress="return ValidateNum(event);" />
+                                                <small><span id="valtxtmobno" class="text-danger"></span></small>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <label>Rejected Qty.</label><span style="color: red"> *</span>
+                                                <input name="ctl00$ContentBody$txtemail" type="text" maxlength="50" id="ctl00_ContentBody_txtemail" class="form-control" placeholder="Rejected Qty." onkeypress="return ValidateNum(event);" />
+                                                <small><span id="valtxtemail" class="text-danger"></span></small>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <label>Accepted Qty. In Store</label><span style="color: red"> *</span>
+                                                <input name="ctl00$ContentBody$txtemail" type="text" maxlength="50" id="ctl00_ContentBody_txtemail" class="form-control" placeholder="Accepted Qty." onkeypress="return ValidateNum(event);" />
+                                                <small><span id="valtxtemail" class="text-danger"></span></small>
+                                            </div>
+                                        </div>
+										<div class="col-md-3">
+                                            <div class="form-group">
+                                                <label>Remark</label><span style="color: red"> *</span>
+                                                <input name="ctl00$ContentBody$txtemail" type="text" maxlength="50" id="ctl00_ContentBody_txtemail" class="form-control" placeholder="Remark" onkeypress="return Validatename(event);" />
+                                                <small><span id="valtxtemail" class="text-danger"></span></small>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <div class="form-group">
+                                                <input type="submit" style="margin-top:25px" name="ctl00$ContentBody$btnSave" value="Add" id="btnAdd" class="btn btn-success btn-block" />
+                                            </div>
+                                        </div>
+                                    </div>
+									<div class="row">
+                                <div class="col-md-12">
+                                    <div class="table-responsive">
+                                        <div>
+                                            <table class="datatable table table-striped table-bordered table-hover" cellspacing="0" rules="all" border="1" id="ctl00_ContentBody_gvOpeningStock" style="border-collapse:collapse;">
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col">S.No.<br /></th>
+                                                        <th scope="col">Item Name <br /></th>
+                                                        <th scope="col">Received Qty. <br /></th>
+                                                        <th scope="col">Passed Qty.<br /></th>
+                                                        <th scope="col">Rejected Qty. <br /></th>
+                                                        <th scope="col">Accepted Qty.<br /></th>
+														<th scope="col">Remark<br /></th>
+                                                        <th scope="col">Action <br /></th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>
+                                                            1
+                                                        </td>
+                                                        <td>
+                                                            Item 1
+                                                        </td>
+                                                        <td>
+                                                            45
+                                                        </td>
+                                                        <td>
+                                                            44
+                                                        </td>
+                                                        <td>
+                                                            1
+                                                        </td>
+                                                        <td>
+                                                            44
+                                                        </td>
+														<td>
+                                                            Remark 1
+                                                        </td>
+                                                        <td>
+															<a onclick="return confirm(&#39;Are you sure to Delete?&#39;);" id="ctl00_ContentBody_gvOpeningStock_ctl02_lnkDelete" title="Delete" href="javascript:__doPostBack(&#39;ctl00$ContentBody$gvOpeningStock$ctl02$lnkDelete&#39;,&#39;&#39;)" style="color: red;"><i class="fa fa-trash"></i></a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            2
+                                                        </td>
+                                                        <td>
+                                                            Item 2
+                                                        </td>
+                                                        <td>
+                                                            45
+                                                        </td>
+                                                        <td>
+                                                            45
+                                                        </td>
+                                                        <td>
+                                                            0
+                                                        </td>
+                                                        <td>
+                                                            45
+                                                        </td>
+														<td>
+                                                            Remark 2
+                                                        </td>
+                                                        <td>
+															<a onclick="return confirm(&#39;Are you sure to Delete?&#39;);" id="ctl00_ContentBody_gvOpeningStock_ctl02_lnkDelete" title="Delete" href="javascript:__doPostBack(&#39;ctl00$ContentBody$gvOpeningStock$ctl02$lnkDelete&#39;,&#39;&#39;)" style="color: red;"><i class="fa fa-trash"></i></a>
+                                                        </td>
+                                                    </tr>
+
+
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                                </fieldset>
+                                <!--<div class="row">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label>Dugdh Sangh Name<span class="text-danger">*</span></label>
+                                            <select name="ctl00$ContentBody$ddlstate" id="ctl00_ContentBody_ddlstate" class="form-control Select2">
+                                                <option value="0">Select</option>
+                                                <option value="1">DS1</option>
+                                                <option value="2">DS2</option>
+                                            </select>
+                                            <small><span id="valddlstate" class="text-danger"></span></small>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label>Truck No.<span class="text-danger">*</span></label>
+                                            <select name="ctl00$ContentBody$ddlstate" id="ctl00_ContentBody_ddlstate" class="form-control Select2">
+                                                <option value="0">Select</option>
+                                                <option value="1">MP 04 T 1848</option>
+                                                <option value="2">MP 04 T 8941</option>
+                                                <option value="3">MP 04 R 8419</option>
+                                                <option value="4">MP 04 K 9999</option>
+                                            </select>
+                                            <small><span id="valddlstate" class="text-danger"></span></small>
+                                        </div>
+                                    </div>
+                                </div>-->
+                                <div class="row">
+                                    <div class="col-md-2">
+                                        <div class="form-group">
+										<a href="PrintGoodsAdvice.html" class="btn btn-primary btn-block" class="btn btn-block btn-default">Save & Print</a>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group">
+                                            <a href="#" class="btn btn-block btn-default">Clear</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+           
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="box box-primary">
+                        <div class="box-header">
+                            <h3 class="box-title">INWARD GOODS ADVICE DETAILS </h3>
+                        </div>
+                        <div class="box-body">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="table-responsive">
+                                        <div>
+                                            <table class="datatable table table-striped table-bordered table-hover" cellspacing="0" rules="all" border="1" id="ctl00_ContentBody_gvOpeningStock" style="border-collapse:collapse;">
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col">S.No.<br /></th>
+                                                        <th scope="col">Date <br /></th>
+                                                        <th scope="col">PO No.<br /></th>
+                                                        <th scope="col">PO Date<br /></th>
+                                                        <th scope="col">Supplier </th>
+                                                        <th scope="col">Dispatch <br /></th>
+                                                        <th scope="col">Particular<br /></th>
+                                                        <th scope="col">Action <br /></th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>
+                                                            1
+                                                        </td>
+                                                        <td>
+                                                            28/01/2019
+                                                        </td>
+                                                        <td>
+                                                            PO-121
+                                                        </td>
+                                                        <td>
+                                                            28/01/2019
+                                                        </td>
+                                                        <td>
+                                                            Supplier 1
+                                                        </td>
+
+                                                        <td>
+                                                            Indore
+                                                        </td>
+                                                        <td>
+                                                            -
+                                                        </td>
+                                                        <td>
+															<a id="ctl00_ContentBody_gvOpeningStock_ctl02_lnkUpdate" title="Update" href="PrintGoodsAdvice.html"><i class="fa fa-print"></i></a>
+                                                            &nbsp;&nbsp;<a id="ctl00_ContentBody_gvOpeningStock_ctl02_lnkUpdate" title="Update" href="javascript:__doPostBack(&#39;ctl00$ContentBody$gvOpeningStock$ctl02$lnkUpdate&#39;,&#39;&#39;)"><i class="fa fa-pencil"></i></a>
+                                                            &nbsp;&nbsp;&nbsp;<a onclick="return confirm(&#39;Are you sure to Delete?&#39;);" id="ctl00_ContentBody_gvOpeningStock_ctl02_lnkDelete" title="Delete" href="javascript:__doPostBack(&#39;ctl00$ContentBody$gvOpeningStock$ctl02$lnkDelete&#39;,&#39;&#39;)" style="color: red;"><i class="fa fa-trash"></i></a>
+                                                        </td>
+                                                    </tr>
+                                                    
+
+
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+
+        </section>
+        <!-- /.content-wrapper -->
+        <footer class="main-footer">
+            <div class="pull-right hidden-xs">
+                <b>Version</b> 1.0.0
+            </div>
+            <strong>Designed and Developed by : <a target="_blank" href="">SFA</a></strong>  All rights reserved.
+        </footer>
+
+        <!-- Control Sidebar -->
+        <!-- /.control-sidebar -->
+        <!-- Add the sidebar's background. This div must be placed
+        immediately after the control sidebar -->
+        <div class="control-sidebar-bg"></div>
+    </div>
+    <script src="../assets/plugins/jQuery/jQuery-2.2.0.min.js"></script>
+    <!-- Bootstrap 3.3.6 -->
+    <script src="../assets/js/bootstrap.min.js"></script>
+    <!-- DataTables -->
+    <script src="../assets/plugins/datatables/jquery.dataTables.min.js"></script>
+    <script src="../assets/plugins/datatables/dataTables.bootstrap.min.js"></script>
+    <!-- SlimScroll -->
+    <script src="../assets/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+    <!-- datepicker -->
+    <script src="../assets/plugins/datepicker/bootstrap-datepicker.js"></script>
+    <!-- FastClick -->
+    <script src="../assets/plugins/fastclick/fastclick.js"></script>
+    <script src="../assets/plugins/select2/select2.min.js"></script>
+    <!-- page script -->
+    <script src="../assets/js/script.js"></script>
+    <script src="../assets/js/app.min.js"></script>
+
+
+
+
+</body>
+</html>

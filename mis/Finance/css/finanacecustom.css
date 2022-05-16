@@ -1,0 +1,65 @@
+﻿
+
+a.btn.btn-default.buttons-excel.buttons-html5 {
+    background: #ff5722c2;
+    color: white;
+    border-radius: unset;
+    box-shadow: 2px 2px 2px #808080;
+    margin-left: 6px;
+    border: none;
+}
+
+a.btn.btn-default.buttons-pdf.buttons-html5 {
+    background: #009688c9;
+    color: white;
+    border-radius: unset;
+    box-shadow: 2px 2px 2px #808080;
+    margin-left: 6px;
+    border: none;
+}
+
+a.btn.btn-default.buttons-print {
+    background: #e91e639e;
+    color: white;
+    border-radius: unset;
+    box-shadow: 2px 2px 2px #808080;
+    border: none;
+}
+
+    a.btn.btn-default.buttons-print:hover, a.btn.btn-default.buttons-pdf.buttons-html5:hover, a.btn.btn-default.buttons-excel.buttons-html5:hover {
+        box-shadow: 1px 1px 1px #808080;
+    }
+
+    a.btn.btn-default.buttons-print:active, a.btn.btn-default.buttons-pdf.buttons-html5:active, a.btn.btn-default.buttons-excel.buttons-html5:active {
+        box-shadow: 1px 1px 1px #808080;
+    }
+
+.box.box-pramod {
+    border-top-color: #1ca79a;
+}
+
+.box {
+    min-height: auto;
+}
+        .show_detail {
+            margin-top: 24px;
+        }
+
+        .mainheading {
+            font-size: 20px;
+            color: tomato;
+        }
+
+        .table > tbody > tr > th, .table > tfoot > tr > th, .table > tbody > tr > td, .table > tfoot > tr > td {
+            padding: 2px !important;
+            line-height: 1 !important;
+        }
+
+        .table-bordered > thead > tr > th, 
+        .table-bordered > tbody > tr > th, 
+        .table-bordered > tfoot > tr > th, 
+        .table-bordered > thead > tr > td, 
+        .table-bordered > tbody > tr > td, 
+        .table-bordered > tfoot > tr > td {
+            border: .5px solid #eaeaea !important;
+        }

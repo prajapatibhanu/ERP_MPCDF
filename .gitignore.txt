@@ -1,0 +1,76 @@
+
+# Ignore all text files
+*.txt
+
+# Ignore all PDF files
+*.pdf
+
+# Ignore all RAR files
+*.rar
+
+# Ignore all RAR files
+*.zip
+
+# Ignore all RAR files
+*.mp4
+
+# Ignore all Excel files
+*.xlsx
+
+# Ignore all Excel files
+*.xls
+
+# Ignore all Excel files
+*.bak
+
+# Ignore all Excel files
+*.sql
+
+**/TempFiles
+
+**/bin
+
+**/debug
+
+**/Upload
+
+**/UploadDoc
+
+**/Uploads
+
+**/BackUp
+
+**/Upload_Doc
+
+**/SupplierOrderOldBackUp
+
+**/backup_files
+
+**/AchievementUpload
+
+**/ACRDoc
+
+**/EnquiryDoc
+
+**/MomDocs
+
+**/PunishmentUpload
+
+**/ServiceBook
+
+**/UploadDoc
+
+**/Payroll-Local
+
+**/MedicalReport
+
+**/PurchaseFiles
+
+**/RTI_Docs
+
+**/Supporting_Doc
+
+**/UserManual
+
+**/WrAgrements
+

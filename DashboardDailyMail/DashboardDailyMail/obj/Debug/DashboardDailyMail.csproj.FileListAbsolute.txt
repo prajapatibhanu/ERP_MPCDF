@@ -1,0 +1,6 @@
+c:\users\hp\documents\visual studio 2013\Projects\DashboardDailyMail\DashboardDailyMail\bin\Debug\DashboardDailyMail.exe.config
+c:\users\hp\documents\visual studio 2013\Projects\DashboardDailyMail\DashboardDailyMail\bin\Debug\DashboardDailyMail.exe
+c:\users\hp\documents\visual studio 2013\Projects\DashboardDailyMail\DashboardDailyMail\bin\Debug\DashboardDailyMail.pdb
+c:\users\hp\documents\visual studio 2013\Projects\DashboardDailyMail\DashboardDailyMail\obj\Debug\DashboardDailyMail.csprojResolveAssemblyReference.cache
+c:\users\hp\documents\visual studio 2013\Projects\DashboardDailyMail\DashboardDailyMail\obj\Debug\DashboardDailyMail.exe
+c:\users\hp\documents\visual studio 2013\Projects\DashboardDailyMail\DashboardDailyMail\obj\Debug\DashboardDailyMail.pdb

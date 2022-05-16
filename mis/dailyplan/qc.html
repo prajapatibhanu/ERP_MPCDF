@@ -1,0 +1,520 @@
+﻿<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>
+        MPCDF - ERP
+    </title>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport" />
+    <link href="../css/bootstrap.css" rel="stylesheet" />
+    <link href="../css/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link href="../css/Ionicons/css/ionicons.css" rel="stylesheet" />
+    <link href="../css/select2.css" rel="stylesheet" />
+    <link href="../css/AdminLTE.css" rel="stylesheet" />
+    <link href="../css/skin-green-light.css" rel="stylesheet" />
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Google Font -->
+    <link href="../css/daterangepicker.css" rel="stylesheet" />
+    <link href="../css/bootstrap-datepicker.css" rel="stylesheet" />
+    <link href="../css/bootstrap-timepicker.css" rel="stylesheet" />
+    <link href="../css/StyleSheet.css" rel="stylesheet" />
+    <link href="../css/jquery.datetimepicker.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic" />
+    <style>
+        li.header {
+            font-size: 14px !important;
+            color: #F44336 !important;
+        }
+
+        span#ctl00_spnUsername {
+            text-transform: uppercase;
+            font-weight: 600;
+            font-size: 16px;
+        }
+
+        li.dropdown.tasks-menu.classhide a {
+            padding: 4px 10px 0px 0px;
+        }
+
+        a.btn.btn-default.buttons-excel.buttons-html5 {
+            background: #ff5722c2;
+            color: white;
+            border-radius: unset;
+            box-shadow: 2px 2px 2px #808080;
+            margin-left: 6px;
+            border: none;
+        }
+
+        a.btn.btn-default.buttons-pdf.buttons-html5 {
+            background: #009688c9;
+            color: white;
+            border-radius: unset;
+            box-shadow: 2px 2px 2px #808080;
+            margin-left: 6px;
+            border: none;
+        }
+
+        a.btn.btn-default.buttons-print {
+            background: #e91e639e;
+            color: white;
+            border-radius: unset;
+            box-shadow: 2px 2px 2px #808080;
+            border: none;
+        }
+
+        .navbar {
+            background: #ebf4ff !important;
+            box-shadow: 0px 0px 8px #0058a6;
+            color: #0058a6;
+        }
+
+        .skin-green-light .main-header .logo {
+            background: #fff !important;
+        }
+
+
+        a.btn.btn-default.buttons-print:hover, a.btn.btn-default.buttons-pdf.buttons-html5:hover, a.btn.btn-default.buttons-excel.buttons-html5:hover {
+            box-shadow: 1px 1px 1px #808080;
+        }
+
+        a.btn.btn-default.buttons-print:active, a.btn.btn-default.buttons-pdf.buttons-html5:active, a.btn.btn-default.buttons-excel.buttons-html5:active {
+            box-shadow: 1px 1px 1px #808080;
+        }
+
+        .btn-success {
+            background-color: #1d7ce0;
+            border-color: #1d7ce0;
+        }
+
+            .btn-success:hover, .btn-success:active, .btn-success.hover, .btn-success:focus, .btn-success.focus, .btn-success:active:focus {
+                background-color: #1d7ce0;
+                border-color: #1d7ce0;
+            }
+
+            .btn-success:hover {
+                color: #fff;
+                background-color: #1d7ce0;
+                border-color: #1d7ce0;
+            }
+
+        fieldset {
+            border: 1px solid #ff7836;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+
+        legend {
+            width: initial;
+            padding: 4px 15px;
+            margin: 0;
+            font-size: 12px;
+            font-weight: bold;
+            color: #00427b;
+            text-transform: uppercase;
+            border: 1px solid #ff7836;
+        }
+
+        table .select2 {
+            width: 100px !important;
+        }
+    </style>
+
+    <link href="assets/css/Dashboard.css" rel="stylesheet" />
+</head>
+<body class="sidebar-mini wysihtml5-supported skin-green-light" style="height: auto; min-height: 100%;" onkeydown="return (event.keyCode != 116)">
+
+    <div class="wrapper">
+        <header class="main-header">
+            <!-- Logo -->
+            <a href="#" class="logo">
+
+
+                <img style="height:47px;" src="../image/MPCDFlogo.png" />
+            </a>
+            <!-- Header Navbar: style can be found in header.less -->
+            <nav class="navbar navbar-static-top">
+
+                <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button"></a>
+
+                <span class="top-logo-line hidden-sm hidden-xs">&nbsp; एम. पी. स्टेट को ऑपरेटिव डेयरी फेडरेशन</span>
+
+                <div class="navbar-custom-menu">
+                    <ul class="nav navbar-nav">
+                        <li class="dropdown tasks-menu classhide">
+                            <a>
+                                <span style="color: white;"><b>WELCOME : </b></span>
+                                <span id="ctl00_spnUsername" style="text-transform: uppercase">Manish</span>
+                            </a>
+                        </li>
+
+
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <!-- Left side column. contains the logo and sidebar -->
+        <aside class="main-sidebar">
+            <!-- sidebar: style can be found in sidebar.less -->
+            <section id="ctl00_Navigation" class="sidebar">
+                <ul class='sidebar-menu' data-widget='tree'>
+                    <li class='header' style='text-align: center;'>Monday, February 24, 2020</li>
+                    <li><hr style='margin: 0' /></li>
+                    <li><a href='../../mis/Dashboard/Home.aspx?IsMainPage=1'><i class='fa fa-home'></i><span>&nbsp;Main Page</span></a></li>
+                    <li><a href='dailyplan.html'><i class='fa fa-hand-o-right'></i><span>Daily Production Plan</span></a></li>
+                    <li class="treeview">
+                        <a href="#">
+                            <i class="fa fa-hand-o-right"></i><span>Daily Production</span><span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu" style="display: none;">
+                            <li><a href="productionplan.html"><i class="fa fa-hand-o-right"></i><span>Production Plan</span></a></li>
+                            <li><a href="receive.html"><i class="fa fa-hand-o-right"></i><span>Receive Inventory</span></a></li>
+                            <li><a href="production.html"><i class="fa fa-hand-o-right"></i><span>Production</span></a></li>
+                            <li><a href="qc.html"><i class="fa fa-hand-o-right"></i><span>Quality Test Report</span></a></li>
+                            <li><a href="dispatch.html"><i class="fa fa-hand-o-right"></i><span>Dispatch</span></a></li>
+                        </ul>
+                    </li>
+                    <li><a href='dailyproduction.html'><i class='fa fa-hand-o-right'></i><span>Daily Production Report</span></a></li>
+                </ul>
+            </section>
+            <!-- /.sidebar -->
+        </aside>
+        <!-- Content Wrapper. Contains page content -->
+
+        <div class="content-wrapper">
+            <section class="content">
+                <div class="box box-success">
+                    <div class="box-header">
+                        <h3 class="box-title">Quality control / गुणवत्ता नियंत्रण</h3>
+                    </div>
+                    <span id="ctl00_ContentBody_lblMsg"></span>
+                    <div class="box-body">
+                        <div class="row">
+
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label>तारीख / Date<span style="color: red;">*</span></label>
+                                    <div class="input-group date">
+                                        <div class="input-group-addon">
+                                            <i class="fa fa-calendar"></i>
+                                        </div>
+                                        <input name="" type="text" id="txtOrderDate" placeholder="Select Date..." class="form-control DateAdd" data-date-start-date="-60d" data-date-end-date="0d" autocomplete="off" onpaste="return false" readonly="readonly" />
+                                    </div>
+                                </div>
+                            </div>
+                            <!--<div class="col-md-4">
+                                <div class="form-group">
+                                    <label>Shift /  पारी<span style="color: red;">*</span></label>
+                                    <select name="" id="" class="form-control select2">
+                                        <option value="0">Select</option>
+                                        <option value="1">Shift 1</option>
+                                        <option value="2">Shift 2</option>
+                                        <option value="3">Shift 3</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label>Product section / उत्पाद अनुभाग<span style="color: red;">*</span></label>
+                                    <select name="" id="ctl00_ContentBody_ddlOldOffice" class="form-control select2">
+                                        <option value="0">Select</option>
+                                        <option value="1">Milk section</option>
+                                        <option value="2">Ghee Section</option>
+                                        <option value="3">Shreekhand Section</option>
+                                        <option value="4">Peda Section</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label>Product /  उत्पाद<span style="color: red;">*</span></label>
+                                    <select name="" id="" class="form-control select2">
+                                        <option value="0">Select</option>
+                                        <option value="1">सांची गोल्ड</option>
+                                        <option value="2">साँची शक्ति</option>
+                                        <option value="3">साँची स्मार्ट</option>
+                                        <option value="4">साँची गाय का दूध</option>
+                                        <option value="5">साँची लाइट ( स्किम्ड मिल्क )</option>
+                                        <option value="6">साँची चाह दूध</option>
+                                        <option value="7">साँची चाय</option>
+                                        <option value="8">स्पेशल दूध</option>
+                                    </select>
+                                </div>
+                            </div>-->
+                            <!--<div class="col-md-3">
+                                <div class="form-group">
+                                    <label>Sample Name<span style="color: red;">*</span></label>
+                                    <input name="" type="text" id="" placeholder="" class="form-control" autocomplete="off" onpaste="return false" />
+                                </div>
+                            </div>
+
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label>Batch No<span style="color: red;">*</span></label>
+                                    <select name="" id="ctl00_ContentBody_ddlOldOffice" class="form-control select2">
+                                        <option value="0">Select</option>
+                                        <option value="1">Batch 1</option>
+                                        <option value="2">Batch 2</option>
+                                        <option value="3">Batch 3</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="form-group">
+                                    <label>Serial/Lot No<span style="color: red;">*</span></label>
+                                    <select name="" id="ctl00_ContentBody_ddlOldOffice" class="form-control select2">
+                                        <option value="0">Select</option>
+                                        <option value="1">Lot 1</option>
+                                        <option value="2">Lot 2</option>
+                                        <option value="3">Lot 3</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="col-md-2">
+                                <div class="form-group">
+                                    <label>Test Type<span style="color: red;">*</span></label>
+                                    <select name="" id="ctl00_ContentBody_ddlOldOffice" class="form-control select2">
+                                        <option value="0">Select</option>
+                                        <option value="1">Type 1</option>
+                                        <option value="2">Type 2</option>
+                                        <option value="3">Type 3</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="form-group">
+                                    <label>Test Result<span style="color: red;">*</span></label>
+                                    <select name="" id="ctl00_ContentBody_ddlOldOffice" class="form-control select2">
+                                        <option value="0">Select</option>
+                                        <option value="1">Pass</option>
+                                        <option value="2">Fail</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="form-group">
+                                    <label>Test Remark<span style="color: red;">*</span></label>
+                                    <input name="" type="text" id="" placeholder="" class="form-control" autocomplete="off" onpaste="return false" />
+                                </div>
+                            </div>-->
+
+
+                        </div>
+                        <br />
+                        <br />
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h4 class="text-bold text-center"><u>Pending samples of selected date:</u></h4>
+                            </div>
+                            <div class="col-md-12">
+                                <table style="width:100%;" class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th></th>
+                                            <th>Sno.</th>
+                                            <th>Particular</th>
+                                            <th>Sample Name</th>
+                                            <th>Batch No</th>
+                                            <th>Lot No</th>
+                                            <th>Type Test</th>
+                                            <th>Type Result</th>
+                                            <th>Test Remark (Test No.)</th>
+                                            <th>Date</th>
+                                            <th>Shift</th>
+                                            <th>Production Section</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><input id="Checkbox1" type="checkbox" /></td>
+                                            <td>1</td>
+                                            <td>सांची गोल्ड 1 Ltr</td>
+                                            <td>Sample 1</td>
+                                            <td>Batch 1</td>
+                                            <td>Lot 1</td>
+                                            <td>Type 1</td>
+                                            <td>
+                                                <select name="" id="ctl00_ContentBody_ddlOldOffice" class="form-control select2">
+                                                    <option value="0">Select</option>
+                                                    <option value="1">Pass</option>
+                                                    <option value="2">Fail</option>
+                                                    <option value="2">Re sampled</option>
+                                                    <option value="2">Cancelled</option>
+                                                </select>
+                                            </td>
+                                            <td><input name="" type="text" id="" placeholder="" class="form-control" autocomplete="off" onpaste="return false" /></td>
+                                            <td>25-02-2019</td>
+                                            <td>Shift 2</td>
+                                            <td>Milk</td>
+                                        </tr>
+
+                                        <tr>
+                                            <td><input id="Checkbox1" type="checkbox" /></td>
+                                            <td>2</td>
+                                            <td>सांची गोल्ड 200ML</td>
+                                            <td>Sample 1</td>
+                                            <td>Batch 1</td>
+                                            <td>Lot 1</td>
+                                            <td>Type 1</td>
+                                            <td>
+                                                <select name="" id="ctl00_ContentBody_ddlOldOffice" class="form-control select2">
+                                                    <option value="0">Select</option>
+                                                    <option value="1">Pass</option>
+                                                    <option value="2">Fail</option>
+                                                    <option value="2">Re sampled</option>
+                                                    <option value="2">Cancelled</option>
+                                                </select>
+                                            </td>
+                                            <td><input name="" type="text" id="" placeholder="" class="form-control" autocomplete="off" onpaste="return false" /></td>
+                                            <td>25-02-2019</td>
+                                            <td>Shift 2</td>
+                                            <td>Milk</td>
+                                        </tr>
+
+                                        <tr>
+                                            <td><input id="Checkbox1" type="checkbox" /></td>
+                                            <td>3</td>
+                                            <td>सांची गोल्ड 500ML</td>
+                                            <td>Sample 1</td>
+                                            <td>Batch 1</td>
+                                            <td>Lot 1</td>
+                                            <td>Type 1</td>
+                                            <td>
+                                                <select name="" id="ctl00_ContentBody_ddlOldOffice" class="form-control select2">
+                                                    <option value="0">Select</option>
+                                                    <option value="1">Pass</option>
+                                                    <option value="2">Fail</option>
+                                                    <option value="2">Re sampled</option>
+                                                    <option value="2">Cancelled</option>
+                                                </select>
+                                            </td>
+                                            <td><input name="" type="text" id="" placeholder="" class="form-control" autocomplete="off" onpaste="return false" /></td>
+                                            <td>25-02-2019</td>
+                                            <td>Shift 2</td>
+                                            <td>Milk</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <input type="submit" name="" value="Save Quality Test Report" onclick="return validateform();" id="" class="btn btn-block btn-success" style="margin-top: 23px;" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <br />
+                        <br />
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h4 class="text-bold text-center"><u>Tested samples of selected date:</u></h4>
+                            </div>
+                            <div class="col-md-12">
+                                <table style="width:100%;" class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th>Sno.</th>
+                                            <th>Particular</th>
+                                            <th>Sample Name</th>
+                                            <th>Batch No</th>
+                                            <th>Lot No</th>
+                                            <th>Type Test</th>
+                                            <th>Type Result</th>
+                                            <th>Test Remark (Test No.)</th>
+                                            <th>Date</th>
+                                            <th>Shift</th>
+                                            <th>Production Section</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>सांची गोल्ड 1 Ltr</td>
+                                            <td>Sample 1</td>
+                                            <td>Batch 1</td>
+                                            <td>Lot 1</td>
+                                            <td>Type 1</td>
+                                            <td><span class="badge bg-green">Pass</span></td>
+                                            <td>N/A</td>
+                                            <td>25-02-2019</td>
+                                            <td>Shift 2</td>
+                                            <td>Milk</td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>2</td>
+                                            <td>सांची गोल्ड 200ML</td>
+                                            <td>Sample 1</td>
+                                            <td>Batch 1</td>
+                                            <td>Lot 1</td>
+                                            <td>Type 1</td>
+                                            <td><span class="badge bg-green">Pass</span></td>
+                                            <td>N/A</td>
+                                            <td>25-02-2019</td>
+                                            <td>Shift 2</td>
+                                            <td>Milk</td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>3</td>
+                                            <td>सांची गोल्ड 500ML</td>
+                                            <td>Sample 1</td>
+                                            <td>Batch 1</td>
+                                            <td>Lot 1</td>
+                                            <td>Type 1</td>
+                                            <td><span class="badge bg-green">Pass</span></td>
+                                            <td>N/A</td>
+                                            <td>25-02-2019</td>
+                                            <td>Shift 2</td>
+                                            <td>Milk</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <footer class="main-footer">
+            <div class="pull-right hidden-xs">
+                <b>Version</b> 1.0.0
+            </div>
+            <strong>Designed and Developed by : <a target="_blank" href=""></a></strong>All rights reserved.
+        </footer>
+        <div class="control-sidebar-bg"></div>
+    </div>
+    <script src="../js/jquery-2.2.4.js"></script>
+    <script src="../js/bootstrap.js"></script>
+    <script src="../js/Script.js"></script>
+    <script src="../js/adminlte.js"></script>
+    <script src="../js/moment.js"></script>
+    <script src="../js/daterangepicker.js"></script>
+    <script src="../js/bootstrap-datepicker.js"></script>
+    <script src="../js/select2.full.js"></script>
+    <script src="../js/jquery.datetimepicker.js"></script>
+    <script>
+        $('.select2').select2()
+
+        $('.DateAdd').datepicker({
+            autoclose: true,
+            format: 'dd/mm/yyyy'
+        })
+        function myModal() {
+            $("#myModal").modal('show');
+        }
+    </script>
+
+    <div>
+    </div>
+</body>
+</html>

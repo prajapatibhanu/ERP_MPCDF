@@ -1,0 +1,723 @@
+﻿<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>
+        MPCDF - ERP
+    </title>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport" />
+    <link href="../css/bootstrap.css" rel="stylesheet" />
+    <link href="../css/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link href="../css/Ionicons/css/ionicons.css" rel="stylesheet" />
+    <link href="../css/select2.css" rel="stylesheet" />
+    <link href="../css/AdminLTE.css" rel="stylesheet" />
+    <link href="../css/skin-green-light.css" rel="stylesheet" />
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Google Font -->
+    <link href="../css/daterangepicker.css" rel="stylesheet" />
+    <link href="../css/bootstrap-datepicker.css" rel="stylesheet" />
+    <link href="../css/bootstrap-timepicker.css" rel="stylesheet" />
+    <link href="../css/StyleSheet.css" rel="stylesheet" />
+    <link href="../css/jquery.datetimepicker.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic" />
+    <style>
+        li.header {
+            font-size: 14px !important;
+            color: #F44336 !important;
+        }
+
+        span#ctl00_spnUsername {
+            text-transform: uppercase;
+            font-weight: 600;
+            font-size: 16px;
+        }
+
+        li.dropdown.tasks-menu.classhide a {
+            padding: 4px 10px 0px 0px;
+        }
+
+        a.btn.btn-default.buttons-excel.buttons-html5 {
+            background: #ff5722c2;
+            color: white;
+            border-radius: unset;
+            box-shadow: 2px 2px 2px #808080;
+            margin-left: 6px;
+            border: none;
+        }
+
+        a.btn.btn-default.buttons-pdf.buttons-html5 {
+            background: #009688c9;
+            color: white;
+            border-radius: unset;
+            box-shadow: 2px 2px 2px #808080;
+            margin-left: 6px;
+            border: none;
+        }
+
+        a.btn.btn-default.buttons-print {
+            background: #e91e639e;
+            color: white;
+            border-radius: unset;
+            box-shadow: 2px 2px 2px #808080;
+            border: none;
+        }
+
+        .navbar {
+            background: #ebf4ff !important;
+            box-shadow: 0px 0px 8px #0058a6;
+            color: #0058a6;
+        }
+
+        .skin-green-light .main-header .logo {
+            background: #fff !important;
+        }
+
+
+        a.btn.btn-default.buttons-print:hover, a.btn.btn-default.buttons-pdf.buttons-html5:hover, a.btn.btn-default.buttons-excel.buttons-html5:hover {
+            box-shadow: 1px 1px 1px #808080;
+        }
+
+        a.btn.btn-default.buttons-print:active, a.btn.btn-default.buttons-pdf.buttons-html5:active, a.btn.btn-default.buttons-excel.buttons-html5:active {
+            box-shadow: 1px 1px 1px #808080;
+        }
+
+        .btn-success {
+            background-color: #1d7ce0;
+            border-color: #1d7ce0;
+        }
+
+            .btn-success:hover, .btn-success:active, .btn-success.hover, .btn-success:focus, .btn-success.focus, .btn-success:active:focus {
+                background-color: #1d7ce0;
+                border-color: #1d7ce0;
+            }
+
+            .btn-success:hover {
+                color: #fff;
+                background-color: #1d7ce0;
+                border-color: #1d7ce0;
+            }
+
+        fieldset {
+            border: 1px solid #ff7836;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+
+        legend {
+            width: initial;
+            padding: 4px 15px;
+            margin: 0;
+            font-size: 12px;
+            font-weight: bold;
+            color: #00427b;
+            text-transform: uppercase;
+            border: 1px solid #ff7836;
+        }
+
+        table .select2 {
+            width: 100px !important;
+        }
+    </style>
+
+    <link href="assets/css/Dashboard.css" rel="stylesheet" />
+</head>
+<body class="sidebar-mini wysihtml5-supported skin-green-light" style="height: auto; min-height: 100%;" onkeydown="return (event.keyCode != 116)">
+
+    <div class="wrapper">
+        <header class="main-header">
+            <nav class="navbar navbar-static-top">
+                <a href="#" class="logo">
+                    <img src="../image/sanchi_logo_blue.png">
+                </a>
+                <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button"></a>
+                <span class="top-logo-line hidden-sm hidden-xs">एम. पी. स्टेट को ऑपरेटिव डेयरी फेडरेशन</span>
+
+                <div class="navbar-custom-menu">
+                    <ul class="nav navbar-nav">
+                        <li class="dropdown tasks-menu classhide">
+                            <a>
+                                <span><b>WELCOME : </b></span>
+                                <span id="ctl00_spnUsername" style="text-transform: uppercase">Demo User [HO - Bhopal]</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <!-- Left side column. contains the logo and sidebar -->
+        <aside class="main-sidebar">
+            <!-- sidebar: style can be found in sidebar.less -->
+            <section id="ctl00_Navigation" class="sidebar">
+                <ul class='sidebar-menu' data-widget='tree'>
+                    <li class='header' style='text-align: center;'>Monday, February 24, 2020</li>
+                    <li><hr style='margin: 0' /></li>
+                    <li><a href='../../mis/Dashboard/Home.aspx?IsMainPage=1'><i class='fa fa-home'></i><span>&nbsp;Main Page</span></a></li>
+                    <li><a href='dailyplan.html'><i class='fa fa-hand-o-right'></i><span>Daily Production Plan</span></a></li>
+                    <li class="treeview">
+                        <a href="#">
+                            <i class="fa fa-hand-o-right"></i><span>Daily Production</span><span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu" style="display: none;">
+                            <li><a href="productionplan.html"><i class="fa fa-hand-o-right"></i><span>Production Plan</span></a></li>
+                            <li><a href="receive.html"><i class="fa fa-hand-o-right"></i><span>Receive Inventory</span></a></li>
+                            <li><a href="production.html"><i class="fa fa-hand-o-right"></i><span>Production</span></a></li>
+                            <li><a href="qc.html"><i class="fa fa-hand-o-right"></i><span>Quality Test Report</span></a></li>
+                            <li><a href="dispatch.html"><i class="fa fa-hand-o-right"></i><span>Dispatch</span></a></li>
+                        </ul>
+                    </li>
+                    <li><a href='dailyproduction.html'><i class='fa fa-hand-o-right'></i><span>Daily Production Report</span></a></li>
+                </ul>
+            </section>
+            <!-- /.sidebar -->
+        </aside>
+        <!-- Content Wrapper. Contains page content -->
+
+        <div class="content-wrapper">
+            <section class="content">
+                <div class="box box-success">
+                    <div class="box-header">
+                        <h3 class="box-title">Daily Production Plan / दैनिक उत्पादन योजना</h3>
+                    </div>
+                    <span id="ctl00_ContentBody_lblMsg"></span>
+                    <div class="box-body">
+                        <div class="row">
+
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label>तारीख / Date<span style="color: red;">*</span></label>
+                                    <div class="input-group date">
+                                        <div class="input-group-addon">
+                                            <i class="fa fa-calendar"></i>
+                                        </div>
+                                        <input name="" type="text" id="txtOrderDate" placeholder="Select Date..." class="form-control DateAdd" data-date-start-date="-60d" data-date-end-date="0d" autocomplete="off" onpaste="return false" readonly="readonly" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label>Shift /  पारी<span style="color: red;">*</span></label>
+                                    <select name="" id="" class="form-control select2">
+                                        <option value="0">Select</option>
+                                        <option value="1">Shift 1</option>
+                                        <option value="2">Shift 2</option>
+                                        <option value="3">Shift 3</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <!--<div class="col-md-4">
+                                <div class="form-group">
+                                    <label>Product section / उत्पाद अनुभाग<span style="color: red;">*</span></label>
+                                    <select name="" id="ctl00_ContentBody_ddlOldOffice" class="form-control select2">
+                                        <option value="0">Select</option>
+                                        <option value="1">Milk section</option>
+                                    </select>
+                                </div>
+                            </div>-->
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="col-md-12">
+                                    <h4 class="text-bold text-center"><u>Daily Production Plan / दैनिक उत्पादन योजना :</u></h4>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <table style="width:100%;" class="table">
+                                            <thead>
+                                                <tr>
+                                                    <th colspan="4" class="text-center"><h4>Milk Section</h4></th>
+                                                </tr>
+                                                <tr>
+                                                    <th>Sno.</th>
+                                                    <th>Particular</th>
+                                                    <th>Demand</th>
+                                                    <th>Target</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>1</td>
+                                                    <td>साँची गोल्ड 1 ली.</td>
+                                                    <td>10</td>
+                                                    <td><input type="text" value="10" /></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>2</td>
+                                                    <td>साँची गोल्ड 500 मि. ली.</td>
+                                                    <td>10</td>
+                                                    <td><input type="text" value="10" /></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>3</td>
+                                                    <td>साँची गोल्ड 200 मि. ली.</td>
+                                                    <td>10</td>
+                                                    <td><input type="text" value="10" /></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>4</td>
+                                                    <td>साँची शक्ति  1 ली.</td>
+                                                    <td>10</td>
+                                                    <td><input type="text" value="10" /></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>5</td>
+                                                    <td>साँची शक्ति 500 मि. ली.</td>
+                                                    <td>10</td>
+                                                    <td><input type="text" value="10" /></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>6</td>
+                                                    <td>साँची शक्ति 200 मि. ली.</td>
+                                                    <td>10</td>
+                                                    <td><input type="text" value="10" /></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>7</td>
+                                                    <td>साँची स्मार्ट 1 ली.</td>
+                                                    <td>10</td>
+                                                    <td><input type="text" value="10" /></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>8</td>
+                                                    <td>साँची स्मार्ट 500 मि. ली.</td>
+                                                    <td>10</td>
+                                                    <td><input type="text" value="10" /></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>9</td>
+                                                    <td>साँची स्मार्ट 200 मि. ली.</td>
+                                                    <td>10</td>
+                                                    <td><input type="text" value="10" /></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>10</td>
+                                                    <td>साँची गाय का दूध 1 ली.</td>
+                                                    <td>10</td>
+                                                    <td><input type="text" value="10" /></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>11</td>
+                                                    <td>साँची गाय का दूध  500 मि. ली.</td>
+                                                    <td>10</td>
+                                                    <td><input type="text" value="10" /></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>12</td>
+                                                    <td>साँची गाय का दूध  200 मि. ली.</td>
+                                                    <td>10</td>
+                                                    <td><input type="text" value="10" /></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>13</td>
+                                                    <td>साँची लाइट ( स्किम्ड मिल्क ) 1 ली.</td>
+                                                    <td>10</td>
+                                                    <td><input type="text" value="10" /></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>14</td>
+                                                    <td>साँची लाइट ( स्किम्ड मिल्क )  500 मि. ली.</td>
+                                                    <td>10</td>
+                                                    <td><input type="text" value="10" /></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>15</td>
+                                                    <td>साँची लाइट ( स्किम्ड मिल्क )  200 मि. ली.</td>
+                                                    <td>10</td>
+                                                    <td><input type="text" value="10" /></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>16</td>
+                                                    <td>साँची चाह दूध 1 ली.</td>
+                                                    <td>10</td>
+                                                    <td><input type="text" value="10" /></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>17</td>
+                                                    <td>साँची चाह दूध  500 मि. ली.</td>
+                                                    <td>10</td>
+                                                    <td><input type="text" value="10" /></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>18</td>
+                                                    <td>साँची चाह दूध  200 मि. ली.</td>
+                                                    <td>10</td>
+                                                    <td><input type="text" value="10" /></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>19</td>
+                                                    <td>साँची चाय  1 ली.</td>
+                                                    <td>10</td>
+                                                    <td><input type="text" value="10" /></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>20</td>
+                                                    <td>साँची चाय  500 मि. ली.</td>
+                                                    <td>10</td>
+                                                    <td><input type="text" value="10" /></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>21</td>
+                                                    <td>साँची चाय  200 मि. ली.</td>
+                                                    <td>10</td>
+                                                    <td><input type="text" value="10" /></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>22</td>
+                                                    <td>स्पेशल दूध  1 ली.</td>
+                                                    <td>10</td>
+                                                    <td><input type="text" value="10" /></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>23</td>
+                                                    <td>स्पेशल दूध  500 मि. ली.</td>
+                                                    <td>10</td>
+                                                    <td><input type="text" value="10" /></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>24</td>
+                                                    <td>स्पेशल दूध 200 मि. ली.</td>
+                                                    <td>10</td>
+                                                    <td><input type="text" value="10" /></td>
+                                                </tr>
+                                            </tbody>
+                                            <tfoot>
+                                                <tr>
+                                                    <th colspan="2">Total</th>
+                                                    <th>240</th>
+                                                    <th>240</th>
+                                                </tr>
+                                            </tfoot>
+
+                                        </table>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <table style="width:100%;" class="table">
+                                            <thead>
+                                                <tr>
+                                                    <th colspan="4" class="text-center"><h4>Product Section</h4></th>
+                                                </tr>
+                                                <tr>
+                                                    <th>Sno.</th>
+                                                    <th>Particular</th>
+                                                    <th>Demand</th>
+                                                    <th>Target</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>1</td>
+                                                    <td> साँची घी</td>
+                                                    <td>10</td>
+                                                    <td><input type="text" value="10" /></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>2</td>
+                                                    <td>साँची श्रीखण्ड</td>
+                                                    <td>10</td>
+                                                    <td><input type="text" value="10" /></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>3</td>
+                                                    <td>साँची लस्सी</td>
+                                                    <td>10</td>
+                                                    <td><input type="text" value="10" /></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>4</td>
+                                                    <td>साँची पेड़ा</td>
+                                                    <td>10</td>
+                                                    <td><input type="text" value="10" /></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>5</td>
+                                                    <td>साँची पेड़ा प्रसाद</td>
+                                                    <td>10</td>
+                                                    <td><input type="text" value="10" /></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>6</td>
+                                                    <td>साँची नारियल बर्फी</td>
+                                                    <td>10</td>
+                                                    <td><input type="text" value="10" /></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>7</td>
+                                                    <td>साँची मिल्क केक</td>
+                                                    <td>10</td>
+                                                    <td><input type="text" value="10" /></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>8</td>
+                                                    <td>साँची सादा दही</td>
+                                                    <td>10</td>
+                                                    <td><input type="text" value="10" /></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>9</td>
+                                                    <td>साँची सादा मट्ठा</td>
+                                                    <td>10</td>
+                                                    <td><input type="text" value="10" /></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>10</td>
+                                                    <td>साँची लस्सी लाइट</td>
+                                                    <td>10</td>
+                                                    <td><input type="text" value="10" /></td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td>11</td>
+                                                    <td>साँची नमकीन मट्ठा</td>
+                                                    <td>10</td>
+                                                    <td><input type="text" value="10" /></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>12</td>
+                                                    <td> साँची मावा</td>
+                                                    <td>10</td>
+                                                    <td><input type="text" value="10" /></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>13</td>
+                                                    <td>साँची छैना रबड़ी</td>
+                                                    <td>10</td>
+                                                    <td><input type="text" value="10" /></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>14</td>
+                                                    <td>साँची मीठा दही</td>
+                                                    <td>10</td>
+                                                    <td><input type="text" value="10" /></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>15</td>
+                                                    <td>साँची पनीर</td>
+                                                    <td>10</td>
+                                                    <td><input type="text" value="10" /></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>16</td>
+                                                    <td>साँची उर्जा फ्लेवर्ड मिल्क</td>
+                                                    <td>10</td>
+                                                    <td><input type="text" value="10" /></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>17</td>
+                                                    <td>साँची दही</td>
+                                                    <td>10</td>
+                                                    <td><input type="text" value="10" /></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>18</td>
+                                                    <td> साँची मक्खन</td>
+                                                    <td>10</td>
+                                                    <td><input type="text" value="10" /></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>19</td>
+                                                    <td> साँची गिफ्ट पैक</td>
+                                                    <td>10</td>
+                                                    <td><input type="text" value="10" /></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>20</td>
+                                                    <td> साँची मक्खन</td>
+                                                    <td>10</td>
+                                                    <td><input type="text" value="10" /></td>
+                                                </tr>
+                                            </tbody>
+                                            <tfoot>
+                                                <tr>
+                                                    <th colspan="2">Total</th>
+                                                    <th>80</th>
+                                                    <th>80</th>
+                                                </tr>
+                                            </tfoot>
+
+                                        </table>
+                                    </div>
+
+
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <input type="submit" name="" value="Save Production Plan" onclick="return validateform();" id="" class="btn btn-block btn-success" style="margin-top: 23px;" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="col-md-12">
+                                    <h4 class="text-bold text-center"><u>As per the target issue required item for production :</u></h4>
+                                </div>
+                                <div class="row">
+                                    
+                                    <div class="col-md-6">
+                                        <table style="width:100%;" class="table">
+                                            <thead>
+                                                <tr>
+                                                    <th colspan="4" class="text-center"><h4>Milk Section</h4></th>
+                                                </tr>
+                                                <tr>
+                                                    <th>Sno.</th>
+                                                    <th>Particular</th>
+                                                    <th>Required Quantity</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>1</td>
+                                                    <td>FAT (KG)</td>
+                                                    <td><input type="text" value="10" /></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>2</td>
+                                                    <td>SNF (KG)</td>
+                                                    <td><input type="text" value="10" /></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>3</td>
+                                                    <td>Solid MILK (KG)</td>
+                                                    <td><input type="text" value="10" /></td>
+                                                </tr>
+
+                                            </tbody>
+                                            <tfoot>
+
+                                            </tfoot>
+
+                                        </table>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <table style="width:100%;" class="table">
+                                            <thead>
+                                                <tr>
+                                                    <th colspan="4" class="text-center"><h4>Product Section</h4></th>
+                                                </tr>
+                                                <tr>
+                                                    <th>Sno.</th>
+                                                    <th>Particular</th>
+                                                    <th>Required Quantity</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>1</td>
+                                                    <td>FAT (KG)</td>
+                                                    <td><input type="text" value="10" /></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>2</td>
+                                                    <td>SNF (KG)</td>
+                                                    <td><input type="text" value="10" /></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>3</td>
+                                                    <td>Solid MILK (KG)</td>
+                                                    <td><input type="text" value="10" /></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>4</td>
+                                                    <td>Sugar (KG)</td>
+                                                    <td><input type="text" value="10" /></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>5</td>
+                                                    <td>Elaichi (KG)</td>
+                                                    <td><input type="text" value="10" /></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>6</td>
+                                                    <td>Salt (KG)</td>
+                                                    <td><input type="text" value="10" /></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>7</td>
+                                                    <td>Kesar (KG)</td>
+                                                    <td><input type="text" value="10" /></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>8</td>
+                                                    <td>Vanilla essence (KG)</td>
+                                                    <td><input type="text" value="10" /></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>9</td>
+                                                    <td>Rose essence (KG)</td>
+                                                    <td><input type="text" value="10" /></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>10</td>
+                                                    <td>Black Pepper (KG)</td>
+                                                    <td><input type="text" value="10" /></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>11</td>
+                                                    <td>Jeera (KG)</td>
+                                                    <td><input type="text" value="10" /></td>
+                                                </tr>
+
+                                            </tbody>
+                                            <tfoot>
+
+                                            </tfoot>
+
+                                        </table>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <input type="submit" name="" value="Issue items for production" onclick="return validateform();" id="" class="btn btn-block btn-success" style="margin-top: 23px;" />
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="row">
+
+                            </div>
+                        </div>
+                    </div>
+            </section>
+        </div>
+        <footer class="main-footer">
+            <div class="pull-right hidden-xs">
+                <b>Version</b> 1.0.0
+            </div>
+            <strong>Designed and Developed by : <a target="_blank" href=""></a></strong>All rights reserved.
+        </footer>
+        <div class="control-sidebar-bg"></div>
+    </div>
+    <script src="../js/jquery-2.2.4.js"></script>
+    <script src="../js/bootstrap.js"></script>
+    <script src="../js/Script.js"></script>
+    <script src="../js/adminlte.js"></script>
+    <script src="../js/moment.js"></script>
+    <script src="../js/daterangepicker.js"></script>
+    <script src="../js/bootstrap-datepicker.js"></script>
+    <script src="../js/select2.full.js"></script>
+    <script src="../js/jquery.datetimepicker.js"></script>
+    <script>
+        $('.select2').select2()
+
+        $('.DateAdd').datepicker({
+            autoclose: true,
+            format: 'dd/mm/yyyy'
+        })
+        function myModal() {
+            $("#myModal").modal('show');
+        }
+    </script>
+
+    <div>
+    </div>
+</body>
+</html>
