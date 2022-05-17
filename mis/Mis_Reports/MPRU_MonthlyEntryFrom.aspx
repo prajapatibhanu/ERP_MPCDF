@@ -1585,11 +1585,102 @@
                                         </div>
                                     </div>
                                 </div>
+                                <div id="RawMaterialCost" runat="server">
+                                    <fieldset>
+                                        <legend>Raw Material Cost</legend>
+                                        <fieldset>
+                                            <legend>8.0 FINANCIAL PERFORMANCE : (Rs.)</legend>
+                                            <div class="col-md-12">
+                                                <div class="table table-responsive">
+                                                    <table class="table table-bordered">
+                                                        <tr>
+                                                            <th colspan="6">Raw Material Cost</th>
+                                                            <th colspan="5">PROCUREMENT TRANSPORTATION</th>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>DCS Milk</th>
+                                                            <th>SMG Milk</th>
+                                                            <th>NMG Milk</th>
+                                                            <th>Other Milk</th>
+                                                            <th>COMM. Used</th>
+                                                            <th>Total</th>
+                                                            <th>DCS-DAIRY/CC/IMC</th>
+                                                            <th>CC/IMC TO  DAIRY</th>
+                                                            <th>SMG MILK</th>
+                                                            <th>NMG MILK</th>
+                                                            <th>TOTAL</th>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <asp:TextBox onpaste="return false" ClientIDMode="Static" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeyup="rowmatecost()" onkeypress="return isNumberKey(this, event);" ID="txtDCSMilkRMC" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ErrorMessage="Value required" ControlToValidate="txtDCSMilkRMC" ValidationGroup="a"
+                                                                    ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
+                                                            </td>
+                                                            <td>
+                                                                <asp:TextBox onpaste="return false" ClientIDMode="Static" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeyup="rowmatecost()" onkeypress="return isNumberKey(this, event);" ID="txtSMGMilkRMC" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="Value required" ControlToValidate="txtSMGMilkRMC" ValidationGroup="a"
+                                                                    ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
+                                                            </td>
+                                                            <td>
+                                                                <asp:TextBox onpaste="return false" ClientIDMode="Static" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeyup="rowmatecost()" onkeypress="return isNumberKey(this, event);" ID="txtNMGMilkRMC" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator3" runat="server" ErrorMessage="Value required" ControlToValidate="txtNMGMilkRMC" ValidationGroup="a"
+                                                                    ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
+                                                            </td>
+                                                            <td>
+                                                                <asp:TextBox onpaste="return false" ClientIDMode="Static" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeyup="rowmatecost()" onkeypress="return isNumberKey(this, event);" ID="txtOtherMilkRMC" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator4" runat="server" ErrorMessage="Value required" ControlToValidate="txtOtherMilkRMC" ValidationGroup="a"
+                                                                    ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
+                                                            </td>
+                                                            <td>
+                                                                <asp:TextBox onpaste="return false" ClientIDMode="Static" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeyup="rowmatecost()" onkeypress="return isNumberKey(this, event);" ID="txtCOMMUsedRMC" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator5" runat="server" ErrorMessage="Value required" ControlToValidate="txtCOMMUsedRMC" ValidationGroup="a"
+                                                                    ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
+                                                            </td>
+                                                            <td>
+                                                                <asp:TextBox onpaste="return false" ClientIDMode="Static" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeyup="rowmatecost()" onkeypress="return isNumberKey(this, event);" ID="txtTotalRMC" runat="server" CssClass="form-control"></asp:TextBox>
+                                                            </td>
+                                                            <td>
+                                                                <asp:TextBox onpaste="return false" ClientIDMode="Static" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeyup="rowmatecost()" onkeypress="return isNumberKey(this, event);" ID="txtDCSdairyCCimc" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator7" runat="server" ErrorMessage="Value required" ControlToValidate="txtDCSdairyCCimc" ValidationGroup="a"
+                                                                    ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
+                                                            </td>
+                                                            <td>
+                                                                <asp:TextBox onpaste="return false" ClientIDMode="Static" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeyup="rowmatecost()" onkeypress="return isNumberKey(this, event);" ID="txtccIMCtoDAIRYpt" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator8" runat="server" ErrorMessage="Value required" ControlToValidate="txtccIMCtoDAIRYpt" ValidationGroup="a"
+                                                                    ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
+                                                            </td>
+                                                            <td>
+                                                                <asp:TextBox onpaste="return false" ClientIDMode="Static" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeyup="rowmatecost()" onkeypress="return isNumberKey(this, event);" ID="txtSMGMILKPT" runat="server" CssClass="form-control">
+
+                                                                </asp:TextBox><asp:RegularExpressionValidator ID="RegularExpressionValidator9" runat="server" ErrorMessage="Value required" ControlToValidate="txtSMGMILKPT" ValidationGroup="a"
+                                                                    ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
+                                                            </td>
+                                                            <td>
+                                                                <asp:TextBox onpaste="return false" ClientIDMode="Static" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeyup="rowmatecost()" onkeypress="return isNumberKey(this, event);" ID="txtNMGMILKpt" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator10" runat="server" ErrorMessage="Value required" ControlToValidate="txtNMGMILKpt" ValidationGroup="a"
+                                                                    ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
+                                                            </td>
+                                                            <td>
+                                                                <asp:TextBox onpaste="return false" ClientIDMode="Static" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeyup="rowmatecost()" onkeypress="return isNumberKey(this, event);" ID="txtTotalPT" runat="server" CssClass="form-control"></asp:TextBox>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+
+                                                </div>
+                                            </div>
+                                        </fieldset>
+                                    </fieldset>
+                                    <div class="col-md-2 pull-right">
+                                        <div class="form-group">
+                                            <asp:Button ID="btnroematerial" runat="server" Style="margin-top: 19px;" CssClass="btn btn-primary btn-block" Text="Save" OnClick="btnroematerial_click" ValidationGroup="a"></asp:Button>
+                                        </div>
+                                    </div>
+                                </div>
                                 <div id="Administration" runat="server">
                                     <fieldset>
                                         <legend>ADMINISTRATION</legend>
                                         <fieldset>
-                                            <legend>8.0 FINANCIAL PERFORMANCE (conted): (Rs.)</legend>
+                                            <legend>9.0 FINANCIAL PERFORMANCE (conted): (Rs.)</legend>
                                             <div class="col-md-12">
                                                 <div class="table table-responsive">
                                                     <table class="table table-bordered">
@@ -1611,37 +1702,37 @@
                                                         </tr>
                                                         <tr>
                                                             <td>
-                                                                <asp:TextBox onpaste="return false" ClientIDMode="Static" onkeyup="ADMcalc()" oninput="validate(this)" AutoComplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtsalaryAndAllow_AD" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:TextBox onpaste="return false" ClientIDMode="Static" onkeyup="ADMcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtsalaryAndAllow_AD" runat="server" CssClass="form-control"></asp:TextBox>
                                                             </td>
                                                             <td>
-                                                                <asp:TextBox onpaste="return false" ClientIDMode="Static" onkeyup="ADMcalc()" oninput="validate(this)" AutoComplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtMedicalTA_AD" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:TextBox onpaste="return false" ClientIDMode="Static" onkeyup="ADMcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtMedicalTA_AD" runat="server" CssClass="form-control"></asp:TextBox>
                                                             </td>
                                                             <td>
-                                                                <asp:TextBox onpaste="return false" ClientIDMode="Static" onkeyup="ADMcalc()" oninput="validate(this)" AutoComplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtConveyence_AD" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:TextBox onpaste="return false" ClientIDMode="Static" onkeyup="ADMcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtConveyence_AD" runat="server" CssClass="form-control"></asp:TextBox>
                                                             </td>
                                                             <td>
-                                                                <asp:TextBox onpaste="return false" ClientIDMode="Static" onkeyup="ADMcalc()" oninput="validate(this)" AutoComplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtSecurity_AD" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:TextBox onpaste="return false" ClientIDMode="Static" onkeyup="ADMcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtSecurity_AD" runat="server" CssClass="form-control"></asp:TextBox>
                                                             </td>
                                                             <td>
-                                                                <asp:TextBox onpaste="return false" ClientIDMode="Static" onkeyup="ADMcalc()" oninput="validate(this)" AutoComplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtSupervisionVehic_AD" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:TextBox onpaste="return false" ClientIDMode="Static" onkeyup="ADMcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtSupervisionVehic_AD" runat="server" CssClass="form-control"></asp:TextBox>
                                                             </td>
                                                             <td>
-                                                                <asp:TextBox onpaste="return false" ClientIDMode="Static" onkeyup="ADMcalc()" oninput="validate(this)" AutoComplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtContractLabour_AD" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:TextBox onpaste="return false" ClientIDMode="Static" onkeyup="ADMcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtContractLabour_AD" runat="server" CssClass="form-control"></asp:TextBox>
                                                             </td>
                                                             <td>
-                                                                <asp:TextBox onpaste="return false" ClientIDMode="Static" onkeyup="ADMcalc()" oninput="validate(this)" AutoComplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtInsuranceOTH_AD" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:TextBox onpaste="return false" ClientIDMode="Static" onkeyup="ADMcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtInsuranceOTH_AD" runat="server" CssClass="form-control"></asp:TextBox>
                                                             </td>
                                                             <td>
-                                                                <asp:TextBox onpaste="return false" ClientIDMode="Static" onkeyup="ADMcalc()" oninput="validate(this)" AutoComplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtLegalAuditFee_AD" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:TextBox onpaste="return false" ClientIDMode="Static" onkeyup="ADMcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtLegalAuditFee_AD" runat="server" CssClass="form-control"></asp:TextBox>
                                                             </td>
                                                             <td>
-                                                                <asp:TextBox onpaste="return false" ClientIDMode="Static" onkeyup="ADMcalc()" oninput="validate(this)" AutoComplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtStationary_AD" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:TextBox onpaste="return false" ClientIDMode="Static" onkeyup="ADMcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtStationary_AD" runat="server" CssClass="form-control"></asp:TextBox>
                                                             </td>
                                                             <td>
-                                                                <asp:TextBox onpaste="return false" ClientIDMode="Static" onkeyup="ADMcalc()" oninput="validate(this)" AutoComplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtOther_AD" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:TextBox onpaste="return false" ClientIDMode="Static" onkeyup="ADMcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtOther_AD" runat="server" CssClass="form-control"></asp:TextBox>
                                                             </td>
                                                             <td>
-                                                                <asp:TextBox onpaste="return false" ClientIDMode="Static" onkeyup="ADMcalc()" oninput="validate(this)" AutoComplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtTotal_AD" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:TextBox onpaste="return false" ClientIDMode="Static" onkeyup="ADMcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtTotal_AD" runat="server" CssClass="form-control"></asp:TextBox>
                                                             </td>
                                                         </tr>
                                                     </table>
@@ -1665,37 +1756,37 @@
                                                         </tr>
                                                         <tr>
                                                             <td>
-                                                                <asp:TextBox onpaste="return false" ClientIDMode="Static" onkeyup="ADMcalc()" oninput="validate(this)" AutoComplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtBonus_Provi" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:TextBox onpaste="return false" ClientIDMode="Static" onkeyup="ADMcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtBonus_Provi" runat="server" CssClass="form-control"></asp:TextBox>
                                                             </td>
                                                             <td>
-                                                                <asp:TextBox onpaste="return false" ClientIDMode="Static" onkeyup="ADMcalc()" oninput="validate(this)" AutoComplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtAuditFees_Provi" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:TextBox onpaste="return false" ClientIDMode="Static" onkeyup="ADMcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtAuditFees_Provi" runat="server" CssClass="form-control"></asp:TextBox>
                                                             </td>
                                                             <td>
-                                                                <asp:TextBox onpaste="return false" ClientIDMode="Static" onkeyup="ADMcalc()" oninput="validate(this)" AutoComplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtGroupGratutiy_Provi" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:TextBox onpaste="return false" ClientIDMode="Static" onkeyup="ADMcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtGroupGratutiy_Provi" runat="server" CssClass="form-control"></asp:TextBox>
                                                             </td>
                                                             <td>
-                                                                <asp:TextBox onpaste="return false" ClientIDMode="Static" onkeyup="ADMcalc()" oninput="validate(this)" AutoComplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtLiveires_Provi" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:TextBox onpaste="return false" ClientIDMode="Static" onkeyup="ADMcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtLiveires_Provi" runat="server" CssClass="form-control"></asp:TextBox>
                                                             </td>
                                                             <td>
-                                                                <asp:TextBox onpaste="return false" ClientIDMode="Static" onkeyup="ADMcalc()" oninput="validate(this)" AutoComplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtLeavesalary_Provi" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:TextBox onpaste="return false" ClientIDMode="Static" onkeyup="ADMcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtLeavesalary_Provi" runat="server" CssClass="form-control"></asp:TextBox>
                                                             </td>
                                                             <td>
-                                                                <asp:TextBox onpaste="return false" ClientIDMode="Static" onkeyup="ADMcalc()" oninput="validate(this)" AutoComplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtotherExps_Provi" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:TextBox onpaste="return false" ClientIDMode="Static" onkeyup="ADMcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtotherExps_Provi" runat="server" CssClass="form-control"></asp:TextBox>
                                                             </td>
                                                             <td>
-                                                                <asp:TextBox onpaste="return false" ClientIDMode="Static" onkeyup="ADMcalc()" oninput="validate(this)" AutoComplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtTotal_Provi" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:TextBox onpaste="return false" ClientIDMode="Static" onkeyup="ADMcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtTotal_Provi" runat="server" CssClass="form-control"></asp:TextBox>
                                                             </td>
                                                             <td>
-                                                                <asp:TextBox onpaste="return false" ClientIDMode="Static" onkeyup="ADMcalc()" oninput="validate(this)" AutoComplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtNDDB_LI" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:TextBox onpaste="return false" ClientIDMode="Static" onkeyup="ADMcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtNDDB_LI" runat="server" CssClass="form-control"></asp:TextBox>
                                                             </td>
                                                             <td>
-                                                                <asp:TextBox onpaste="return false" ClientIDMode="Static" onkeyup="ADMcalc()" oninput="validate(this)" AutoComplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtBANKLoan_LI" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:TextBox onpaste="return false" ClientIDMode="Static" onkeyup="ADMcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtBANKLoan_LI" runat="server" CssClass="form-control"></asp:TextBox>
                                                             </td>
                                                             <td>
-                                                                <asp:TextBox onpaste="return false" ClientIDMode="Static" onkeyup="ADMcalc()" oninput="validate(this)" AutoComplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtTotal_LI" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:TextBox onpaste="return false" ClientIDMode="Static" onkeyup="ADMcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtTotal_LI" runat="server" CssClass="form-control"></asp:TextBox>
                                                             </td>
                                                             <td>
-                                                                <asp:TextBox onpaste="return false" ClientIDMode="Static" onkeyup="ADMcalc()" oninput="validate(this)" AutoComplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtDepreciation" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:TextBox onpaste="return false" ClientIDMode="Static" onkeyup="ADMcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtDepreciation" runat="server" CssClass="form-control"></asp:TextBox>
                                                             </td>
                                                         </tr>
                                                     </table>
@@ -1711,16 +1802,16 @@
                                                         </tr>
                                                         <tr>
                                                             <td>
-                                                                <asp:TextBox onpaste="return false" ClientIDMode="Static" onkeyup="ADMcalc()" oninput="validate(this)" AutoComplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtProductMaking" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:TextBox onpaste="return false" ClientIDMode="Static" onkeyup="ADMcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtProductMaking" runat="server" CssClass="form-control"></asp:TextBox>
                                                             </td>
                                                             <td>
-                                                                <asp:TextBox onpaste="return false" ClientIDMode="Static" onkeyup="ADMcalc()" oninput="validate(this)" AutoComplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtConversionCharge" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:TextBox onpaste="return false" ClientIDMode="Static" onkeyup="ADMcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtConversionCharge" runat="server" CssClass="form-control"></asp:TextBox>
                                                             </td>
                                                             <td>
-                                                                <asp:TextBox onpaste="return false" ClientIDMode="Static" onkeyup="ADMcalc()" oninput="validate(this)" AutoComplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtFPOther" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:TextBox onpaste="return false" ClientIDMode="Static" onkeyup="ADMcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtFPOther" runat="server" CssClass="form-control"></asp:TextBox>
                                                             </td>
                                                             <td>
-                                                                <asp:TextBox onpaste="return false" ClientIDMode="Static" onkeyup="ADMcalc()" oninput="validate(this)" AutoComplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtFPTotal" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:TextBox onpaste="return false" ClientIDMode="Static" onkeyup="ADMcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtFPTotal" runat="server" CssClass="form-control"></asp:TextBox>
                                                             </td>
                                                         </tr>
                                                     </table>
@@ -1738,7 +1829,7 @@
                                     <fieldset>
                                         <legend>RECETPTS</legend>
                                         <fieldset>
-                                            <legend>9.0 FINANCIAL PERFORMANCE (conted): (Rs.)</legend>
+                                            <legend>10.0 FINANCIAL PERFORMANCE (conted): (Rs.)</legend>
                                             <div class="col-md-12">
                                                 <div class="table table-responsive">
                                                     <table class="table table-bordered">
@@ -1763,43 +1854,43 @@
                                                         </tr>
                                                         <tr>
                                                             <td>
-                                                                <asp:TextBox onpaste="return false" ClientIDMode="Static" onkeyup="RCTcalc()" oninput="validate(this)" AutoComplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtmilksaleTR" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:TextBox onpaste="return false" ClientIDMode="Static" onkeyup="RCTcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtmilksaleTR" runat="server" CssClass="form-control"></asp:TextBox>
                                                             </td>
                                                             <td>
-                                                                <asp:TextBox onpaste="return false" ClientIDMode="Static" onkeyup="RCTcalc()" oninput="validate(this)" AutoComplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtProductsTR" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:TextBox onpaste="return false" ClientIDMode="Static" onkeyup="RCTcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtProductsTR" runat="server" CssClass="form-control"></asp:TextBox>
                                                             </td>
                                                             <td>
-                                                                <asp:TextBox onpaste="return false" ClientIDMode="Static" onkeyup="RCTcalc()" oninput="validate(this)" AutoComplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtTotalSaleTR" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:TextBox onpaste="return false" ClientIDMode="Static" onkeyup="RCTcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtTotalSaleTR" runat="server" CssClass="form-control"></asp:TextBox>
                                                             </td>
                                                             <td>
-                                                                <asp:TextBox onpaste="return false" ClientIDMode="Static" onkeyup="RCTcalc()" oninput="validate(this)" AutoComplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtCommoditiesTR" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:TextBox onpaste="return false" ClientIDMode="Static" onkeyup="RCTcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtCommoditiesTR" runat="server" CssClass="form-control"></asp:TextBox>
                                                             </td>
                                                             <td>
-                                                                <asp:TextBox onpaste="return false" ClientIDMode="Static" onkeyup="RCTcalc()" oninput="validate(this)" AutoComplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtcommditiesPurchTR" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:TextBox onpaste="return false" ClientIDMode="Static" onkeyup="RCTcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtcommditiesPurchTR" runat="server" CssClass="form-control"></asp:TextBox>
                                                             </td>
                                                             <td>
-                                                                <asp:TextBox onpaste="return false" ClientIDMode="Static" onkeyup="RCTcalc()" oninput="validate(this)" AutoComplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtopeningStocksTR" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:TextBox onpaste="return false" ClientIDMode="Static" onkeyup="RCTcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtopeningStocksTR" runat="server" CssClass="form-control"></asp:TextBox>
                                                             </td>
                                                             <td>
-                                                                <asp:TextBox onpaste="return false" ClientIDMode="Static" onkeyup="RCTcalc()" oninput="validate(this)" AutoComplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtClosingStocksTR" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:TextBox onpaste="return false" ClientIDMode="Static" onkeyup="RCTcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtClosingStocksTR" runat="server" CssClass="form-control"></asp:TextBox>
                                                             </td>
                                                             <td>
-                                                                <asp:TextBox onpaste="return false" ClientIDMode="Static" onkeyup="RCTcalc()" oninput="validate(this)" AutoComplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtOtherIncomeTR" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:TextBox onpaste="return false" ClientIDMode="Static" onkeyup="RCTcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtOtherIncomeTR" runat="server" CssClass="form-control"></asp:TextBox>
                                                             </td>
                                                             <td>
-                                                                <asp:TextBox onpaste="return false" ClientIDMode="Static" onkeyup="RCTcalc()" oninput="validate(this)" AutoComplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtNetRecieptsTR" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:TextBox onpaste="return false" ClientIDMode="Static" onkeyup="RCTcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtNetRecieptsTR" runat="server" CssClass="form-control"></asp:TextBox>
                                                             </td>
                                                             <td>
-                                                                <asp:TextBox onpaste="return false" ClientIDMode="Static" onkeyup="RCTcalc()" oninput="validate(this)" AutoComplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtbeforIDATR" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:TextBox onpaste="return false" ClientIDMode="Static" onkeyup="RCTcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtbeforIDATR" runat="server" CssClass="form-control"></asp:TextBox>
                                                             </td>
                                                             <td>
-                                                                <asp:TextBox onpaste="return false" ClientIDMode="Static" onkeyup="RCTcalc()" oninput="validate(this)" AutoComplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtbeforDEFERDTR" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:TextBox onpaste="return false" ClientIDMode="Static" onkeyup="RCTcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtbeforDEFERDTR" runat="server" CssClass="form-control"></asp:TextBox>
                                                             </td>
                                                             <td>
-                                                                <asp:TextBox onpaste="return false" ClientIDMode="Static" onkeyup="RCTcalc()" oninput="validate(this)" AutoComplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtbeforDEPRECIATIONTR" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:TextBox onpaste="return false" ClientIDMode="Static" onkeyup="RCTcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtbeforDEPRECIATIONTR" runat="server" CssClass="form-control"></asp:TextBox>
                                                             </td>
                                                             <td>
-                                                                <asp:TextBox onpaste="return false" ClientIDMode="Static" onkeyup="RCTcalc()" oninput="validate(this)" AutoComplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtNETINCLUDEPTR" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:TextBox onpaste="return false" ClientIDMode="Static" onkeyup="RCTcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtNETINCLUDEPTR" runat="server" CssClass="form-control"></asp:TextBox>
                                                             </td>
                                                         </tr>
                                                     </table>
@@ -1823,40 +1914,40 @@
                                                         </tr>
                                                         <tr>
                                                             <td>
-                                                                <asp:TextBox onpaste="return false" ClientIDMode="Static" onkeyup="RCTcalc()" oninput="validate(this)" AutoComplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txttotalvarriCostTVC" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:TextBox onpaste="return false" ClientIDMode="Static" onkeyup="RCTcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txttotalvarriCostTVC" runat="server" CssClass="form-control"></asp:TextBox>
                                                             </td>
                                                             <td>
-                                                                <asp:TextBox onpaste="return false" ClientIDMode="Static" onkeyup="RCTcalc()" oninput="validate(this)" AutoComplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtsalaryWages_TFCOSTTVC" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:TextBox onpaste="return false" ClientIDMode="Static" onkeyup="RCTcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtsalaryWages_TFCOSTTVC" runat="server" CssClass="form-control"></asp:TextBox>
                                                             </td>
                                                             <td>
-                                                                <asp:TextBox onpaste="return false" ClientIDMode="Static" onkeyup="RCTcalc()" oninput="validate(this)" AutoComplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtOthers_TFCOSTTVC" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:TextBox onpaste="return false" ClientIDMode="Static" onkeyup="RCTcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtOthers_TFCOSTTVC" runat="server" CssClass="form-control"></asp:TextBox>
                                                             </td>
                                                             <td>
-                                                                <asp:TextBox onpaste="return false" ClientIDMode="Static" onkeyup="RCTcalc()" oninput="validate(this)" AutoComplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txttotalfixCostTVC" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:TextBox onpaste="return false" ClientIDMode="Static" onkeyup="RCTcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txttotalfixCostTVC" runat="server" CssClass="form-control"></asp:TextBox>
                                                             </td>
                                                             <td>
-                                                                <asp:TextBox onpaste="return false" ClientIDMode="Static" onkeyup="RCTcalc()" oninput="validate(this)" AutoComplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtToCostTVC" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:TextBox onpaste="return false" ClientIDMode="Static" onkeyup="RCTcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtToCostTVC" runat="server" CssClass="form-control"></asp:TextBox>
                                                             </td>
                                                             <td>
-                                                                <asp:TextBox onpaste="return false" ClientIDMode="Static" onkeyup="RCTcalc()" oninput="validate(this)" AutoComplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtTFcostEXCLINTTTVC" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:TextBox onpaste="return false" ClientIDMode="Static" onkeyup="RCTcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtTFcostEXCLINTTTVC" runat="server" CssClass="form-control"></asp:TextBox>
                                                             </td>
                                                             <td>
-                                                                <asp:TextBox onpaste="return false" ClientIDMode="Static" onkeyup="RCTcalc()" oninput="validate(this)" AutoComplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtToSaleTVC" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:TextBox onpaste="return false" ClientIDMode="Static" onkeyup="RCTcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtToSaleTVC" runat="server" CssClass="form-control"></asp:TextBox>
                                                             </td>
                                                             <td>
-                                                                <asp:TextBox onpaste="return false" ClientIDMode="Static" onkeyup="RCTcalc()" oninput="validate(this)" AutoComplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtIDAOpertingProfTVC" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:TextBox onpaste="return false" ClientIDMode="Static" onkeyup="RCTcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtIDAOpertingProfTVC" runat="server" CssClass="form-control"></asp:TextBox>
                                                             </td>
                                                             <td>
-                                                                <asp:TextBox onpaste="return false" ClientIDMode="Static" onkeyup="RCTcalc()" oninput="validate(this)" AutoComplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtNEtIncluIDTTVC" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:TextBox onpaste="return false" ClientIDMode="Static" onkeyup="RCTcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtNEtIncluIDTTVC" runat="server" CssClass="form-control"></asp:TextBox>
                                                             </td>
                                                             <td>
-                                                                <asp:TextBox onpaste="return false" ClientIDMode="Static" onkeyup="RCTcalc()" oninput="validate(this)" AutoComplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtToSaleWithCFFTVC" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:TextBox onpaste="return false" ClientIDMode="Static" onkeyup="RCTcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtToSaleWithCFFTVC" runat="server" CssClass="form-control"></asp:TextBox>
                                                             </td>
                                                             <td>
-                                                                <asp:TextBox onpaste="return false" ClientIDMode="Static" onkeyup="RCTcalc()" oninput="validate(this)" AutoComplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtOPLOssProfitCFFTVC" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:TextBox onpaste="return false" ClientIDMode="Static" onkeyup="RCTcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtOPLOssProfitCFFTVC" runat="server" CssClass="form-control"></asp:TextBox>
                                                             </td>
                                                             <td>
-                                                                <asp:TextBox onpaste="return false" ClientIDMode="Static" onkeyup="RCTcalc()" oninput="validate(this)" AutoComplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtNETprofitLossTVC" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:TextBox onpaste="return false" ClientIDMode="Static" onkeyup="RCTcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtNETprofitLossTVC" runat="server" CssClass="form-control"></asp:TextBox>
                                                             </td>
                                                         </tr>
                                                     </table>
@@ -1874,7 +1965,7 @@
                                     <fieldset>
                                         <legend>CAPACITY UTILISATION</legend>
                                         <fieldset>
-                                            <legend>10.0 CAPACITY UTILISATION IN %AGE</legend>
+                                            <legend>11.0 CAPACITY UTILISATION IN %AGE</legend>
                                             <div class="col-md-12">
                                                 <div class="table table-responsive">
                                                     <table class="table table-bordered">
@@ -1900,40 +1991,40 @@
                                                         </tr>
                                                         <tr>
                                                             <td>
-                                                                <asp:TextBox ID="txtthruoputwithoutWC_PC" runat="server" onpaste="return false" ClientIDMode="Static" oninput="validate(this)" AutoComplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" CssClass="form-control"></asp:TextBox>
+                                                                <asp:TextBox ID="txtthruoputwithoutWC_PC" runat="server" onpaste="return false" ClientIDMode="Static" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" CssClass="form-control"></asp:TextBox>
                                                             </td>
                                                             <td>
-                                                                <asp:TextBox ID="txtthroughpuINKGS_PC" runat="server" onkeyup="CapacityUti()" onpaste="return false" ClientIDMode="Static" oninput="validate(this)" AutoComplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" CssClass="form-control"></asp:TextBox>
+                                                                <asp:TextBox ID="txtthroughpuINKGS_PC" runat="server" onkeyup="CapacityUti()" onpaste="return false" ClientIDMode="Static" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" CssClass="form-control"></asp:TextBox>
                                                             </td>
                                                             <td>
-                                                                <asp:TextBox ID="txtthroughpuINLTS_PC" runat="server" onpaste="return false" ClientIDMode="Static" oninput="validate(this)" AutoComplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" CssClass="form-control"></asp:TextBox>
+                                                                <asp:TextBox ID="txtthroughpuINLTS_PC" runat="server" onpaste="return false" ClientIDMode="Static" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" CssClass="form-control"></asp:TextBox>
                                                             </td>
                                                             <td>
-                                                                <asp:TextBox ID="txtthroughputPERDAY_PC" runat="server" onpaste="return false" ClientIDMode="Static" oninput="validate(this)" AutoComplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" CssClass="form-control"></asp:TextBox>
+                                                                <asp:TextBox ID="txtthroughputPERDAY_PC" runat="server" onpaste="return false" ClientIDMode="Static" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" CssClass="form-control"></asp:TextBox>
                                                             </td>
                                                             <td>
-                                                                <asp:TextBox ID="txtcapacityutilisationINKGS_PC" runat="server" onpaste="return false" ClientIDMode="Static" oninput="validate(this)" AutoComplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" CssClass="form-control"></asp:TextBox>
+                                                                <asp:TextBox ID="txtcapacityutilisationINKGS_PC" runat="server" onpaste="return false" ClientIDMode="Static" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" CssClass="form-control"></asp:TextBox>
                                                             </td>
                                                             <td>
-                                                                <asp:TextBox ID="txtAllCCsthruoput_CC" onkeyup="CapUtiCC()" runat="server" onpaste="return false" ClientIDMode="Static" oninput="validate(this)" AutoComplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" CssClass="form-control"></asp:TextBox>
+                                                                <asp:TextBox ID="txtAllCCsthruoput_CC" onkeyup="CapUtiCC()" runat="server" onpaste="return false" ClientIDMode="Static" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" CssClass="form-control"></asp:TextBox>
                                                             </td>
                                                             <td>
-                                                                <asp:TextBox ID="txtcapacityuti_CC" runat="server" onpaste="return false" ClientIDMode="Static" oninput="validate(this)" AutoComplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" CssClass="form-control"></asp:TextBox>
+                                                                <asp:TextBox ID="txtcapacityuti_CC" runat="server" onpaste="return false" ClientIDMode="Static" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" CssClass="form-control"></asp:TextBox>
                                                             </td>
                                                             <td>
-                                                                <asp:TextBox ID="txtbcfsale_BMC" runat="server" onpaste="return false" ClientIDMode="Static" oninput="validate(this)" AutoComplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" CssClass="form-control"></asp:TextBox>
+                                                                <asp:TextBox ID="txtbcfsale_BMC" runat="server" onpaste="return false" ClientIDMode="Static" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" CssClass="form-control"></asp:TextBox>
                                                             </td>
                                                             <td>
-                                                                <asp:TextBox ID="txtbcfProdCFF_BMC" runat="server" onkeyup="CapacityUtiSMP()" onpaste="return false" ClientIDMode="Static" oninput="validate(this)" AutoComplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" CssClass="form-control"></asp:TextBox>
+                                                                <asp:TextBox ID="txtbcfProdCFF_BMC" runat="server" onkeyup="CapacityUtiSMP()" onpaste="return false" ClientIDMode="Static" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" CssClass="form-control"></asp:TextBox>
                                                             </td>
                                                             <td>
-                                                                <asp:TextBox ID="txtcapacityuti_BMC" runat="server" onpaste="return false" ClientIDMode="Static" oninput="validate(this)" AutoComplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" CssClass="form-control"></asp:TextBox>
+                                                                <asp:TextBox ID="txtcapacityuti_BMC" runat="server" onpaste="return false" ClientIDMode="Static" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" CssClass="form-control"></asp:TextBox>
                                                             </td>
                                                             <td>
-                                                                <asp:TextBox ID="txtSMPProd_SMP" runat="server" onpaste="return false" ClientIDMode="Static" oninput="validate(this)" AutoComplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" CssClass="form-control"></asp:TextBox>
+                                                                <asp:TextBox ID="txtSMPProd_SMP" runat="server" onpaste="return false" ClientIDMode="Static" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" CssClass="form-control"></asp:TextBox>
                                                             </td>
                                                             <td>
-                                                                <asp:TextBox ID="txtcapacityuti_SMP" runat="server" onpaste="return false" ClientIDMode="Static" oninput="validate(this)" AutoComplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" CssClass="form-control"></asp:TextBox>
+                                                                <asp:TextBox ID="txtcapacityuti_SMP" runat="server" onpaste="return false" ClientIDMode="Static" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" CssClass="form-control"></asp:TextBox>
                                                             </td>
                                                         </tr>
                                                     </table>
@@ -1952,7 +2043,7 @@
                                     <fieldset>
                                         <legend>MATERIAL BALANCING</legend>
                                         <fieldset>
-                                            <legend>11.0 MATERIAL BALANCING :</legend>
+                                            <legend>12.0 MATERIAL BALANCING :</legend>
                                             <table style="width: 100%" class="table table-bordered">
                                                 <tr>
                                                     <th colspan="7">MILK PROCUREMENT : (In Kgs)</th>
@@ -1974,37 +2065,37 @@
                                                 <tr>
                                                     <%--there is only one table in database for both table available here--%>
                                                     <td>
-                                                        <asp:TextBox onpaste="return false" onkeyup="CalMB()" ClientIDMode="Static" oninput="validate(this)" AutoComplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtdcsmilkcow_MP" runat="server" CssClass="form-control"></asp:TextBox>
+                                                        <asp:TextBox onpaste="return false" onkeyup="CalMB()" ClientIDMode="Static" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtdcsmilkcow_MP" runat="server" CssClass="form-control"></asp:TextBox><asp:RegularExpressionValidator ID="RegularExpressionValidator6" runat="server" ErrorMessage="Value required" ControlToValidate="txtdcsmilkcow_MP" ValidationGroup="MB"></asp:RegularExpressionValidator>
                                                     </td>
                                                     <td>
-                                                        <asp:TextBox onpaste="return false" onkeyup="CalMB()" ClientIDMode="Static" oninput="validate(this)" AutoComplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtdcsmilkbuff_MP" runat="server" CssClass="form-control"></asp:TextBox>
+                                                        <asp:TextBox onpaste="return false" onkeyup="CalMB()" ClientIDMode="Static" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtdcsmilkbuff_MP" runat="server" CssClass="form-control"></asp:TextBox><asp:RegularExpressionValidator ID="RegularExpressionValidator11" runat="server" ErrorMessage="Value required" ControlToValidate="txtdcsmilkbuff_MP" ValidationGroup="MB"></asp:RegularExpressionValidator>
                                                     </td>
                                                     <td>
-                                                        <asp:TextBox onpaste="return false" ClientIDMode="Static" oninput="validate(this)" AutoComplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtdcsmilktotal_MP" runat="server" CssClass="form-control"></asp:TextBox>
+                                                        <asp:TextBox onpaste="return false" ClientIDMode="Static" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtdcsmilktotal_MP" runat="server" CssClass="form-control"></asp:TextBox><asp:RegularExpressionValidator ID="RegularExpressionValidator12" runat="server" ErrorMessage="Value required" ControlToValidate="txtdcsmilktotal_MP" ValidationGroup="MB"></asp:RegularExpressionValidator>
                                                     </td>
                                                     <td>
-                                                        <asp:TextBox onpaste="return false" onkeyup="CalMB()" ClientIDMode="Static" oninput="validate(this)" AutoComplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtfat_MP" runat="server" CssClass="form-control"></asp:TextBox>
+                                                        <asp:TextBox onpaste="return false" onkeyup="CalMB()" ClientIDMode="Static" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtfat_MP" runat="server" CssClass="form-control"></asp:TextBox><asp:RegularExpressionValidator ID="RegularExpressionValidator13" runat="server" ErrorMessage="Value required" ControlToValidate="txtfat_MP" ValidationGroup="MB"></asp:RegularExpressionValidator>
                                                     </td>
                                                     <td>
-                                                        <asp:TextBox onpaste="return false" onkeyup="CalMB()" ClientIDMode="Static" oninput="validate(this)" AutoComplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtsnf_MP" runat="server" CssClass="form-control"></asp:TextBox>
+                                                        <asp:TextBox onpaste="return false" onkeyup="CalMB()" ClientIDMode="Static" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtsnf_MP" runat="server" CssClass="form-control"></asp:TextBox><asp:RegularExpressionValidator ID="RegularExpressionValidator14" runat="server" ErrorMessage="Value required" ControlToValidate="txtsnf_MP" ValidationGroup="MB"></asp:RegularExpressionValidator>
                                                     </td>
                                                     <td>
-                                                        <asp:TextBox onpaste="return false" ClientIDMode="Static" oninput="validate(this)" AutoComplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtfatpercent_MP" runat="server" CssClass="form-control"></asp:TextBox>
+                                                        <asp:TextBox onpaste="return false" ClientIDMode="Static" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtfatpercent_MP" runat="server" CssClass="form-control"></asp:TextBox><asp:RegularExpressionValidator ID="RegularExpressionValidator15" runat="server" ErrorMessage="Value required" ControlToValidate="txtfatpercent_MP" ValidationGroup="MB"></asp:RegularExpressionValidator>
                                                     </td>
                                                     <td>
-                                                        <asp:TextBox onpaste="return false" ClientIDMode="Static" oninput="validate(this)" AutoComplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtsnfpercent_MP" runat="server" CssClass="form-control"></asp:TextBox>
+                                                        <asp:TextBox onpaste="return false" ClientIDMode="Static" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtsnfpercent_MP" runat="server" CssClass="form-control"></asp:TextBox><asp:RegularExpressionValidator ID="RegularExpressionValidator16" runat="server" ErrorMessage="Value required" ControlToValidate="txtsnfpercent_MP" ValidationGroup="MB"></asp:RegularExpressionValidator>
                                                     </td>
                                                     <td>
-                                                        <asp:TextBox onpaste="return false" ClientIDMode="Static" oninput="validate(this)" AutoComplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtquantityinkgs_TI" runat="server" CssClass="form-control"></asp:TextBox>
+                                                        <asp:TextBox onpaste="return false" ClientIDMode="Static" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtquantityinkgs_TI" runat="server" CssClass="form-control"></asp:TextBox><asp:RegularExpressionValidator ID="RegularExpressionValidator17" runat="server" ErrorMessage="Value required" ControlToValidate="txtquantityinkgs_TI" ValidationGroup="MB"></asp:RegularExpressionValidator>
                                                     </td>
                                                     <td>
-                                                        <asp:TextBox onpaste="return false" ClientIDMode="Static" oninput="validate(this)" AutoComplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtfatinkgs_TI" onkeyup="CalMBInOut()" runat="server" CssClass="form-control"></asp:TextBox>
+                                                        <asp:TextBox onpaste="return false" ClientIDMode="Static" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtfatinkgs_TI" onkeyup="CalMBInOut()" runat="server" CssClass="form-control"></asp:TextBox><asp:RegularExpressionValidator ID="RegularExpressionValidator18" runat="server" ErrorMessage="Value required" ControlToValidate="txtfatinkgs_TI" ValidationGroup="MB"></asp:RegularExpressionValidator>
                                                     </td>
                                                     <td>
-                                                        <asp:TextBox onpaste="return false" ClientIDMode="Static" oninput="validate(this)" AutoComplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtsnfinkgs_TI" onkeyup="CalMBInOut()" runat="server" CssClass="form-control"></asp:TextBox>
+                                                        <asp:TextBox onpaste="return false" ClientIDMode="Static" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtsnfinkgs_TI" onkeyup="CalMBInOut()" runat="server" CssClass="form-control"></asp:TextBox><asp:RegularExpressionValidator ID="RegularExpressionValidator19" runat="server" ErrorMessage="Value required" ControlToValidate="txtsnfinkgs_TI" ValidationGroup="MB"></asp:RegularExpressionValidator>
                                                     </td>
                                                     <td>
-                                                        <asp:TextBox onpaste="return false" ClientIDMode="Static" oninput="validate(this)" AutoComplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtvalueinrs_TI" runat="server" CssClass="form-control"></asp:TextBox>
+                                                        <asp:TextBox onpaste="return false" ClientIDMode="Static" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtvalueinrs_TI" runat="server" CssClass="form-control"></asp:TextBox><asp:RegularExpressionValidator ID="RegularExpressionValidator20" runat="server" ErrorMessage="Value required" ControlToValidate="txtvalueinrs_TI" ValidationGroup="MB"></asp:RegularExpressionValidator>
                                                     </td>
                                                 </tr>
                                             </table>
@@ -2025,30 +2116,30 @@
                                                 </tr>
                                                 <tr>
                                                     <td>
-                                                        <asp:TextBox onpaste="return false" ClientIDMode="Static" oninput="validate(this)" AutoComplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtquantityinkgs_TO" runat="server" CssClass="form-control"></asp:TextBox>
+                                                        <asp:TextBox onpaste="return false" ClientIDMode="Static" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtquantityinkgs_TO" runat="server" CssClass="form-control"></asp:TextBox><asp:RegularExpressionValidator ID="RegularExpressionValidator21" runat="server" ErrorMessage="Value required" ControlToValidate="txtquantityinkgs_TO" ValidationGroup="MB"></asp:RegularExpressionValidator>
                                                     </td>
 
                                                     <td>
-                                                        <asp:TextBox onpaste="return false" ClientIDMode="Static" oninput="validate(this)" AutoComplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtfatinkgs_TO" onkeyup="CalMBInOut()" runat="server" CssClass="form-control"></asp:TextBox>
+                                                        <asp:TextBox onpaste="return false" ClientIDMode="Static" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtfatinkgs_TO" onkeyup="CalMBInOut()" runat="server" CssClass="form-control"></asp:TextBox><asp:RegularExpressionValidator ID="RegularExpressionValidator22" runat="server" ErrorMessage="Value required" ControlToValidate="txtfatinkgs_TO" ValidationGroup="MB"></asp:RegularExpressionValidator>
                                                     </td>
                                                     <td>
-                                                        <asp:TextBox onpaste="return false" ClientIDMode="Static" oninput="validate(this)" AutoComplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtsnfinKgs_TO" onkeyup="CalMBInOut()" runat="server" CssClass="form-control"></asp:TextBox>
+                                                        <asp:TextBox onpaste="return false" ClientIDMode="Static" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtsnfinKgs_TO" onkeyup="CalMBInOut()" runat="server" CssClass="form-control"></asp:TextBox><asp:RegularExpressionValidator ID="RegularExpressionValidator23" runat="server" ErrorMessage="Value required" ControlToValidate="txtsnfinKgs_TO" ValidationGroup="MB"></asp:RegularExpressionValidator>
                                                     </td>
                                                     <td>
-                                                        <asp:TextBox onpaste="return false" ClientIDMode="Static" oninput="validate(this)" AutoComplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtValueinrs_To" runat="server" CssClass="form-control"></asp:TextBox>
+                                                        <asp:TextBox onpaste="return false" ClientIDMode="Static" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtValueinrs_To" runat="server" CssClass="form-control"></asp:TextBox><asp:RegularExpressionValidator ID="RegularExpressionValidator24" runat="server" ErrorMessage="Value required" ControlToValidate="txtValueinrs_To" ValidationGroup="MB"></asp:RegularExpressionValidator>
                                                     </td>
 
                                                     <td>
-                                                        <asp:TextBox onpaste="return false" ClientIDMode="Static" oninput="validate(this)" AutoComplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtfatinkgs_MG" runat="server" CssClass="form-control"></asp:TextBox>
+                                                        <asp:TextBox onpaste="return false" ClientIDMode="Static" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtfatinkgs_MG" runat="server" CssClass="form-control"></asp:TextBox><asp:RegularExpressionValidator ID="RegularExpressionValidator25" runat="server" ErrorMessage="Value required" ControlToValidate="txtfatinkgs_MG" ValidationGroup="MB"></asp:RegularExpressionValidator>
                                                     </td>
                                                     <td>
-                                                        <asp:TextBox onpaste="return false" ClientIDMode="Static" oninput="validate(this)" AutoComplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtsngfinkgs_MG" runat="server" CssClass="form-control"></asp:TextBox>
+                                                        <asp:TextBox onpaste="return false" ClientIDMode="Static" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtsngfinkgs_MG" runat="server" CssClass="form-control"></asp:TextBox><asp:RegularExpressionValidator ID="RegularExpressionValidator26" runat="server" ErrorMessage="Value required" ControlToValidate="txtsngfinkgs_MG" ValidationGroup="MB"></asp:RegularExpressionValidator>
                                                     </td>
                                                     <td>
-                                                        <asp:TextBox onpaste="return false" ClientIDMode="Static" oninput="validate(this)" AutoComplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtfatpercentage_MG" runat="server" CssClass="form-control"></asp:TextBox>
+                                                        <asp:TextBox onpaste="return false" ClientIDMode="Static" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtfatpercentage_MG" runat="server" CssClass="form-control"></asp:TextBox><asp:RegularExpressionValidator ID="RegularExpressionValidator27" runat="server" ErrorMessage="Value required" ControlToValidate="txtfatpercentage_MG" ValidationGroup="MB"></asp:RegularExpressionValidator>
                                                     </td>
                                                     <td>
-                                                        <asp:TextBox onpaste="return false" ClientIDMode="Static" oninput="validate(this)" AutoComplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtsnfpercentage_MG" runat="server" CssClass="form-control"></asp:TextBox>
+                                                        <asp:TextBox onpaste="return false" ClientIDMode="Static" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtsnfpercentage_MG" runat="server" CssClass="form-control"></asp:TextBox><asp:RegularExpressionValidator ID="RegularExpressionValidator28" runat="server" ErrorMessage="Value required" ControlToValidate="txtsnfpercentage_MG" ValidationGroup="MB"></asp:RegularExpressionValidator>
                                                     </td>
                                                 </tr>
                                             </table>
@@ -2056,7 +2147,7 @@
                                     </fieldset>
                                     <div class="col-md-2 pull-right">
                                         <div class="form-group">
-                                            <asp:Button ID="btnmaterialbalancing" runat="server" Style="margin-top: 19px;" CssClass="btn btn-primary btn-block" Text="Save" OnClick="btnmaterialbalancing_Click"></asp:Button>
+                                            <asp:Button ID="btnmaterialbalancing" runat="server" Style="margin-top: 19px;" CssClass="btn btn-primary btn-block" Text="Save" OnClick="btnmaterialbalancing_Click" ValidationGroup="MB"></asp:Button>
                                         </div>
                                     </div>
                                 </div>
@@ -2155,7 +2246,7 @@
     <script type="text/javascript">
         //=========== CAPACITY UTILISATION=================
         function CapacityUti() {
-            
+
             let dy = noDays();
             let throughpuINKGS = document.getElementById('<%=txtthroughpuINKGS_PC.ClientID %>').value;
             if (throughpuINKGS === '')
@@ -2167,7 +2258,7 @@
             if (isNaN(throughpuINLTS))
                 throughpuINLTS = "0";
             document.getElementById('<%=txtthroughpuINLTS_PC.ClientID %>').value = throughpuINLTS;
-            
+
             let throughputPERDAY = Math.round(parseFloat(throughpuINLTS) / parseInt(dy));
             if (isNaN(throughputPERDAY))
                 throughputPERDAY = "0";
@@ -2178,7 +2269,7 @@
         }
 
         function CapUtiCC() {
-            
+
             let dy = noDays();
             let AllCCsthruoput = document.getElementById('<%=txtAllCCsthruoput_CC.ClientID %>').value;
             if (AllCCsthruoput === '')
@@ -2192,7 +2283,7 @@
             document.getElementById('<%=txtcapacityuti_CC.ClientID %>').value = capacityuti.toFixed(2);
         }
         function CapacityUtiSMP() {
-            
+
             let dy = noDays();
             let bcfProdCFF = document.getElementById('<%=txtbcfProdCFF_BMC.ClientID %>').value;
             if (bcfProdCFF === '')
@@ -2209,7 +2300,7 @@
             let daysInMonth = '0';
             let month = document.getElementById('<%=ddlmonth.ClientID %>').value;
             let year = document.getElementById('<%=ddlYear.ClientID %>').value;
-            if(month != '0' & year != '0')
+            if (month != '0' & year != '0')
                 daysInMonth = new Date(year, month, 0).getDate();
             return daysInMonth;
 
@@ -2259,7 +2350,7 @@
         }
         // ================ Farmer's Organisation =============================
         function FOsubFOM() {
-          
+
             let DCSo = document.getElementById('<%=txtdcsorgnised.ClientID %>').value;
             let DCSf = document.getElementById('<%=txtdcsfunctional.ClientID %>').value;
             if (DCSo === '')
@@ -2500,20 +2591,20 @@
             if (isNaN(tolt))
                 tolt = "0";
             document.getElementById('<%=txtNetRecieptsTR.ClientID %>').value = tolt.toFixed(2);
-         }
+        }
 
-         function getSum() {
-             let sum = 0
-             for (let i = 0; i < arguments.length; i++) {
+        function getSum() {
+            let sum = 0
+            for (let i = 0; i < arguments.length; i++) {
 
-                 if (arguments[i] === '')
-                     arguments[i] = '0';
-                 if (arguments[i] === '.')
-                     arguments[i] = '0';
-                 sum += parseFloat(arguments[i]);
-             }
-             return sum.toFixed(2);
-         }
+                if (arguments[i] === '')
+                    arguments[i] = '0';
+                if (arguments[i] === '.')
+                    arguments[i] = '0';
+                sum += parseFloat(arguments[i]);
+            }
+            return sum.toFixed(2);
+        }
 
 
 
