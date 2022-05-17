@@ -82,7 +82,9 @@ public partial class mis_Mis_Reports_MPRU_MonthlyEntryFrom : System.Web.UI.Page
             txtdcsmilktotal_MP.Attributes.Add("readonly", "readonly");
             txtfatpercent_MP.Attributes.Add("readonly", "readonly");
             txtsnfpercent_MP.Attributes.Add("readonly", "readonly");
-            //===============================
+            //===============================RAW MATERIAL COST=================
+            txtTotalRMC.Attributes.Add("readonly", "readonly");
+            txtTotalPT.Attributes.Add("readonly", "readonly");
             FillYear();
             openingForm();
         }
@@ -122,6 +124,7 @@ public partial class mis_Mis_Reports_MPRU_MonthlyEntryFrom : System.Web.UI.Page
         Reciepts.Visible = false;
         CapUtilisation.Visible = false;
         materialbalancing.Visible = false;
+        RawMaterialCost.Visible = false;
 
         if (ddlmonth.SelectedValue != "0" && ddlYear.SelectedValue != "0" && ddlform.SelectedValue != "0")
         {
@@ -798,7 +801,7 @@ public partial class mis_Mis_Reports_MPRU_MonthlyEntryFrom : System.Web.UI.Page
                             }
                         }
                     }
-               
+
                 }
                 catch (Exception ex)
                 {
@@ -883,7 +886,7 @@ public partial class mis_Mis_Reports_MPRU_MonthlyEntryFrom : System.Web.UI.Page
                                 txtfatinkgs_TI.Text = ds.Tables[0].Rows[0]["MP_TI_FATkg"].ToString();
                                 txtsnfinkgs_TI.Text = ds.Tables[0].Rows[0]["MP_TI_SNFkg"].ToString();
                                 txtvalueinrs_TI.Text = ds.Tables[0].Rows[0]["MP_TI_ValueinRS"].ToString();
-                            
+
                                 txtquantityinkgs_TO.Text = ds.Tables[0].Rows[0]["TO_QntinKG"].ToString();
                                 txtfatinkgs_TO.Text = ds.Tables[0].Rows[0]["TO_FatinKG"].ToString();
                                 txtsnfinKgs_TO.Text = ds.Tables[0].Rows[0]["TO_SNFinKG"].ToString();
@@ -905,6 +908,47 @@ public partial class mis_Mis_Reports_MPRU_MonthlyEntryFrom : System.Web.UI.Page
                     ds.Clear();
                 }
                 #endregion
+            }
+            if (ddlform.SelectedValue == "12")
+            {
+                RawMaterialCost.Visible = true;
+                Rawcostclr();
+                ds.Clear();
+                try
+                {
+                    if (ddlmonth.SelectedValue != "0" && ddlYear.SelectedValue != "0")
+                    {
+                        //R
+                        ds = objdb.ByProcedure("SP_MonthlyCoasting_RawMaterialCost",
+                                new string[] { "flag", "Office_ID", "Entry_Year", "Entry_Month" },
+                                new string[] { "1", objdb.Office_ID(), ddlYear.SelectedValue, ddlmonth.SelectedValue }, "dataset");
+                        if (ds != null && ds.Tables.Count > 0)
+                        {
+                            if (ds != null && ds.Tables[0].Rows.Count > 0)
+                            {
+                                txtDCSMilkRMC.Text = ds.Tables[0].Rows[0]["DCSmilkRMC"].ToString();
+                                txtSMGMilkRMC.Text = ds.Tables[0].Rows[0]["SMGMilkRMC"].ToString();
+                                txtNMGMilkRMC.Text = ds.Tables[0].Rows[0]["NMGMilkRMC"].ToString();
+                                txtOtherMilkRMC.Text = ds.Tables[0].Rows[0]["OtherMilkRMC"].ToString();
+                                txtCOMMUsedRMC.Text = ds.Tables[0].Rows[0]["COMMUsedRMC"].ToString();
+                                txtTotalRMC.Text = ds.Tables[0].Rows[0]["TotalRMC"].ToString();
+                                txtDCSdairyCCimc.Text = ds.Tables[0].Rows[0]["DCSdairyCCimc"].ToString();
+                                txtccIMCtoDAIRYpt.Text = ds.Tables[0].Rows[0]["ccIMCtoDAIRYpt"].ToString();
+                                txtSMGMILKPT.Text = ds.Tables[0].Rows[0]["SMGMILKPT"].ToString();
+                                txtNMGMILKpt.Text = ds.Tables[0].Rows[0]["NMGMILKpt"].ToString();
+                                txtTotalPT.Text = ds.Tables[0].Rows[0]["TotalPT"].ToString();
+                            }
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    lblMsg.Text = objdb.Alert("fa-ban", "alert-danger", "Sorry! ", ex.Message.ToString());
+                }
+                finally
+                {
+                    ds.Clear();
+                }
             }
         }
     }
@@ -941,7 +985,7 @@ public partial class mis_Mis_Reports_MPRU_MonthlyEntryFrom : System.Web.UI.Page
             {
                 msg += "Select Year. \\n";
             }
-            
+            //1
             if (txtAHCsalaryandwages.Text == "") { txtAHCsalaryandwages.Text = "0"; }
             if (txtAHCotherdirectcost.Text == "") { txtAHCotherdirectcost.Text = "0"; }
             if (txtAHCtotalCost.Text == "") { txtAHCtotalCost.Text = "0"; }
@@ -1825,7 +1869,83 @@ public partial class mis_Mis_Reports_MPRU_MonthlyEntryFrom : System.Web.UI.Page
 
     }
     #endregion
+    #region RowMaterialCost
+    protected void btnroematerial_click(object sender, EventArgs e)
+    {
+        try
+        {
 
+            lblMsg.Text = "";
+            string msg = "";
+            if (ddlYear.SelectedIndex == 0)
+            {
+                msg += "Select Year. \\n";
+            }
+            if (ddlmonth.SelectedIndex == 0)
+            {
+                msg += "Select Month. \\n";
+            }
+            if (ddlform.SelectedIndex == 0)
+            {
+                msg += "Select Year. \\n";
+            }
+            if (txtDCSMilkRMC.Text == "" || txtDCSMilkRMC.Text == ".") { txtDCSMilkRMC.Text = "0"; }
+            if (txtSMGMilkRMC.Text == "") { txtSMGMilkRMC.Text = "0"; }
+            if (txtNMGMilkRMC.Text == "") { txtNMGMilkRMC.Text = "0"; }
+            if (txtOtherMilkRMC.Text == "") { txtOtherMilkRMC.Text = "0"; }
+            if (txtCOMMUsedRMC.Text == "") { txtCOMMUsedRMC.Text = "0"; }
+            if (txtTotalRMC.Text == "") { txtTotalRMC.Text = "0"; }
+            if (txtDCSdairyCCimc.Text == "") { txtDCSdairyCCimc.Text = "0"; }
+            if (txtccIMCtoDAIRYpt.Text == "") { txtccIMCtoDAIRYpt.Text = "0"; }
+            if (txtSMGMILKPT.Text == "") { txtSMGMILKPT.Text = "0"; }
+            if (txtNMGMILKpt.Text == "") { txtNMGMILKpt.Text = "0"; }
+            if (txtTotalPT.Text == "") { txtTotalPT.Text = "0"; }
+            if (msg == "")
+            {
+                ds = objdb.ByProcedure("SP_MonthlyCoasting_RawMaterialCost",
+                           new string[] { "flag", "Office_ID", "Entry_Year", "Entry_Month","DCSmilkRMC","SMGMilkRMC","NMGMilkRMC","OtherMilkRMC","COMMUsedRMC","TotalRMC","DCSdairyCCimc","ccIMCtoDAIRYpt","SMGMILKPT","NMGMILKpt","TotalPT",
+                           "CreatedBy", "CreatedIP"},
+                           new string[] { "0", objdb.Office_ID(), ddlYear.SelectedValue, ddlmonth.SelectedValue,txtDCSMilkRMC.Text,txtSMGMilkRMC.Text,txtNMGMilkRMC.Text,txtOtherMilkRMC.Text,txtCOMMUsedRMC.Text,txtTotalRMC.Text,txtDCSdairyCCimc.Text,txtccIMCtoDAIRYpt.Text,txtSMGMILKPT.Text,txtNMGMILKpt.Text,txtTotalPT.Text,
+                           objdb.createdBy(),objdb.GetLocalIPAddress()}, "dataset");
+                if (ds != null && ds.Tables[0].Rows.Count > 0)
+                {
+                    if (ds.Tables[0].Rows[0]["Msg"].ToString() == "ok")
+                    {
+                        lblMsg.Text = objdb.Alert("fa-check", "alert-success", "Thankyou! ", ds.Tables[0].Rows[0]["Errormsg"].ToString());
+                    }
+                    else
+                    {
+                        lblMsg.Text = objdb.Alert("fa-exclamation-triangle", "alert-warning", "Warning! ", ds.Tables[0].Rows[0]["Errormsg"].ToString());
+
+                    }
+                }
+                openingForm();
+            }
+            else
+            {
+                lblMsg.Text = objdb.Alert("fa-ban", "alert-danger", "Sorry! ", msg);
+            }
+        }
+        catch (Exception ex)
+        {
+            lblMsg.Text = objdb.Alert("fa-ban", "alert-danger", "Sorry! ", ex.Message.ToString());
+        }
+    }
+    protected void Rawcostclr()
+    {
+        txtDCSMilkRMC.Text = "";
+        txtSMGMilkRMC.Text = "";
+        txtNMGMilkRMC.Text = "";
+        txtOtherMilkRMC.Text = "";
+        txtCOMMUsedRMC.Text = "";
+        txtTotalRMC.Text = "";
+        txtDCSdairyCCimc.Text = "";
+        txtccIMCtoDAIRYpt.Text = "";
+        txtSMGMILKPT.Text = "";
+        txtNMGMILKpt.Text = "";
+        txtTotalPT.Text = "";
+    }
+    #endregion
     #region Administration
     protected void btnAdministration_Click(object sender, EventArgs e)
     {
