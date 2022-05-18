@@ -32,18 +32,18 @@
                                             <label>Month <span style="color: red;">*</span></label>
                                             <asp:dropdownlist id="ddlmonth" runat="server" cssclass="form-control" autopostback="true" onselectedindexchanged="ddlform_SelectedIndexChanged">
                                                 <asp:ListItem Value="0">Select</asp:ListItem>
-                                                <asp:ListItem Value="4">April</asp:ListItem>
-                                                <asp:ListItem Value="5">May</asp:ListItem>
-                                                <asp:ListItem Value="6">June</asp:ListItem>
-                                                <asp:ListItem Value="7">July</asp:ListItem>
-                                                <asp:ListItem Value="8">August</asp:ListItem>
-                                                <asp:ListItem Value="9">September</asp:ListItem>
+                                                <asp:ListItem Value="04">April</asp:ListItem>
+                                                <asp:ListItem Value="05">May</asp:ListItem>
+                                                <asp:ListItem Value="06">June</asp:ListItem>
+                                                <asp:ListItem Value="07">July</asp:ListItem>
+                                                <asp:ListItem Value="08">August</asp:ListItem>
+                                                <asp:ListItem Value="09">September</asp:ListItem>
                                                 <asp:ListItem Value="10">October</asp:ListItem>
                                                 <asp:ListItem Value="11">November</asp:ListItem>
                                                 <asp:ListItem Value="12">December</asp:ListItem>
-                                                <asp:ListItem Value="1">January</asp:ListItem>
-                                                <asp:ListItem Value="2">February</asp:ListItem>
-                                                <asp:ListItem Value="3">March</asp:ListItem>
+                                                <asp:ListItem Value="01">January</asp:ListItem>
+                                                <asp:ListItem Value="02">February</asp:ListItem>
+                                                <asp:ListItem Value="03">March</asp:ListItem>
                                             </asp:dropdownlist>
                                         </div>
                                     </div>
@@ -2187,7 +2187,7 @@
                                                                 <asp:regularexpressionvalidator id="RegularExpressionValidator45" runat="server" errormessage="Value required" controltovalidate="txtcommditiesPurchTR" validationgroup="FPC" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox onpaste="return false" clientidmode="Static" onkeyup="RCTcalc()" oninput="validate(this)" autocomplete="off" maxlength="10" onkeypress="return isNumberKey(this, event);" id="txtopeningStocksTR" runat="server" cssclass="form-control"></asp:textbox>
+                                                                <asp:textbox onpaste="return false" clientidmode="Static" onkeyup="RCTcalc()" oninput="validate(this)" autocomplete="off" maxlength="10" onkeypress="return isNumberKey(this, event);" id="txtopeningStocksTR" runat="server" cssclass="form-control" ToolTip="Last Month Closing"></asp:textbox>
                                                                 <asp:regularexpressionvalidator id="RegularExpressionValidator46" runat="server" errormessage="Value required" controltovalidate="txtopeningStocksTR" validationgroup="FPC" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
                                                             </td>
                                                             <td>
