@@ -2408,6 +2408,26 @@ public partial class mis_Mis_Reports_MPRU_MonthlyEntryFrom : System.Web.UI.Page
             btnroematerial.Visible = true;
 
         }
+            //if (Convert.ToInt16(ddlmonth.SelectedValue) == DateTime.Now.Month || Convert.ToInt16(ddlmonth.SelectedValue) == (DateTime.Now.Month) - 1)
+        //{
+        //    if (Convert.ToInt16(ddlYear.SelectedValue) == DateTime.Now.Year)
+        //    {
+        //        btnAdministration.Visible = true;
+        //        btnCapUtilisation.Visible = true;
+        //        btnFO.Visible = true;
+        //        btnMarketing.Visible = true;
+        //        btnmaterialbalancing.Visible = true;
+        //        btnMOP.Visible = true;
+        //        btnPackagingAndCC.Visible = true;
+        //        btnPMandSale.Visible = true;
+        //        btnPPMaking.Visible = true;
+        //        btnReceipt.Visible = true;
+        //        btnrecombination.Visible = true;
+        //        btnroematerial.Visible = true;
+        //    }
+        //}
+
+
         else
         {
             btnAdministration.Visible = false;
