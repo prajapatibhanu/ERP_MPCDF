@@ -2531,6 +2531,30 @@
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentFooter" runat="Server">
     <script type="text/javascript">
+
+        function noDays() {
+            let daysInMonth = '0';
+            let month = document.getElementById('<%=ddlmonth.ClientID %>').value;
+            let year = document.getElementById('<%=ddlYear.ClientID %>').value;
+            if (month != '0' & year != '0')
+                daysInMonth = new Date(year, month, 0).getDate();
+            return daysInMonth;
+
+        }
+        function getSum() {
+            let sum = 0
+            for (let i = 0; i < arguments.length; i++) {
+
+                if (arguments[i] === '')
+                    arguments[i] = '0';
+                if (arguments[i] === '.')
+                    arguments[i] = '0';
+                sum += parseFloat(arguments[i]);
+            }
+            return sum.toFixed(2);
+        }
+    </script>
+    <script type="text/javascript">
         // =========  MATERIAL BALANCING =====
         function CalMB() {
             let dcsmilkcow = document.getElementById('<%=txtdcsmilkcow_MP.ClientID %>').value;
@@ -2730,10 +2754,11 @@
                 DCSf = '0';
             if (DCSf === '.')
                 DCSf = '0';
-            let tolt = parseFloat(DCSo) - parseFloat(DCSf);
+            let tolt = parseFloat(DCSo) - parseFloat(DCSf).toFixed(2);
             if (isNaN(tolt))
                 tolt = "0";
-            document.getElementById('<%=txtdcsclosedtemp.ClientID %>').value = tolt.toFixed(2);
+            document.getElementById('<%=txtdcsclosedtemp.ClientID %>').value = tolt;
+            document.getElementById('<%=txtdcsselingbcf.ClientID %>').value = tolt;
         }
         function FOcalc() {
 
@@ -2782,22 +2807,69 @@
                                                                                 document.getElementById('<%=txtTaandtransportPAC.ClientID %>').value,
                                                                                 document.getElementById('<%=txtcontractlabourPAC.ClientID %>').value,
                                                                                 document.getElementById('<%=txtotherexpansesPAC.ClientID %>').value);
-            document.getElementById('<%=txttotalcostAiactivites.ClientID %>').value = getSum(document.getElementById('<%=txtsalaryandwagesAiActivites.ClientID %>').value,
+
+            let totalcostAiactivites = getSum(document.getElementById('<%=txtsalaryandwagesAiActivites.ClientID %>').value,
                                                                                 document.getElementById('<%=txttransportAiActivites.ClientID %>').value,
                                                                                 document.getElementById('<%=txtLn2ConsumedAiAcitivites.ClientID %>').value,
                                                                                 document.getElementById('<%=txtLn2transportAiactivites.ClientID %>').value,
                                                                                 document.getElementById('<%=txtsemenandstrawesAiactivites.ClientID %>').value,
-                                                                                document.getElementById('<%=txtotherdirectcostAiactivites.ClientID %>').value,
-                                                                                document.getElementById('<%=txtlessincomeAiactivites.ClientID %>').value);
+                                                                                document.getElementById('<%=txtotherdirectcostAiactivites.ClientID %>').value);
+            let lessincomeAiactivites = document.getElementById('<%=txtlessincomeAiactivites.ClientID %>').value;
+            if (totalcostAiactivites === "")
+                totalcostAiactivites = "0";
+            if (totalcostAiactivites === ".")
+                totalcostAiactivites = "0";
+            if (lessincomeAiactivites === "")
+                lessincomeAiactivites = "0";
+            if (lessincomeAiactivites === ".")
+                lessincomeAiactivites = "0";
+            let tttotalcostAiactivites = (parseFloat(totalcostAiactivites) - parseFloat(lessincomeAiactivites)).toFixed(2);
+            if (tttotalcostAiactivites === "")
+                tttotalcostAiactivites = "0";
+            if (tttotalcostAiactivites === ".")
+                tttotalcostAiactivites = "0";
+            document.getElementById('<%=txttotalcostAiactivites.ClientID %>').value = tttotalcostAiactivites;
+
+
             document.getElementById('<%=txtFPCtotalcost.ClientID %>').value = getSum(document.getElementById('<%=txtFPCsalryandwages.ClientID %>').value,
                                                                                 document.getElementById('<%=txtFPCotherdirectcost.ClientID %>').value);
             document.getElementById('<%=txtAHCtotalCost.ClientID %>').value = getSum(document.getElementById('<%=txtAHCsalaryandwages.ClientID %>').value,
                                                                                 document.getElementById('<%=txtAHCotherdirectcost.ClientID %>').value);
-            document.getElementById('<%=txtTotalCost.ClientID %>').value = getSum(document.getElementById('<%=txtTEcostsalaryandwages.ClientID %>').value,
-                                                                                document.getElementById('<%=txtTEcostotherdirectcost.ClientID %>').value,
-                                                                                document.getElementById('<%=txtTEcostlessincome.ClientID %>').value);
-            document.getElementById('<%=txttotalcostOTI.ClientID %>').value = getSum(document.getElementById('<%=txtsalaryandwagesOTI.ClientID %>').value,
-                                                                                document.getElementById('<%=txtotherincmecostOTI.ClientID %>').value);
+
+            let tTotalCost = getSum(document.getElementById('<%=txtTEcostsalaryandwages.ClientID %>').value,
+                                                                                document.getElementById('<%=txtTEcostotherdirectcost.ClientID %>').value);
+            let tTEcostlessincome = document.getElementById('<%=txtTEcostlessincome.ClientID %>').value;
+            if (tTotalCost === "")
+                tTotalCost = "0";
+            if (tTotalCost === ".")
+                tTotalCost = "0";
+            if (tTEcostlessincome === "")
+                tTEcostlessincome = "0";
+            if (tTEcostlessincome === ".")
+                tTEcostlessincome = "0";
+            let txTEcostlessincome = (parseFloat(tTotalCost) - parseFloat(tTEcostlessincome)).toFixed(2);
+            if (txTEcostlessincome === "")
+                txTEcostlessincome = "0";
+            if (txTEcostlessincome === ".")
+                txTEcostlessincome = "0";
+            document.getElementById('<%=txtTotalCost.ClientID %>').value = txTEcostlessincome;
+            //====================================================================================
+            let ttotalcostOTI = getSum(document.getElementById('<%=txtsalaryandwagesOTI.ClientID %>').value,
+                                document.getElementById('<%=txtotherincmecostOTI.ClientID %>').value);
+            let tOIcostlessincome = document.getElementById('<%=txtOIcostlessincome.ClientID %>').value;
+            if (ttotalcostOTI === "")
+                ttotalcostOTI = "0";
+            if (ttotalcostOTI === ".")
+                ttotalcostOTI = "0";
+            if (tOIcostlessincome === "")
+                tOIcostlessincome = "0";
+            if (tOIcostlessincome === ".")
+                tOIcostlessincome = "0";
+            let tttotalcostOTI = (parseFloat(ttotalcostOTI) - parseFloat(tOIcostlessincome)).toFixed(2);
+            if (tttotalcostOTI === ".")
+                tttotalcostOTI = "0";
+            document.getElementById('<%=txttotalcostOTI.ClientID %>').value = tttotalcostOTI;
+            //===============================================
             document.getElementById('<%=txtFOGrandTotal.ClientID %>').value = getSum(document.getElementById('<%=txtAHCtotalCost.ClientID %>').value,
                                                                                 document.getElementById('<%=txtFPCtotalcost.ClientID %>').value,
                                                                                 document.getElementById('<%=txtTotalCost.ClientID %>').value,
@@ -2827,15 +2899,45 @@
                                                                         document.getElementById('<%=txtforproduct_Commused.ClientID %>').value);
         }
         // ================== MILK PROCUREMENT AND SALE =======================================
+        function MPKGPD() {
+
+            let MILKPROC_monthly = getSum(document.getElementById('<%=txtDCSmilkRMRD.ClientID %>').value,
+                                          document.getElementById('<%=txtDCSmilkCCS.ClientID %>').value,
+                                          document.getElementById('<%=txtOTHER.ClientID %>').value)
+            let totalMILKPROC_monthly = (parseFloat(MILKPROC_monthly) / parseFloat(noofDays())).toFixed(2);
+            document.getElementById('<%=txtMILKPROC_monthly.ClientID %>').value = totalMILKPROC_monthly;
+
+            let hfTotalMP = document.getElementById('<%=hfTotalMP.ClientID %>').value;
+            let hidallDay = document.getElementById('<%=hfDay.ClientID %>').value;
+
+            if (hfTotalMP === "")
+                hfTotalMP = "0";
+            if (hfTotalMP === ".")
+                hfTotalMP = "0";
+            if (hidallDay === "")
+                hidallDay = "0";
+            if (hidallDay === ".")
+                hidallDay = "0";
+
+            let hidfTotal = ((parseFloat(hfTotalMP) + parseFloat(MILKPROC_monthly)) / parseFloat(hidallDay)).toFixed(2);
+            if (isNaN(hidfTotal))
+                hidfTotal = "0";
+            document.getElementById('<%=txtMILKPROC_Cummulat.ClientID %>').value = hidfTotal;
+
+
+        }
         function MPcalc() {
+
             document.getElementById('<%=txttotalMilkProc.ClientID %>').value = getSum(document.getElementById('<%=txtDCSmilkRMRD.ClientID %>').value,
                                                                                        document.getElementById('<%=txtDCSmilkCCS.ClientID %>').value,
                                                                                        document.getElementById('<%=txtSMGMILK.ClientID %>').value,
                                                                                        document.getElementById('<%=txtNMGmilk.ClientID %>').value,
                                                                                        document.getElementById('<%=txtOTHER.ClientID %>').value);
+            MPKGPD();
         }
         function LMScalc() {
-            document.getElementById('<%=txttotalmilksale.ClientID %>').value = getSum(document.getElementById('<%=txtwholemilk.ClientID %>').value,
+
+            let totalmilksale = getSum(document.getElementById('<%=txtwholemilk.ClientID %>').value,
                                                                                         document.getElementById('<%=txtfullcreammilk.ClientID %>').value,
                                                                                         document.getElementById('<%=txtstdmilk.ClientID %>').value,
                                                                                         document.getElementById('<%=txttonedmilk.ClientID %>').value,
@@ -2846,21 +2948,281 @@
                                                                                         document.getElementById('<%=txtcowmilk.ClientID %>').value,
                                                                                         document.getElementById('<%=txtsanchilitemilk.ClientID %>').value,
                                                                                         document.getElementById('<%=txtchahamilk.ClientID %>').value);
+            document.getElementById('<%=txttotalmilksale.ClientID %>').value = totalmilksale;
+            let LocalMILK_MOnthly = (parseFloat(totalmilksale) / parseFloat(noofDays())).toFixed(2);
+            if (isNaN(LocalMILK_MOnthly))
+                LocalMILK_MOnthly = "0";
+
+            document.getElementById('<%=txtLocalMILK_MOnthly.ClientID %>').value = LocalMILK_MOnthly;
+            let Hideftotalmilksale = document.getElementById('<%=hftotalmilksale.ClientID %>').value;
+            let hfallDay = document.getElementById('<%=hfDay.ClientID %>').value;
+            if (Hideftotalmilksale === "")
+                Hideftotalmilksale = "0";
+            if (Hideftotalmilksale === ".")
+                Hideftotalmilksale = "0";
+            if (hfallDay === "")
+                hfallDay = "0";
+            if (hfallDay === ".")
+                hfallDay = "0";
+            let hfTotal = ((parseFloat(Hideftotalmilksale) + parseFloat(totalmilksale)) / parseFloat(hfallDay)).toFixed(2);
+            if (isNaN(hfTotal))
+                hfTotal = "0";
+            document.getElementById('<%=txtLocalMilk_Cummulat.ClientID %>').value = hfTotal;
+
+        }
+        //============   SMG   ==========================================================
+        function SMGHideField(totalsmg) {
+            let SMGmilk_Monthly = (parseFloat(totalsmg) / parseFloat(noofDays())).toFixed(2);
+            if (isNaN(SMGmilk_Monthly))
+                SMGmilk_Monthly = "0";
+            document.getElementById('<%=txtSMGmilk_Monthly.ClientID %>').value = SMGmilk_Monthly;
+
+            let hidfSMS_TotalSMGSale = document.getElementById('<%=hfSMS_TotalSMGSale.ClientID %>').value;
+            let hidfallDay = document.getElementById('<%=hfDay.ClientID %>').value;
+            if (hidfSMS_TotalSMGSale === "")
+                hidfSMS_TotalSMGSale = "0";
+            if (hidfSMS_TotalSMGSale === ".")
+                hidfSMS_TotalSMGSale = "0";
+            if (hidfallDay === "")
+                hidfallDay = "0";
+            if (hidfallDay === ".")
+                hidfallDay = "0";
+            let SMGmilk_Cummulat = ((parseFloat(totalsmg) + parseFloat(hidfSMS_TotalSMGSale)) / parseFloat(hidfallDay)).toFixed(2);
+            if (isNaN(SMGmilk_Cummulat))
+                SMGmilk_Cummulat = "0";
+            document.getElementById('<%=txtSMGmilk_Cummulat.ClientID %>').value = SMGmilk_Cummulat;
         }
         function SMGcalc() {
-            document.getElementById('<%=txtTotalsmgsale_SMG.ClientID %>').value = getSum(document.getElementById('<%=txtwholemilk_SMG.ClientID %>').value,
-                                                                                        document.getElementById('<%=txtskimmilk_SMG.ClientID %>').value,
-                                                                                        document.getElementById('<%=txtOther_SMG.ClientID %>').value);
+            let wholemilk_SMG = document.getElementById('<%=txtwholemilk_SMG.ClientID %>').value;
+            let skimmilk_SMG = document.getElementById('<%=txtskimmilk_SMG.ClientID %>').value;
+            let txtOther_SMG = document.getElementById('<%=txtOther_SMG.ClientID %>').value;
+            if (wholemilk_SMG === "")
+                wholemilk_SMG = "0";
+            if (wholemilk_SMG === ".")
+                wholemilk_SMG = "0";
+            let totalwholemilk_SMG = (parseFloat(wholemilk_SMG) / 1.03).toFixed(2);
+            if (totalwholemilk_SMG === "")
+                totalwholemilk_SMG = "0";
+            if (totalwholemilk_SMG === ".")
+                totalwholemilk_SMG = "0";
+            document.getElementById('<%=txtwholemilk_SMG.ClientID %>').value = totalwholemilk_SMG;
+            let Totalsmgsale_SMG = getSum(totalwholemilk_SMG, skimmilk_SMG, txtOther_SMG)
+            document.getElementById('<%=txtTotalsmgsale_SMG.ClientID %>').value = Totalsmgsale_SMG;
+            SMGHideField(Totalsmgsale_SMG);
+        }
+        function SMGcalc1() {
+            let wholemilk_SMG1 = document.getElementById('<%=txtwholemilk_SMG.ClientID %>').value;
+            let skimmilk_SMG1 = document.getElementById('<%=txtskimmilk_SMG.ClientID %>').value;
+            let txtOther_SMG1 = document.getElementById('<%=txtOther_SMG.ClientID %>').value;
+            if (skimmilk_SMG1 === "")
+                skimmilk_SMG1 = "0";
+            if (skimmilk_SMG1 === ".")
+                skimmilk_SMG1 = "0";
+            let totlskimmilk_SMG = (parseFloat(skimmilk_SMG1) / 1.03).toFixed(2);
+            if (totlskimmilk_SMG === "")
+                totlskimmilk_SMG = "0";
+            if (totlskimmilk_SMG === ".")
+                totlskimmilk_SMG = "0";
+            document.getElementById('<%=txtskimmilk_SMG.ClientID %>').value = totlskimmilk_SMG;
+            let Totalsmgsale_SMG1 = getSum(wholemilk_SMG1, totlskimmilk_SMG, txtOther_SMG1);
+            document.getElementById('<%=txtTotalsmgsale_SMG.ClientID %>').value = Totalsmgsale_SMG1;
+            SMGHideField(Totalsmgsale_SMG1);
+        }
+        function SMGcalc2() {
+            let wholemilk_SMG2 = document.getElementById('<%=txtwholemilk_SMG.ClientID %>').value;
+            let skimmilk_SMG2 = document.getElementById('<%=txtskimmilk_SMG.ClientID %>').value;
+            let txtOther_SMG2 = document.getElementById('<%=txtOther_SMG.ClientID %>').value;
+            if (txtOther_SMG2 === "")
+                txtOther_SMG2 = "0";
+            if (txtOther_SMG2 === ".")
+                txtOther_SMG2 = "0";
+            let totltxtOther_SMG2 = (parseFloat(txtOther_SMG2) / 1.03).toFixed(2);
+            if (totltxtOther_SMG2 === "")
+                totltxtOther_SMG2 = "0";
+            if (totltxtOther_SMG2 === ".")
+                totltxtOther_SMG2 = "0";
+            document.getElementById('<%=txtOther_SMG.ClientID %>').value = totltxtOther_SMG2;
+            let Totalsmgsale_SMG2 = getSum(wholemilk_SMG2, skimmilk_SMG2, totltxtOther_SMG2);
+            document.getElementById('<%=txtTotalsmgsale_SMG.ClientID %>').value = Totalsmgsale_SMG2;
+            SMGHideField(Totalsmgsale_SMG2);
+        }
+        //===================  NMG  =================================================================
+        function NMGHideField() {
+            let Total_NMS_OS = getSum(document.getElementById('<%=txtTotalNMGsale_NMG.ClientID %>').value,
+                               document.getElementById('<%=txtwholmilkinLit_OSALE.ClientID %>').value,
+                               document.getElementById('<%=txtskimmilkinLit_OSALE.ClientID %>').value);
+
+            let NMGOTH_MOnthly = (parseFloat(Total_NMS_OS) / parseFloat(noofDays())).toFixed(2);
+            if (isNaN(NMGOTH_MOnthly))
+                NMGOTH_MOnthly = "0";
+            document.getElementById('<%=txtNMGOTH_MOnthly.ClientID %>').value = NMGOTH_MOnthly;
+
+            let hidfTotal_NMS_OS = document.getElementById('<%=hfTotal_NMS_OS.ClientID %>').value;
+            let hidefallDay = document.getElementById('<%=hfDay.ClientID %>').value;
+            if (hidfTotal_NMS_OS === "")
+                hidfTotal_NMS_OS = "0";
+            if (hidfTotal_NMS_OS === ".")
+                hidfTotal_NMS_OS = "0";
+            if (hidefallDay === "")
+                hidefallDay = "0";
+            if (hidefallDay === ".")
+                hidefallDay = "0";
+            let NMGOTH_Cummulat = ((parseFloat(Total_NMS_OS) + parseFloat(hidfTotal_NMS_OS)) / parseFloat(hidefallDay)).toFixed(2);
+            if (isNaN(NMGOTH_Cummulat))
+                NMGOTH_Cummulat = "0";
+            document.getElementById('<%=txtNMGOTH_Cummulat.ClientID %>').value = NMGOTH_Cummulat;
         }
         function NMGcalc() {
-            document.getElementById('<%=txtTotalNMGsale_NMG.ClientID %>').value = getSum(document.getElementById('<%=txtwholemilk_NMG.ClientID %>').value,
-                                                                                        document.getElementById('<%=txtskimmilk_NMG.ClientID %>').value,
-                                                                                        document.getElementById('<%=txtOther_NMG.ClientID %>').value);
+            let wholemilk_NMG = document.getElementById('<%=txtwholemilk_NMG.ClientID %>').value;
+            let txtskimmilk_NMG = document.getElementById('<%=txtskimmilk_NMG.ClientID %>').value;
+            let txtOther_NMG = document.getElementById('<%=txtOther_NMG.ClientID %>').value;
+            if (wholemilk_NMG === "")
+                wholemilk_NMG = "0";
+            if (wholemilk_NMG === ".")
+                wholemilk_NMG = "0";
+            let totlwholemilk_NMG = (parseFloat(wholemilk_NMG) / 1.03).toFixed(2);
+            if (totlwholemilk_NMG === "")
+                totlwholemilk_NMG = "0";
+            if (totlwholemilk_NMG === ".")
+                totlwholemilk_NMG = "0";
+            document.getElementById('<%=txtwholemilk_NMG.ClientID %>').value = totlwholemilk_NMG;
+            document.getElementById('<%=txtTotalNMGsale_NMG.ClientID %>').value = getSum(totlwholemilk_NMG, txtskimmilk_NMG, txtOther_NMG);
+            NMGHideField();
         }
+        function NMGcalc1() {
+            let wholemilk_NMG1 = document.getElementById('<%=txtwholemilk_NMG.ClientID %>').value;
+            let txtskimmilk_NMG1 = document.getElementById('<%=txtskimmilk_NMG.ClientID %>').value;
+            let txtOther_NMG1 = document.getElementById('<%=txtOther_NMG.ClientID %>').value;
+            if (txtskimmilk_NMG1 === "")
+                txtskimmilk_NMG1 = "0";
+            if (txtskimmilk_NMG1 === ".")
+                wholemilk_NMG = "0";
+            let totltxtskimmilk_NMG1 = (parseFloat(txtskimmilk_NMG1) / 1.03).toFixed(2);
+            if (totltxtskimmilk_NMG1 === "")
+                totltxtskimmilk_NMG1 = "0";
+            if (totltxtskimmilk_NMG1 === ".")
+                totltxtskimmilk_NMG1 = "0";
+            document.getElementById('<%=txtskimmilk_NMG.ClientID %>').value = totltxtskimmilk_NMG1;
+            document.getElementById('<%=txtTotalNMGsale_NMG.ClientID %>').value = getSum(wholemilk_NMG1, totltxtskimmilk_NMG1, txtOther_NMG1);
+            NMGHideField();
+        }
+        function NMGcalc2() {
+            let wholemilk_NMG2 = document.getElementById('<%=txtwholemilk_NMG.ClientID %>').value;
+            let txtskimmilk_NMG2 = document.getElementById('<%=txtskimmilk_NMG.ClientID %>').value;
+            let txtOther_NMG2 = document.getElementById('<%=txtOther_NMG.ClientID %>').value;
+            if (txtOther_NMG2 === "")
+                txtOther_NMG2 = "0";
+            if (txtOther_NMG2 === ".")
+                txtOther_NMG2 = "0";
+            let totltxtOther_NMG2 = (parseFloat(txtOther_NMG2) / 1.03).toFixed(2);
+            if (totltxtOther_NMG2 === "")
+                totltxtOther_NMG2 = "0";
+            if (totltxtOther_NMG2 === ".")
+                totltxtOther_NMG2 = "0";
+            document.getElementById('<%=txtOther_NMG.ClientID %>').value = totltxtOther_NMG2;
+            document.getElementById('<%=txtTotalNMGsale_NMG.ClientID %>').value = getSum(wholemilk_NMG2, txtskimmilk_NMG2, totltxtOther_NMG2);
+            NMGHideField();
+        }
+        //===============  OS  ======================================================================================================
         function OScalc() {
-            document.getElementById('<%=txttotalBulkSale_OSALE.ClientID %>').value = getSum(document.getElementById('<%=txtwholmilkinLit_OSALE.ClientID %>').value,
-                                                                                         document.getElementById('<%=txtskimmilkinLit_OSALE.ClientID %>').value,
-                                                                                        document.getElementById('<%=txtOther_OSALE.ClientID %>').value);
+            let wholmilkinLit_OSALE = document.getElementById('<%=txtwholmilkinLit_OSALE.ClientID %>').value;
+            let skimmilkinLit_OSALE = document.getElementById('<%=txtskimmilkinLit_OSALE.ClientID %>').value;
+            let Other_OSALE = document.getElementById('<%=txtOther_OSALE.ClientID %>').value;
+
+            if (wholmilkinLit_OSALE === "")
+                wholmilkinLit_OSALE = "0";
+            if (wholmilkinLit_OSALE === ".")
+                wholmilkinLit_OSALE = "0";
+            let totlwholmilkinLit_OSALE = (parseFloat(wholmilkinLit_OSALE) / 1.03).toFixed(2);
+            if (totlwholmilkinLit_OSALE === "")
+                totlwholmilkinLit_OSALE = "0";
+            if (totlwholmilkinLit_OSALE === ".")
+                totlwholmilkinLit_OSALE = "0";
+            document.getElementById('<%=txtwholmilkinLit_OSALE.ClientID %>').value = totlwholmilkinLit_OSALE;
+            document.getElementById('<%=txttotalBulkSale_OSALE.ClientID %>').value = getSum(totlwholmilkinLit_OSALE, skimmilkinLit_OSALE, Other_OSALE);
+            NMGHideField();
+        }
+        function OScalc1() {
+            let wholmilkinLit_OSALE1 = document.getElementById('<%=txtwholmilkinLit_OSALE.ClientID %>').value;
+            let skimmilkinLit_OSALE1 = document.getElementById('<%=txtskimmilkinLit_OSALE.ClientID %>').value;
+            let Other_OSALE1 = document.getElementById('<%=txtOther_OSALE.ClientID %>').value;
+
+            if (skimmilkinLit_OSALE1 === "")
+                skimmilkinLit_OSALE1 = "0";
+            if (skimmilkinLit_OSALE1 === ".")
+                skimmilkinLit_OSALE1 = "0";
+            let totlskimmilkinLit_OSALE1 = (parseFloat(skimmilkinLit_OSALE1) / 1.03).toFixed(2);
+            if (totlskimmilkinLit_OSALE1 === "")
+                totlskimmilkinLit_OSALE1 = "0";
+            if (totlskimmilkinLit_OSALE1 === ".")
+                totlskimmilkinLit_OSALE1 = "0";
+            document.getElementById('<%=txtskimmilkinLit_OSALE.ClientID %>').value = totlskimmilkinLit_OSALE1;
+            document.getElementById('<%=txttotalBulkSale_OSALE.ClientID %>').value = getSum(wholmilkinLit_OSALE1, totlskimmilkinLit_OSALE1, Other_OSALE1);
+            NMGHideField();
+        }
+        function OScalc2() {
+            let wholmilkinLit_OSALE2 = document.getElementById('<%=txtwholmilkinLit_OSALE.ClientID %>').value;
+            let skimmilkinLit_OSALE2 = document.getElementById('<%=txtskimmilkinLit_OSALE.ClientID %>').value;
+            let Other_OSALE2 = document.getElementById('<%=txtOther_OSALE.ClientID %>').value;
+
+            if (Other_OSALE2 === "")
+                Other_OSALE2 = "0";
+            if (Other_OSALE2 === ".")
+                Other_OSALE2 = "0";
+            let totlOther_OSALE2 = (parseFloat(Other_OSALE2) / 1.03).toFixed(2);
+            if (totlOther_OSALE2 === "")
+                totlOther_OSALE2 = "0";
+            if (totlOther_OSALE2 === ".")
+                totlOther_OSALE2 = "0";
+            document.getElementById('<%=txtOther_OSALE.ClientID %>').value = totlOther_OSALE2;
+            document.getElementById('<%=txttotalBulkSale_OSALE.ClientID %>').value = getSum(wholmilkinLit_OSALE2, skimmilkinLit_OSALE2, totlOther_OSALE2);
+        }
+        //==============================================================================
+        function GMPcalc() {
+            noofDays();
+            let hidfMP_TillMonthGMPMS = document.getElementById('<%=hfMP_TillMonthGMPMS.ClientID %>').value;
+            let hidfLMS_TillMonthGMPMS = document.getElementById('<%=hfLMS_TillMonthGMPMS.ClientID %>').value;
+            let hidfallDay = document.getElementById('<%=hfDay.ClientID %>').value;
+            if (hidfMP_TillMonthGMPMS === "")
+                hidfMP_TillMonthGMPMS = "0";
+            if (hidfMP_TillMonthGMPMS === ".")
+                hidfMP_TillMonthGMPMS = "0";
+            if (hidfLMS_TillMonthGMPMS === "")
+                hidfLMS_TillMonthGMPMS = "0";
+            if (hidfLMS_TillMonthGMPMS === ".")
+                hidfLMS_TillMonthGMPMS = "0";
+            let MILKproKGPD_KG_Monthly = document.getElementById('<%=txtMILKproKGPD_KG_Monthly.ClientID %>').value;
+            if (MILKproKGPD_KG_Monthly === "")
+                MILKproKGPD_KG_Monthly = "0";
+            if (MILKproKGPD_KG_Monthly === ".")
+                MILKproKGPD_KG_Monthly = "0";
+            let MILKproKGPD_Monthly = (parseFloat(MILKproKGPD_KG_Monthly) / parseFloat(noofDays())).toFixed(2);
+            if (isNaN(MILKproKGPD_Monthly))
+                MILKproKGPD_Monthly = "0";
+            document.getElementById('<%=txtMILKproKGPD_Monthly.ClientID %>').value = MILKproKGPD_Monthly;
+
+            let MILKprocKGPD_Cummulative = ((parseFloat(MILKproKGPD_KG_Monthly) + parseFloat(hidfMP_TillMonthGMPMS)) / parseFloat(hidfallDay)).toFixed(2);
+            if (isNaN(MILKprocKGPD_Cummulative))
+                MILKprocKGPD_Cummulative = "0";
+            document.getElementById('<%=txtMILKprocKGPD_Cummulative.ClientID %>').value = MILKprocKGPD_Cummulative;
+
+            let LocalMILKLPD_Ltr_Monthly = document.getElementById('<%=txtLocalMILKLPD_Ltr_Monthly.ClientID %>').value;
+            if (LocalMILKLPD_Ltr_Monthly === "")
+                LocalMILKLPD_Ltr_Monthly = "0";
+            if (LocalMILKLPD_Ltr_Monthly === ".")
+                LocalMILKLPD_Ltr_Monthly = "0";
+            let LocalMILKLPD_Monthly = (parseFloat(LocalMILKLPD_Ltr_Monthly) / parseFloat(noofDays())).toFixed(2);
+            if (isNaN(LocalMILKLPD_Monthly))
+                LocalMILKLPD_Monthly = "0";
+            document.getElementById('<%=txtLocalMILKLPD_Monthly.ClientID %>').value = LocalMILKLPD_Monthly;
+
+            let LocalmilkLPD_Cummulative = ((parseFloat(LocalMILKLPD_Ltr_Monthly) + parseFloat(hidfLMS_TillMonthGMPMS)) / parseFloat(hidfallDay)).toFixed(2);
+            if (isNaN(LocalmilkLPD_Cummulative))
+                LocalmilkLPD_Cummulative = "0";
+            document.getElementById('<%=txtLocalmilkLPD_Cummulative.ClientID %>').value = LocalmilkLPD_Cummulative;
+
+
+
         }
         // =============== PROCESSING AND PRODUCTS MAKING ========================
         function PPMcalc() {
@@ -2974,6 +3336,7 @@
                                                                                         document.getElementById('<%=txtSMGMILKPT.ClientID %>').value,
                                                                                         document.getElementById('<%=txtNMGMILKpt.ClientID %>').value);
         }
+
         function getSum() {
             let sum = 0
             for (let i = 0; i < arguments.length; i++) {
@@ -2987,7 +3350,15 @@
             return sum.toFixed(2);
         }
 
+        function noofDays() {
+            let daysInMonth = '0';
+            let month = document.getElementById('<%=ddlmonth.ClientID %>').value;
+            let year = document.getElementById('<%=ddlYear.ClientID %>').value;
+            if (month != '0' & year != '0')
+                daysInMonth = new Date(year, month, 0).getDate();
+            return daysInMonth;
 
+        }
 
     </script>
 
