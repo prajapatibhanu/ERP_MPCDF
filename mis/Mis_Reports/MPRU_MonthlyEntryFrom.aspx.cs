@@ -341,14 +341,15 @@ public partial class mis_Mis_Reports_MPRU_MonthlyEntryFrom : System.Web.UI.Page
                         {
                             lyear += 1;
                         }
-                        string lDate = "" + ddlmonth.SelectedValue + "/01/" + lyear + "";
-                        DateTime origDT = Convert.ToDateTime(lDate);
-                        DateTime lastDate = new DateTime(origDT.Year, origDT.Month, 1).AddMonths(1).AddDays(-1);
-                        string llDate = lastDate.ToString("dd");
+                        string fDate = "01/" + ddlmonth.SelectedValue + "/" + lyear + "";
+                        DateTime forday = DateTime.ParseExact(fDate, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+                        DateTime lastDate = new DateTime(forday.Year, forday.Month, 1).AddMonths(1).AddDays(-1);
+                        string day = lastDate.ToString("dd");
 
-
-                        DateTime start = new DateTime(Convert.ToInt32(ddlYear.SelectedValue), 04, 01);
-                        DateTime end = new DateTime(lyear, Convert.ToInt32(ddlmonth.SelectedValue), Convert.ToInt32(llDate));
+                        string strt = "01/04/" + ddlYear.SelectedValue + "";
+                        DateTime start = DateTime.ParseExact(strt, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+                        string en = "" + day + "/" + ddlmonth.SelectedValue + "/" + ddlYear.SelectedValue + "";
+                        DateTime end = DateTime.ParseExact(en, "dd/MM/yyyy", CultureInfo.InvariantCulture);
                         TimeSpan difference = end - start;
                         string alldays = difference.Days.ToString();
                         int dy = Convert.ToInt32(alldays) + 1;
@@ -2440,41 +2441,41 @@ public partial class mis_Mis_Reports_MPRU_MonthlyEntryFrom : System.Web.UI.Page
     {
         lblMsg.Text = "";
 
-        if (Convert.ToInt16(ddlmonth.SelectedValue) == DateTime.Now.Month || Convert.ToInt16(ddlmonth.SelectedValue) == (DateTime.Now.Month) - 1 && Convert.ToInt16(ddlYear.SelectedValue) == DateTime.Now.Year)
-        {
-
-            btnAdministration.Visible = true;
-            btnCapUtilisation.Visible = true;
-            btnFO.Visible = true;
-            btnMarketing.Visible = true;
-            btnmaterialbalancing.Visible = true;
-            btnMOP.Visible = true;
-            btnPackagingAndCC.Visible = true;
-            btnPMandSale.Visible = true;
-            btnPPMaking.Visible = true;
-            btnReceipt.Visible = true;
-            btnrecombination.Visible = true;
-            btnroematerial.Visible = true;
-
-        }
-            //if (Convert.ToInt16(ddlmonth.SelectedValue) == DateTime.Now.Month || Convert.ToInt16(ddlmonth.SelectedValue) == (DateTime.Now.Month) - 1)
+        //if (Convert.ToInt16(ddlmonth.SelectedValue) == DateTime.Now.Month || Convert.ToInt16(ddlmonth.SelectedValue) == ((DateTime.Now.Month) - 1)  && Convert.ToInt16(ddlYear.SelectedValue) == DateTime.Now.Year)
         //{
-        //    if (Convert.ToInt16(ddlYear.SelectedValue) == DateTime.Now.Year)
-        //    {
-        //        btnAdministration.Visible = true;
-        //        btnCapUtilisation.Visible = true;
-        //        btnFO.Visible = true;
-        //        btnMarketing.Visible = true;
-        //        btnmaterialbalancing.Visible = true;
-        //        btnMOP.Visible = true;
-        //        btnPackagingAndCC.Visible = true;
-        //        btnPMandSale.Visible = true;
-        //        btnPPMaking.Visible = true;
-        //        btnReceipt.Visible = true;
-        //        btnrecombination.Visible = true;
-        //        btnroematerial.Visible = true;
-        //    }
+
+        //    btnAdministration.Visible = true;
+        //    btnCapUtilisation.Visible = true;
+        //    btnFO.Visible = true;
+        //    btnMarketing.Visible = true;
+        //    btnmaterialbalancing.Visible = true;
+        //    btnMOP.Visible = true;
+        //    btnPackagingAndCC.Visible = true;
+        //    btnPMandSale.Visible = true;
+        //    btnPPMaking.Visible = true;
+        //    btnReceipt.Visible = true;
+        //    btnrecombination.Visible = true;
+        //    btnroematerial.Visible = true;
+
         //}
+        if (Convert.ToInt16(ddlmonth.SelectedValue) == DateTime.Now.Month || Convert.ToInt16(ddlmonth.SelectedValue) == (DateTime.Now.Month) - 1)
+        {
+            if (Convert.ToInt16(ddlYear.SelectedValue) == DateTime.Now.Year)
+            {
+                btnAdministration.Visible = true;
+                btnCapUtilisation.Visible = true;
+                btnFO.Visible = true;
+                btnMarketing.Visible = true;
+                btnmaterialbalancing.Visible = true;
+                btnMOP.Visible = true;
+                btnPackagingAndCC.Visible = true;
+                btnPMandSale.Visible = true;
+                btnPPMaking.Visible = true;
+                btnReceipt.Visible = true;
+                btnrecombination.Visible = true;
+                btnroematerial.Visible = true;
+            }
+        }
 
 
         else
