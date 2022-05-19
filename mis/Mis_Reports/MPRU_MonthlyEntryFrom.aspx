@@ -2908,6 +2908,16 @@
                                                                         document.getElementById('<%=txtforproduct_Commused.ClientID %>').value);
         }
         // ================== MILK PROCUREMENT AND SALE =======================================
+
+
+            document.getElementById('<%=txtTotalMilkSale_Monthly.ClientID %>').value = getSum(document.getElementById('<%=txtLocalMILK_MOnthly.ClientID %>').value,
+                                                                                            document.getElementById('<%=txtSMGmilk_Monthly.ClientID %>').value,
+                                                                                document.getElementById('<%=txtNMGOTH_MOnthly.ClientID %>').value);
+
+            document.getElementById('<%=txtTotalMilkSale_Cummulat.ClientID %>').value = getSum(document.getElementById('<%=txtLocalMilk_Cummulat.ClientID %>').value,
+                                                                                            document.getElementById('<%=txtSMGmilk_Cummulat.ClientID %>').value,
+                                                                                document.getElementById('<%=txtNMGOTH_Cummulat.ClientID %>').value);
+        }
         function MPKGPD() {
 
             let MILKPROC_monthly = getSum(document.getElementById('<%=txtDCSmilkRMRD.ClientID %>').value,
@@ -2963,6 +2973,7 @@
                 LocalMILK_MOnthly = "0";
 
             document.getElementById('<%=txtLocalMILK_MOnthly.ClientID %>').value = LocalMILK_MOnthly;
+
             let Hideftotalmilksale = document.getElementById('<%=hftotalmilksale.ClientID %>').value;
             let hfallDay = document.getElementById('<%=hfDay.ClientID %>').value;
             if (Hideftotalmilksale === "")
@@ -2977,7 +2988,7 @@
             if (isNaN(hfTotal))
                 hfTotal = "0";
             document.getElementById('<%=txtLocalMilk_Cummulat.ClientID %>').value = hfTotal;
-
+            TMScalMPS();
         }
         //============   SMG   ==========================================================
         function SMGHideField(totalsmg) {
@@ -3000,6 +3011,7 @@
             if (isNaN(SMGmilk_Cummulat))
                 SMGmilk_Cummulat = "0";
             document.getElementById('<%=txtSMGmilk_Cummulat.ClientID %>').value = SMGmilk_Cummulat;
+            TMScalMPS();
         }
         function SMGcalc() {
             let wholemilk_SMG = document.getElementById('<%=txtwholemilk_SMG.ClientID %>').value;
@@ -3080,6 +3092,7 @@
             if (isNaN(NMGOTH_Cummulat))
                 NMGOTH_Cummulat = "0";
             document.getElementById('<%=txtNMGOTH_Cummulat.ClientID %>').value = NMGOTH_Cummulat;
+            TMScalMPS();
         }
         function NMGcalc() {
             let wholemilk_NMG = document.getElementById('<%=txtwholemilk_NMG.ClientID %>').value;
