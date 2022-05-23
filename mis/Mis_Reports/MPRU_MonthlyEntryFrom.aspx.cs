@@ -82,6 +82,7 @@ public partial class mis_Mis_Reports_MPRU_MonthlyEntryFrom : System.Web.UI.Page
             txtTotal_LI.Attributes.Add("readonly", "readonly");
             txtTotal_Provi.Attributes.Add("readonly", "readonly");
             txtFPTotal.Attributes.Add("readonly", "readonly");
+            txtalltotal.Attributes.Add("readonly", "readonly");
             //=========== CAPACITY UTILISATION=================
             txtthroughpuINLTS_PC.Attributes.Add("readonly", "readonly");
             txtthroughputPERDAY_PC.Attributes.Add("readonly", "readonly");
@@ -815,6 +816,11 @@ public partial class mis_Mis_Reports_MPRU_MonthlyEntryFrom : System.Web.UI.Page
                                 txtConversionCharge.Text = ds.Tables[2].Rows[0]["ConversionCharge"].ToString();
                                 txtFPOther.Text = ds.Tables[2].Rows[0]["Other"].ToString();
                                 txtFPTotal.Text = ds.Tables[2].Rows[0]["Total"].ToString();
+                            }
+                            if (ds != null && ds.Tables[3].Rows.Count > 0)
+                            {
+                                txtalltotal.Text = ds.Tables[3].Rows[0]["grandtotal"].ToString();
+                              
                             }
                         }
                     }
