@@ -11,7 +11,7 @@
     <div class="content-wrapper">
         <section class="content">
             <div class="box box-primary">
-                <asp:label id="lblMsg" runat="server"></asp:label>
+                <asp:Label ID="lblMsg" runat="server"></asp:Label>
                 <div class="box-header">
                     <h3 class="box-title">MPRU MONTHLY ENTRY</h3>
                 </div>
@@ -24,33 +24,33 @@
                                     <div class="col-md-3">
                                         <div class="form-group">
                                             <label>Year <span style="color: red;">*</span></label>
-                                            <asp:dropdownlist id="ddlYear" runat="server" cssclass="form-control" autopostback="true" onselectedindexchanged="ddlform_SelectedIndexChanged"></asp:dropdownlist>
+                                            <asp:DropDownList ID="ddlYear" runat="server" CssClass="form-control" AutoPostBack="true" OnSelectedIndexChanged="ddlform_SelectedIndexChanged"></asp:DropDownList>
                                         </div>
                                     </div>
                                     <div class="col-md-3">
                                         <div class="form-group">
                                             <label>Month <span style="color: red;">*</span></label>
-                                            <asp:dropdownlist id="ddlmonth" runat="server" cssclass="form-control" autopostback="true" onselectedindexchanged="ddlform_SelectedIndexChanged">
+                                            <asp:DropDownList ID="ddlmonth" runat="server" CssClass="form-control" AutoPostBack="true" OnSelectedIndexChanged="ddlform_SelectedIndexChanged">
                                                 <asp:ListItem Value="0">Select</asp:ListItem>
-                                                <asp:ListItem Value="4">April</asp:ListItem>
-                                                <asp:ListItem Value="5">May</asp:ListItem>
-                                                <asp:ListItem Value="6">June</asp:ListItem>
-                                                <asp:ListItem Value="7">July</asp:ListItem>
-                                                <asp:ListItem Value="8">August</asp:ListItem>
-                                                <asp:ListItem Value="9">September</asp:ListItem>
+                                                <asp:ListItem Value="04">April</asp:ListItem>
+                                                <asp:ListItem Value="05">May</asp:ListItem>
+                                                <asp:ListItem Value="06">June</asp:ListItem>
+                                                <asp:ListItem Value="07">July</asp:ListItem>
+                                                <asp:ListItem Value="08">August</asp:ListItem>
+                                                <asp:ListItem Value="09">September</asp:ListItem>
                                                 <asp:ListItem Value="10">October</asp:ListItem>
                                                 <asp:ListItem Value="11">November</asp:ListItem>
                                                 <asp:ListItem Value="12">December</asp:ListItem>
-                                                <asp:ListItem Value="1">January</asp:ListItem>
-                                                <asp:ListItem Value="2">February</asp:ListItem>
-                                                <asp:ListItem Value="3">March</asp:ListItem>
-                                            </asp:dropdownlist>
+                                                <asp:ListItem Value="01">January</asp:ListItem>
+                                                <asp:ListItem Value="02">February</asp:ListItem>
+                                                <asp:ListItem Value="03">March</asp:ListItem>
+                                            </asp:DropDownList>
                                         </div>
                                     </div>
                                     <div class="col-md-3">
                                         <div class="form-group">
                                             <label>Entry Form <span style="color: red;">*</span></label>
-                                            <asp:dropdownlist id="ddlform" runat="server" cssclass="form-control" autopostback="true" onselectedindexchanged="ddlform_SelectedIndexChanged">
+                                            <asp:DropDownList ID="ddlform" runat="server" CssClass="form-control" AutoPostBack="true" OnSelectedIndexChanged="ddlform_SelectedIndexChanged">
                                                 <asp:ListItem Value="0">Select</asp:ListItem>
                                                 <asp:ListItem Value="1">Farmer Organisation</asp:ListItem>
                                                 <asp:ListItem Value="2">Milk Procurement and Sale</asp:ListItem>
@@ -64,7 +64,7 @@
                                                 <asp:ListItem Value="9">Receipts</asp:ListItem>
                                                 <asp:ListItem Value="10">Capacity Utilisation</asp:ListItem>
                                                 <asp:ListItem Value="11">Material Balancing</asp:ListItem>
-                                            </asp:dropdownlist>
+                                            </asp:DropDownList>
                                         </div>
                                     </div>
                                 </div>
@@ -93,36 +93,36 @@
                                                         </tr>
                                                         <tr>
                                                             <td>
-                                                                <asp:textbox clientidmode="Static" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txtNOofroutes" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator268" runat="server" errormessage="Value required" controltovalidate="txtNOofroutes" validationgroup="FO" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ClientIDMode="Static" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtNOofroutes" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator268" runat="server" ErrorMessage="Value required" ControlToValidate="txtNOofroutes" ValidationGroup="FO" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox clientidmode="Static" onkeyup="FOsubFOM()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txtdcsorgnised" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator269" runat="server" errormessage="Value required" controltovalidate="txtdcsorgnised" validationgroup="FO" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ClientIDMode="Static" onkeyup="FOsubFOM()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtdcsorgnised" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator269" runat="server" ErrorMessage="Value required" ControlToValidate="txtdcsorgnised" ValidationGroup="FO" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox clientidmode="Static" onkeyup="FOsubFOM()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txtdcsfunctional" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator270" runat="server" errormessage="Value required" controltovalidate="txtdcsfunctional" validationgroup="FO" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ClientIDMode="Static" onkeyup="FOsubFOM()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtdcsfunctional" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator270" runat="server" ErrorMessage="Value required" ControlToValidate="txtdcsfunctional" ValidationGroup="FO" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox clientidmode="Static" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txtdcsclosedtemp" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator271" runat="server" errormessage="Value required" controltovalidate="txtdcsclosedtemp" validationgroup="FO" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ClientIDMode="Static" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtdcsclosedtemp" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator271" runat="server" ErrorMessage="Value required" ControlToValidate="txtdcsclosedtemp" ValidationGroup="FO" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox clientidmode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txtnewdcsorganisedmonth" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator272" runat="server" errormessage="Value required" controltovalidate="txtnewdcsorganisedmonth" validationgroup="FO" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ClientIDMode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtnewdcsorganisedmonth" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator272" runat="server" ErrorMessage="Value required" ControlToValidate="txtnewdcsorganisedmonth" ValidationGroup="FO" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox clientidmode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txtnewdcsregisteredmonth" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator273" runat="server" errormessage="Value required" controltovalidate="txtnewdcsregisteredmonth" validationgroup="FO" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ClientIDMode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtnewdcsregisteredmonth" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator273" runat="server" ErrorMessage="Value required" ControlToValidate="txtnewdcsregisteredmonth" ValidationGroup="FO" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox clientidmode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txtdcsrevivedmonth" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator274" runat="server" errormessage="Value required" controltovalidate="txtdcsrevivedmonth" validationgroup="FO" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ClientIDMode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtdcsrevivedmonth" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator274" runat="server" ErrorMessage="Value required" ControlToValidate="txtdcsrevivedmonth" ValidationGroup="FO" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox clientidmode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txtcolesdmonth" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator275" runat="server" errormessage="Value required" controltovalidate="txtcolesdmonth" validationgroup="FO" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ClientIDMode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtcolesdmonth" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator275" runat="server" ErrorMessage="Value required" ControlToValidate="txtcolesdmonth" ValidationGroup="FO" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                         </tr>
                                                     </table>
@@ -152,48 +152,48 @@
                                                         </tr>
                                                         <tr>
                                                             <td>
-                                                                <asp:textbox clientidmode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txtGeneral" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator276" runat="server" errormessage="Value required" controltovalidate="txtGeneral" validationgroup="FO" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ClientIDMode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtGeneral" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator276" runat="server" ErrorMessage="Value required" ControlToValidate="txtGeneral" ValidationGroup="FO" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox clientidmode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txtSceduledcaste" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator277" runat="server" errormessage="Value required" controltovalidate="txtSceduledcaste" validationgroup="FO" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ClientIDMode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtSceduledcaste" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator277" runat="server" ErrorMessage="Value required" ControlToValidate="txtSceduledcaste" ValidationGroup="FO" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox clientidmode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txtscheduletribe" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator278" runat="server" errormessage="Value required" controltovalidate="txtscheduletribe" validationgroup="FO" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ClientIDMode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtscheduletribe" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator278" runat="server" ErrorMessage="Value required" ControlToValidate="txtscheduletribe" ValidationGroup="FO" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox clientidmode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txtbackworsclasses" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator279" runat="server" errormessage="Value required" controltovalidate="txtbackworsclasses" validationgroup="FO" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ClientIDMode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtbackworsclasses" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator279" runat="server" ErrorMessage="Value required" ControlToValidate="txtbackworsclasses" ValidationGroup="FO" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox clientidmode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txtmembershiptotal" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator280" runat="server" errormessage="Value required" controltovalidate="txtmembershiptotal" validationgroup="FO" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ClientIDMode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtmembershiptotal" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator280" runat="server" ErrorMessage="Value required" ControlToValidate="txtmembershiptotal" ValidationGroup="FO" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox clientidmode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txtlandlesslabour" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator281" runat="server" errormessage="Value required" controltovalidate="txtlandlesslabour" validationgroup="FO" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ClientIDMode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtlandlesslabour" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator281" runat="server" ErrorMessage="Value required" ControlToValidate="txtlandlesslabour" ValidationGroup="FO" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox clientidmode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txtmarginalfarmer" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator282" runat="server" errormessage="Value required" controltovalidate="txtmarginalfarmer" validationgroup="FO" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ClientIDMode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtmarginalfarmer" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator282" runat="server" ErrorMessage="Value required" ControlToValidate="txtmarginalfarmer" ValidationGroup="FO" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox clientidmode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txtsmallfarmer" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator283" runat="server" errormessage="Value required" controltovalidate="txtsmallfarmer" validationgroup="FO" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ClientIDMode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtsmallfarmer" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator283" runat="server" ErrorMessage="Value required" ControlToValidate="txtsmallfarmer" ValidationGroup="FO" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox clientidmode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txtlargefarmer" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator284" runat="server" errormessage="Value required" controltovalidate="txtlargefarmer" validationgroup="FO" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ClientIDMode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtlargefarmer" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator284" runat="server" ErrorMessage="Value required" ControlToValidate="txtlargefarmer" ValidationGroup="FO" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox clientidmode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txtothers" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator285" runat="server" errormessage="Value required" controltovalidate="txtothers" validationgroup="FO" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ClientIDMode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtothers" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator285" runat="server" ErrorMessage="Value required" ControlToValidate="txtothers" ValidationGroup="FO" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox clientidmode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txttotal" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator286" runat="server" errormessage="Value required" controltovalidate="txttotal" validationgroup="FO" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ClientIDMode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txttotal" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator286" runat="server" ErrorMessage="Value required" ControlToValidate="txttotal" ValidationGroup="FO" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                         </tr>
                                                     </table>
@@ -214,36 +214,36 @@
                                                         </tr>
                                                         <tr>
                                                             <td>
-                                                                <asp:textbox clientidmode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txtfemalGeneral" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator287" runat="server" errormessage="Value required" controltovalidate="txtfemalGeneral" validationgroup="FO" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ClientIDMode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtfemalGeneral" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator287" runat="server" ErrorMessage="Value required" ControlToValidate="txtfemalGeneral" ValidationGroup="FO" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox clientidmode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txtScheCastfemale" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator288" runat="server" errormessage="Value required" controltovalidate="txtScheCastfemale" validationgroup="FO" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ClientIDMode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtScheCastfemale" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator288" runat="server" ErrorMessage="Value required" ControlToValidate="txtScheCastfemale" ValidationGroup="FO" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox clientidmode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txtschedtribfemale" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator289" runat="server" errormessage="Value required" controltovalidate="txtschedtribfemale" validationgroup="FO" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ClientIDMode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtschedtribfemale" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator289" runat="server" ErrorMessage="Value required" ControlToValidate="txtschedtribfemale" ValidationGroup="FO" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox clientidmode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txtotherbackwordfemale" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator290" runat="server" errormessage="Value required" controltovalidate="txtotherbackwordfemale" validationgroup="FO" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ClientIDMode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtotherbackwordfemale" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator290" runat="server" ErrorMessage="Value required" ControlToValidate="txtotherbackwordfemale" ValidationGroup="FO" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox clientidmode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txttotalfemale" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator291" runat="server" errormessage="Value required" controltovalidate="txttotalfemale" validationgroup="FO" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ClientIDMode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txttotalfemale" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator291" runat="server" ErrorMessage="Value required" ControlToValidate="txttotalfemale" ValidationGroup="FO" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox clientidmode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txtoldDues" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator292" runat="server" errormessage="Value required" controltovalidate="txtoldDues" validationgroup="FO" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ClientIDMode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtoldDues" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator292" runat="server" ErrorMessage="Value required" ControlToValidate="txtoldDues" ValidationGroup="FO" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox clientidmode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txtcurrentDues" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator293" runat="server" errormessage="Value required" controltovalidate="txtcurrentDues" validationgroup="FO" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ClientIDMode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtcurrentDues" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator293" runat="server" ErrorMessage="Value required" ControlToValidate="txtcurrentDues" ValidationGroup="FO" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox clientidmode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txttoalDues" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator294" runat="server" errormessage="Value required" controltovalidate="txttoalDues" validationgroup="FO" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ClientIDMode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txttoalDues" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator294" runat="server" ErrorMessage="Value required" ControlToValidate="txttoalDues" ValidationGroup="FO" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                         </tr>
                                                     </table>
@@ -273,48 +273,48 @@
                                                         </tr>
                                                         <tr>
                                                             <td>
-                                                                <asp:textbox clientidmode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txtgenralFun" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator295" runat="server" errormessage="Value required" controltovalidate="txtgenralFun" validationgroup="FO" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ClientIDMode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtgenralFun" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator295" runat="server" ErrorMessage="Value required" ControlToValidate="txtgenralFun" ValidationGroup="FO" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox clientidmode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txtschedulcasteFun" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator296" runat="server" errormessage="Value required" controltovalidate="txtschedulcasteFun" validationgroup="FO" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ClientIDMode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtschedulcasteFun" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator296" runat="server" ErrorMessage="Value required" ControlToValidate="txtschedulcasteFun" ValidationGroup="FO" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox clientidmode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txtscheduletribeFun" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator297" runat="server" errormessage="Value required" controltovalidate="txtscheduletribeFun" validationgroup="FO" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ClientIDMode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtscheduletribeFun" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator297" runat="server" ErrorMessage="Value required" ControlToValidate="txtscheduletribeFun" ValidationGroup="FO" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox clientidmode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txtbackwordFun" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator298" runat="server" errormessage="Value required" controltovalidate="txtbackwordFun" validationgroup="FO" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ClientIDMode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtbackwordFun" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator298" runat="server" ErrorMessage="Value required" ControlToValidate="txtbackwordFun" ValidationGroup="FO" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox clientidmode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txtTotalFun" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator299" runat="server" errormessage="Value required" controltovalidate="txtTotalFun" validationgroup="FO" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ClientIDMode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtTotalFun" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator299" runat="server" ErrorMessage="Value required" ControlToValidate="txtTotalFun" ValidationGroup="FO" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox clientidmode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txtlandlesslaboueFun" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator300" runat="server" errormessage="Value required" controltovalidate="txtlandlesslaboueFun" validationgroup="FO" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ClientIDMode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtlandlesslaboueFun" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator300" runat="server" ErrorMessage="Value required" ControlToValidate="txtlandlesslaboueFun" ValidationGroup="FO" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox clientidmode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txtmarinalfarmerFun" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator301" runat="server" errormessage="Value required" controltovalidate="txtmarinalfarmerFun" validationgroup="FO" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ClientIDMode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtmarinalfarmerFun" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator301" runat="server" ErrorMessage="Value required" ControlToValidate="txtmarinalfarmerFun" ValidationGroup="FO" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox clientidmode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txtsmallfarmerFun" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator302" runat="server" errormessage="Value required" controltovalidate="txtsmallfarmerFun" validationgroup="FO" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ClientIDMode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtsmallfarmerFun" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator302" runat="server" ErrorMessage="Value required" ControlToValidate="txtsmallfarmerFun" ValidationGroup="FO" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox clientidmode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txtlargefarmerFun" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator303" runat="server" errormessage="Value required" controltovalidate="txtlargefarmerFun" validationgroup="FO" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ClientIDMode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtlargefarmerFun" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator303" runat="server" ErrorMessage="Value required" ControlToValidate="txtlargefarmerFun" ValidationGroup="FO" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox clientidmode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txtOthersFun" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator304" runat="server" errormessage="Value required" controltovalidate="txtOthersFun" validationgroup="FO" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ClientIDMode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtOthersFun" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator304" runat="server" ErrorMessage="Value required" ControlToValidate="txtOthersFun" ValidationGroup="FO" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox clientidmode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txtFunTotal" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator305" runat="server" errormessage="Value required" controltovalidate="txtFunTotal" validationgroup="FO" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ClientIDMode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtFunTotal" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator305" runat="server" ErrorMessage="Value required" ControlToValidate="txtFunTotal" ValidationGroup="FO" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                         </tr>
                                                     </table>
@@ -339,36 +339,36 @@
                                                         </tr>
                                                         <tr>
                                                             <td>
-                                                                <asp:textbox clientidmode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txtfemalegeneral" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator306" runat="server" errormessage="Value required" controltovalidate="txtfemalegeneral" validationgroup="FO" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ClientIDMode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtfemalegeneral" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator306" runat="server" ErrorMessage="Value required" ControlToValidate="txtfemalegeneral" ValidationGroup="FO" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox clientidmode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txtfemaleschedulcaste" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator307" runat="server" errormessage="Value required" controltovalidate="txtfemaleschedulcaste" validationgroup="FO" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ClientIDMode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtfemaleschedulcaste" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator307" runat="server" ErrorMessage="Value required" ControlToValidate="txtfemaleschedulcaste" ValidationGroup="FO" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox clientidmode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txtfemaletribe" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator308" runat="server" errormessage="Value required" controltovalidate="txtfemaletribe" validationgroup="FO" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ClientIDMode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtfemaletribe" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator308" runat="server" ErrorMessage="Value required" ControlToValidate="txtfemaletribe" ValidationGroup="FO" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox clientidmode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txtfemalebackword" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator309" runat="server" errormessage="Value required" controltovalidate="txtfemalebackword" validationgroup="FO" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ClientIDMode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtfemalebackword" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator309" runat="server" ErrorMessage="Value required" ControlToValidate="txtfemalebackword" ValidationGroup="FO" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox clientidmode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txtfemaletotal" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator310" runat="server" errormessage="Value required" controltovalidate="txtfemaletotal" validationgroup="FO" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ClientIDMode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtfemaletotal" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator310" runat="server" ErrorMessage="Value required" ControlToValidate="txtfemaletotal" ValidationGroup="FO" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox clientidmode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txtmembers" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator311" runat="server" errormessage="Value required" controltovalidate="txtmembers" validationgroup="FO" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ClientIDMode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtmembers" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator311" runat="server" ErrorMessage="Value required" ControlToValidate="txtmembers" ValidationGroup="FO" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox clientidmode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txtnonmerbers" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator312" runat="server" errormessage="Value required" controltovalidate="txtnonmerbers" validationgroup="FO" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ClientIDMode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtnonmerbers" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator312" runat="server" ErrorMessage="Value required" ControlToValidate="txtnonmerbers" ValidationGroup="FO" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox clientidmode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txttotalPourers" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator313" runat="server" errormessage="Value required" controltovalidate="txttotalPourers" validationgroup="FO" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ClientIDMode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txttotalPourers" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator313" runat="server" ErrorMessage="Value required" ControlToValidate="txttotalPourers" ValidationGroup="FO" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                         </tr>
                                                     </table>
@@ -403,44 +403,44 @@
                                                             </tr>
                                                             <tr>
                                                                 <td>
-                                                                    <asp:textbox clientidmode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txtAIcentersingle" runat="server" cssclass="form-control"></asp:textbox>
-                                                                    <asp:regularexpressionvalidator id="RegularExpressionValidator314" runat="server" errormessage="Value required" controltovalidate="txtAIcentersingle" validationgroup="FO" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                    <asp:TextBox ClientIDMode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtAIcentersingle" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                    <asp:RegularExpressionValidator ID="RegularExpressionValidator314" runat="server" ErrorMessage="Value required" ControlToValidate="txtAIcentersingle" ValidationGroup="FO" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                                 </td>
                                                                 <td>
-                                                                    <asp:textbox clientidmode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txtAIcentercluster" runat="server" cssclass="form-control"></asp:textbox>
-                                                                    <asp:regularexpressionvalidator id="RegularExpressionValidator315" runat="server" errormessage="Value required" controltovalidate="txtAIcentercluster" validationgroup="FO" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                    <asp:TextBox ClientIDMode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtAIcentercluster" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                    <asp:RegularExpressionValidator ID="RegularExpressionValidator315" runat="server" ErrorMessage="Value required" ControlToValidate="txtAIcentercluster" ValidationGroup="FO" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                                 </td>
                                                                 <td>
-                                                                    <asp:textbox clientidmode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txtAIcentertotal" runat="server" cssclass="form-control"></asp:textbox>
-                                                                    <asp:regularexpressionvalidator id="RegularExpressionValidator316" runat="server" errormessage="Value required" controltovalidate="txtAIcentertotal" validationgroup="FO" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                    <asp:TextBox ClientIDMode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtAIcentertotal" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                    <asp:RegularExpressionValidator ID="RegularExpressionValidator316" runat="server" ErrorMessage="Value required" ControlToValidate="txtAIcentertotal" ValidationGroup="FO" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                                 </td>
                                                                 <td>
-                                                                    <asp:textbox clientidmode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txtAIperformSinglecow" runat="server" cssclass="form-control"></asp:textbox>
-                                                                    <asp:regularexpressionvalidator id="RegularExpressionValidator317" runat="server" errormessage="Value required" controltovalidate="txtAIperformSinglecow" validationgroup="FO" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                    <asp:TextBox ClientIDMode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtAIperformSinglecow" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                    <asp:RegularExpressionValidator ID="RegularExpressionValidator317" runat="server" ErrorMessage="Value required" ControlToValidate="txtAIperformSinglecow" ValidationGroup="FO" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                                 </td>
                                                                 <td>
-                                                                    <asp:textbox clientidmode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txtAIperformBuff1" runat="server" cssclass="form-control"></asp:textbox>
-                                                                    <asp:regularexpressionvalidator id="RegularExpressionValidator318" runat="server" errormessage="Value required" controltovalidate="txtAIperformBuff1" validationgroup="FO" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                    <asp:TextBox ClientIDMode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtAIperformBuff1" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                    <asp:RegularExpressionValidator ID="RegularExpressionValidator318" runat="server" ErrorMessage="Value required" ControlToValidate="txtAIperformBuff1" ValidationGroup="FO" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                                 </td>
                                                                 <td>
-                                                                    <asp:textbox clientidmode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txtAIperformclustercow" runat="server" cssclass="form-control"></asp:textbox>
-                                                                    <asp:regularexpressionvalidator id="RegularExpressionValidator319" runat="server" errormessage="Value required" controltovalidate="txtAIperformclustercow" validationgroup="FO" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                    <asp:TextBox ClientIDMode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtAIperformclustercow" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                    <asp:RegularExpressionValidator ID="RegularExpressionValidator319" runat="server" ErrorMessage="Value required" ControlToValidate="txtAIperformclustercow" ValidationGroup="FO" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                                 </td>
                                                                 <td>
-                                                                    <asp:textbox clientidmode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txtAIPerformBuff2" runat="server" cssclass="form-control"></asp:textbox>
-                                                                    <asp:regularexpressionvalidator id="RegularExpressionValidator320" runat="server" errormessage="Value required" controltovalidate="txtAIPerformBuff2" validationgroup="FO" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                    <asp:TextBox ClientIDMode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtAIPerformBuff2" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                    <asp:RegularExpressionValidator ID="RegularExpressionValidator320" runat="server" ErrorMessage="Value required" ControlToValidate="txtAIPerformBuff2" ValidationGroup="FO" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                                 </td>
                                                                 <td>
-                                                                    <asp:textbox clientidmode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txtAItotalCow" runat="server" cssclass="form-control"></asp:textbox>
-                                                                    <asp:regularexpressionvalidator id="RegularExpressionValidator321" runat="server" errormessage="Value required" controltovalidate="txtAItotalCow" validationgroup="FO" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                    <asp:TextBox ClientIDMode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtAItotalCow" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                    <asp:RegularExpressionValidator ID="RegularExpressionValidator321" runat="server" ErrorMessage="Value required" ControlToValidate="txtAItotalCow" ValidationGroup="FO" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                                 </td>
                                                                 <td>
-                                                                    <asp:textbox clientidmode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txtAItotalBuff" runat="server" cssclass="form-control"></asp:textbox>
-                                                                    <asp:regularexpressionvalidator id="RegularExpressionValidator322" runat="server" errormessage="Value required" controltovalidate="txtAItotalBuff" validationgroup="FO" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                    <asp:TextBox ClientIDMode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtAItotalBuff" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                    <asp:RegularExpressionValidator ID="RegularExpressionValidator322" runat="server" ErrorMessage="Value required" ControlToValidate="txtAItotalBuff" ValidationGroup="FO" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                                 </td>
                                                                 <td>
-                                                                    <asp:textbox clientidmode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txtAiperformedtotal" runat="server" cssclass="form-control"></asp:textbox>
-                                                                    <asp:regularexpressionvalidator id="RegularExpressionValidator323" runat="server" errormessage="Value required" controltovalidate="txtAiperformedtotal" validationgroup="FO" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                    <asp:TextBox ClientIDMode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtAiperformedtotal" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                    <asp:RegularExpressionValidator ID="RegularExpressionValidator323" runat="server" ErrorMessage="Value required" ControlToValidate="txtAiperformedtotal" ValidationGroup="FO" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                                 </td>
                                                             </tr>
                                                         </table>
@@ -469,44 +469,44 @@
                                                         </tr>
                                                         <tr>
                                                             <td>
-                                                                <asp:textbox clientidmode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txtcalvborntotalcow" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator324" runat="server" errormessage="Value required" controltovalidate="txtcalvborntotalcow" validationgroup="FO" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ClientIDMode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtcalvborntotalcow" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator324" runat="server" ErrorMessage="Value required" ControlToValidate="txtcalvborntotalcow" ValidationGroup="FO" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox clientidmode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txtcalvbornbuff" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator325" runat="server" errormessage="Value required" controltovalidate="txtcalvbornbuff" validationgroup="FO" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ClientIDMode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtcalvbornbuff" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator325" runat="server" ErrorMessage="Value required" ControlToValidate="txtcalvbornbuff" ValidationGroup="FO" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox clientidmode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txtanimalhusfirstAid" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator326" runat="server" errormessage="Value required" controltovalidate="txtanimalhusfirstAid" validationgroup="FO" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ClientIDMode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtanimalhusfirstAid" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator326" runat="server" ErrorMessage="Value required" ControlToValidate="txtanimalhusfirstAid" ValidationGroup="FO" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox clientidmode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txtaniamlhusAHWcase" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator327" runat="server" errormessage="Value required" controltovalidate="txtaniamlhusAHWcase" validationgroup="FO" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ClientIDMode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtaniamlhusAHWcase" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator327" runat="server" ErrorMessage="Value required" ControlToValidate="txtaniamlhusAHWcase" ValidationGroup="FO" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox clientidmode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txtcattlefiedsold" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator328" runat="server" errormessage="Value required" controltovalidate="txtcattlefiedsold" validationgroup="FO" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ClientIDMode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtcattlefiedsold" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator328" runat="server" ErrorMessage="Value required" ControlToValidate="txtcattlefiedsold" ValidationGroup="FO" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox clientidmode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txtdcsselingbcf" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator329" runat="server" errormessage="Value required" controltovalidate="txtdcsselingbcf" validationgroup="FO" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ClientIDMode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtdcsselingbcf" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator329" runat="server" ErrorMessage="Value required" ControlToValidate="txtdcsselingbcf" ValidationGroup="FO" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox clientidmode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txtmmsalebydcs" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator330" runat="server" errormessage="Value required" controltovalidate="txtmmsalebydcs" validationgroup="FO" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ClientIDMode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtmmsalebydcs" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator330" runat="server" ErrorMessage="Value required" ControlToValidate="txtmmsalebydcs" ValidationGroup="FO" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox clientidmode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txtcattinducproject" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator331" runat="server" errormessage="Value required" controltovalidate="txtcattinducproject" validationgroup="FO" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ClientIDMode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtcattinducproject" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator331" runat="server" ErrorMessage="Value required" ControlToValidate="txtcattinducproject" ValidationGroup="FO" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox clientidmode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txtcattinducselffinance" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator332" runat="server" errormessage="Value required" controltovalidate="txtcattinducselffinance" validationgroup="FO" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ClientIDMode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtcattinducselffinance" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator332" runat="server" ErrorMessage="Value required" ControlToValidate="txtcattinducselffinance" ValidationGroup="FO" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox clientidmode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txtcattleinductotal" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator333" runat="server" errormessage="Value required" controltovalidate="txtcattleinductotal" validationgroup="FO" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ClientIDMode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtcattleinductotal" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator333" runat="server" ErrorMessage="Value required" ControlToValidate="txtcattleinductotal" ValidationGroup="FO" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                         </tr>
                                                     </table>
@@ -538,56 +538,56 @@
                                                     </tr>
                                                     <tr>
                                                         <td>
-                                                            <asp:textbox clientidmode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txtsalarywagesPAC" runat="server" cssclass="form-control"></asp:textbox>
-                                                            <asp:regularexpressionvalidator id="RegularExpressionValidator334" runat="server" errormessage="Value required" controltovalidate="txtsalarywagesPAC" validationgroup="FO" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                            <asp:TextBox ClientIDMode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtsalarywagesPAC" runat="server" CssClass="form-control"></asp:TextBox>
+                                                            <asp:RegularExpressionValidator ID="RegularExpressionValidator334" runat="server" ErrorMessage="Value required" ControlToValidate="txtsalarywagesPAC" ValidationGroup="FO" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                         </td>
                                                         <td>
-                                                            <asp:textbox clientidmode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txtTaandtransportPAC" runat="server" cssclass="form-control"></asp:textbox>
-                                                            <asp:regularexpressionvalidator id="RegularExpressionValidator335" runat="server" errormessage="Value required" controltovalidate="txtTaandtransportPAC" validationgroup="FO" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                            <asp:TextBox ClientIDMode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtTaandtransportPAC" runat="server" CssClass="form-control"></asp:TextBox>
+                                                            <asp:RegularExpressionValidator ID="RegularExpressionValidator335" runat="server" ErrorMessage="Value required" ControlToValidate="txtTaandtransportPAC" ValidationGroup="FO" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                         </td>
                                                         <td>
-                                                            <asp:textbox clientidmode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txtcontractlabourPAC" runat="server" cssclass="form-control"></asp:textbox>
-                                                            <asp:regularexpressionvalidator id="RegularExpressionValidator336" runat="server" errormessage="Value required" controltovalidate="txtcontractlabourPAC" validationgroup="FO" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                            <asp:TextBox ClientIDMode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtcontractlabourPAC" runat="server" CssClass="form-control"></asp:TextBox>
+                                                            <asp:RegularExpressionValidator ID="RegularExpressionValidator336" runat="server" ErrorMessage="Value required" ControlToValidate="txtcontractlabourPAC" ValidationGroup="FO" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                         </td>
                                                         <td>
-                                                            <asp:textbox clientidmode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txtotherexpansesPAC" runat="server" cssclass="form-control"></asp:textbox>
-                                                            <asp:regularexpressionvalidator id="RegularExpressionValidator337" runat="server" errormessage="Value required" controltovalidate="txtotherexpansesPAC" validationgroup="FO" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                            <asp:TextBox ClientIDMode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtotherexpansesPAC" runat="server" CssClass="form-control"></asp:TextBox>
+                                                            <asp:RegularExpressionValidator ID="RegularExpressionValidator337" runat="server" ErrorMessage="Value required" ControlToValidate="txtotherexpansesPAC" ValidationGroup="FO" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                         </td>
                                                         <td>
-                                                            <asp:textbox clientidmode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txttotalPAC" runat="server" cssclass="form-control"></asp:textbox>
-                                                            <asp:regularexpressionvalidator id="RegularExpressionValidator338" runat="server" errormessage="Value required" controltovalidate="txttotalPAC" validationgroup="FO" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                            <asp:TextBox ClientIDMode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txttotalPAC" runat="server" CssClass="form-control"></asp:TextBox>
+                                                            <asp:RegularExpressionValidator ID="RegularExpressionValidator338" runat="server" ErrorMessage="Value required" ControlToValidate="txttotalPAC" ValidationGroup="FO" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                         </td>
                                                         <td>
-                                                            <asp:textbox clientidmode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txtsalaryandwagesAiActivites" runat="server" cssclass="form-control"></asp:textbox>
-                                                            <asp:regularexpressionvalidator id="RegularExpressionValidator339" runat="server" errormessage="Value required" controltovalidate="txtsalaryandwagesAiActivites" validationgroup="FO" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                            <asp:TextBox ClientIDMode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtsalaryandwagesAiActivites" runat="server" CssClass="form-control"></asp:TextBox>
+                                                            <asp:RegularExpressionValidator ID="RegularExpressionValidator339" runat="server" ErrorMessage="Value required" ControlToValidate="txtsalaryandwagesAiActivites" ValidationGroup="FO" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                         </td>
                                                         <td>
-                                                            <asp:textbox clientidmode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txttransportAiActivites" runat="server" cssclass="form-control"></asp:textbox>
-                                                            <asp:regularexpressionvalidator id="RegularExpressionValidator340" runat="server" errormessage="Value required" controltovalidate="txttransportAiActivites" validationgroup="FO" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                            <asp:TextBox ClientIDMode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txttransportAiActivites" runat="server" CssClass="form-control"></asp:TextBox>
+                                                            <asp:RegularExpressionValidator ID="RegularExpressionValidator340" runat="server" ErrorMessage="Value required" ControlToValidate="txttransportAiActivites" ValidationGroup="FO" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                         </td>
                                                         <td>
-                                                            <asp:textbox clientidmode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txtLn2ConsumedAiAcitivites" runat="server" cssclass="form-control"></asp:textbox>
-                                                            <asp:regularexpressionvalidator id="RegularExpressionValidator341" runat="server" errormessage="Value required" controltovalidate="txtLn2ConsumedAiAcitivites" validationgroup="FO" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                            <asp:TextBox ClientIDMode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtLn2ConsumedAiAcitivites" runat="server" CssClass="form-control"></asp:TextBox>
+                                                            <asp:RegularExpressionValidator ID="RegularExpressionValidator341" runat="server" ErrorMessage="Value required" ControlToValidate="txtLn2ConsumedAiAcitivites" ValidationGroup="FO" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                         </td>
                                                         <td>
-                                                            <asp:textbox clientidmode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txtLn2transportAiactivites" runat="server" cssclass="form-control"></asp:textbox>
-                                                            <asp:regularexpressionvalidator id="RegularExpressionValidator342" runat="server" errormessage="Value required" controltovalidate="txtLn2transportAiactivites" validationgroup="FO" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                            <asp:TextBox ClientIDMode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtLn2transportAiactivites" runat="server" CssClass="form-control"></asp:TextBox>
+                                                            <asp:RegularExpressionValidator ID="RegularExpressionValidator342" runat="server" ErrorMessage="Value required" ControlToValidate="txtLn2transportAiactivites" ValidationGroup="FO" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                         </td>
                                                         <td>
-                                                            <asp:textbox clientidmode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txtsemenandstrawesAiactivites" runat="server" cssclass="form-control"></asp:textbox>
-                                                            <asp:regularexpressionvalidator id="RegularExpressionValidator343" runat="server" errormessage="Value required" controltovalidate="txtsemenandstrawesAiactivites" validationgroup="FO" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                            <asp:TextBox ClientIDMode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtsemenandstrawesAiactivites" runat="server" CssClass="form-control"></asp:TextBox>
+                                                            <asp:RegularExpressionValidator ID="RegularExpressionValidator343" runat="server" ErrorMessage="Value required" ControlToValidate="txtsemenandstrawesAiactivites" ValidationGroup="FO" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                         </td>
                                                         <td>
-                                                            <asp:textbox clientidmode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txtotherdirectcostAiactivites" runat="server" cssclass="form-control"></asp:textbox>
-                                                            <asp:regularexpressionvalidator id="RegularExpressionValidator344" runat="server" errormessage="Value required" controltovalidate="txtotherdirectcostAiactivites" validationgroup="FO" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                            <asp:TextBox ClientIDMode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtotherdirectcostAiactivites" runat="server" CssClass="form-control"></asp:TextBox>
+                                                            <asp:RegularExpressionValidator ID="RegularExpressionValidator344" runat="server" ErrorMessage="Value required" ControlToValidate="txtotherdirectcostAiactivites" ValidationGroup="FO" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                         </td>
                                                         <td>
-                                                            <asp:textbox clientidmode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txtlessincomeAiactivites" runat="server" cssclass="form-control"></asp:textbox>
-                                                            <asp:regularexpressionvalidator id="RegularExpressionValidator345" runat="server" errormessage="Value required" controltovalidate="txtlessincomeAiactivites" validationgroup="FO" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                            <asp:TextBox ClientIDMode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtlessincomeAiactivites" runat="server" CssClass="form-control"></asp:TextBox>
+                                                            <asp:RegularExpressionValidator ID="RegularExpressionValidator345" runat="server" ErrorMessage="Value required" ControlToValidate="txtlessincomeAiactivites" ValidationGroup="FO" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                         </td>
                                                         <td>
-                                                            <asp:textbox clientidmode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txttotalcostAiactivites" runat="server" cssclass="form-control"></asp:textbox>
-                                                            <asp:regularexpressionvalidator id="RegularExpressionValidator346" runat="server" errormessage="Value required" controltovalidate="txttotalcostAiactivites" validationgroup="FO" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                            <asp:TextBox ClientIDMode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txttotalcostAiactivites" runat="server" CssClass="form-control"></asp:TextBox>
+                                                            <asp:RegularExpressionValidator ID="RegularExpressionValidator346" runat="server" ErrorMessage="Value required" ControlToValidate="txttotalcostAiactivites" ValidationGroup="FO" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                         </td>
                                                     </tr>
                                                 </table>
@@ -606,28 +606,28 @@
                                                     </tr>
                                                     <tr>
                                                         <td>
-                                                            <asp:textbox clientidmode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txtAHCsalaryandwages" runat="server" cssclass="form-control"></asp:textbox>
-                                                            <asp:regularexpressionvalidator id="RegularExpressionValidator347" runat="server" errormessage="Value required" controltovalidate="txtAHCsalaryandwages" validationgroup="FO" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                            <asp:TextBox ClientIDMode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtAHCsalaryandwages" runat="server" CssClass="form-control"></asp:TextBox>
+                                                            <asp:RegularExpressionValidator ID="RegularExpressionValidator347" runat="server" ErrorMessage="Value required" ControlToValidate="txtAHCsalaryandwages" ValidationGroup="FO" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                         </td>
                                                         <td>
-                                                            <asp:textbox clientidmode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txtAHCotherdirectcost" runat="server" cssclass="form-control"></asp:textbox>
-                                                            <asp:regularexpressionvalidator id="RegularExpressionValidator348" runat="server" errormessage="Value required" controltovalidate="txtAHCotherdirectcost" validationgroup="FO" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                            <asp:TextBox ClientIDMode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtAHCotherdirectcost" runat="server" CssClass="form-control"></asp:TextBox>
+                                                            <asp:RegularExpressionValidator ID="RegularExpressionValidator348" runat="server" ErrorMessage="Value required" ControlToValidate="txtAHCotherdirectcost" ValidationGroup="FO" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                         </td>
                                                         <td>
-                                                            <asp:textbox clientidmode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txtAHCtotalCost" runat="server" cssclass="form-control"></asp:textbox>
-                                                            <asp:regularexpressionvalidator id="RegularExpressionValidator349" runat="server" errormessage="Value required" controltovalidate="txtAHCtotalCost" validationgroup="FO" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                            <asp:TextBox ClientIDMode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtAHCtotalCost" runat="server" CssClass="form-control"></asp:TextBox>
+                                                            <asp:RegularExpressionValidator ID="RegularExpressionValidator349" runat="server" ErrorMessage="Value required" ControlToValidate="txtAHCtotalCost" ValidationGroup="FO" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                         </td>
                                                         <td>
-                                                            <asp:textbox clientidmode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txtFPCsalryandwages" runat="server" cssclass="form-control"></asp:textbox>
-                                                            <asp:regularexpressionvalidator id="RegularExpressionValidator350" runat="server" errormessage="Value required" controltovalidate="txtFPCsalryandwages" validationgroup="FO" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                            <asp:TextBox ClientIDMode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtFPCsalryandwages" runat="server" CssClass="form-control"></asp:TextBox>
+                                                            <asp:RegularExpressionValidator ID="RegularExpressionValidator350" runat="server" ErrorMessage="Value required" ControlToValidate="txtFPCsalryandwages" ValidationGroup="FO" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                         </td>
                                                         <td>
-                                                            <asp:textbox clientidmode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txtFPCotherdirectcost" runat="server" cssclass="form-control"></asp:textbox>
-                                                            <asp:regularexpressionvalidator id="RegularExpressionValidator351" runat="server" errormessage="Value required" controltovalidate="txtFPCotherdirectcost" validationgroup="FO" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                            <asp:TextBox ClientIDMode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtFPCotherdirectcost" runat="server" CssClass="form-control"></asp:TextBox>
+                                                            <asp:RegularExpressionValidator ID="RegularExpressionValidator351" runat="server" ErrorMessage="Value required" ControlToValidate="txtFPCotherdirectcost" ValidationGroup="FO" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                         </td>
                                                         <td>
-                                                            <asp:textbox clientidmode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txtFPCtotalcost" runat="server" cssclass="form-control"></asp:textbox>
-                                                            <asp:regularexpressionvalidator id="RegularExpressionValidator352" runat="server" errormessage="Value required" controltovalidate="txtFPCtotalcost" validationgroup="FO" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                            <asp:TextBox ClientIDMode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtFPCtotalcost" runat="server" CssClass="form-control"></asp:TextBox>
+                                                            <asp:RegularExpressionValidator ID="RegularExpressionValidator352" runat="server" ErrorMessage="Value required" ControlToValidate="txtFPCtotalcost" ValidationGroup="FO" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                         </td>
                                                     </tr>
                                                 </table>
@@ -648,36 +648,36 @@
                                                     </tr>
                                                     <tr>
                                                         <td>
-                                                            <asp:textbox clientidmode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txtTEcostsalaryandwages" runat="server" cssclass="form-control"></asp:textbox>
-                                                            <asp:regularexpressionvalidator id="RegularExpressionValidator353" runat="server" errormessage="Value required" controltovalidate="txtTEcostsalaryandwages" validationgroup="FO" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                            <asp:TextBox ClientIDMode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtTEcostsalaryandwages" runat="server" CssClass="form-control"></asp:TextBox>
+                                                            <asp:RegularExpressionValidator ID="RegularExpressionValidator353" runat="server" ErrorMessage="Value required" ControlToValidate="txtTEcostsalaryandwages" ValidationGroup="FO" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                         </td>
                                                         <td>
-                                                            <asp:textbox clientidmode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txtTEcostotherdirectcost" runat="server" cssclass="form-control"></asp:textbox>
-                                                            <asp:regularexpressionvalidator id="RegularExpressionValidator354" runat="server" errormessage="Value required" controltovalidate="txtTEcostotherdirectcost" validationgroup="FO" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                            <asp:TextBox ClientIDMode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtTEcostotherdirectcost" runat="server" CssClass="form-control"></asp:TextBox>
+                                                            <asp:RegularExpressionValidator ID="RegularExpressionValidator354" runat="server" ErrorMessage="Value required" ControlToValidate="txtTEcostotherdirectcost" ValidationGroup="FO" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                         </td>
                                                         <td>
-                                                            <asp:textbox clientidmode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txtTEcostlessincome" runat="server" cssclass="form-control"></asp:textbox>
-                                                            <asp:regularexpressionvalidator id="RegularExpressionValidator355" runat="server" errormessage="Value required" controltovalidate="txtTEcostlessincome" validationgroup="FO" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                            <asp:TextBox ClientIDMode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtTEcostlessincome" runat="server" CssClass="form-control"></asp:TextBox>
+                                                            <asp:RegularExpressionValidator ID="RegularExpressionValidator355" runat="server" ErrorMessage="Value required" ControlToValidate="txtTEcostlessincome" ValidationGroup="FO" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                         </td>
                                                         <td>
-                                                            <asp:textbox clientidmode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txtTotalCost" runat="server" cssclass="form-control"></asp:textbox>
-                                                            <asp:regularexpressionvalidator id="RegularExpressionValidator356" runat="server" errormessage="Value required" controltovalidate="txtTotalCost" validationgroup="FO" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                            <asp:TextBox ClientIDMode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtTotalCost" runat="server" CssClass="form-control"></asp:TextBox>
+                                                            <asp:RegularExpressionValidator ID="RegularExpressionValidator356" runat="server" ErrorMessage="Value required" ControlToValidate="txtTotalCost" ValidationGroup="FO" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                         </td>
                                                         <td>
-                                                            <asp:textbox clientidmode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txtsalaryandwagesOTI" runat="server" cssclass="form-control"></asp:textbox>
-                                                            <asp:regularexpressionvalidator id="RegularExpressionValidator357" runat="server" errormessage="Value required" controltovalidate="txtsalaryandwagesOTI" validationgroup="FO" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                            <asp:TextBox ClientIDMode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtsalaryandwagesOTI" runat="server" CssClass="form-control"></asp:TextBox>
+                                                            <asp:RegularExpressionValidator ID="RegularExpressionValidator357" runat="server" ErrorMessage="Value required" ControlToValidate="txtsalaryandwagesOTI" ValidationGroup="FO" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                         </td>
                                                         <td>
-                                                            <asp:textbox clientidmode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txtotherincmecostOTI" runat="server" cssclass="form-control"></asp:textbox>
-                                                            <asp:regularexpressionvalidator id="RegularExpressionValidator358" runat="server" errormessage="Value required" controltovalidate="txtotherincmecostOTI" validationgroup="FO" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                            <asp:TextBox ClientIDMode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtotherincmecostOTI" runat="server" CssClass="form-control"></asp:TextBox>
+                                                            <asp:RegularExpressionValidator ID="RegularExpressionValidator358" runat="server" ErrorMessage="Value required" ControlToValidate="txtotherincmecostOTI" ValidationGroup="FO" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                         </td>
                                                         <td>
-                                                            <asp:textbox clientidmode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txtOIcostlessincome" runat="server" cssclass="form-control"></asp:textbox>
-                                                            <asp:regularexpressionvalidator id="RegularExpressionValidator359" runat="server" errormessage="Value required" controltovalidate="txtOIcostlessincome" validationgroup="FO" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                            <asp:TextBox ClientIDMode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtOIcostlessincome" runat="server" CssClass="form-control"></asp:TextBox>
+                                                            <asp:RegularExpressionValidator ID="RegularExpressionValidator359" runat="server" ErrorMessage="Value required" ControlToValidate="txtOIcostlessincome" ValidationGroup="FO" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                         </td>
                                                         <td>
-                                                            <asp:textbox clientidmode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txttotalcostOTI" runat="server" cssclass="form-control"></asp:textbox>
-                                                            <asp:regularexpressionvalidator id="RegularExpressionValidator360" runat="server" errormessage="Value required" controltovalidate="txttotalcostOTI" validationgroup="FO" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                            <asp:TextBox ClientIDMode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txttotalcostOTI" runat="server" CssClass="form-control"></asp:TextBox>
+                                                            <asp:RegularExpressionValidator ID="RegularExpressionValidator360" runat="server" ErrorMessage="Value required" ControlToValidate="txttotalcostOTI" ValidationGroup="FO" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                         </td>
                                                     </tr>
                                                 </table>
@@ -688,12 +688,12 @@
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label><b>Grand Total</b></label>
-                                                <asp:textbox clientidmode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txtFOGrandTotal" runat="server" cssclass="form-control"></asp:textbox>
+                                                <asp:TextBox ClientIDMode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtFOGrandTotal" runat="server" CssClass="form-control"></asp:TextBox>
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <asp:button id="btnFO" runat="server" style="margin-top: 19px;" cssclass="btn btn-primary btn-block" text="Save" validationgroup="FO" onclick="btnFO_Click"></asp:button>
+                                                <asp:Button ID="btnFO" runat="server" Style="margin-top: 19px;" CssClass="btn btn-primary btn-block" Text="Save" ValidationGroup="FO" OnClick="btnFO_Click"></asp:Button>
                                             </div>
                                         </div>
                                     </div>
@@ -719,28 +719,29 @@
                                                         </tr>
                                                         <tr>
                                                             <td>
-                                                                <asp:textbox id="txtDCSmilkRMRD" onpaste="return false" clientidmode="Static" onkeyup="MPcalc()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator222" runat="server" errormessage="Value required" controltovalidate="txtDCSmilkRMRD" validationgroup="MPAS" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ID="txtDCSmilkRMRD" onpaste="return false" ClientIDMode="Static" onkeyup="MPcalc()" oninput="validate(this)" AutoComplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator222" runat="server" ErrorMessage="Value required" ControlToValidate="txtDCSmilkRMRD" ValidationGroup="MPAS" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox id="txtDCSmilkCCS" onpaste="return false" clientidmode="Static" onkeyup="MPcalc()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator223" runat="server" errormessage="Value required" controltovalidate="txtDCSmilkCCS" validationgroup="MPAS" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ID="txtDCSmilkCCS" onpaste="return false" ClientIDMode="Static" onkeyup="MPcalc()" oninput="validate(this)" AutoComplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator223" runat="server" ErrorMessage="Value required" ControlToValidate="txtDCSmilkCCS" ValidationGroup="MPAS" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox id="txtSMGMILK" onpaste="return false" clientidmode="Static" onkeyup="MPcalc()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator224" runat="server" errormessage="Value required" controltovalidate="txtSMGMILK" validationgroup="MPAS" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ID="txtSMGMILK" onpaste="return false" ClientIDMode="Static" onkeyup="MPcalc()" oninput="validate(this)" AutoComplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator224" runat="server" ErrorMessage="Value required" ControlToValidate="txtSMGMILK" ValidationGroup="MPAS" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox id="txtNMGmilk" onpaste="return false" clientidmode="Static" onkeyup="MPcalc()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator225" runat="server" errormessage="Value required" controltovalidate="txtNMGmilk" validationgroup="MPAS" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ID="txtNMGmilk" onpaste="return false" ClientIDMode="Static" onkeyup="MPcalc()" oninput="validate(this)" AutoComplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator225" runat="server" ErrorMessage="Value required" ControlToValidate="txtNMGmilk" ValidationGroup="MPAS" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox id="txtOTHER" onpaste="return false" clientidmode="Static" onkeyup="MPcalc()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator226" runat="server" errormessage="Value required" controltovalidate="txtOTHER" validationgroup="MPAS" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ID="txtOTHER" onpaste="return false" ClientIDMode="Static" onkeyup="MPcalc()" oninput="validate(this)" AutoComplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator226" runat="server" ErrorMessage="Value required" ControlToValidate="txtOTHER" ValidationGroup="MPAS" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
+                                                                <asp:HiddenField ClientIDMode="Static" ID="hfTotalMP" runat="server" />
                                                             </td>
                                                             <td>
-                                                                <asp:textbox id="txttotalMilkProc" onpaste="return false" clientidmode="Static" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator227" runat="server" errormessage="Value required" controltovalidate="txttotalMilkProc" validationgroup="MPAS" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ID="txttotalMilkProc" onpaste="return false" ClientIDMode="Static" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator227" runat="server" ErrorMessage="Value required" ControlToValidate="txttotalMilkProc" ValidationGroup="MPAS" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                         </tr>
                                                     </table>
@@ -764,52 +765,54 @@
                                                         </tr>
                                                         <tr>
                                                             <td>
-                                                                <asp:textbox id="txtwholemilk" onpaste="return false" clientidmode="Static" oninput="validate(this)" onkeyup="LMScalc()" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator228" runat="server" errormessage="Value required" controltovalidate="txtwholemilk" validationgroup="MPAS" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ID="txtwholemilk" onpaste="return false" ClientIDMode="Static" oninput="validate(this)" onkeyup="LMScalc()" AutoComplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator228" runat="server" ErrorMessage="Value required" ControlToValidate="txtwholemilk" ValidationGroup="MPAS" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox id="txtfullcreammilk" onpaste="return false" clientidmode="Static" oninput="validate(this)" onkeyup="LMScalc()" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator229" runat="server" errormessage="Value required" controltovalidate="txtfullcreammilk" validationgroup="MPAS" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ID="txtfullcreammilk" onpaste="return false" ClientIDMode="Static" oninput="validate(this)" onkeyup="LMScalc()" AutoComplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator229" runat="server" ErrorMessage="Value required" ControlToValidate="txtfullcreammilk" ValidationGroup="MPAS" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox id="txtstdmilk" onpaste="return false" clientidmode="Static" oninput="validate(this)" onkeyup="LMScalc()" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator230" runat="server" errormessage="Value required" controltovalidate="txtstdmilk" validationgroup="MPAS" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ID="txtstdmilk" onpaste="return false" ClientIDMode="Static" oninput="validate(this)" onkeyup="LMScalc()" AutoComplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator230" runat="server" ErrorMessage="Value required" ControlToValidate="txtstdmilk" ValidationGroup="MPAS" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox id="txttonedmilk" onpaste="return false" clientidmode="Static" oninput="validate(this)" onkeyup="LMScalc()" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator231" runat="server" errormessage="Value required" controltovalidate="txttonedmilk" validationgroup="MPAS" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ID="txttonedmilk" onpaste="return false" ClientIDMode="Static" oninput="validate(this)" onkeyup="LMScalc()" AutoComplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator231" runat="server" ErrorMessage="Value required" ControlToValidate="txttonedmilk" ValidationGroup="MPAS" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox id="txtdtmilk" onpaste="return false" clientidmode="Static" oninput="validate(this)" onkeyup="LMScalc()" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator232" runat="server" errormessage="Value required" controltovalidate="txtdtmilk" validationgroup="MPAS" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ID="txtdtmilk" onpaste="return false" ClientIDMode="Static" oninput="validate(this)" onkeyup="LMScalc()" AutoComplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator232" runat="server" ErrorMessage="Value required" ControlToValidate="txtdtmilk" ValidationGroup="MPAS" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox id="txtskimmilk" onpaste="return false" clientidmode="Static" oninput="validate(this)" onkeyup="LMScalc()" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator233" runat="server" errormessage="Value required" controltovalidate="txtskimmilk" validationgroup="MPAS" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ID="txtskimmilk" onpaste="return false" ClientIDMode="Static" oninput="validate(this)" onkeyup="LMScalc()" AutoComplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator233" runat="server" ErrorMessage="Value required" ControlToValidate="txtskimmilk" ValidationGroup="MPAS" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox id="txtrawchilldmilk" onpaste="return false" clientidmode="Static" oninput="validate(this)" onkeyup="LMScalc()" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator234" runat="server" errormessage="Value required" controltovalidate="txtrawchilldmilk" validationgroup="MPAS" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ID="txtrawchilldmilk" onpaste="return false" ClientIDMode="Static" oninput="validate(this)" onkeyup="LMScalc()" AutoComplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator234" runat="server" ErrorMessage="Value required" ControlToValidate="txtskimmilk" ValidationGroup="MPAS" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox id="txtchaispecimilk" onpaste="return false" clientidmode="Static" oninput="validate(this)" onkeyup="LMScalc()" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator235" runat="server" errormessage="Value required" controltovalidate="txtchaispecimilk" validationgroup="MPAS" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ID="txtchaispecimilk" onpaste="return false" ClientIDMode="Static" oninput="validate(this)" onkeyup="LMScalc()" AutoComplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator235" runat="server" ErrorMessage="Value required" ControlToValidate="txtchaispecimilk" ValidationGroup="MPAS" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox id="txtcowmilk" onpaste="return false" clientidmode="Static" oninput="validate(this)" onkeyup="LMScalc()" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator236" runat="server" errormessage="Value required" controltovalidate="txtcowmilk" validationgroup="MPAS" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ID="txtcowmilk" onpaste="return false" ClientIDMode="Static" oninput="validate(this)" onkeyup="LMScalc()" AutoComplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator236" runat="server" ErrorMessage="Value required" ControlToValidate="txtcowmilk" ValidationGroup="MPAS" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox id="txtsanchilitemilk" onpaste="return false" clientidmode="Static" onkeyup="LMScalc()" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator237" runat="server" errormessage="Value required" controltovalidate="txtsanchilitemilk" validationgroup="MPAS" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ID="txtsanchilitemilk" onpaste="return false" ClientIDMode="Static" onkeyup="LMScalc()" AutoComplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator237" runat="server" ErrorMessage="Value required" ControlToValidate="txtsanchilitemilk" ValidationGroup="MPAS" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox id="txtchahamilk" onpaste="return false" clientidmode="Static" oninput="validate(this)" onkeyup="LMScalc()" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator238" runat="server" errormessage="Value required" controltovalidate="txtchahamilk" validationgroup="MPAS" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ID="txtchahamilk" onpaste="return false" ClientIDMode="Static" oninput="validate(this)" onkeyup="LMScalc()" AutoComplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator238" runat="server" ErrorMessage="Value required" ControlToValidate="txtchahamilk" ValidationGroup="MPAS" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox id="txttotalmilksale" onpaste="return false" clientidmode="Static" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator239" runat="server" errormessage="Value required" controltovalidate="txttotalmilksale" validationgroup="MPAS" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ID="txttotalmilksale" onpaste="return false" ClientIDMode="Static" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator239" runat="server" ErrorMessage="Value required" ControlToValidate="txttotalmilksale" ValidationGroup="MPAS" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
+                                                                <asp:HiddenField ClientIDMode="Static" ID="hftotalmilksale" runat="server" />
+                                                                <asp:HiddenField ClientIDMode="Static" ID="hfDay" runat="server" />
                                                             </td>
                                                         </tr>
                                                     </table>
@@ -835,52 +838,55 @@
                                                         </tr>
                                                         <tr>
                                                             <td>
-                                                                <asp:textbox id="txtwholemilk_SMG" onpaste="return false" clientidmode="Static" onblur="SMGcalc()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator240" runat="server" errormessage="Value required" controltovalidate="txtwholemilk_SMG" validationgroup="MPAS" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ID="txtwholemilk_SMG" onpaste="return false" ClientIDMode="Static" onBlur="SMGcalc()" oninput="validate(this)" AutoComplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator240" runat="server" ErrorMessage="Value required" ControlToValidate="txtwholemilk_SMG" ValidationGroup="MPAS" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox id="txtskimmilk_SMG" onpaste="return false" clientidmode="Static" onblur="SMGcalc1()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator241" runat="server" errormessage="Value required" controltovalidate="txtskimmilk_SMG" validationgroup="MPAS" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ID="txtskimmilk_SMG" onpaste="return false" ClientIDMode="Static" onBlur="SMGcalc1()" oninput="validate(this)" AutoComplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator241" runat="server" ErrorMessage="Value required" ControlToValidate="txtskimmilk_SMG" ValidationGroup="MPAS" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox id="txtOther_SMG" onpaste="return false" clientidmode="Static" onblur="SMGcalc2()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator242" runat="server" errormessage="Value required" controltovalidate="txtOther_SMG" validationgroup="MPAS" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ID="txtOther_SMG" onpaste="return false" ClientIDMode="Static" onBlur="SMGcalc2()" oninput="validate(this)" AutoComplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator242" runat="server" ErrorMessage="Value required" ControlToValidate="txtOther_SMG" ValidationGroup="MPAS" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox id="txtTotalsmgsale_SMG" onpaste="return false" clientidmode="Static" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator243" runat="server" errormessage="Value required" controltovalidate="txtTotalsmgsale_SMG" validationgroup="MPAS" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ID="txtTotalsmgsale_SMG" onpaste="return false" ClientIDMode="Static" oninput="validate(this)" AutoComplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator243" runat="server" ErrorMessage="Value required" ControlToValidate="txtTotalsmgsale_SMG" ValidationGroup="MPAS" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
+                                                                <asp:HiddenField ClientIDMode="Static" ID="hfSMS_TotalSMGSale" runat="server" />
                                                             </td>
                                                             <td>
-                                                                <asp:textbox id="txtwholemilk_NMG" onpaste="return false" clientidmode="Static" onblur="NMGcalc()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator244" runat="server" errormessage="Value required" controltovalidate="txtwholemilk_NMG" validationgroup="MPAS" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ID="txtwholemilk_NMG" onpaste="return false" ClientIDMode="Static" onBlur="NMGcalc()" oninput="validate(this)" AutoComplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator244" runat="server" ErrorMessage="Value required" ControlToValidate="txtwholemilk_NMG" ValidationGroup="MPAS" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox id="txtskimmilk_NMG" onpaste="return false" clientidmode="Static" onblur="NMGcalc1()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator245" runat="server" errormessage="Value required" controltovalidate="txtskimmilk_NMG" validationgroup="MPAS" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ID="txtskimmilk_NMG" onpaste="return false" ClientIDMode="Static" onBlur="NMGcalc1()" oninput="validate(this)" AutoComplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator245" runat="server" ErrorMessage="Value required" ControlToValidate="txtskimmilk_NMG" ValidationGroup="MPAS" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox id="txtOther_NMG" onpaste="return false" clientidmode="Static" onblur="NMGcalc2()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator246" runat="server" errormessage="Value required" controltovalidate="txtOther_NMG" validationgroup="MPAS" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ID="txtOther_NMG" onpaste="return false" ClientIDMode="Static" onBlur="NMGcalc2()" oninput="validate(this)" AutoComplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator246" runat="server" ErrorMessage="Value required" ControlToValidate="txtOther_NMG" ValidationGroup="MPAS" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox id="txtTotalNMGsale_NMG" onpaste="return false" clientidmode="Static" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator247" runat="server" errormessage="Value required" controltovalidate="txtTotalNMGsale_NMG" validationgroup="MPAS" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ID="txtTotalNMGsale_NMG" onpaste="return false" ClientIDMode="Static" oninput="validate(this)" AutoComplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator247" runat="server" ErrorMessage="Value required" ControlToValidate="txtTotalNMGsale_NMG" ValidationGroup="MPAS" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
+                                                                <asp:HiddenField ClientIDMode="Static" ID="hfTotal_NMS_OS" runat="server" />
                                                             </td>
                                                             <td>
-                                                                <asp:textbox id="txtwholmilkinLit_OSALE" onpaste="return false" clientidmode="Static" onblur="OScalc()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator248" runat="server" errormessage="Value required" controltovalidate="txtwholmilkinLit_OSALE" validationgroup="MPAS" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ID="txtwholmilkinLit_OSALE" onpaste="return false" ClientIDMode="Static" onBlur="OScalc()" oninput="validate(this)" AutoComplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator248" runat="server" ErrorMessage="Value required" ControlToValidate="txtwholmilkinLit_OSALE" ValidationGroup="MPAS" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox id="txtskimmilkinLit_OSALE" onpaste="return false" clientidmode="Static" onblur="OScalc1()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator249" runat="server" errormessage="Value required" controltovalidate="txtskimmilkinLit_OSALE" validationgroup="MPAS" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ID="txtskimmilkinLit_OSALE" onpaste="return false" ClientIDMode="Static" onBlur="OScalc1()" oninput="validate(this)" AutoComplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator249" runat="server" ErrorMessage="Value required" ControlToValidate="txtskimmilkinLit_OSALE" ValidationGroup="MPAS" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox id="txtOther_OSALE" onpaste="return false" clientidmode="Static" onblur="OScalc2()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator250" runat="server" errormessage="Value required" controltovalidate="txtOther_OSALE" validationgroup="MPAS" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ID="txtOther_OSALE" onpaste="return false" ClientIDMode="Static" onBlur="OScalc2()" oninput="validate(this)" AutoComplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" runat="server" CssClass="form-control"></asp:TextBox>
+
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator250" runat="server" ErrorMessage="Value required" ControlToValidate="txtOther_OSALE" ValidationGroup="MPAS" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox id="txttotalBulkSale_OSALE" onpaste="return false" clientidmode="Static" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator251" runat="server" errormessage="Value required" controltovalidate="txttotalBulkSale_OSALE" validationgroup="MPAS" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ID="txttotalBulkSale_OSALE" onpaste="return false" ClientIDMode="Static" oninput="validate(this)" AutoComplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator251" runat="server" ErrorMessage="Value required" ControlToValidate="txttotalBulkSale_OSALE" ValidationGroup="MPAS" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                         </tr>
                                                     </table>
@@ -919,44 +925,44 @@
                                                         </tr>
                                                         <tr>
                                                             <td>
-                                                                <asp:textbox id="txtMILKPROC_monthly" onpaste="return false" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator252" runat="server" errormessage="Value required" controltovalidate="txtMILKPROC_monthly" validationgroup="MPAS" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ID="txtMILKPROC_monthly" onpaste="return false" oninput="validate(this)" AutoComplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator252" runat="server" ErrorMessage="Value required" ControlToValidate="txtMILKPROC_monthly" ValidationGroup="MPAS" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox id="txtMILKPROC_Cummulat" onpaste="return false" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator253" runat="server" errormessage="Value required" controltovalidate="txtMILKPROC_Cummulat" validationgroup="MPAS" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ID="txtMILKPROC_Cummulat" onpaste="return false" oninput="validate(this)" AutoComplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator253" runat="server" ErrorMessage="Value required" ControlToValidate="txtMILKPROC_Cummulat" ValidationGroup="MPAS" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox id="txtLocalMILK_MOnthly" onpaste="return false" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator254" runat="server" errormessage="Value required" controltovalidate="txtLocalMILK_MOnthly" validationgroup="MPAS" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ID="txtLocalMILK_MOnthly" onpaste="return false" oninput="validate(this)" AutoComplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator254" runat="server" ErrorMessage="Value required" ControlToValidate="txtLocalMILK_MOnthly" ValidationGroup="MPAS" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox id="txtLocalMilk_Cummulat" onpaste="return false" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator255" runat="server" errormessage="Value required" controltovalidate="txtLocalMilk_Cummulat" validationgroup="MPAS" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ID="txtLocalMilk_Cummulat" onpaste="return false" oninput="validate(this)" AutoComplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator255" runat="server" ErrorMessage="Value required" ControlToValidate="txtLocalMilk_Cummulat" ValidationGroup="MPAS" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox id="txtTotalMilkSale_Monthly" onpaste="return false" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator256" runat="server" errormessage="Value required" controltovalidate="txtTotalMilkSale_Monthly" validationgroup="MPAS" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ID="txtTotalMilkSale_Monthly" onpaste="return false" oninput="validate(this)" AutoComplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator256" runat="server" ErrorMessage="Value required" ControlToValidate="txtTotalMilkSale_Monthly" ValidationGroup="MPAS" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox id="txtTotalMilkSale_Cummulat" onpaste="return false" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator257" runat="server" errormessage="Value required" controltovalidate="txtTotalMilkSale_Cummulat" validationgroup="MPAS" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ID="txtTotalMilkSale_Cummulat" onpaste="return false" oninput="validate(this)" AutoComplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator257" runat="server" ErrorMessage="Value required" ControlToValidate="txtTotalMilkSale_Cummulat" ValidationGroup="MPAS" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox id="txtSMGmilk_Monthly" onpaste="return false" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator258" runat="server" errormessage="Value required" controltovalidate="txtSMGmilk_Monthly" validationgroup="MPAS" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ID="txtSMGmilk_Monthly" onpaste="return false" oninput="validate(this)" AutoComplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator258" runat="server" ErrorMessage="Value required" ControlToValidate="txtSMGmilk_Monthly" ValidationGroup="MPAS" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox id="txtSMGmilk_Cummulat" onpaste="return false" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator259" runat="server" errormessage="Value required" controltovalidate="txtSMGmilk_Cummulat" validationgroup="MPAS" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ID="txtSMGmilk_Cummulat" onpaste="return false" oninput="validate(this)" AutoComplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator259" runat="server" ErrorMessage="Value required" ControlToValidate="txtSMGmilk_Cummulat" ValidationGroup="MPAS" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox id="txtNMGOTH_MOnthly" onpaste="return false" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator260" runat="server" errormessage="Value required" controltovalidate="txtNMGOTH_MOnthly" validationgroup="MPAS" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ID="txtNMGOTH_MOnthly" onpaste="return false" oninput="validate(this)" AutoComplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator260" runat="server" ErrorMessage="Value required" ControlToValidate="txtNMGOTH_MOnthly" ValidationGroup="MPAS" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox id="txtNMGOTH_Cummulat" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator261" runat="server" errormessage="Value required" controltovalidate="txtNMGOTH_Cummulat" validationgroup="MPAS" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ID="txtNMGOTH_Cummulat" oninput="validate(this)" AutoComplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator261" runat="server" ErrorMessage="Value required" ControlToValidate="txtNMGOTH_Cummulat" ValidationGroup="MPAS" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                         </tr>
                                                     </table>
@@ -990,28 +996,30 @@
                                                         </tr>
                                                         <tr>
                                                             <td>
-                                                                <asp:textbox id="txtMILKproKGPD_KG_Monthly" clientidmode="Static" onkeyup="GMPcalc()" onpaste="return false" oninput="validate(this)" autocomplete="off" maxlength="10" onkeypress="return isNumberKey(this, event);" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator262" runat="server" errormessage="Value required" controltovalidate="txtMILKproKGPD_KG_Monthly" validationgroup="MPAS" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ID="txtMILKproKGPD_KG_Monthly" ClientIDMode="Static" onkeyup="GMPcalc()" onpaste="return false" oninput="validate(this)" AutoComplete="off" MaxLength="10" onkeypress="return isNumberKey(this, event);" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator262" runat="server" ErrorMessage="Value required" ControlToValidate="txtMILKproKGPD_KG_Monthly" ValidationGroup="MPAS" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox id="txtMILKproKGPD_Monthly" clientidmode="Static" onkeyup="GMPcalc()" onpaste="return false" oninput="validate(this)" autocomplete="off" maxlength="10" onkeypress="return isNumberKey(this, event);" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator263" runat="server" errormessage="Value required" controltovalidate="txtMILKproKGPD_Monthly" validationgroup="MPAS" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ID="txtMILKproKGPD_Monthly" ClientIDMode="Static" onkeyup="GMPcalc()" onpaste="return false" oninput="validate(this)" AutoComplete="off" MaxLength="10" onkeypress="return isNumberKey(this, event);" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator263" runat="server" ErrorMessage="Value required" ControlToValidate="txtMILKproKGPD_Monthly" ValidationGroup="MPAS" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox id="txtMILKprocKGPD_Cummulative" clientidmode="Static" onkeyup="GMPcalc()" onpaste="return false" oninput="validate(this)" autocomplete="off" maxlength="10" onkeypress="return isNumberKey(this, event);" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator264" runat="server" errormessage="Value required" controltovalidate="txtMILKprocKGPD_Cummulative" validationgroup="MPAS" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ID="txtMILKprocKGPD_Cummulative" ClientIDMode="Static" onkeyup="GMPcalc()" onpaste="return false" oninput="validate(this)" AutoComplete="off" MaxLength="10" onkeypress="return isNumberKey(this, event);" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator264" runat="server" ErrorMessage="Value required" ControlToValidate="txtMILKprocKGPD_Cummulative" ValidationGroup="MPAS" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
+                                                                <asp:HiddenField ClientIDMode="Static" ID="hfMP_TillMonthGMPMS" runat="server" />
                                                             </td>
                                                             <td>
-                                                                <asp:textbox id="txtLocalMILKLPD_Ltr_Monthly" clientidmode="Static" onkeyup="GMPcalc()" onpaste="return false" oninput="validate(this)" autocomplete="off" maxlength="10" onkeypress="return isNumberKey(this, event);" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator265" runat="server" errormessage="Value required" controltovalidate="txtLocalMILKLPD_Ltr_Monthly" validationgroup="MPAS" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ID="txtLocalMILKLPD_Ltr_Monthly" ClientIDMode="Static" onkeyup="GMPcalc()" onpaste="return false" oninput="validate(this)" AutoComplete="off" MaxLength="10" onkeypress="return isNumberKey(this, event);" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator265" runat="server" ErrorMessage="Value required" ControlToValidate="txtLocalMILKLPD_Ltr_Monthly" ValidationGroup="MPAS" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox id="txtLocalMILKLPD_Monthly" clientidmode="Static" onkeyup="GMPcalc()" onpaste="return false" oninput="validate(this)" autocomplete="off" maxlength="10" onkeypress="return isNumberKey(this, event);" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator266" runat="server" errormessage="Value required" controltovalidate="txtLocalMILKLPD_Monthly" validationgroup="MPAS" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ID="txtLocalMILKLPD_Monthly" ClientIDMode="Static" onkeyup="GMPcalc()" onpaste="return false" oninput="validate(this)" AutoComplete="off" MaxLength="10" onkeypress="return isNumberKey(this, event);" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator266" runat="server" ErrorMessage="Value required" ControlToValidate="txtLocalMILKLPD_Monthly" ValidationGroup="MPAS" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox id="txtLocalmilkLPD_Cummulative" clientidmode="Static" onkeyup="GMPcalc()" onpaste="return false" oninput="validate(this)" autocomplete="off" maxlength="10" onkeypress="return isNumberKey(this, event);" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator267" runat="server" errormessage="Value required" controltovalidate="txtLocalmilkLPD_Cummulative" validationgroup="MPAS" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ID="txtLocalmilkLPD_Cummulative" ClientIDMode="Static" onkeyup="GMPcalc()" onpaste="return false" oninput="validate(this)" AutoComplete="off" MaxLength="10" onkeypress="return isNumberKey(this, event);" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator267" runat="server" ErrorMessage="Value required" ControlToValidate="txtLocalmilkLPD_Cummulative" ValidationGroup="MPAS" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
+                                                                <asp:HiddenField ClientIDMode="Static" ID="hfLMS_TillMonthGMPMS" runat="server" />
                                                             </td>
                                                         </tr>
                                                     </table>
@@ -1021,10 +1029,11 @@
                                     </fieldset>
                                     <div class="col-md-2 pull-right">
                                         <div class="form-group">
-                                            <asp:button id="btnMOP" runat="server" style="margin-top: 19px;" cssclass="btn btn-primary btn-block" text="Save" validationgroup="MPAS" onclick="btnMOP_Click"></asp:button>
+                                            <asp:Button ID="btnMOP" runat="server" Style="margin-top: 19px;" CssClass="btn btn-primary btn-block" Text="Save" OnClick="btnMOP_Click"></asp:Button>
                                         </div>
                                     </div>
                                 </div>
+
                                 <div id="PMandSALE" runat="server">
                                     <fieldset>
                                         <legend>PRODUCTS MANUFACTURING AND SALE</legend>
@@ -1059,60 +1068,60 @@
                                                         </tr>
                                                         <tr>
                                                             <td>
-                                                                <asp:textbox id="txtGhee" onpaste="return false" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator167" runat="server" errormessage="Value required" controltovalidate="txtGhee" validationgroup="PMAS" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ID="txtGhee" onpaste="return false" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator167" runat="server" ErrorMessage="Value required" ControlToValidate="txtGhee" ValidationGroup="PMAS" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox id="txtSkimmilkpowder" onpaste="return false" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator168" runat="server" errormessage="Value required" controltovalidate="txtSkimmilkpowder" validationgroup="PMAS" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ID="txtSkimmilkpowder" onpaste="return false" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator168" runat="server" ErrorMessage="Value required" ControlToValidate="txtSkimmilkpowder" ValidationGroup="PMAS" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox id="txttablebutter" onpaste="return false" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator169" runat="server" errormessage="Value required" controltovalidate="txttablebutter" validationgroup="PMAS" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ID="txttablebutter" onpaste="return false" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator169" runat="server" ErrorMessage="Value required" ControlToValidate="txttablebutter" ValidationGroup="PMAS" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox id="txtwhitebutter" onpaste="return false" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator170" runat="server" errormessage="Value required" controltovalidate="txtwhitebutter" validationgroup="PMAS" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ID="txtwhitebutter" onpaste="return false" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator170" runat="server" ErrorMessage="Value required" ControlToValidate="txtwhitebutter" ValidationGroup="PMAS" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox id="txtWMP" onpaste="return false" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator171" runat="server" errormessage="Value required" controltovalidate="txtWMP" validationgroup="PMAS" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ID="txtWMP" onpaste="return false" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator171" runat="server" ErrorMessage="Value required" ControlToValidate="txtWMP" ValidationGroup="PMAS" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox id="txtpaneer" onpaste="return false" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator172" runat="server" errormessage="Value required" controltovalidate="txtpaneer" validationgroup="PMAS" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ID="txtpaneer" onpaste="return false" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator172" runat="server" ErrorMessage="Value required" ControlToValidate="txtpaneer" ValidationGroup="PMAS" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox id="txtSanchi_GHEESale" onpaste="return false" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator173" runat="server" errormessage="Value required" controltovalidate="txtSanchi_GHEESale" validationgroup="PMAS" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ID="txtSanchi_GHEESale" onpaste="return false" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator173" runat="server" ErrorMessage="Value required" ControlToValidate="txtSanchi_GHEESale" ValidationGroup="PMAS" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox id="txtSneha_GHEESale" onpaste="return false" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator174" runat="server" errormessage="Value required" controltovalidate="txtSneha_GHEESale" validationgroup="PMAS" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ID="txtSneha_GHEESale" onpaste="return false" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator174" runat="server" ErrorMessage="Value required" ControlToValidate="txtSneha_GHEESale" ValidationGroup="PMAS" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox id="txtOther_GHEESale" onpaste="return false" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator175" runat="server" errormessage="Value required" controltovalidate="txtOther_GHEESale" validationgroup="PMAS" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ID="txtOther_GHEESale" onpaste="return false" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator175" runat="server" ErrorMessage="Value required" ControlToValidate="txtOther_GHEESale" ValidationGroup="PMAS" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox id="txtTotal_GHEESale" onpaste="return false" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator176" runat="server" errormessage="Value required" controltovalidate="txtTotal_GHEESale" validationgroup="PMAS" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ID="txtTotal_GHEESale" onpaste="return false" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator176" runat="server" ErrorMessage="Value required" ControlToValidate="txtTotal_GHEESale" ValidationGroup="PMAS" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox id="txtskimmilk_Prodctsale" onpaste="return false" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator177" runat="server" errormessage="Value required" controltovalidate="txtskimmilk_Prodctsale" validationgroup="PMAS" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ID="txtskimmilk_Prodctsale" onpaste="return false" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator177" runat="server" ErrorMessage="Value required" ControlToValidate="txtskimmilk_Prodctsale" ValidationGroup="PMAS" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox id="txttablebutter_Prodctsale" onpaste="return false" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator178" runat="server" errormessage="Value required" controltovalidate="txttablebutter_Prodctsale" validationgroup="PMAS" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ID="txttablebutter_Prodctsale" onpaste="return false" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator178" runat="server" ErrorMessage="Value required" ControlToValidate="txttablebutter_Prodctsale" ValidationGroup="PMAS" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox id="txtwhitebutter_Prodctsale" onpaste="return false" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator179" runat="server" errormessage="Value required" controltovalidate="txtwhitebutter_Prodctsale" validationgroup="PMAS" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ID="txtwhitebutter_Prodctsale" onpaste="return false" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator179" runat="server" ErrorMessage="Value required" ControlToValidate="txtwhitebutter_Prodctsale" ValidationGroup="PMAS" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox id="txtshrikhand_Prodctsale" onpaste="return false" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator180" runat="server" errormessage="Value required" controltovalidate="txtshrikhand_Prodctsale" validationgroup="PMAS" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ID="txtshrikhand_Prodctsale" onpaste="return false" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator180" runat="server" ErrorMessage="Value required" ControlToValidate="txtshrikhand_Prodctsale" ValidationGroup="PMAS" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                         </tr>
                                                     </table>
@@ -1136,64 +1145,64 @@
                                                         </tr>
                                                         <tr>
                                                             <td>
-                                                                <asp:textbox id="txtPAneer_PMAS" onpaste="return false" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator181" runat="server" errormessage="Value required" controltovalidate="txtPAneer_PMAS" validationgroup="PMAS" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ID="txtPAneer_PMAS" onpaste="return false" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator181" runat="server" ErrorMessage="Value required" ControlToValidate="txtPAneer_PMAS" ValidationGroup="PMAS" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox id="txtflavmilk_PMAS" onpaste="return false" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator182" runat="server" errormessage="Value required" controltovalidate="txtflavmilk_PMAS" validationgroup="PMAS" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ID="txtflavmilk_PMAS" onpaste="return false" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator182" runat="server" ErrorMessage="Value required" ControlToValidate="txtflavmilk_PMAS" ValidationGroup="PMAS" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox id="txtBtrmilk_PMAS" onpaste="return false" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator183" runat="server" errormessage="Value required" controltovalidate="txtBtrmilk_PMAS" validationgroup="PMAS" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ID="txtBtrmilk_PMAS" onpaste="return false" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator183" runat="server" ErrorMessage="Value required" ControlToValidate="txtBtrmilk_PMAS" ValidationGroup="PMAS" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox id="txtSweetcurd_PMAS" onpaste="return false" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator184" runat="server" errormessage="Value required" controltovalidate="txtSweetcurd_PMAS" validationgroup="PMAS" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ID="txtSweetcurd_PMAS" onpaste="return false" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator184" runat="server" ErrorMessage="Value required" ControlToValidate="txtSweetcurd_PMAS" ValidationGroup="PMAS" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox id="txtpeda_PMAS" onpaste="return false" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator185" runat="server" errormessage="Value required" controltovalidate="txtpeda_PMAS" validationgroup="PMAS" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ID="txtpeda_PMAS" onpaste="return false" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator185" runat="server" ErrorMessage="Value required" ControlToValidate="txtpeda_PMAS" ValidationGroup="PMAS" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox id="txtplaincurd_PMAS" onpaste="return false" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator186" runat="server" errormessage="Value required" controltovalidate="txtplaincurd_PMAS" validationgroup="PMAS" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ID="txtplaincurd_PMAS" onpaste="return false" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator186" runat="server" ErrorMessage="Value required" ControlToValidate="txtplaincurd_PMAS" ValidationGroup="PMAS" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox id="txtorangsip_PMAS" onpaste="return false" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator187" runat="server" errormessage="Value required" controltovalidate="txtorangsip_PMAS" validationgroup="PMAS" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ID="txtorangsip_PMAS" onpaste="return false" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator187" runat="server" ErrorMessage="Value required" ControlToValidate="txtorangsip_PMAS" ValidationGroup="PMAS" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox id="txtprobioticcurd_PMAS" onpaste="return false" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator188" runat="server" errormessage="Value required" controltovalidate="txtprobioticcurd_PMAS" validationgroup="PMAS" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ID="txtprobioticcurd_PMAS" onpaste="return false" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator188" runat="server" ErrorMessage="Value required" ControlToValidate="txtprobioticcurd_PMAS" ValidationGroup="PMAS" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox id="txtwholemilk_PMAS" onpaste="return false" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator189" runat="server" errormessage="Value required" controltovalidate="txtwholemilk_PMAS" validationgroup="PMAS" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ID="txtwholemilk_PMAS" onpaste="return false" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator189" runat="server" ErrorMessage="Value required" ControlToValidate="txtwholemilk_PMAS" ValidationGroup="PMAS" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox id="txtChenarabdi_PMAS" onpaste="return false" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator190" runat="server" errormessage="Value required" controltovalidate="txtChenarabdi_PMAS" validationgroup="PMAS" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ID="txtChenarabdi_PMAS" onpaste="return false" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator190" runat="server" ErrorMessage="Value required" ControlToValidate="txtChenarabdi_PMAS" ValidationGroup="PMAS" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox id="txtpresscurd_PMAS" onpaste="return false" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator191" runat="server" errormessage="Value required" controltovalidate="txtpresscurd_PMAS" validationgroup="PMAS" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ID="txtpresscurd_PMAS" onpaste="return false" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator191" runat="server" ErrorMessage="Value required" ControlToValidate="txtpresscurd_PMAS" ValidationGroup="PMAS" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox id="txtcream_PMAS" onpaste="return false" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator192" runat="server" errormessage="Value required" controltovalidate="txtcream_PMAS" validationgroup="PMAS" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ID="txtcream_PMAS" onpaste="return false" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator192" runat="server" ErrorMessage="Value required" ControlToValidate="txtcream_PMAS" ValidationGroup="PMAS" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox id="txtlassi_PMAS" onpaste="return false" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator193" runat="server" errormessage="Value required" controltovalidate="txtlassi_PMAS" validationgroup="PMAS" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ID="txtlassi_PMAS" onpaste="return false" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator193" runat="server" ErrorMessage="Value required" ControlToValidate="txtlassi_PMAS" ValidationGroup="PMAS" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox id="txtamarkhand_PMAS" onpaste="return false" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator194" runat="server" errormessage="Value required" controltovalidate="txtamarkhand_PMAS" validationgroup="PMAS" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ID="txtamarkhand_PMAS" onpaste="return false" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator194" runat="server" ErrorMessage="Value required" ControlToValidate="txtamarkhand_PMAS" ValidationGroup="PMAS" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox id="txtsmp_PMAS" onpaste="return false" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator195" runat="server" errormessage="Value required" controltovalidate="txtsmp_PMAS" validationgroup="PMAS" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ID="txtsmp_PMAS" onpaste="return false" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator195" runat="server" ErrorMessage="Value required" ControlToValidate="txtsmp_PMAS" ValidationGroup="PMAS" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                         </tr>
                                                     </table>
@@ -1215,56 +1224,56 @@
                                                         </tr>
                                                         <tr>
                                                             <td>
-                                                                <asp:textbox id="txtmawa_PMAS" onpaste="return false" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator196" runat="server" errormessage="Value required" controltovalidate="txtmawa_PMAS" validationgroup="PMAS" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ID="txtmawa_PMAS" onpaste="return false" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator196" runat="server" ErrorMessage="Value required" ControlToValidate="txtmawa_PMAS" ValidationGroup="PMAS" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox id="txtdrycasein_PMAS" onpaste="return false" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator197" runat="server" errormessage="Value required" controltovalidate="txtdrycasein_PMAS" validationgroup="PMAS" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ID="txtdrycasein_PMAS" onpaste="return false" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator197" runat="server" ErrorMessage="Value required" ControlToValidate="txtdrycasein_PMAS" ValidationGroup="PMAS" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox id="txtcookingbutter_PMAS" onpaste="return false" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator198" runat="server" errormessage="Value required" controltovalidate="txtcookingbutter_PMAS" validationgroup="PMAS" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ID="txtcookingbutter_PMAS" onpaste="return false" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator198" runat="server" ErrorMessage="Value required" ControlToValidate="txtcookingbutter_PMAS" ValidationGroup="PMAS" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox id="txtgulabjamun_PMAS" onpaste="return false" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator199" runat="server" errormessage="Value required" controltovalidate="txtgulabjamun_PMAS" validationgroup="PMAS" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ID="txtgulabjamun_PMAS" onpaste="return false" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator199" runat="server" ErrorMessage="Value required" ControlToValidate="txtgulabjamun_PMAS" ValidationGroup="PMAS" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox id="txtrasgulla_PMAS" onpaste="return false" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator200" runat="server" errormessage="Value required" controltovalidate="txtrasgulla_PMAS" validationgroup="PMAS" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ID="txtrasgulla_PMAS" onpaste="return false" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator200" runat="server" ErrorMessage="Value required" ControlToValidate="txtrasgulla_PMAS" ValidationGroup="PMAS" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox id="txtmawagulabjanum_PMAS" onpaste="return false" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator201" runat="server" errormessage="Value required" controltovalidate="txtmawagulabjanum_PMAS" validationgroup="PMAS" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ID="txtmawagulabjanum_PMAS" onpaste="return false" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator201" runat="server" ErrorMessage="Value required" ControlToValidate="txtmawagulabjanum_PMAS" ValidationGroup="PMAS" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox id="txtmilkcake_PMAS" onpaste="return false" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator202" runat="server" errormessage="Value required" controltovalidate="txtmilkcake_PMAS" validationgroup="PMAS" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ID="txtmilkcake_PMAS" onpaste="return false" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator202" runat="server" ErrorMessage="Value required" ControlToValidate="txtmilkcake_PMAS" ValidationGroup="PMAS" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox id="txtThandai_PMAS" onpaste="return false" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator203" runat="server" errormessage="Value required" controltovalidate="txtThandai_PMAS" validationgroup="PMAS" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ID="txtThandai_PMAS" onpaste="return false" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator203" runat="server" ErrorMessage="Value required" ControlToValidate="txtThandai_PMAS" ValidationGroup="PMAS" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox id="txtMDm_PMAS" onpaste="return false" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator204" runat="server" errormessage="Value required" controltovalidate="txtMDm_PMAS" validationgroup="PMAS" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ID="txtMDm_PMAS" onpaste="return false" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator204" runat="server" ErrorMessage="Value required" ControlToValidate="txtMDm_PMAS" ValidationGroup="PMAS" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox id="txtlightlassi_PMAS" onpaste="return false" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator205" runat="server" errormessage="Value required" controltovalidate="txtlightlassi_PMAS" validationgroup="PMAS" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ID="txtlightlassi_PMAS" onpaste="return false" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator205" runat="server" ErrorMessage="Value required" ControlToValidate="txtlightlassi_PMAS" ValidationGroup="PMAS" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox id="txtpudinaraita_PMAS" onpaste="return false" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator206" runat="server" errormessage="Value required" controltovalidate="txtpudinaraita_PMAS" validationgroup="PMAS" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ID="txtpudinaraita_PMAS" onpaste="return false" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator206" runat="server" ErrorMessage="Value required" ControlToValidate="txtpudinaraita_PMAS" ValidationGroup="PMAS" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox id="txtWMP_PMAS" onpaste="return false" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator207" runat="server" errormessage="Value required" controltovalidate="txtWMP_PMAS" validationgroup="PMAS" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ID="txtWMP_PMAS" onpaste="return false" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator207" runat="server" ErrorMessage="Value required" ControlToValidate="txtWMP_PMAS" ValidationGroup="PMAS" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox id="txtpannerachar_PMAS" onpaste="return false" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator208" runat="server" errormessage="Value required" controltovalidate="txtpannerachar_PMAS" validationgroup="PMAS" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ID="txtpannerachar_PMAS" onpaste="return false" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator208" runat="server" ErrorMessage="Value required" ControlToValidate="txtpannerachar_PMAS" ValidationGroup="PMAS" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                         </tr>
                                                     </table>
@@ -1286,56 +1295,56 @@
                                                         </tr>
                                                         <tr>
                                                             <td>
-                                                                <asp:textbox id="txtsanchilitemilk_PMAS" onpaste="return false" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator209" runat="server" errormessage="Value required" controltovalidate="txtsanchilitemilk_PMAS" validationgroup="PMAS" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ID="txtsanchilitemilk_PMAS" onpaste="return false" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator209" runat="server" ErrorMessage="Value required" ControlToValidate="txtsanchilitemilk_PMAS" ValidationGroup="PMAS" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox id="txtnariyalbarfi_PMAS" onpaste="return false" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator210" runat="server" errormessage="Value required" controltovalidate="txtnariyalbarfi_PMAS" validationgroup="PMAS" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ID="txtnariyalbarfi_PMAS" onpaste="return false" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator210" runat="server" ErrorMessage="Value required" ControlToValidate="txtnariyalbarfi_PMAS" ValidationGroup="PMAS" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox id="txtgulabjamunMix_PMAS" onpaste="return false" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator211" runat="server" errormessage="Value required" controltovalidate="txtgulabjamunMix_PMAS" validationgroup="PMAS" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ID="txtgulabjamunMix_PMAS" onpaste="return false" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator211" runat="server" ErrorMessage="Value required" ControlToValidate="txtgulabjamunMix_PMAS" ValidationGroup="PMAS" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox id="txtcoffemix_PMAS" onpaste="return false" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator212" runat="server" errormessage="Value required" controltovalidate="txtcoffemix_PMAS" validationgroup="PMAS" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ID="txtcoffemix_PMAS" onpaste="return false" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator212" runat="server" ErrorMessage="Value required" ControlToValidate="txtcoffemix_PMAS" ValidationGroup="PMAS" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox id="txtcookingbutter" onpaste="return false" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator213" runat="server" errormessage="Value required" controltovalidate="txtcookingbutter" validationgroup="PMAS" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ID="txtcookingbutter" onpaste="return false" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator213" runat="server" ErrorMessage="Value required" ControlToValidate="txtcookingbutter" ValidationGroup="PMAS" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox id="txtlowfatpanner_PMAS" onpaste="return false" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator214" runat="server" errormessage="Value required" controltovalidate="txtlowfatpanner_PMAS" validationgroup="PMAS" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ID="txtlowfatpanner_PMAS" onpaste="return false" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator214" runat="server" ErrorMessage="Value required" ControlToValidate="txtlowfatpanner_PMAS" ValidationGroup="PMAS" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox id="txtwheydrink_PMAS" onpaste="return false" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator215" runat="server" errormessage="Value required" controltovalidate="txtwheydrink_PMAS" validationgroup="PMAS" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ID="txtwheydrink_PMAS" onpaste="return false" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator215" runat="server" ErrorMessage="Value required" ControlToValidate="txtwheydrink_PMAS" ValidationGroup="PMAS" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox id="txtsanchitea_PMAS" onpaste="return false" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator216" runat="server" errormessage="Value required" controltovalidate="txtsanchitea_PMAS" validationgroup="PMAS" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ID="txtsanchitea_PMAS" onpaste="return false" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator216" runat="server" ErrorMessage="Value required" ControlToValidate="txtsanchitea_PMAS" ValidationGroup="PMAS" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox id="txtpedaprasadi_PMAS" onpaste="return false" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator217" runat="server" errormessage="Value required" controltovalidate="txtpedaprasadi_PMAS" validationgroup="PMAS" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ID="txtpedaprasadi_PMAS" onpaste="return false" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator217" runat="server" ErrorMessage="Value required" ControlToValidate="txtpedaprasadi_PMAS" ValidationGroup="PMAS" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox id="txticecream_PMAS" onpaste="return false" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator218" runat="server" errormessage="Value required" controltovalidate="txticecream_PMAS" validationgroup="PMAS" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ID="txticecream_PMAS" onpaste="return false" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator218" runat="server" ErrorMessage="Value required" ControlToValidate="txticecream_PMAS" ValidationGroup="PMAS" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox id="txtgoldenmilk_PMAS" onpaste="return false" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator219" runat="server" errormessage="Value required" controltovalidate="txtgoldenmilk_PMAS" validationgroup="PMAS" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ID="txtgoldenmilk_PMAS" onpaste="return false" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator219" runat="server" ErrorMessage="Value required" ControlToValidate="txtgoldenmilk_PMAS" ValidationGroup="PMAS" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox id="txtsugarfreepeda_PMAS" onpaste="return false" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator220" runat="server" errormessage="Value required" controltovalidate="txtsugarfreepeda_PMAS" validationgroup="PMAS" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ID="txtsugarfreepeda_PMAS" onpaste="return false" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator220" runat="server" ErrorMessage="Value required" ControlToValidate="txtsugarfreepeda_PMAS" ValidationGroup="PMAS" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox id="txthealthvita_PMAS" onpaste="return false" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator221" runat="server" errormessage="Value required" controltovalidate="txthealthvita_PMAS" validationgroup="PMAS" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ID="txthealthvita_PMAS" onpaste="return false" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator221" runat="server" ErrorMessage="Value required" ControlToValidate="txthealthvita_PMAS" ValidationGroup="PMAS" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                         </tr>
                                                     </table>
@@ -1345,7 +1354,7 @@
                                     </fieldset>
                                     <div class="col-md-2 pull-right">
                                         <div class="form-group">
-                                            <asp:button id="btnPMandSale" runat="server" style="margin-top: 19px;" cssclass="btn btn-primary btn-block" text="Save" validationgroup="PMAS" onclick="btnPMandSale_Click"></asp:button>
+                                            <asp:Button ID="btnPMandSale" runat="server" Style="margin-top: 19px;" CssClass="btn btn-primary btn-block" Text="Save" ValidationGroup="PMAS" OnClick="btnPMandSale_Click"></asp:Button>
                                         </div>
                                     </div>
                                 </div>
@@ -1383,64 +1392,64 @@
                                                         </tr>
                                                         <tr>
                                                             <td>
-                                                                <asp:textbox id="txtSMP_forMilk" onpaste="return false" clientidmode="Static" onkeyup="RMcalc()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator152" runat="server" errormessage="Value required" controltovalidate="txtSMP_forMilk" validationgroup="REC" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ID="txtSMP_forMilk" onpaste="return false" ClientIDMode="Static" onkeyup="RMcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator152" runat="server" ErrorMessage="Value required" ControlToValidate="txtSMP_forMilk" ValidationGroup="REC" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox id="txtWB_forMilk" onpaste="return false" clientidmode="Static" onkeyup="RMcalc()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator153" runat="server" errormessage="Value required" controltovalidate="txtWB_forMilk" validationgroup="REC" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ID="txtWB_forMilk" onpaste="return false" ClientIDMode="Static" onkeyup="RMcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator153" runat="server" ErrorMessage="Value required" ControlToValidate="txtWB_forMilk" ValidationGroup="REC" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox id="txtGHEE_forMilk" onpaste="return false" clientidmode="Static" onkeyup="RMcalc()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator154" runat="server" errormessage="Value required" controltovalidate="txtGHEE_forMilk" validationgroup="REC" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ID="txtGHEE_forMilk" onpaste="return false" ClientIDMode="Static" onkeyup="RMcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator154" runat="server" ErrorMessage="Value required" ControlToValidate="txtGHEE_forMilk" ValidationGroup="REC" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox id="txtWMP_forMilk" onpaste="return false" clientidmode="Static" onkeyup="RMcalc()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator155" runat="server" errormessage="Value required" controltovalidate="txtWMP_forMilk" validationgroup="REC" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ID="txtWMP_forMilk" onpaste="return false" ClientIDMode="Static" onkeyup="RMcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator155" runat="server" ErrorMessage="Value required" ControlToValidate="txtWMP_forMilk" ValidationGroup="REC" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox id="txtPANEER_forMilk" onpaste="return false" clientidmode="Static" onkeyup="RMcalc()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator156" runat="server" errormessage="Value required" controltovalidate="txtPANEER_forMilk" validationgroup="REC" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ID="txtPANEER_forMilk" onpaste="return false" ClientIDMode="Static" onkeyup="RMcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator156" runat="server" ErrorMessage="Value required" ControlToValidate="txtPANEER_forMilk" ValidationGroup="REC" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox id="txtTOTAL_forMilk" onpaste="return false" clientidmode="Static" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator157" runat="server" errormessage="Value required" controltovalidate="txtTOTAL_forMilk" validationgroup="REC" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ID="txtTOTAL_forMilk" onpaste="return false" ClientIDMode="Static" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator157" runat="server" ErrorMessage="Value required" ControlToValidate="txtTOTAL_forMilk" ValidationGroup="REC" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox id="txtSMP_forproduct" onpaste="return false" clientidmode="Static" onkeyup="RPcalc()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator158" runat="server" errormessage="Value required" controltovalidate="txtSMP_forproduct" validationgroup="REC" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ID="txtSMP_forproduct" onpaste="return false" ClientIDMode="Static" onkeyup="RPcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator158" runat="server" ErrorMessage="Value required" ControlToValidate="txtSMP_forproduct" ValidationGroup="REC" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox id="txtWB_forproduct" onpaste="return false" clientidmode="Static" onkeyup="RPcalc()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator159" runat="server" errormessage="Value required" controltovalidate="txtWB_forproduct" validationgroup="REC" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ID="txtWB_forproduct" onpaste="return false" ClientIDMode="Static" onkeyup="RPcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator159" runat="server" ErrorMessage="Value required" ControlToValidate="txtWB_forproduct" ValidationGroup="REC" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox id="txtGHEE_forproduct" onpaste="return false" clientidmode="Static" onkeyup="RPcalc()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator160" runat="server" errormessage="Value required" controltovalidate="txtGHEE_forproduct" validationgroup="REC" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ID="txtGHEE_forproduct" onpaste="return false" ClientIDMode="Static" onkeyup="RPcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator160" runat="server" ErrorMessage="Value required" ControlToValidate="txtGHEE_forproduct" ValidationGroup="REC" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox id="txtWMP_forproduct" onpaste="return false" clientidmode="Static" onkeyup="RPcalc()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator161" runat="server" errormessage="Value required" controltovalidate="txtWMP_forproduct" validationgroup="REC" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ID="txtWMP_forproduct" onpaste="return false" ClientIDMode="Static" onkeyup="RPcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator161" runat="server" ErrorMessage="Value required" ControlToValidate="txtWMP_forproduct" ValidationGroup="REC" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox id="txtPANEER_forproduct" onpaste="return false" clientidmode="Static" onkeyup="RPcalc()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator162" runat="server" errormessage="Value required" controltovalidate="txtPANEER_forproduct" validationgroup="REC" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ID="txtPANEER_forproduct" onpaste="return false" ClientIDMode="Static" onkeyup="RPcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator162" runat="server" ErrorMessage="Value required" ControlToValidate="txtPANEER_forproduct" ValidationGroup="REC" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox id="txtTOTAL_forproduct" onpaste="return false" clientidmode="Static" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator163" runat="server" errormessage="Value required" controltovalidate="txtTOTAL_forproduct" validationgroup="REC" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ID="txtTOTAL_forproduct" onpaste="return false" ClientIDMode="Static" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator163" runat="server" ErrorMessage="Value required" ControlToValidate="txtTOTAL_forproduct" ValidationGroup="REC" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox id="txtformilk_Commused" onpaste="return false" clientidmode="Static" onkeyup="RCommcalc()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator164" runat="server" errormessage="Value required" controltovalidate="txtformilk_Commused" validationgroup="REC" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ID="txtformilk_Commused" onpaste="return false" ClientIDMode="Static" onkeyup="RCommcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator164" runat="server" ErrorMessage="Value required" ControlToValidate="txtformilk_Commused" ValidationGroup="REC" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox id="txtforproduct_Commused" onpaste="return false" clientidmode="Static" onkeyup="RCommcalc()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator165" runat="server" errormessage="Value required" controltovalidate="txtforproduct_Commused" validationgroup="REC" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ID="txtforproduct_Commused" onpaste="return false" ClientIDMode="Static" onkeyup="RCommcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator165" runat="server" ErrorMessage="Value required" ControlToValidate="txtforproduct_Commused" ValidationGroup="REC" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox id="txtRecombination" onpaste="return false" clientidmode="Static" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator166" runat="server" errormessage="Value required" controltovalidate="txtRecombination" validationgroup="REC" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ID="txtRecombination" onpaste="return false" ClientIDMode="Static" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator166" runat="server" ErrorMessage="Value required" ControlToValidate="txtRecombination" ValidationGroup="REC" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                         </tr>
                                                     </table>
@@ -1451,7 +1460,7 @@
                                     </fieldset>
                                     <div class="col-md-2 pull-right">
                                         <div class="form-group">
-                                            <asp:button id="btnrecombination" runat="server" style="margin-top: 19px;" cssclass="btn btn-primary btn-block" text="Save" validationgroup="REC" onclick="btnrecombination_Click"></asp:button>
+                                            <asp:Button ID="btnrecombination" runat="server" Style="margin-top: 19px;" CssClass="btn btn-primary btn-block" Text="Save" ValidationGroup="REC" OnClick="btnrecombination_Click"></asp:Button>
                                         </div>
                                     </div>
                                 </div>
@@ -1481,48 +1490,48 @@
                                                         </tr>
                                                         <tr>
                                                             <td>
-                                                                <asp:textbox clientidmode="Static" onkeyup="PPMcalc()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txtsalaryandallow_FPCD" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator128" runat="server" errormessage="Value required" controltovalidate="txtsalaryandallow_FPCD" validationgroup="PPM" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ClientIDMode="Static" onkeyup="PPMcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtsalaryandallow_FPCD" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator128" runat="server" ErrorMessage="Value required" ControlToValidate="txtsalaryandallow_FPCD" ValidationGroup="PPM" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox clientidmode="Static" onkeyup="PPMcalc()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txtContlaboures_FPCD" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator129" runat="server" errormessage="Value required" controltovalidate="txtContlaboures_FPCD" validationgroup="PPM" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ClientIDMode="Static" onkeyup="PPMcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtContlaboures_FPCD" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator129" runat="server" ErrorMessage="Value required" ControlToValidate="txtContlaboures_FPCD" ValidationGroup="PPM" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox clientidmode="Static" onkeyup="PPMcalc()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txtCosumbleCommon_FPCD" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator130" runat="server" errormessage="Value required" controltovalidate="txtCosumbleCommon_FPCD" validationgroup="PPM" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ClientIDMode="Static" onkeyup="PPMcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtCosumbleCommon_FPCD" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator130" runat="server" ErrorMessage="Value required" ControlToValidate="txtCosumbleCommon_FPCD" ValidationGroup="PPM" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox clientidmode="Static" onkeyup="PPMcalc()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txtConsumbledirect_FPCD" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator131" runat="server" errormessage="Value required" controltovalidate="txtConsumbledirect_FPCD" validationgroup="PPM" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ClientIDMode="Static" onkeyup="PPMcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtConsumbledirect_FPCD" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator131" runat="server" ErrorMessage="Value required" ControlToValidate="txtConsumbledirect_FPCD" ValidationGroup="PPM" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox clientidmode="Static" onkeyup="PPMcalc()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txtchemicaldetergent_FPCD" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator132" runat="server" errormessage="Value required" controltovalidate="txtchemicaldetergent_FPCD" validationgroup="PPM" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ClientIDMode="Static" onkeyup="PPMcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtchemicaldetergent_FPCD" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator132" runat="server" ErrorMessage="Value required" ControlToValidate="txtchemicaldetergent_FPCD" ValidationGroup="PPM" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox clientidmode="Static" onkeyup="PPMcalc()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txtElectricity_FPCD" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator133" runat="server" errormessage="Value required" controltovalidate="txtElectricity_FPCD" validationgroup="PPM" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ClientIDMode="Static" onkeyup="PPMcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtElectricity_FPCD" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator133" runat="server" ErrorMessage="Value required" ControlToValidate="txtElectricity_FPCD" ValidationGroup="PPM" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox clientidmode="Static" onkeyup="PPMcalc()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txtWater_FPCD" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator134" runat="server" errormessage="Value required" controltovalidate="txtWater_FPCD" validationgroup="PPM" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ClientIDMode="Static" onkeyup="PPMcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtWater_FPCD" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator134" runat="server" ErrorMessage="Value required" ControlToValidate="txtWater_FPCD" ValidationGroup="PPM" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox clientidmode="Static" onkeyup="PPMcalc()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txtfurnanceoil_FPCD" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator135" runat="server" errormessage="Value required" controltovalidate="txtfurnanceoil_FPCD" validationgroup="PPM" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ClientIDMode="Static" onkeyup="PPMcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtfurnanceoil_FPCD" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator135" runat="server" ErrorMessage="Value required" ControlToValidate="txtfurnanceoil_FPCD" ValidationGroup="PPM" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox clientidmode="Static" onkeyup="PPMcalc()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txtrepairmaintance_FPCD" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator136" runat="server" errormessage="Value required" controltovalidate="txtrepairmaintance_FPCD" validationgroup="PPM" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ClientIDMode="Static" onkeyup="PPMcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtrepairmaintance_FPCD" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator136" runat="server" ErrorMessage="Value required" ControlToValidate="txtrepairmaintance_FPCD" ValidationGroup="PPM" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox clientidmode="Static" onkeyup="PPMcalc()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txtOtherExps_FPCD" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator137" runat="server" errormessage="Value required" controltovalidate="txtOtherExps_FPCD" validationgroup="PPM" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ClientIDMode="Static" onkeyup="PPMcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtOtherExps_FPCD" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator137" runat="server" ErrorMessage="Value required" ControlToValidate="txtOtherExps_FPCD" ValidationGroup="PPM" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox clientidmode="Static" onkeyup="PPMcalc()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txtTotal_FPCD" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator138" runat="server" errormessage="Value required" controltovalidate="txtTotal_FPCD" validationgroup="PPM" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ClientIDMode="Static" onkeyup="PPMcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtTotal_FPCD" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator138" runat="server" ErrorMessage="Value required" ControlToValidate="txtTotal_FPCD" ValidationGroup="PPM" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                         </tr>
                                                     </table>
@@ -1554,56 +1563,56 @@
                                                     </tr>
                                                     <tr>
                                                         <td>
-                                                            <asp:textbox clientidmode="Static" onkeyup="PPMcalc()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txtsalaryallow_CA" runat="server" cssclass="form-control"></asp:textbox>
-                                                            <asp:regularexpressionvalidator id="RegularExpressionValidator139" runat="server" errormessage="Value required" controltovalidate="txtsalaryallow_CA" validationgroup="PPM" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                            <asp:TextBox ClientIDMode="Static" onkeyup="PPMcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtsalaryallow_CA" runat="server" CssClass="form-control"></asp:TextBox>
+                                                            <asp:RegularExpressionValidator ID="RegularExpressionValidator139" runat="server" ErrorMessage="Value required" ControlToValidate="txtsalaryallow_CA" ValidationGroup="PPM" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                         </td>
                                                         <td>
-                                                            <asp:textbox clientidmode="Static" onkeyup="PPMcalc()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txtContlaboures_CA" runat="server" cssclass="form-control"></asp:textbox>
-                                                            <asp:regularexpressionvalidator id="RegularExpressionValidator140" runat="server" errormessage="Value required" controltovalidate="txtContlaboures_CA" validationgroup="PPM" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                            <asp:TextBox ClientIDMode="Static" onkeyup="PPMcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtContlaboures_CA" runat="server" CssClass="form-control"></asp:TextBox>
+                                                            <asp:RegularExpressionValidator ID="RegularExpressionValidator140" runat="server" ErrorMessage="Value required" ControlToValidate="txtContlaboures_CA" ValidationGroup="PPM" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                         </td>
                                                         <td>
-                                                            <asp:textbox clientidmode="Static" onkeyup="PPMcalc()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txtConsumblecommon_CA" runat="server" cssclass="form-control"></asp:textbox>
-                                                            <asp:regularexpressionvalidator id="RegularExpressionValidator141" runat="server" errormessage="Value required" controltovalidate="txtConsumblecommon_CA" validationgroup="PPM" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                            <asp:TextBox ClientIDMode="Static" onkeyup="PPMcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtConsumblecommon_CA" runat="server" CssClass="form-control"></asp:TextBox>
+                                                            <asp:RegularExpressionValidator ID="RegularExpressionValidator141" runat="server" ErrorMessage="Value required" ControlToValidate="txtConsumblecommon_CA" ValidationGroup="PPM" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                         </td>
                                                         <td>
-                                                            <asp:textbox clientidmode="Static" onkeyup="PPMcalc()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txtConsumbleDirect_CA" runat="server" cssclass="form-control"></asp:textbox>
-                                                            <asp:regularexpressionvalidator id="RegularExpressionValidator142" runat="server" errormessage="Value required" controltovalidate="txtConsumbleDirect_CA" validationgroup="PPM" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                            <asp:TextBox ClientIDMode="Static" onkeyup="PPMcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtConsumbleDirect_CA" runat="server" CssClass="form-control"></asp:TextBox>
+                                                            <asp:RegularExpressionValidator ID="RegularExpressionValidator142" runat="server" ErrorMessage="Value required" ControlToValidate="txtConsumbleDirect_CA" ValidationGroup="PPM" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                         </td>
                                                         <td>
-                                                            <asp:textbox clientidmode="Static" onkeyup="PPMcalc()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txtchemicaldetergent_CA" runat="server" cssclass="form-control"></asp:textbox>
-                                                            <asp:regularexpressionvalidator id="RegularExpressionValidator143" runat="server" errormessage="Value required" controltovalidate="txtchemicaldetergent_CA" validationgroup="PPM" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                            <asp:TextBox ClientIDMode="Static" onkeyup="PPMcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtchemicaldetergent_CA" runat="server" CssClass="form-control"></asp:TextBox>
+                                                            <asp:RegularExpressionValidator ID="RegularExpressionValidator143" runat="server" ErrorMessage="Value required" ControlToValidate="txtchemicaldetergent_CA" ValidationGroup="PPM" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                         </td>
                                                         <td>
-                                                            <asp:textbox clientidmode="Static" onkeyup="PPMcalc()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txtElectricity_CA" runat="server" cssclass="form-control"></asp:textbox>
-                                                            <asp:regularexpressionvalidator id="RegularExpressionValidator144" runat="server" errormessage="Value required" controltovalidate="txtElectricity_CA" validationgroup="PPM" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                            <asp:TextBox ClientIDMode="Static" onkeyup="PPMcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtElectricity_CA" runat="server" CssClass="form-control"></asp:TextBox>
+                                                            <asp:RegularExpressionValidator ID="RegularExpressionValidator144" runat="server" ErrorMessage="Value required" ControlToValidate="txtElectricity_CA" ValidationGroup="PPM" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                         </td>
                                                         <td>
-                                                            <asp:textbox clientidmode="Static" onkeyup="PPMcalc()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txtWater_CA" runat="server" cssclass="form-control"></asp:textbox>
-                                                            <asp:regularexpressionvalidator id="RegularExpressionValidator145" runat="server" errormessage="Value required" controltovalidate="txtWater_CA" validationgroup="PPM" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                            <asp:TextBox ClientIDMode="Static" onkeyup="PPMcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtWater_CA" runat="server" CssClass="form-control"></asp:TextBox>
+                                                            <asp:RegularExpressionValidator ID="RegularExpressionValidator145" runat="server" ErrorMessage="Value required" ControlToValidate="txtWater_CA" ValidationGroup="PPM" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                         </td>
                                                         <td>
-                                                            <asp:textbox clientidmode="Static" onkeyup="PPMcalc()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txtFurnanceoil_CA" runat="server" cssclass="form-control"></asp:textbox>
-                                                            <asp:regularexpressionvalidator id="RegularExpressionValidator146" runat="server" errormessage="Value required" controltovalidate="txtFurnanceoil_CA" validationgroup="PPM" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                            <asp:TextBox ClientIDMode="Static" onkeyup="PPMcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtFurnanceoil_CA" runat="server" CssClass="form-control"></asp:TextBox>
+                                                            <asp:RegularExpressionValidator ID="RegularExpressionValidator146" runat="server" ErrorMessage="Value required" ControlToValidate="txtFurnanceoil_CA" ValidationGroup="PPM" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                         </td>
                                                         <td>
-                                                            <asp:textbox clientidmode="Static" onkeyup="PPMcalc()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txtRepairMaint_CA" runat="server" cssclass="form-control"></asp:textbox>
-                                                            <asp:regularexpressionvalidator id="RegularExpressionValidator147" runat="server" errormessage="Value required" controltovalidate="txtRepairMaint_CA" validationgroup="PPM" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                            <asp:TextBox ClientIDMode="Static" onkeyup="PPMcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtRepairMaint_CA" runat="server" CssClass="form-control"></asp:TextBox>
+                                                            <asp:RegularExpressionValidator ID="RegularExpressionValidator147" runat="server" ErrorMessage="Value required" ControlToValidate="txtRepairMaint_CA" ValidationGroup="PPM" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                         </td>
                                                         <td>
-                                                            <asp:textbox clientidmode="Static" onkeyup="PPMcalc()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txtOtherExps_CA" runat="server" cssclass="form-control"></asp:textbox>
-                                                            <asp:regularexpressionvalidator id="RegularExpressionValidator148" runat="server" errormessage="Value required" controltovalidate="txtOtherExps_CA" validationgroup="PPM" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                            <asp:TextBox ClientIDMode="Static" onkeyup="PPMcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtOtherExps_CA" runat="server" CssClass="form-control"></asp:TextBox>
+                                                            <asp:RegularExpressionValidator ID="RegularExpressionValidator148" runat="server" ErrorMessage="Value required" ControlToValidate="txtOtherExps_CA" ValidationGroup="PPM" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                         </td>
                                                         <td>
-                                                            <asp:textbox clientidmode="Static" onkeyup="PPMcalc()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txtTOTal_CA" runat="server" cssclass="form-control"></asp:textbox>
-                                                            <asp:regularexpressionvalidator id="RegularExpressionValidator149" runat="server" errormessage="Value required" controltovalidate="txtTOTal_CA" validationgroup="PPM" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                            <asp:TextBox ClientIDMode="Static" onkeyup="PPMcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtTOTal_CA" runat="server" CssClass="form-control"></asp:TextBox>
+                                                            <asp:RegularExpressionValidator ID="RegularExpressionValidator149" runat="server" ErrorMessage="Value required" ControlToValidate="txtTOTal_CA" ValidationGroup="PPM" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                         </td>
                                                         <td>
-                                                            <asp:textbox clientidmode="Static" onkeyup="PPMcalc()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txtMilkProssCA" runat="server" cssclass="form-control"></asp:textbox>
-                                                            <asp:regularexpressionvalidator id="RegularExpressionValidator150" runat="server" errormessage="Value required" controltovalidate="txtMilkProssCA" validationgroup="PPM" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                            <asp:TextBox ClientIDMode="Static" onkeyup="PPMcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtMilkProssCA" runat="server" CssClass="form-control"></asp:TextBox>
+                                                            <asp:RegularExpressionValidator ID="RegularExpressionValidator150" runat="server" ErrorMessage="Value required" ControlToValidate="txtMilkProssCA" ValidationGroup="PPM" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                         </td>
                                                         <td>
-                                                            <asp:textbox clientidmode="Static" onkeyup="PPMcalc()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txtMilkPrepackCA" runat="server" cssclass="form-control"></asp:textbox>
-                                                            <asp:regularexpressionvalidator id="RegularExpressionValidator151" runat="server" errormessage="Value required" controltovalidate="txtMilkPrepackCA" validationgroup="PPM" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                            <asp:TextBox ClientIDMode="Static" onkeyup="PPMcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtMilkPrepackCA" runat="server" CssClass="form-control"></asp:TextBox>
+                                                            <asp:RegularExpressionValidator ID="RegularExpressionValidator151" runat="server" ErrorMessage="Value required" ControlToValidate="txtMilkPrepackCA" ValidationGroup="PPM" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                         </td>
                                                     </tr>
                                                 </table>
@@ -1614,12 +1623,12 @@
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label><b>Grand Total</b></label>
-                                                <asp:textbox clientidmode="Static" onkeyup="PPMcalc()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txtPPMGrandTotal" runat="server" cssclass="form-control"></asp:textbox>
+                                                <asp:TextBox ClientIDMode="Static" onkeyup="PPMcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtPPMGrandTotal" runat="server" CssClass="form-control"></asp:TextBox>
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <asp:button id="btnPPMaking" runat="server" style="margin-top: 19px;" cssclass="btn btn-primary btn-block" text="Save" validationgroup="PPM" onclick="btnPPMaking_Click1"></asp:button>
+                                                <asp:Button ID="btnPPMaking" runat="server" Style="margin-top: 19px;" CssClass="btn btn-primary btn-block" Text="Save" ValidationGroup="PPM" OnClick="btnPPMaking_Click1"></asp:Button>
                                             </div>
                                         </div>
                                     </div>
@@ -1656,68 +1665,68 @@
                                                         </tr>
                                                         <tr>
                                                             <td>
-                                                                <asp:textbox id="txtmilCC_PC" onpaste="return false" clientidmode="Static" onkeyup="PCCcalcPC()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator112" runat="server" errormessage="Value required" controltovalidate="txtmilCC_PC" validationgroup="P&CC" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ID="txtmilCC_PC" onpaste="return false" ClientIDMode="Static" onkeyup="PCCcalcPC()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator112" runat="server" ErrorMessage="Value required" ControlToValidate="txtmilCC_PC" ValidationGroup="P&CC" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox id="txtMilkDairy_PC" onpaste="return false" clientidmode="Static" onkeyup="PCCcalcPC()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator113" runat="server" errormessage="Value required" controltovalidate="txtMilkDairy_PC" validationgroup="P&CC" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ID="txtMilkDairy_PC" onpaste="return false" ClientIDMode="Static" onkeyup="PCCcalcPC()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator113" runat="server" ErrorMessage="Value required" ControlToValidate="txtMilkDairy_PC" ValidationGroup="P&CC" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox id="txtmainproduct_PC" onpaste="return false" clientidmode="Static" onkeyup="PCCcalcPC()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator114" runat="server" errormessage="Value required" controltovalidate="txtmainproduct_PC" validationgroup="P&CC" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ID="txtmainproduct_PC" onpaste="return false" ClientIDMode="Static" onkeyup="PCCcalcPC()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator114" runat="server" ErrorMessage="Value required" ControlToValidate="txtmainproduct_PC" ValidationGroup="P&CC" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox id="txtINDGproduct_PC" onpaste="return false" clientidmode="Static" onkeyup="PCCcalcPC()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator115" runat="server" errormessage="Value required" controltovalidate="txtINDGproduct_PC" validationgroup="P&CC" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ID="txtINDGproduct_PC" onpaste="return false" ClientIDMode="Static" onkeyup="PCCcalcPC()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator115" runat="server" ErrorMessage="Value required" ControlToValidate="txtINDGproduct_PC" ValidationGroup="P&CC" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox id="txtTotal_PC" clientidmode="Static" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator116" runat="server" errormessage="Value required" controltovalidate="txtTotal_PC" validationgroup="P&CC" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ID="txtTotal_PC" ClientIDMode="Static" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator116" runat="server" ErrorMessage="Value required" ControlToValidate="txtTotal_PC" ValidationGroup="P&CC" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox id="txtsalaryallow_CC" onpaste="return false" clientidmode="Static" onkeyup="PCCcalcCC()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator117" runat="server" errormessage="Value required" controltovalidate="txtsalaryallow_CC" validationgroup="P&CC" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ID="txtsalaryallow_CC" onpaste="return false" ClientIDMode="Static" onkeyup="PCCcalcCC()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator117" runat="server" ErrorMessage="Value required" ControlToValidate="txtsalaryallow_CC" ValidationGroup="P&CC" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox id="txtContlaboure_CC" onpaste="return false" clientidmode="Static" onkeyup="PCCcalcCC()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator118" runat="server" errormessage="Value required" controltovalidate="txtContlaboure_CC" validationgroup="P&CC" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ID="txtContlaboure_CC" onpaste="return false" ClientIDMode="Static" onkeyup="PCCcalcCC()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator118" runat="server" ErrorMessage="Value required" ControlToValidate="txtContlaboure_CC" ValidationGroup="P&CC" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox id="txtElectricity_CC" onpaste="return false" clientidmode="Static" onkeyup="PCCcalcCC()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator119" runat="server" errormessage="Value required" controltovalidate="txtElectricity_CC" validationgroup="P&CC" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ID="txtElectricity_CC" onpaste="return false" ClientIDMode="Static" onkeyup="PCCcalcCC()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator119" runat="server" ErrorMessage="Value required" ControlToValidate="txtElectricity_CC" ValidationGroup="P&CC" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox id="txtCoalDiesel_CC" onpaste="return false" clientidmode="Static" onkeyup="PCCcalcCC()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator120" runat="server" errormessage="Value required" controltovalidate="txtCoalDiesel_CC" validationgroup="P&CC" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ID="txtCoalDiesel_CC" onpaste="return false" ClientIDMode="Static" onkeyup="PCCcalcCC()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator120" runat="server" ErrorMessage="Value required" ControlToValidate="txtCoalDiesel_CC" ValidationGroup="P&CC" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox id="txtConsumble_CC" onpaste="return false" clientidmode="Static" onkeyup="PCCcalcCC()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator121" runat="server" errormessage="Value required" controltovalidate="txtConsumble_CC" validationgroup="P&CC" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ID="txtConsumble_CC" onpaste="return false" ClientIDMode="Static" onkeyup="PCCcalcCC()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator121" runat="server" ErrorMessage="Value required" ControlToValidate="txtConsumble_CC" ValidationGroup="P&CC" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox id="txtChemandDeter_CC" onpaste="return false" clientidmode="Static" onkeyup="PCCcalcCC()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator122" runat="server" errormessage="Value required" controltovalidate="txtChemandDeter_CC" validationgroup="P&CC" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ID="txtChemandDeter_CC" onpaste="return false" ClientIDMode="Static" onkeyup="PCCcalcCC()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator122" runat="server" ErrorMessage="Value required" ControlToValidate="txtChemandDeter_CC" ValidationGroup="P&CC" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox id="txtRepairMAint_CC" onpaste="return false" clientidmode="Static" onkeyup="PCCcalcCC()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator123" runat="server" errormessage="Value required" controltovalidate="txtRepairMAint_CC" validationgroup="P&CC" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ID="txtRepairMAint_CC" onpaste="return false" ClientIDMode="Static" onkeyup="PCCcalcCC()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator123" runat="server" ErrorMessage="Value required" ControlToValidate="txtRepairMAint_CC" ValidationGroup="P&CC" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox id="txtBMC_CC" onpaste="return false" clientidmode="Static" onkeyup="PCCcalcCC()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator124" runat="server" errormessage="Value required" controltovalidate="txtBMC_CC" validationgroup="P&CC" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ID="txtBMC_CC" onpaste="return false" ClientIDMode="Static" onkeyup="PCCcalcCC()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator124" runat="server" ErrorMessage="Value required" ControlToValidate="txtBMC_CC" ValidationGroup="P&CC" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox id="txtSecurity_CC" onpaste="return false" clientidmode="Static" onkeyup="PCCcalcCC()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator125" runat="server" errormessage="Value required" controltovalidate="txtSecurity_CC" validationgroup="P&CC" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ID="txtSecurity_CC" onpaste="return false" ClientIDMode="Static" onkeyup="PCCcalcCC()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator125" runat="server" ErrorMessage="Value required" ControlToValidate="txtSecurity_CC" ValidationGroup="P&CC" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox id="txtOtherExps_CC" onpaste="return false" clientidmode="Static" onkeyup="PCCcalcCC()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator126" runat="server" errormessage="Value required" controltovalidate="txtOtherExps_CC" validationgroup="P&CC" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ID="txtOtherExps_CC" onpaste="return false" ClientIDMode="Static" onkeyup="PCCcalcCC()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator126" runat="server" ErrorMessage="Value required" ControlToValidate="txtOtherExps_CC" ValidationGroup="P&CC" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox id="txtTotal_CC" onpaste="return false" clientidmode="Static" onkeyup="PCCcalcCC()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator127" runat="server" errormessage="Value required" controltovalidate="txtTotal_CC" validationgroup="P&CC" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox ID="txtTotal_CC" onpaste="return false" ClientIDMode="Static" onkeyup="PCCcalcCC()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator127" runat="server" ErrorMessage="Value required" ControlToValidate="txtTotal_CC" ValidationGroup="P&CC" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                         </tr>
                                                     </table>
@@ -1728,7 +1737,7 @@
                                     </fieldset>
                                     <div class="col-md-2 pull-right">
                                         <div class="form-group">
-                                            <asp:button id="btnPackagingAndCC" runat="server" style="margin-top: 19px;" cssclass="btn btn-primary btn-block" text="Save" validationgroup="P&CC" onclick="btnPackagingAndCC_Click"></asp:button>
+                                            <asp:Button ID="btnPackagingAndCC" runat="server" Style="margin-top: 19px;" CssClass="btn btn-primary btn-block" Text="Save" ValidationGroup="P&CC" OnClick="btnPackagingAndCC_Click"></asp:Button>
                                         </div>
                                     </div>
                                 </div>
@@ -1757,40 +1766,40 @@
                                                         </tr>
                                                         <tr>
                                                             <td>
-                                                                <asp:textbox onpaste="return false" clientidmode="Static" onkeyup="MarkcalcCC()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txtsalaryAllow_MarkCostLM" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator92" runat="server" errormessage="Value required" controltovalidate="txtsalaryAllow_MarkCostLM" validationgroup="Mar" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox onpaste="return false" ClientIDMode="Static" onkeyup="MarkcalcCC()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtsalaryAllow_MarkCostLM" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator92" runat="server" ErrorMessage="Value required" ControlToValidate="txtsalaryAllow_MarkCostLM" ValidationGroup="Mar" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox onpaste="return false" clientidmode="Static" onkeyup="MarkcalcCC()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txttranportation_MarkCostLM" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator93" runat="server" errormessage="Value required" controltovalidate="txttranportation_MarkCostLM" validationgroup="Mar" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox onpaste="return false" ClientIDMode="Static" onkeyup="MarkcalcCC()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txttranportation_MarkCostLM" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator93" runat="server" ErrorMessage="Value required" ControlToValidate="txttranportation_MarkCostLM" ValidationGroup="Mar" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox onpaste="return false" clientidmode="Static" onkeyup="MarkcalcCC()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txtsalesprom_MarkCostLM" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator94" runat="server" errormessage="Value required" controltovalidate="txtsalesprom_MarkCostLM" validationgroup="Mar" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox onpaste="return false" ClientIDMode="Static" onkeyup="MarkcalcCC()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtsalesprom_MarkCostLM" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator94" runat="server" ErrorMessage="Value required" ControlToValidate="txtsalesprom_MarkCostLM" ValidationGroup="Mar" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox onpaste="return false" clientidmode="Static" onkeyup="MarkcalcCC()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txtservicecharg_MarkCostLM" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator95" runat="server" errormessage="Value required" controltovalidate="txtservicecharg_MarkCostLM" validationgroup="Mar" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox onpaste="return false" ClientIDMode="Static" onkeyup="MarkcalcCC()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtservicecharg_MarkCostLM" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator95" runat="server" ErrorMessage="Value required" ControlToValidate="txtservicecharg_MarkCostLM" ValidationGroup="Mar" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox onpaste="return false" clientidmode="Static" onkeyup="MarkcalcCC()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txtAdvertise_MarkCostLM" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator96" runat="server" errormessage="Value required" controltovalidate="txtAdvertise_MarkCostLM" validationgroup="Mar" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox onpaste="return false" ClientIDMode="Static" onkeyup="MarkcalcCC()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtAdvertise_MarkCostLM" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator96" runat="server" ErrorMessage="Value required" ControlToValidate="txtAdvertise_MarkCostLM" ValidationGroup="Mar" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox onpaste="return false" clientidmode="Static" onkeyup="MarkcalcCC()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txtAdvanceCard_MarkCostLM" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator97" runat="server" errormessage="Value required" controltovalidate="txtAdvanceCard_MarkCostLM" validationgroup="Mar" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox onpaste="return false" ClientIDMode="Static" onkeyup="MarkcalcCC()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtAdvanceCard_MarkCostLM" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator97" runat="server" ErrorMessage="Value required" ControlToValidate="txtAdvanceCard_MarkCostLM" ValidationGroup="Mar" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox onpaste="return false" clientidmode="Static" onkeyup="MarkcalcCC()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txtContractlabour_MarkCostLM" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator98" runat="server" errormessage="Value required" controltovalidate="txtContractlabour_MarkCostLM" validationgroup="Mar" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox onpaste="return false" ClientIDMode="Static" onkeyup="MarkcalcCC()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtContractlabour_MarkCostLM" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator98" runat="server" ErrorMessage="Value required" ControlToValidate="txtContractlabour_MarkCostLM" ValidationGroup="Mar" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox onpaste="return false" clientidmode="Static" onkeyup="MarkcalcCC()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txtOthers_MarkCostLM" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator99" runat="server" errormessage="Value required" controltovalidate="txtOthers_MarkCostLM" validationgroup="Mar" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox onpaste="return false" ClientIDMode="Static" onkeyup="MarkcalcCC()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtOthers_MarkCostLM" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator99" runat="server" ErrorMessage="Value required" ControlToValidate="txtOthers_MarkCostLM" ValidationGroup="Mar" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox onpaste="return false" clientidmode="Static" onkeyup="MarkcalcCC()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txtTotal_MarkCostLM" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator100" runat="server" errormessage="Value required" controltovalidate="txtTotal_MarkCostLM" validationgroup="Mar" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox onpaste="return false" ClientIDMode="Static" onkeyup="MarkcalcCC()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtTotal_MarkCostLM" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator100" runat="server" ErrorMessage="Value required" ControlToValidate="txtTotal_MarkCostLM" ValidationGroup="Mar" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                         </tr>
                                                     </table>
@@ -1807,58 +1816,58 @@
                                                     <th>Salary And Allow</th>
                                                     <th>Transportation</th>
                                                     <th>Service-Charge</th>
-                                                    <th>Ohters</th>
+                                                    <th>Other</th>
                                                     <th>Total</th>
                                                     <th>Salary And Allow</th>
                                                     <th>transportation</th>
                                                     <th>Service-Charge</th>
-                                                    <th>Ohter Tax</th>
+                                                    <th>Other Tax</th>
                                                     <th>Total</th>
                                                 </tr>
                                                 <tr>
                                                     <td>
-                                                        <asp:textbox onpaste="return false" clientidmode="Static" onkeyup="MarkcalcCC()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txtsalryAllow_SMGNMG" runat="server" cssclass="form-control"></asp:textbox>
-                                                        <asp:regularexpressionvalidator id="RegularExpressionValidator101" runat="server" errormessage="Value required" controltovalidate="txtsalryAllow_SMGNMG" validationgroup="Mar" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                        <asp:TextBox onpaste="return false" ClientIDMode="Static" onkeyup="MarkcalcCC()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtsalryAllow_SMGNMG" runat="server" CssClass="form-control"></asp:TextBox>
+                                                        <asp:RegularExpressionValidator ID="RegularExpressionValidator101" runat="server" ErrorMessage="Value required" ControlToValidate="txtsalryAllow_SMGNMG" ValidationGroup="Mar" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                     </td>
                                                     <td>
-                                                        <asp:textbox onpaste="return false" clientidmode="Static" onkeyup="MarkcalcCC()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txtTransport_SMGNMG" runat="server" cssclass="form-control"></asp:textbox>
-                                                        <asp:regularexpressionvalidator id="RegularExpressionValidator102" runat="server" errormessage="Value required" controltovalidate="txtTransport_SMGNMG" validationgroup="Mar" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                        <asp:TextBox onpaste="return false" ClientIDMode="Static" onkeyup="MarkcalcCC()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtTransport_SMGNMG" runat="server" CssClass="form-control"></asp:TextBox>
+                                                        <asp:RegularExpressionValidator ID="RegularExpressionValidator102" runat="server" ErrorMessage="Value required" ControlToValidate="txtTransport_SMGNMG" ValidationGroup="Mar" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                     </td>
                                                     <td>
-                                                        <asp:textbox onpaste="return false" clientidmode="Static" onkeyup="MarkcalcCC()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txtServicCharg_SMGNMG" runat="server" cssclass="form-control"></asp:textbox>
-                                                        <asp:regularexpressionvalidator id="RegularExpressionValidator103" runat="server" errormessage="Value required" controltovalidate="txtServicCharg_SMGNMG" validationgroup="Mar" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                        <asp:TextBox onpaste="return false" ClientIDMode="Static" onkeyup="MarkcalcCC()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtServicCharg_SMGNMG" runat="server" CssClass="form-control"></asp:TextBox>
+                                                        <asp:RegularExpressionValidator ID="RegularExpressionValidator103" runat="server" ErrorMessage="Value required" ControlToValidate="txtServicCharg_SMGNMG" ValidationGroup="Mar" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                     </td>
                                                     <td>
-                                                        <asp:textbox onpaste="return false" clientidmode="Static" onkeyup="MarkcalcCC()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txtOthers_SMGNMG" runat="server" cssclass="form-control"></asp:textbox>
-                                                        <asp:regularexpressionvalidator id="RegularExpressionValidator104" runat="server" errormessage="Value required" controltovalidate="txtOthers_SMGNMG" validationgroup="Mar" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                        <asp:TextBox onpaste="return false" ClientIDMode="Static" onkeyup="MarkcalcCC()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtOthers_SMGNMG" runat="server" CssClass="form-control"></asp:TextBox>
+                                                        <asp:RegularExpressionValidator ID="RegularExpressionValidator104" runat="server" ErrorMessage="Value required" ControlToValidate="txtOthers_SMGNMG" ValidationGroup="Mar" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                     </td>
                                                     <td>
-                                                        <asp:textbox onpaste="return false" clientidmode="Static" onkeyup="MarkcalcCC()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txtTotal_SMGNMG" runat="server" cssclass="form-control"></asp:textbox>
-                                                        <asp:regularexpressionvalidator id="RegularExpressionValidator105" runat="server" errormessage="Value required" controltovalidate="txtTotal_SMGNMG" validationgroup="Mar" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                        <asp:TextBox onpaste="return false" ClientIDMode="Static" onkeyup="MarkcalcCC()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtTotal_SMGNMG" runat="server" CssClass="form-control"></asp:TextBox>
+                                                        <asp:RegularExpressionValidator ID="RegularExpressionValidator105" runat="server" ErrorMessage="Value required" ControlToValidate="txtTotal_SMGNMG" ValidationGroup="Mar" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                     </td>
                                                     <td>
-                                                        <asp:textbox onpaste="return false" clientidmode="Static" onkeyup="MarkcalcCC()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txtsalryAndAllow_INDG" runat="server" cssclass="form-control"></asp:textbox>
-                                                        <asp:regularexpressionvalidator id="RegularExpressionValidator106" runat="server" errormessage="Value required" controltovalidate="txtsalryAndAllow_INDG" validationgroup="Mar" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                        <asp:TextBox onpaste="return false" ClientIDMode="Static" onkeyup="MarkcalcCC()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtsalryAndAllow_INDG" runat="server" CssClass="form-control"></asp:TextBox>
+                                                        <asp:RegularExpressionValidator ID="RegularExpressionValidator106" runat="server" ErrorMessage="Value required" ControlToValidate="txtsalryAndAllow_INDG" ValidationGroup="Mar" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                     </td>
                                                     <td>
-                                                        <asp:textbox onpaste="return false" clientidmode="Static" onkeyup="MarkcalcCC()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txtTransport_INDG" runat="server" cssclass="form-control"></asp:textbox>
-                                                        <asp:regularexpressionvalidator id="RegularExpressionValidator107" runat="server" errormessage="Value required" controltovalidate="txtTransport_INDG" validationgroup="Mar" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                        <asp:TextBox onpaste="return false" ClientIDMode="Static" onkeyup="MarkcalcCC()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtTransport_INDG" runat="server" CssClass="form-control"></asp:TextBox>
+                                                        <asp:RegularExpressionValidator ID="RegularExpressionValidator107" runat="server" ErrorMessage="Value required" ControlToValidate="txtTransport_INDG" ValidationGroup="Mar" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                     </td>
                                                     <td>
-                                                        <asp:textbox onpaste="return false" clientidmode="Static" onkeyup="MarkcalcCC()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txtServicCharg_INDG" runat="server" cssclass="form-control"></asp:textbox>
-                                                        <asp:regularexpressionvalidator id="RegularExpressionValidator108" runat="server" errormessage="Value required" controltovalidate="txtServicCharg_INDG" validationgroup="Mar" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                        <asp:TextBox onpaste="return false" ClientIDMode="Static" onkeyup="MarkcalcCC()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtServicCharg_INDG" runat="server" CssClass="form-control"></asp:TextBox>
+                                                        <asp:RegularExpressionValidator ID="RegularExpressionValidator108" runat="server" ErrorMessage="Value required" ControlToValidate="txtServicCharg_INDG" ValidationGroup="Mar" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                     </td>
                                                     <td>
-                                                        <asp:textbox onpaste="return false" clientidmode="Static" onkeyup="MarkcalcCC()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txtOthersTax_INDG" runat="server" cssclass="form-control"></asp:textbox>
-                                                        <asp:regularexpressionvalidator id="RegularExpressionValidator109" runat="server" errormessage="Value required" controltovalidate="txtOthersTax_INDG" validationgroup="Mar" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                        <asp:TextBox onpaste="return false" ClientIDMode="Static" onkeyup="MarkcalcCC()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtOthersTax_INDG" runat="server" CssClass="form-control"></asp:TextBox>
+                                                        <asp:RegularExpressionValidator ID="RegularExpressionValidator109" runat="server" ErrorMessage="Value required" ControlToValidate="txtOthersTax_INDG" ValidationGroup="Mar" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                     </td>
                                                     <td>
-                                                        <asp:textbox onpaste="return false" clientidmode="Static" onkeyup="MarkcalcCC()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txtTotal_INDG" runat="server" cssclass="form-control"></asp:textbox>
-                                                        <asp:regularexpressionvalidator id="RegularExpressionValidator110" runat="server" errormessage="Value required" controltovalidate="txtTotal_INDG" validationgroup="Mar" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                        <asp:TextBox onpaste="return false" ClientIDMode="Static" onkeyup="MarkcalcCC()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtTotal_INDG" runat="server" CssClass="form-control"></asp:TextBox>
+                                                        <asp:RegularExpressionValidator ID="RegularExpressionValidator110" runat="server" ErrorMessage="Value required" ControlToValidate="txtTotal_INDG" ValidationGroup="Mar" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                     </td>
                                                     <td>
-                                                        <asp:textbox onpaste="return false" clientidmode="Static" onkeyup="MarkcalcCC()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txtTotalMKTG" runat="server" cssclass="form-control"></asp:textbox>
-                                                        <asp:regularexpressionvalidator id="RegularExpressionValidator111" runat="server" errormessage="Value required" controltovalidate="txtTotalMKTG" validationgroup="Mar" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                        <asp:TextBox onpaste="return false" ClientIDMode="Static" onkeyup="MarkcalcCC()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtTotalMKTG" runat="server" CssClass="form-control"></asp:TextBox>
+                                                        <asp:RegularExpressionValidator ID="RegularExpressionValidator111" runat="server" ErrorMessage="Value required" ControlToValidate="txtTotalMKTG" ValidationGroup="Mar" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                     </td>
                                                 </tr>
                                             </table>
@@ -1866,7 +1875,7 @@
                                     </fieldset>
                                     <div class="col-md-2 pull-right">
                                         <div class="form-group">
-                                            <asp:button id="btnMarketing" runat="server" style="margin-top: 19px;" cssclass="btn btn-primary btn-block" text="Save" validationgroup="Mar" onclick="btnMarketing_Click"></asp:button>
+                                            <asp:Button ID="btnMarketing" runat="server" Style="margin-top: 19px;" CssClass="btn btn-primary btn-block" Text="Save" ValidationGroup="Mar" OnClick="btnMarketing_Click"></asp:Button>
                                         </div>
                                     </div>
                                 </div>
@@ -1898,57 +1907,57 @@
                                                         </tr>
                                                         <tr>
                                                             <td>
-                                                                <asp:textbox onpaste="return false" clientidmode="Static" oninput="validate(this)" autocomplete="off" maxlength="8" onkeyup="rowmatecost()" onkeypress="return isNumberKey(this, event);" id="txtDCSMilkRMC" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator2" runat="server" errormessage="Value required" controltovalidate="txtDCSMilkRMC" validationgroup="a"
-                                                                    validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox onpaste="return false" ClientIDMode="Static" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeyup="rowmatecost()" onkeypress="return isNumberKey(this, event);" ID="txtDCSMilkRMC" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ErrorMessage="Value required" ControlToValidate="txtDCSMilkRMC" ValidationGroup="a"
+                                                                    ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox onpaste="return false" clientidmode="Static" oninput="validate(this)" autocomplete="off" maxlength="8" onkeyup="rowmatecost()" onkeypress="return isNumberKey(this, event);" id="txtSMGMilkRMC" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator1" runat="server" errormessage="Value required" controltovalidate="txtSMGMilkRMC" validationgroup="a"
-                                                                    validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox onpaste="return false" ClientIDMode="Static" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeyup="rowmatecost()" onkeypress="return isNumberKey(this, event);" ID="txtSMGMilkRMC" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="Value required" ControlToValidate="txtSMGMilkRMC" ValidationGroup="a"
+                                                                    ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox onpaste="return false" clientidmode="Static" oninput="validate(this)" autocomplete="off" maxlength="8" onkeyup="rowmatecost()" onkeypress="return isNumberKey(this, event);" id="txtNMGMilkRMC" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator3" runat="server" errormessage="Value required" controltovalidate="txtNMGMilkRMC" validationgroup="a"
-                                                                    validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox onpaste="return false" ClientIDMode="Static" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeyup="rowmatecost()" onkeypress="return isNumberKey(this, event);" ID="txtNMGMilkRMC" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator3" runat="server" ErrorMessage="Value required" ControlToValidate="txtNMGMilkRMC" ValidationGroup="a"
+                                                                    ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox onpaste="return false" clientidmode="Static" oninput="validate(this)" autocomplete="off" maxlength="8" onkeyup="rowmatecost()" onkeypress="return isNumberKey(this, event);" id="txtOtherMilkRMC" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator4" runat="server" errormessage="Value required" controltovalidate="txtOtherMilkRMC" validationgroup="a"
-                                                                    validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox onpaste="return false" ClientIDMode="Static" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeyup="rowmatecost()" onkeypress="return isNumberKey(this, event);" ID="txtOtherMilkRMC" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator4" runat="server" ErrorMessage="Value required" ControlToValidate="txtOtherMilkRMC" ValidationGroup="a"
+                                                                    ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox onpaste="return false" clientidmode="Static" oninput="validate(this)" autocomplete="off" maxlength="8" onkeyup="rowmatecost()" onkeypress="return isNumberKey(this, event);" id="txtCOMMUsedRMC" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator5" runat="server" errormessage="Value required" controltovalidate="txtCOMMUsedRMC" validationgroup="a"
-                                                                    validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox onpaste="return false" ClientIDMode="Static" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeyup="rowmatecost()" onkeypress="return isNumberKey(this, event);" ID="txtCOMMUsedRMC" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator5" runat="server" ErrorMessage="Value required" ControlToValidate="txtCOMMUsedRMC" ValidationGroup="a"
+                                                                    ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox onpaste="return false" clientidmode="Static" oninput="validate(this)" autocomplete="off" maxlength="8" onkeyup="rowmatecost()" onkeypress="return isNumberKey(this, event);" id="txtTotalRMC" runat="server" cssclass="form-control"></asp:textbox>
+                                                                <asp:TextBox onpaste="return false" ClientIDMode="Static" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeyup="rowmatecost()" onkeypress="return isNumberKey(this, event);" ID="txtTotalRMC" runat="server" CssClass="form-control"></asp:TextBox>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox onpaste="return false" clientidmode="Static" oninput="validate(this)" autocomplete="off" maxlength="8" onkeyup="rowmatecost()" onkeypress="return isNumberKey(this, event);" id="txtDCSdairyCCimc" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator7" runat="server" errormessage="Value required" controltovalidate="txtDCSdairyCCimc" validationgroup="a"
-                                                                    validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox onpaste="return false" ClientIDMode="Static" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeyup="rowmatecost()" onkeypress="return isNumberKey(this, event);" ID="txtDCSdairyCCimc" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator7" runat="server" ErrorMessage="Value required" ControlToValidate="txtDCSdairyCCimc" ValidationGroup="a"
+                                                                    ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox onpaste="return false" clientidmode="Static" oninput="validate(this)" autocomplete="off" maxlength="8" onkeyup="rowmatecost()" onkeypress="return isNumberKey(this, event);" id="txtccIMCtoDAIRYpt" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator8" runat="server" errormessage="Value required" controltovalidate="txtccIMCtoDAIRYpt" validationgroup="a"
-                                                                    validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox onpaste="return false" ClientIDMode="Static" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeyup="rowmatecost()" onkeypress="return isNumberKey(this, event);" ID="txtccIMCtoDAIRYpt" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator8" runat="server" ErrorMessage="Value required" ControlToValidate="txtccIMCtoDAIRYpt" ValidationGroup="a"
+                                                                    ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox onpaste="return false" clientidmode="Static" oninput="validate(this)" autocomplete="off" maxlength="8" onkeyup="rowmatecost()" onkeypress="return isNumberKey(this, event);" id="txtSMGMILKPT" runat="server" cssclass="form-control">
+                                                                <asp:TextBox onpaste="return false" ClientIDMode="Static" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeyup="rowmatecost()" onkeypress="return isNumberKey(this, event);" ID="txtSMGMILKPT" runat="server" CssClass="form-control">
 
-                                                                </asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator9" runat="server" errormessage="Value required" controltovalidate="txtSMGMILKPT" validationgroup="a"
-                                                                    validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                </asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator9" runat="server" ErrorMessage="Value required" ControlToValidate="txtSMGMILKPT" ValidationGroup="a"
+                                                                    ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox onpaste="return false" clientidmode="Static" oninput="validate(this)" autocomplete="off" maxlength="8" onkeyup="rowmatecost()" onkeypress="return isNumberKey(this, event);" id="txtNMGMILKpt" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator10" runat="server" errormessage="Value required" controltovalidate="txtNMGMILKpt" validationgroup="a"
-                                                                    validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox onpaste="return false" ClientIDMode="Static" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeyup="rowmatecost()" onkeypress="return isNumberKey(this, event);" ID="txtNMGMILKpt" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator10" runat="server" ErrorMessage="Value required" ControlToValidate="txtNMGMILKpt" ValidationGroup="a"
+                                                                    ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox onpaste="return false" clientidmode="Static" oninput="validate(this)" autocomplete="off" maxlength="8" onkeyup="rowmatecost()" onkeypress="return isNumberKey(this, event);" id="txtTotalPT" runat="server" cssclass="form-control"></asp:textbox>
+                                                                <asp:TextBox onpaste="return false" ClientIDMode="Static" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeyup="rowmatecost()" onkeypress="return isNumberKey(this, event);" ID="txtTotalPT" runat="server" CssClass="form-control"></asp:TextBox>
                                                             </td>
                                                         </tr>
                                                     </table>
@@ -1959,7 +1968,7 @@
                                     </fieldset>
                                     <div class="col-md-2 pull-right">
                                         <div class="form-group">
-                                            <asp:button id="btnroematerial" runat="server" style="margin-top: 19px;" cssclass="btn btn-primary btn-block" text="Save" onclick="btnroematerial_click" validationgroup="a"></asp:button>
+                                            <asp:Button ID="btnroematerial" runat="server" Style="margin-top: 19px;" CssClass="btn btn-primary btn-block" Text="Save" OnClick="btnroematerial_click" ValidationGroup="a"></asp:Button>
                                         </div>
                                     </div>
                                 </div>
@@ -1989,48 +1998,48 @@
                                                         </tr>
                                                         <tr>
                                                             <td>
-                                                                <asp:textbox onpaste="return false" clientidmode="Static" onkeyup="ADMcalc()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txtsalaryAndAllow_AD" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator66" runat="server" errormessage="Value required" controltovalidate="txtsalaryAndAllow_AD" validationgroup="ADM" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox onpaste="return false" ClientIDMode="Static" onkeyup="ADMcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtsalaryAndAllow_AD" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator66" runat="server" ErrorMessage="Value required" ControlToValidate="txtsalaryAndAllow_AD" ValidationGroup="ADM" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox onpaste="return false" clientidmode="Static" onkeyup="ADMcalc()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txtMedicalTA_AD" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator67" runat="server" errormessage="Value required" controltovalidate="txtMedicalTA_AD" validationgroup="ADM" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox onpaste="return false" ClientIDMode="Static" onkeyup="ADMcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtMedicalTA_AD" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator67" runat="server" ErrorMessage="Value required" ControlToValidate="txtMedicalTA_AD" ValidationGroup="ADM" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox onpaste="return false" clientidmode="Static" onkeyup="ADMcalc()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txtConveyence_AD" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator68" runat="server" errormessage="Value required" controltovalidate="txtConveyence_AD" validationgroup="ADM" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox onpaste="return false" ClientIDMode="Static" onkeyup="ADMcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtConveyence_AD" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator68" runat="server" ErrorMessage="Value required" ControlToValidate="txtConveyence_AD" ValidationGroup="ADM" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox onpaste="return false" clientidmode="Static" onkeyup="ADMcalc()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txtSecurity_AD" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator69" runat="server" errormessage="Value required" controltovalidate="txtSecurity_AD" validationgroup="ADM" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox onpaste="return false" ClientIDMode="Static" onkeyup="ADMcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtSecurity_AD" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator69" runat="server" ErrorMessage="Value required" ControlToValidate="txtSecurity_AD" ValidationGroup="ADM" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox onpaste="return false" clientidmode="Static" onkeyup="ADMcalc()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txtSupervisionVehic_AD" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator70" runat="server" errormessage="Value required" controltovalidate="txtSupervisionVehic_AD" validationgroup="ADM" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox onpaste="return false" ClientIDMode="Static" onkeyup="ADMcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtSupervisionVehic_AD" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator70" runat="server" ErrorMessage="Value required" ControlToValidate="txtSupervisionVehic_AD" ValidationGroup="ADM" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox onpaste="return false" clientidmode="Static" onkeyup="ADMcalc()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txtContractLabour_AD" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator71" runat="server" errormessage="Value required" controltovalidate="txtContractLabour_AD" validationgroup="ADM" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox onpaste="return false" ClientIDMode="Static" onkeyup="ADMcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtContractLabour_AD" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator71" runat="server" ErrorMessage="Value required" ControlToValidate="txtContractLabour_AD" ValidationGroup="ADM" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox onpaste="return false" clientidmode="Static" onkeyup="ADMcalc()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txtInsuranceOTH_AD" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator72" runat="server" errormessage="Value required" controltovalidate="txtInsuranceOTH_AD" validationgroup="ADM" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox onpaste="return false" ClientIDMode="Static" onkeyup="ADMcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtInsuranceOTH_AD" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator72" runat="server" ErrorMessage="Value required" ControlToValidate="txtInsuranceOTH_AD" ValidationGroup="ADM" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox onpaste="return false" clientidmode="Static" onkeyup="ADMcalc()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txtLegalAuditFee_AD" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator73" runat="server" errormessage="Value required" controltovalidate="txtLegalAuditFee_AD" validationgroup="ADM" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox onpaste="return false" ClientIDMode="Static" onkeyup="ADMcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtLegalAuditFee_AD" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator73" runat="server" ErrorMessage="Value required" ControlToValidate="txtLegalAuditFee_AD" ValidationGroup="ADM" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox onpaste="return false" clientidmode="Static" onkeyup="ADMcalc()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txtStationary_AD" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator74" runat="server" errormessage="Value required" controltovalidate="txtStationary_AD" validationgroup="ADM" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox onpaste="return false" ClientIDMode="Static" onkeyup="ADMcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtStationary_AD" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator74" runat="server" ErrorMessage="Value required" ControlToValidate="txtStationary_AD" ValidationGroup="ADM" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox onpaste="return false" clientidmode="Static" onkeyup="ADMcalc()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txtOther_AD" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator75" runat="server" errormessage="Value required" controltovalidate="txtOther_AD" validationgroup="ADM" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox onpaste="return false" ClientIDMode="Static" onkeyup="ADMcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtOther_AD" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator75" runat="server" ErrorMessage="Value required" ControlToValidate="txtOther_AD" ValidationGroup="ADM" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox onpaste="return false" clientidmode="Static" onkeyup="ADMcalc()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txtTotal_AD" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator76" runat="server" errormessage="Value required" controltovalidate="txtTotal_AD" validationgroup="ADM" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox onpaste="return false" ClientIDMode="Static" onkeyup="ADMcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtTotal_AD" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator76" runat="server" ErrorMessage="Value required" ControlToValidate="txtTotal_AD" ValidationGroup="ADM" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                         </tr>
                                                     </table>
@@ -2054,48 +2063,48 @@
                                                         </tr>
                                                         <tr>
                                                             <td>
-                                                                <asp:textbox onpaste="return false" clientidmode="Static" onkeyup="ADMcalc()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txtBonus_Provi" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator77" runat="server" errormessage="Value required" controltovalidate="txtBonus_Provi" validationgroup="ADM" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox onpaste="return false" ClientIDMode="Static" onkeyup="ADMcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtBonus_Provi" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator77" runat="server" ErrorMessage="Value required" ControlToValidate="txtBonus_Provi" ValidationGroup="ADM" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox onpaste="return false" clientidmode="Static" onkeyup="ADMcalc()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txtAuditFees_Provi" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator78" runat="server" errormessage="Value required" controltovalidate="txtAuditFees_Provi" validationgroup="ADM" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox onpaste="return false" ClientIDMode="Static" onkeyup="ADMcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtAuditFees_Provi" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator78" runat="server" ErrorMessage="Value required" ControlToValidate="txtAuditFees_Provi" ValidationGroup="ADM" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox onpaste="return false" clientidmode="Static" onkeyup="ADMcalc()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txtGroupGratutiy_Provi" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator79" runat="server" errormessage="Value required" controltovalidate="txtGroupGratutiy_Provi" validationgroup="ADM" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox onpaste="return false" ClientIDMode="Static" onkeyup="ADMcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtGroupGratutiy_Provi" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator79" runat="server" ErrorMessage="Value required" ControlToValidate="txtGroupGratutiy_Provi" ValidationGroup="ADM" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox onpaste="return false" clientidmode="Static" onkeyup="ADMcalc()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txtLiveires_Provi" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator80" runat="server" errormessage="Value required" controltovalidate="txtLiveires_Provi" validationgroup="ADM" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox onpaste="return false" ClientIDMode="Static" onkeyup="ADMcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtLiveires_Provi" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator80" runat="server" ErrorMessage="Value required" ControlToValidate="txtLiveires_Provi" ValidationGroup="ADM" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox onpaste="return false" clientidmode="Static" onkeyup="ADMcalc()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txtLeavesalary_Provi" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator81" runat="server" errormessage="Value required" controltovalidate="txtLeavesalary_Provi" validationgroup="ADM" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox onpaste="return false" ClientIDMode="Static" onkeyup="ADMcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtLeavesalary_Provi" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator81" runat="server" ErrorMessage="Value required" ControlToValidate="txtLeavesalary_Provi" ValidationGroup="ADM" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox onpaste="return false" clientidmode="Static" onkeyup="ADMcalc()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txtotherExps_Provi" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator82" runat="server" errormessage="Value required" controltovalidate="txtotherExps_Provi" validationgroup="ADM" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox onpaste="return false" ClientIDMode="Static" onkeyup="ADMcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtotherExps_Provi" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator82" runat="server" ErrorMessage="Value required" ControlToValidate="txtotherExps_Provi" ValidationGroup="ADM" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox onpaste="return false" clientidmode="Static" onkeyup="ADMcalc()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txtTotal_Provi" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator83" runat="server" errormessage="Value required" controltovalidate="txtTotal_Provi" validationgroup="ADM" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox onpaste="return false" ClientIDMode="Static" onkeyup="ADMcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtTotal_Provi" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator83" runat="server" ErrorMessage="Value required" ControlToValidate="txtTotal_Provi" ValidationGroup="ADM" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox onpaste="return false" clientidmode="Static" onkeyup="ADMcalc()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txtNDDB_LI" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator84" runat="server" errormessage="Value required" controltovalidate="txtNDDB_LI" validationgroup="ADM" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox onpaste="return false" ClientIDMode="Static" onkeyup="ADMcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtNDDB_LI" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator84" runat="server" ErrorMessage="Value required" ControlToValidate="txtNDDB_LI" ValidationGroup="ADM" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox onpaste="return false" clientidmode="Static" onkeyup="ADMcalc()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txtBANKLoan_LI" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator85" runat="server" errormessage="Value required" controltovalidate="txtBANKLoan_LI" validationgroup="ADM" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox onpaste="return false" ClientIDMode="Static" onkeyup="ADMcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtBANKLoan_LI" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator85" runat="server" ErrorMessage="Value required" ControlToValidate="txtBANKLoan_LI" ValidationGroup="ADM" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox onpaste="return false" clientidmode="Static" onkeyup="ADMcalc()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txtTotal_LI" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator86" runat="server" errormessage="Value required" controltovalidate="txtTotal_LI" validationgroup="ADM" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox onpaste="return false" ClientIDMode="Static" onkeyup="ADMcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtTotal_LI" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator86" runat="server" ErrorMessage="Value required" ControlToValidate="txtTotal_LI" ValidationGroup="ADM" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox onpaste="return false" clientidmode="Static" onkeyup="ADMcalc()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txtDepreciation" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator87" runat="server" errormessage="Value required" controltovalidate="txtDepreciation" validationgroup="ADM" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox onpaste="return false" ClientIDMode="Static" onkeyup="ADMcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtDepreciation" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator87" runat="server" ErrorMessage="Value required" ControlToValidate="txtDepreciation" ValidationGroup="ADM" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                         </tr>
                                                     </table>
@@ -2111,20 +2120,20 @@
                                                         </tr>
                                                         <tr>
                                                             <td>
-                                                                <asp:textbox onpaste="return false" clientidmode="Static" onkeyup="ADMcalc()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txtProductMaking" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator88" runat="server" errormessage="Value required" controltovalidate="txtProductMaking" validationgroup="ADM" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox onpaste="return false" ClientIDMode="Static" onkeyup="ADMcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtProductMaking" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator88" runat="server" ErrorMessage="Value required" ControlToValidate="txtProductMaking" ValidationGroup="ADM" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox onpaste="return false" clientidmode="Static" onkeyup="ADMcalc()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txtConversionCharge" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator89" runat="server" errormessage="Value required" controltovalidate="txtConversionCharge" validationgroup="ADM" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox onpaste="return false" ClientIDMode="Static" onkeyup="ADMcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtConversionCharge" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator89" runat="server" ErrorMessage="Value required" ControlToValidate="txtConversionCharge" ValidationGroup="ADM" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox onpaste="return false" clientidmode="Static" onkeyup="ADMcalc()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txtFPOther" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator90" runat="server" errormessage="Value required" controltovalidate="txtFPOther" validationgroup="ADM" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox onpaste="return false" ClientIDMode="Static" onkeyup="ADMcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtFPOther" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator90" runat="server" ErrorMessage="Value required" ControlToValidate="txtFPOther" ValidationGroup="ADM" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                             <td>
-                                                                <asp:textbox onpaste="return false" clientidmode="Static" onkeyup="ADMcalc()" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txtFPTotal" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator91" runat="server" errormessage="Value required" controltovalidate="txtFPTotal" validationgroup="ADM" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
+                                                                <asp:TextBox onpaste="return false" ClientIDMode="Static" onkeyup="ADMcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtFPTotal" runat="server" CssClass="form-control"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator91" runat="server" ErrorMessage="Value required" ControlToValidate="txtFPTotal" ValidationGroup="ADM" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
                                                             </td>
                                                         </tr>
                                                     </table>
@@ -2132,404 +2141,437 @@
                                             </div>
                                         </fieldset>
                                     </fieldset>
-                                    <div class="col-md-2 pull-right">
-                                        <div class="form-group">
-                                            <asp:button id="btnAdministration" runat="server" style="margin-top: 19px;" cssclass="btn btn-primary btn-block" text="Save" validationgroup="ADM" onclick="btnAdministration_Click"></asp:button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div id="Reciepts" runat="server">
-                                    <fieldset>
-                                        <legend>RECETPTS</legend>
-                                        <fieldset>
-                                            <legend>10.0 FINANCIAL PERFORMANCE (conted): (Rs.)</legend>
-                                            <div class="col-md-12">
-                                                <div class="table table-responsive">
-                                                    <table class="table table-bordered">
-                                                        <tr>
-                                                            <th colspan="3">TOTAL RECEIPTS :</th>
-                                                            <th rowspan="2">COMMOD-ITIES USED</th>
-                                                            <th rowspan="2">COMMOD-ITIES PURCH/RETURNS</th>
-                                                            <th rowspan="2">OPENING STOCKS</th>
-                                                            <th rowspan="2">CLOSING STOCKS</th>
-                                                            <th rowspan="2">OTHER INCOME</th>
-                                                            <th rowspan="2">TOTAL NET RECEIPTS</th>
-                                                            <th colspan="4">SURPLUS/DEFICIT(-)</th>
-                                                        </tr>
-                                                        <tr>
-                                                            <th>MILK SALE</th>
-                                                            <th>PRODUCTS</th>
-                                                            <th>TOTAL SALE</th>
-                                                            <th>BEFORE IDA/OFF</th>
-                                                            <th>BEFORE DEFFERED</th>
-                                                            <th>BEFORE DEPRECIATION</th>
-                                                            <th>NET INCLU. DEP.</th>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>
-                                                                <asp:textbox onpaste="return false" clientidmode="Static" onkeyup="RCTcalc()" oninput="validate(this)" autocomplete="off" maxlength="10" onkeypress="return isNumberKey(this, event);" id="txtmilksaleTR" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator41" runat="server" errormessage="Value required" controltovalidate="txtmilksaleTR" validationgroup="FPC" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
-                                                            </td>
-                                                            <td>
-                                                                <asp:textbox onpaste="return false" clientidmode="Static" onkeyup="RCTcalc()" oninput="validate(this)" autocomplete="off" maxlength="10" onkeypress="return isNumberKey(this, event);" id="txtProductsTR" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator42" runat="server" errormessage="Value required" controltovalidate="txtProductsTR" validationgroup="FPC" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
-                                                            </td>
-                                                            <td>
-                                                                <asp:textbox onpaste="return false" clientidmode="Static" onkeyup="RCTcalc()" oninput="validate(this)" autocomplete="off" maxlength="10" onkeypress="return isNumberKey(this, event);" id="txtTotalSaleTR" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator43" runat="server" errormessage="Value required" controltovalidate="txtTotalSaleTR" validationgroup="FPC" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
-                                                            </td>
-                                                            <td>
-                                                                <asp:textbox onpaste="return false" clientidmode="Static" onkeyup="RCTcalc()" oninput="validate(this)" autocomplete="off" maxlength="10" onkeypress="return isNumberKey(this, event);" id="txtCommoditiesTR" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator44" runat="server" errormessage="Value required" controltovalidate="txtCommoditiesTR" validationgroup="FPC" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
-                                                            </td>
-                                                            <td>
-                                                                <asp:textbox onpaste="return false" clientidmode="Static" onkeyup="RCTcalc()" oninput="validate(this)" autocomplete="off" maxlength="10" onkeypress="return isNumberKey(this, event);" id="txtcommditiesPurchTR" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator45" runat="server" errormessage="Value required" controltovalidate="txtcommditiesPurchTR" validationgroup="FPC" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
-                                                            </td>
-                                                            <td>
-                                                                <asp:textbox onpaste="return false" clientidmode="Static" onkeyup="RCTcalc()" oninput="validate(this)" autocomplete="off" maxlength="10" onkeypress="return isNumberKey(this, event);" id="txtopeningStocksTR" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator46" runat="server" errormessage="Value required" controltovalidate="txtopeningStocksTR" validationgroup="FPC" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
-                                                            </td>
-                                                            <td>
-                                                                <asp:textbox onpaste="return false" clientidmode="Static" onkeyup="RCTcalc()" oninput="validate(this)" autocomplete="off" maxlength="10" onkeypress="return isNumberKey(this, event);" id="txtClosingStocksTR" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator47" runat="server" errormessage="Value required" controltovalidate="txtClosingStocksTR" validationgroup="FPC" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
-                                                            </td>
-                                                            <td>
-                                                                <asp:textbox onpaste="return false" clientidmode="Static" onkeyup="RCTcalc()" oninput="validate(this)" autocomplete="off" maxlength="10" onkeypress="return isNumberKey(this, event);" id="txtOtherIncomeTR" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator48" runat="server" errormessage="Value required" controltovalidate="txtOtherIncomeTR" validationgroup="FPC" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
-                                                            </td>
-                                                            <td>
-                                                                <asp:textbox onpaste="return false" clientidmode="Static" onkeyup="RCTcalc()" oninput="validate(this)" autocomplete="off" maxlength="10" onkeypress="return isNumberKey(this, event);" id="txtNetRecieptsTR" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator49" runat="server" errormessage="Value required" controltovalidate="txtNetRecieptsTR" validationgroup="FPC" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
-                                                            </td>
-                                                            <td>
-                                                                <asp:textbox onpaste="return false" clientidmode="Static" onkeyup="RCTcalc()" oninput="validate(this)" autocomplete="off" maxlength="10" onkeypress="return isNumberKey(this, event);" id="txtbeforIDATR" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator50" runat="server" errormessage="Value required" controltovalidate="txtbeforIDATR" validationgroup="FPC" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
-                                                            </td>
-                                                            <td>
-                                                                <asp:textbox onpaste="return false" clientidmode="Static" onkeyup="RCTcalc()" oninput="validate(this)" autocomplete="off" maxlength="10" onkeypress="return isNumberKey(this, event);" id="txtbeforDEFERDTR" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator51" runat="server" errormessage="Value required" controltovalidate="txtbeforDEFERDTR" validationgroup="FPC" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
-                                                            </td>
-                                                            <td>
-                                                                <asp:textbox onpaste="return false" clientidmode="Static" onkeyup="RCTcalc()" oninput="validate(this)" autocomplete="off" maxlength="10" onkeypress="return isNumberKey(this, event);" id="txtbeforDEPRECIATIONTR" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator52" runat="server" errormessage="Value required" controltovalidate="txtbeforDEPRECIATIONTR" validationgroup="FPC" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
-                                                            </td>
-                                                            <td>
-                                                                <asp:textbox onpaste="return false" clientidmode="Static" onkeyup="RCTcalc()" oninput="validate(this)" autocomplete="off" maxlength="10" onkeypress="return isNumberKey(this, event);" id="txtNETINCLUDEPTR" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator53" runat="server" errormessage="Value required" controltovalidate="txtNETINCLUDEPTR" validationgroup="FPC" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
-                                                            </td>
-                                                        </tr>
-                                                    </table>
-                                                    <table class="table table-bordered">
-                                                        <tr>
-                                                            <th rowspan="2">TOTAL VARRI. COST</th>
-                                                            <th colspan="2">TOTAL FIXED COST</th>
-                                                            <th rowspan="2">TOTAL FIXED COST</th>
-                                                            <th rowspan="2">TOTAL COST</th>
-                                                            <th rowspan="2">TOTAL FIXED COST EXCL.INTT./DEPR</th>
-                                                            <th rowspan="2">TOTAL SALE</th>
-                                                            <th rowspan="2">BEFORE IDA/OF Operating Profit</th>
-                                                            <th rowspan="2">NET INCLUDING IDT</th>
-                                                            <th rowspan="2">TOTAL SALE TURNOVER WITH CFF</th>
-                                                            <th rowspan="2">TOTAL OPERATING LOSS/PROFIT WITH CFF</th>
-                                                            <th rowspan="2">NET PROFIT/LOSS WITH CFF</th>
-                                                        </tr>
-                                                        <tr>
-                                                            <th>SALARY&WAGES</th>
-                                                            <th>OTHERS</th>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>
-                                                                <asp:textbox onpaste="return false" clientidmode="Static" onkeyup="RCTcalc()" oninput="validate(this)" autocomplete="off" maxlength="10" onkeypress="return isNumberKey(this, event);" id="txttotalvarriCostTVC" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator54" runat="server" errormessage="Value required" controltovalidate="txttotalvarriCostTVC" validationgroup="FPC" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
-                                                            </td>
-                                                            <td>
-                                                                <asp:textbox onpaste="return false" clientidmode="Static" onkeyup="RCTcalc()" oninput="validate(this)" autocomplete="off" maxlength="10" onkeypress="return isNumberKey(this, event);" id="txtsalaryWages_TFCOSTTVC" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator55" runat="server" errormessage="Value required" controltovalidate="txtsalaryWages_TFCOSTTVC" validationgroup="FPC" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
-                                                            </td>
-                                                            <td>
-                                                                <asp:textbox onpaste="return false" clientidmode="Static" onkeyup="RCTcalc()" oninput="validate(this)" autocomplete="off" maxlength="10" onkeypress="return isNumberKey(this, event);" id="txtOthers_TFCOSTTVC" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator56" runat="server" errormessage="Value required" controltovalidate="txtOthers_TFCOSTTVC" validationgroup="FPC" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
-                                                            </td>
-                                                            <td>
-                                                                <asp:textbox onpaste="return false" clientidmode="Static" onkeyup="RCTcalc()" oninput="validate(this)" autocomplete="off" maxlength="10" onkeypress="return isNumberKey(this, event);" id="txttotalfixCostTVC" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator57" runat="server" errormessage="Value required" controltovalidate="txttotalfixCostTVC" validationgroup="FPC" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
-                                                            </td>
-                                                            <td>
-                                                                <asp:textbox onpaste="return false" clientidmode="Static" onkeyup="RCTcalc()" oninput="validate(this)" autocomplete="off" maxlength="10" onkeypress="return isNumberKey(this, event);" id="txtToCostTVC" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator58" runat="server" errormessage="Value required" controltovalidate="txtToCostTVC" validationgroup="FPC" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
-                                                            </td>
-                                                            <td>
-                                                                <asp:textbox onpaste="return false" clientidmode="Static" onkeyup="RCTcalc()" oninput="validate(this)" autocomplete="off" maxlength="10" onkeypress="return isNumberKey(this, event);" id="txtTFcostEXCLINTTTVC" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator59" runat="server" errormessage="Value required" controltovalidate="txtTFcostEXCLINTTTVC" validationgroup="FPC" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
-                                                            </td>
-                                                            <td>
-                                                                <asp:textbox onpaste="return false" clientidmode="Static" onkeyup="RCTcalc()" oninput="validate(this)" autocomplete="off" maxlength="10" onkeypress="return isNumberKey(this, event);" id="txtToSaleTVC" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator60" runat="server" errormessage="Value required" controltovalidate="txtToSaleTVC" validationgroup="FPC" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
-                                                            </td>
-                                                            <td>
-                                                                <asp:textbox onpaste="return false" clientidmode="Static" onkeyup="RCTcalc()" oninput="validate(this)" autocomplete="off" maxlength="10" onkeypress="return isNumberKey(this, event);" id="txtIDAOpertingProfTVC" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator61" runat="server" errormessage="Value required" controltovalidate="txtIDAOpertingProfTVC" validationgroup="FPC" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
-                                                            </td>
-                                                            <td>
-                                                                <asp:textbox onpaste="return false" clientidmode="Static" onkeyup="RCTcalc()" oninput="validate(this)" autocomplete="off" maxlength="10" onkeypress="return isNumberKey(this, event);" id="txtNEtIncluIDTTVC" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator62" runat="server" errormessage="Value required" controltovalidate="txtNEtIncluIDTTVC" validationgroup="FPC" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
-                                                            </td>
-                                                            <td>
-                                                                <asp:textbox onpaste="return false" clientidmode="Static" onkeyup="RCTcalc()" oninput="validate(this)" autocomplete="off" maxlength="10" onkeypress="return isNumberKey(this, event);" id="txtToSaleWithCFFTVC" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator63" runat="server" errormessage="Value required" controltovalidate="txtToSaleWithCFFTVC" validationgroup="FPC" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
-                                                            </td>
-                                                            <td>
-                                                                <asp:textbox onpaste="return false" clientidmode="Static" onkeyup="RCTcalc()" oninput="validate(this)" autocomplete="off" maxlength="10" onkeypress="return isNumberKey(this, event);" id="txtOPLOssProfitCFFTVC" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator64" runat="server" errormessage="Value required" controltovalidate="txtOPLOssProfitCFFTVC" validationgroup="FPC" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
-                                                            </td>
-                                                            <td>
-                                                                <asp:textbox onpaste="return false" clientidmode="Static" onkeyup="RCTcalc()" oninput="validate(this)" autocomplete="off" maxlength="10" onkeypress="return isNumberKey(this, event);" id="txtNETprofitLossTVC" runat="server" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator65" runat="server" errormessage="Value required" controltovalidate="txtNETprofitLossTVC" validationgroup="FPC" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
-                                                            </td>
-                                                        </tr>
-                                                    </table>
-                                                </div>
+                                    <div class="col-md-3 pull-right">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label><b>Grand Total</b></label>
+                                                <asp:TextBox ClientIDMode="Static" onkeyup="FOcalc()" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtalltotal" runat="server" CssClass="form-control"></asp:TextBox>
                                             </div>
-                                        </fieldset>
-                                    </fieldset>
-                                    <div class="col-md-2 pull-right">
-                                        <div class="form-group">
-                                            <asp:button id="btnReceipt" runat="server" style="margin-top: 19px;" cssclass="btn btn-primary btn-block" text="Save" validationgroup="FPC" onclick="btnReceipt_Click"></asp:button>
                                         </div>
-                                    </div>
-                                </div>
-                                <div id="CapUtilisation" runat="server">
-                                    <fieldset>
-                                        <legend>CAPACITY UTILISATION</legend>
-                                        <fieldset>
-                                            <legend>11.0 CAPACITY UTILISATION IN %AGE</legend>
-                                            <div class="col-md-12">
-                                                <div class="table table-responsive">
-                                                    <table class="table table-bordered">
-                                                        <tr>
-                                                            <th colspan="5">PROCESSING CAPACITY :-</th>
-                                                            <th colspan="2">CHILLING CAPACITY:-</th>
-                                                            <th colspan="3">BCF MANUFACTURING CAPACITY :-</th>
-                                                            <th colspan="2">SMP MANUFACTURING :-</th>
-                                                        </tr>
-                                                        <tr>
-                                                            <th>THROUGHPUT (IN KGs) WITHOUT WC</th>
-                                                            <th>THROUGHPUT (IN KGs)</th>
-                                                            <th>THROUGHPUT (IN LTs)</th>
-                                                            <th>THROUGHPUT PER DAY</th>
-                                                            <th>CAPACITY UTILSATION (IN %AGE)</th>
-                                                            <th>ALL CCs THROUGHPUT</th>
-                                                            <th>CAPACITY UTILSATION (IN %AGE)</th>
-                                                            <th>BCF SALE CFF</th>
-                                                            <th>BCF PROD. CFF</th>
-                                                            <th>CAPACITY UTILSATION (IN %AGE)</th>
-                                                            <th>SMP PRODN. IN MTs</th>
-                                                            <th>CAPACITY UTILSATION (IN %AGE)</th>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>
-                                                                <asp:textbox id="txtthruoputwithoutWC_PC" runat="server" onpaste="return false" clientidmode="Static" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator29" runat="server" errormessage="Value required" controltovalidate="txtthruoputwithoutWC_PC" validationgroup="CU" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
-                                                            </td>
-                                                            <td>
-                                                                <asp:textbox id="txtthroughpuINKGS_PC" runat="server" onkeyup="CapacityUti()" onpaste="return false" clientidmode="Static" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator30" runat="server" errormessage="Value required" controltovalidate="txtthroughpuINKGS_PC" validationgroup="CU" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
-                                                            </td>
-                                                            <td>
-                                                                <asp:textbox id="txtthroughpuINLTS_PC" runat="server" onpaste="return false" clientidmode="Static" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator31" runat="server" errormessage="Value required" controltovalidate="txtthroughpuINLTS_PC" validationgroup="CU" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
-                                                            </td>
-                                                            <td>
-                                                                <asp:textbox id="txtthroughputPERDAY_PC" runat="server" onpaste="return false" clientidmode="Static" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator32" runat="server" errormessage="Value required" controltovalidate="txtthroughputPERDAY_PC" validationgroup="CU" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
-                                                            </td>
-                                                            <td>
-                                                                <asp:textbox id="txtcapacityutilisationINKGS_PC" runat="server" onpaste="return false" clientidmode="Static" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator33" runat="server" errormessage="Value required" controltovalidate="txtcapacityutilisationINKGS_PC" validationgroup="CU" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
-                                                            </td>
-                                                            <td>
-                                                                <asp:textbox id="txtAllCCsthruoput_CC" onkeyup="CapUtiCC()" runat="server" onpaste="return false" clientidmode="Static" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator34" runat="server" errormessage="Value required" controltovalidate="txtAllCCsthruoput_CC" validationgroup="CU" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
-                                                            </td>
-                                                            <td>
-                                                                <asp:textbox id="txtcapacityuti_CC" runat="server" onpaste="return false" clientidmode="Static" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator35" runat="server" errormessage="Value required" controltovalidate="txtcapacityuti_CC" validationgroup="CU" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
-                                                            </td>
-                                                            <td>
-                                                                <asp:textbox id="txtbcfsale_BMC" runat="server" onpaste="return false" clientidmode="Static" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator36" runat="server" errormessage="Value required" controltovalidate="txtbcfsale_BMC" validationgroup="CU" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
-                                                            </td>
-                                                            <td>
-                                                                <asp:textbox id="txtbcfProdCFF_BMC" runat="server" onkeyup="CapacityUtiSMP()" onpaste="return false" clientidmode="Static" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator37" runat="server" errormessage="Value required" controltovalidate="txtbcfProdCFF_BMC" validationgroup="CU" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
-                                                            </td>
-                                                            <td>
-                                                                <asp:textbox id="txtcapacityuti_BMC" runat="server" onpaste="return false" clientidmode="Static" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator38" runat="server" errormessage="Value required" controltovalidate="txtcapacityuti_BMC" validationgroup="CU" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
-                                                            </td>
-                                                            <td>
-                                                                <asp:textbox id="txtSMPProd_SMP" runat="server" onpaste="return false" clientidmode="Static" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator39" runat="server" errormessage="Value required" controltovalidate="txtSMPProd_SMP" validationgroup="CU" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
-                                                            </td>
-                                                            <td>
-                                                                <asp:textbox id="txtcapacityuti_SMP" runat="server" onpaste="return false" clientidmode="Static" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" cssclass="form-control"></asp:textbox>
-                                                                <asp:regularexpressionvalidator id="RegularExpressionValidator40" runat="server" errormessage="Value required" controltovalidate="txtcapacityuti_SMP" validationgroup="CU" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
-                                                            </td>
-                                                        </tr>
-                                                    </table>
-                                                </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <asp:Button ID="btnAdministration" runat="server" Style="margin-top: 19px;" CssClass="btn btn-primary btn-block" Text="Save" ValidationGroup="ADM" OnClick="btnAdministration_Click"></asp:Button>
                                             </div>
-
-                                        </fieldset>
-                                    </fieldset>
-                                    <div class="col-md-2 pull-right">
-                                        <div class="form-group">
-                                            <asp:button id="btnCapUtilisation" runat="server" style="margin-top: 19px;" validationgroup="CU" cssclass="btn btn-primary btn-block" text="Save" onclick="btnCapUtilisation_Click"></asp:button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div id="materialbalancing" runat="server">
-                                    <fieldset>
-                                        <legend>MATERIAL BALANCING</legend>
-                                        <fieldset>
-                                            <legend>12.0 MATERIAL BALANCING :</legend>
-                                            <table style="width: 100%" class="table table-bordered">
-                                                <tr>
-                                                    <th colspan="7">MILK PROCUREMENT : (In Kgs)</th>
-                                                    <th colspan="4">TOTAL INPUT :</th>
-                                                </tr>
-                                                <tr>
-                                                    <th>DCS MILK COW</th>
-                                                    <th>DCS MILK BUFF</th>
-                                                    <th>DCS MILK TOTAL</th>
-                                                    <th>FAT</th>
-                                                    <th>SNF</th>
-                                                    <th>FAT%</th>
-                                                    <th>SNF%</th>
-                                                    <th>QUANTITY IN KGs</th>
-                                                    <th>FAT IN KGs</th>
-                                                    <th>SNF IN KGs</th>
-                                                    <th>VALUE IN Rs.</th>
-                                                </tr>
-                                                <tr>
-                                                    <%--there is only one table in database for both table available here--%>
-                                                    <td>
-                                                        <asp:textbox onpaste="return false" onkeyup="CalMB()" clientidmode="Static" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txtdcsmilkcow_MP" runat="server" cssclass="form-control"></asp:textbox>
-                                                        <asp:regularexpressionvalidator id="RegularExpressionValidator6" runat="server" errormessage="Value required" controltovalidate="txtdcsmilkcow_MP" validationgroup="MB" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
-                                                    </td>
-                                                    <td>
-                                                        <asp:textbox onpaste="return false" onkeyup="CalMB()" clientidmode="Static" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txtdcsmilkbuff_MP" runat="server" cssclass="form-control"></asp:textbox>
-                                                        <asp:regularexpressionvalidator id="RegularExpressionValidator11" runat="server" errormessage="Value required" controltovalidate="txtdcsmilkbuff_MP" validationgroup="MB" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
-                                                    </td>
-                                                    <td>
-                                                        <asp:textbox onpaste="return false" clientidmode="Static" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txtdcsmilktotal_MP" runat="server" cssclass="form-control"></asp:textbox>
-                                                        <asp:regularexpressionvalidator id="RegularExpressionValidator12" runat="server" errormessage="Value required" controltovalidate="txtdcsmilktotal_MP" validationgroup="MB" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
-                                                    </td>
-                                                    <td>
-                                                        <asp:textbox onpaste="return false" onkeyup="CalMB()" clientidmode="Static" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txtfat_MP" runat="server" cssclass="form-control"></asp:textbox>
-                                                        <asp:regularexpressionvalidator id="RegularExpressionValidator13" runat="server" errormessage="Value required" controltovalidate="txtfat_MP" validationgroup="MB" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
-                                                    </td>
-                                                    <td>
-                                                        <asp:textbox onpaste="return false" onkeyup="CalMB()" clientidmode="Static" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txtsnf_MP" runat="server" cssclass="form-control"></asp:textbox>
-                                                        <asp:regularexpressionvalidator id="RegularExpressionValidator14" runat="server" errormessage="Value required" controltovalidate="txtsnf_MP" validationgroup="MB" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
-                                                    </td>
-                                                    <td>
-                                                        <asp:textbox onpaste="return false" clientidmode="Static" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txtfatpercent_MP" runat="server" cssclass="form-control"></asp:textbox>
-                                                        <asp:regularexpressionvalidator id="RegularExpressionValidator15" runat="server" errormessage="Value required" controltovalidate="txtfatpercent_MP" validationgroup="MB" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
-                                                    </td>
-                                                    <td>
-                                                        <asp:textbox onpaste="return false" clientidmode="Static" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txtsnfpercent_MP" runat="server" cssclass="form-control"></asp:textbox>
-                                                        <asp:regularexpressionvalidator id="RegularExpressionValidator16" runat="server" errormessage="Value required" controltovalidate="txtsnfpercent_MP" validationgroup="MB" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
-                                                    </td>
-                                                    <td>
-                                                        <asp:textbox onpaste="return false" clientidmode="Static" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txtquantityinkgs_TI" runat="server" cssclass="form-control"></asp:textbox>
-                                                        <asp:regularexpressionvalidator id="RegularExpressionValidator17" runat="server" errormessage="Value required" controltovalidate="txtquantityinkgs_TI" validationgroup="MB" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
-                                                    </td>
-                                                    <td>
-                                                        <asp:textbox onpaste="return false" clientidmode="Static" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txtfatinkgs_TI" onkeyup="CalMBInOut()" runat="server" cssclass="form-control"></asp:textbox>
-                                                        <asp:regularexpressionvalidator id="RegularExpressionValidator18" runat="server" errormessage="Value required" controltovalidate="txtfatinkgs_TI" validationgroup="MB" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
-                                                    </td>
-                                                    <td>
-                                                        <asp:textbox onpaste="return false" clientidmode="Static" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txtsnfinkgs_TI" onkeyup="CalMBInOut()" runat="server" cssclass="form-control"></asp:textbox>
-                                                        <asp:regularexpressionvalidator id="RegularExpressionValidator19" runat="server" errormessage="Value required" controltovalidate="txtsnfinkgs_TI" validationgroup="MB" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
-                                                    </td>
-                                                    <td>
-                                                        <asp:textbox onpaste="return false" clientidmode="Static" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txtvalueinrs_TI" runat="server" cssclass="form-control"></asp:textbox>
-                                                        <asp:regularexpressionvalidator id="RegularExpressionValidator20" runat="server" errormessage="Value required" controltovalidate="txtvalueinrs_TI" validationgroup="MB" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
-                                                    </td>
-                                                </tr>
-                                            </table>
-                                            <table style="width: 100%" class="table table-bordered">
-                                                <tr>
-                                                    <th colspan="4">TOTAL OUTPUT :</th>
-                                                    <th colspan="4">MATERIAL GAIN (-)/LOSS (+)</th>
-                                                </tr>
-                                                <tr>
-                                                    <th>QUANTITY IN KGs</th>
-                                                    <th>FAT IN KGs</th>
-                                                    <th>SNF IN KGs</th>
-                                                    <th>VALUE IN Rs.</th>
-                                                    <th>FAT IN KGs</th>
-                                                    <th>SNF IN KGs</th>
-                                                    <th>FAT %AGE</th>
-                                                    <th>SNF %AGE</th>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <asp:textbox onpaste="return false" clientidmode="Static" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txtquantityinkgs_TO" runat="server" cssclass="form-control"></asp:textbox>
-                                                        <asp:regularexpressionvalidator id="RegularExpressionValidator21" runat="server" errormessage="Value required" controltovalidate="txtquantityinkgs_TO" validationgroup="MB" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
-                                                    </td>
-
-                                                    <td>
-                                                        <asp:textbox onpaste="return false" clientidmode="Static" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txtfatinkgs_TO" onkeyup="CalMBInOut()" runat="server" cssclass="form-control"></asp:textbox>
-                                                        <asp:regularexpressionvalidator id="RegularExpressionValidator22" runat="server" errormessage="Value required" controltovalidate="txtfatinkgs_TO" validationgroup="MB" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
-                                                    </td>
-                                                    <td>
-                                                        <asp:textbox onpaste="return false" clientidmode="Static" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txtsnfinKgs_TO" onkeyup="CalMBInOut()" runat="server" cssclass="form-control"></asp:textbox>
-                                                        <asp:regularexpressionvalidator id="RegularExpressionValidator23" runat="server" errormessage="Value required" controltovalidate="txtsnfinKgs_TO" validationgroup="MB" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
-                                                    </td>
-                                                    <td>
-                                                        <asp:textbox onpaste="return false" clientidmode="Static" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txtValueinrs_To" runat="server" cssclass="form-control"></asp:textbox>
-                                                        <asp:regularexpressionvalidator id="RegularExpressionValidator24" runat="server" errormessage="Value required" controltovalidate="txtValueinrs_To" validationgroup="MB" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
-                                                    </td>
-
-                                                    <td>
-                                                        <asp:textbox onpaste="return false" clientidmode="Static" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txtfatinkgs_MG" runat="server" cssclass="form-control"></asp:textbox>
-                                                        <asp:regularexpressionvalidator id="RegularExpressionValidator25" runat="server" errormessage="Value required" controltovalidate="txtfatinkgs_MG" validationgroup="MB" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
-                                                    </td>
-                                                    <td>
-                                                        <asp:textbox onpaste="return false" clientidmode="Static" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txtsngfinkgs_MG" runat="server" cssclass="form-control"></asp:textbox>
-                                                        <asp:regularexpressionvalidator id="RegularExpressionValidator26" runat="server" errormessage="Value required" controltovalidate="txtsngfinkgs_MG" validationgroup="MB" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
-                                                    </td>
-                                                    <td>
-                                                        <asp:textbox onpaste="return false" clientidmode="Static" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txtfatpercentage_MG" runat="server" cssclass="form-control"></asp:textbox>
-                                                        <asp:regularexpressionvalidator id="RegularExpressionValidator27" runat="server" errormessage="Value required" controltovalidate="txtfatpercentage_MG" validationgroup="MB" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
-                                                    </td>
-                                                    <td>
-                                                        <asp:textbox onpaste="return false" clientidmode="Static" oninput="validate(this)" autocomplete="off" maxlength="8" onkeypress="return isNumberKey(this, event);" id="txtsnfpercentage_MG" runat="server" cssclass="form-control"></asp:textbox>
-                                                        <asp:regularexpressionvalidator id="RegularExpressionValidator28" runat="server" errormessage="Value required" controltovalidate="txtsnfpercentage_MG" validationgroup="MB" validationexpression="(?:\d*\.\d{1,2}|\d+)$"></asp:regularexpressionvalidator>
-                                                    </td>
-                                                </tr>
-                                            </table>
-                                        </fieldset>
-                                    </fieldset>
-                                    <div class="col-md-2 pull-right">
-                                        <div class="form-group">
-                                            <asp:button id="btnmaterialbalancing" runat="server" style="margin-top: 19px;" cssclass="btn btn-primary btn-block" text="Save" onclick="btnmaterialbalancing_Click" validationgroup="MB"></asp:button>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                            <div id="Reciepts" runat="server">
+                                <fieldset>
+                                    <legend>RECETPTS</legend>
+                                    <fieldset>
+                                        <legend>10.0 FINANCIAL PERFORMANCE (conted): (Rs.)</legend>
+                                        <div class="col-md-12">
+                                            <div class="table table-responsive">
+                                                <table class="table table-bordered">
+                                                    <tr>
+                                                        <th colspan="3">TOTAL RECEIPTS :</th>
+                                                        <th rowspan="2">COMMOD-ITIES USED</th>
+                                                        <th rowspan="2">COMMOD-ITIES PURCH/RETURNS</th>
+                                                        <th rowspan="2">OPENING STOCKS</th>
+                                                        <th rowspan="2">CLOSING STOCKS</th>
+                                                        <th rowspan="2">OTHER INCOME</th>
+                                                        <th rowspan="2">TOTAL NET RECEIPTS</th>
+                                                        <th colspan="4">SURPLUS/DEFICIT(-)</th>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>MILK SALE</th>
+                                                        <th>PRODUCTS</th>
+                                                        <th>TOTAL SALE</th>
+                                                        <th>BEFORE IDA/OFF</th>
+                                                        <th>BEFORE DEFFERED</th>
+                                                        <th>BEFORE DEPRECIATION</th>
+                                                        <th>NET INCLU. DEP.</th>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <asp:TextBox onpaste="return false" ClientIDMode="Static" onkeyup="RCTcalc()" oninput="validate(this)" autocomplete="off" MaxLength="10" onkeypress="return isNumberKey(this, event);" ID="txtmilksaleTR" runat="server" CssClass="form-control"></asp:TextBox>
+                                                            <asp:RegularExpressionValidator ID="RegularExpressionValidator41" runat="server" ErrorMessage="Value required" ControlToValidate="txtmilksaleTR" ValidationGroup="FPC" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
+                                                        </td>
+                                                        <td>
+                                                            <asp:TextBox onpaste="return false" ClientIDMode="Static" onkeyup="RCTcalc()" oninput="validate(this)" autocomplete="off" MaxLength="10" onkeypress="return isNumberKey(this, event);" ID="txtProductsTR" runat="server" CssClass="form-control"></asp:TextBox>
+                                                            <asp:RegularExpressionValidator ID="RegularExpressionValidator42" runat="server" ErrorMessage="Value required" ControlToValidate="txtProductsTR" ValidationGroup="FPC" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
+                                                        </td>
+                                                        <td>
+                                                            <asp:TextBox onpaste="return false" ClientIDMode="Static" onkeyup="RCTcalc()" oninput="validate(this)" autocomplete="off" MaxLength="10" onkeypress="return isNumberKey(this, event);" ID="txtTotalSaleTR" runat="server" CssClass="form-control"></asp:TextBox>
+                                                            <asp:RegularExpressionValidator ID="RegularExpressionValidator43" runat="server" ErrorMessage="Value required" ControlToValidate="txtTotalSaleTR" ValidationGroup="FPC" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
+                                                        </td>
+                                                        <td>
+                                                            <asp:TextBox onpaste="return false" ClientIDMode="Static" onkeyup="RCTcalc()" oninput="validate(this)" autocomplete="off" MaxLength="10" onkeypress="return isNumberKey(this, event);" ID="txtCommoditiesTR" runat="server" CssClass="form-control"></asp:TextBox>
+                                                            <asp:RegularExpressionValidator ID="RegularExpressionValidator44" runat="server" ErrorMessage="Value required" ControlToValidate="txtCommoditiesTR" ValidationGroup="FPC" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
+                                                        </td>
+                                                        <td>
+                                                            <asp:TextBox onpaste="return false" ClientIDMode="Static" onkeyup="RCTcalc()" oninput="validate(this)" autocomplete="off" MaxLength="10" onkeypress="return isNumberKey(this, event);" ID="txtcommditiesPurchTR" runat="server" CssClass="form-control"></asp:TextBox>
+                                                            <asp:RegularExpressionValidator ID="RegularExpressionValidator45" runat="server" ErrorMessage="Value required" ControlToValidate="txtcommditiesPurchTR" ValidationGroup="FPC" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
+                                                        </td>
+                                                        <td>
+                                                            <asp:TextBox onpaste="return false" ClientIDMode="Static" onkeyup="RCTcalc()" oninput="validate(this)" autocomplete="off" MaxLength="10" onkeypress="return isNumberKey(this, event);" ID="txtopeningStocksTR" runat="server" CssClass="form-control" ToolTip="Last Month Closing"></asp:TextBox>
+                                                            <asp:RegularExpressionValidator ID="RegularExpressionValidator46" runat="server" ErrorMessage="Value required" ControlToValidate="txtopeningStocksTR" ValidationGroup="FPC" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
+                                                        </td>
+                                                        <td>
+                                                            <asp:TextBox onpaste="return false" ClientIDMode="Static" onkeyup="RCTcalc()" oninput="validate(this)" autocomplete="off" MaxLength="10" onkeypress="return isNumberKey(this, event);" ID="txtClosingStocksTR" runat="server" CssClass="form-control"></asp:TextBox>
+                                                            <asp:RegularExpressionValidator ID="RegularExpressionValidator47" runat="server" ErrorMessage="Value required" ControlToValidate="txtClosingStocksTR" ValidationGroup="FPC" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
+                                                        </td>
+                                                        <td>
+                                                            <asp:TextBox onpaste="return false" ClientIDMode="Static" onkeyup="RCTcalc()" oninput="validate(this)" autocomplete="off" MaxLength="10" onkeypress="return isNumberKey(this, event);" ID="txtOtherIncomeTR" runat="server" CssClass="form-control"></asp:TextBox>
+                                                            <asp:RegularExpressionValidator ID="RegularExpressionValidator48" runat="server" ErrorMessage="Value required" ControlToValidate="txtOtherIncomeTR" ValidationGroup="FPC" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
+                                                        </td>
+                                                        <td>
+                                                            <asp:TextBox onpaste="return false" ClientIDMode="Static" onkeyup="RCTcalc()" oninput="validate(this)" autocomplete="off" MaxLength="10" onkeypress="return isNumberKey(this, event);" ID="txtNetRecieptsTR" runat="server" CssClass="form-control"></asp:TextBox>
+                                                            <asp:RegularExpressionValidator ID="RegularExpressionValidator49" runat="server" ErrorMessage="Value required" ControlToValidate="txtNetRecieptsTR" ValidationGroup="FPC" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
+                                                        </td>
+                                                        <td>
+                                                            <asp:TextBox onpaste="return false" ClientIDMode="Static" onkeyup="RCTcalc()" oninput="validate(this)" autocomplete="off" MaxLength="10" onkeypress="return isNumberKey(this, event);" ID="txtbeforIDATR" runat="server" CssClass="form-control"></asp:TextBox>
+                                                            <asp:RegularExpressionValidator ID="RegularExpressionValidator50" runat="server" ErrorMessage="Value required" ControlToValidate="txtbeforIDATR" ValidationGroup="FPC" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
+                                                        </td>
+                                                        <td>
+                                                            <asp:TextBox onpaste="return false" ClientIDMode="Static" onkeyup="RCTcalc()" oninput="validate(this)" autocomplete="off" MaxLength="10" onkeypress="return isNumberKey(this, event);" ID="txtbeforDEFERDTR" runat="server" CssClass="form-control"></asp:TextBox>
+                                                            <asp:RegularExpressionValidator ID="RegularExpressionValidator51" runat="server" ErrorMessage="Value required" ControlToValidate="txtbeforDEFERDTR" ValidationGroup="FPC" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
+                                                        </td>
+                                                        <td>
+                                                            <asp:TextBox onpaste="return false" ClientIDMode="Static" onkeyup="RCTcalc()" oninput="validate(this)" autocomplete="off" MaxLength="10" onkeypress="return isNumberKey(this, event);" ID="txtbeforDEPRECIATIONTR" runat="server" CssClass="form-control"></asp:TextBox>
+                                                            <asp:RegularExpressionValidator ID="RegularExpressionValidator52" runat="server" ErrorMessage="Value required" ControlToValidate="txtbeforDEPRECIATIONTR" ValidationGroup="FPC" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
+                                                        </td>
+                                                        <td>
+                                                            <asp:TextBox onpaste="return false" ClientIDMode="Static" onkeyup="RCTcalc()" oninput="validate(this)" autocomplete="off" MaxLength="10" onkeypress="return isNumberKey(this, event);" ID="txtNETINCLUDEPTR" runat="server" CssClass="form-control"></asp:TextBox>
+                                                            <asp:RegularExpressionValidator ID="RegularExpressionValidator53" runat="server" ErrorMessage="Value required" ControlToValidate="txtNETINCLUDEPTR" ValidationGroup="FPC" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                                <table class="table table-bordered">
+                                                    <tr>
+                                                        <th rowspan="2">TOTAL VARRI. COST</th>
+                                                        <th colspan="2">TOTAL FIXED COST</th>
+                                                        <th rowspan="2">TOTAL FIXED COST</th>
+                                                        <th rowspan="2">TOTAL COST</th>
+                                                        <th rowspan="2">TOTAL FIXED COST EXCL.INTT./DEPR</th>
+                                                        <th rowspan="2">TOTAL SALE</th>
+                                                        <th rowspan="2">BEFORE IDA/OF Operating Profit</th>
+                                                        <th rowspan="2">NET INCLUDING IDT</th>
+                                                        <th rowspan="2">TOTAL SALE TURNOVER WITH CFF</th>
+                                                        <th rowspan="2">TOTAL OPERATING LOSS/PROFIT WITH CFF</th>
+                                                        <th rowspan="2">NET PROFIT/LOSS WITH CFF</th>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>SALARY&WAGES</th>
+                                                        <th>OTHERS</th>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <asp:TextBox onpaste="return false" ClientIDMode="Static" onkeyup="RCTcalc()" oninput="validate(this)" autocomplete="off" MaxLength="10" onkeypress="return isNumberKey(this, event);" ID="txttotalvarriCostTVC" runat="server" CssClass="form-control"></asp:TextBox>
+                                                            <asp:RegularExpressionValidator ID="RegularExpressionValidator54" runat="server" ErrorMessage="Value required" ControlToValidate="txttotalvarriCostTVC" ValidationGroup="FPC" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
+                                                        </td>
+                                                        <td>
+                                                            <asp:TextBox onpaste="return false" ClientIDMode="Static" onkeyup="RCTcalc()" oninput="validate(this)" autocomplete="off" MaxLength="10" onkeypress="return isNumberKey(this, event);" ID="txtsalaryWages_TFCOSTTVC" runat="server" CssClass="form-control"></asp:TextBox>
+                                                            <asp:RegularExpressionValidator ID="RegularExpressionValidator55" runat="server" ErrorMessage="Value required" ControlToValidate="txtsalaryWages_TFCOSTTVC" ValidationGroup="FPC" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
+                                                        </td>
+                                                        <td>
+                                                            <asp:TextBox onpaste="return false" ClientIDMode="Static" onkeyup="RCTcalc()" oninput="validate(this)" autocomplete="off" MaxLength="10" onkeypress="return isNumberKey(this, event);" ID="txtOthers_TFCOSTTVC" runat="server" CssClass="form-control"></asp:TextBox>
+                                                            <asp:RegularExpressionValidator ID="RegularExpressionValidator56" runat="server" ErrorMessage="Value required" ControlToValidate="txtOthers_TFCOSTTVC" ValidationGroup="FPC" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
+                                                        </td>
+                                                        <td>
+                                                            <asp:TextBox onpaste="return false" ClientIDMode="Static" onkeyup="RCTcalc()" oninput="validate(this)" autocomplete="off" MaxLength="10" onkeypress="return isNumberKey(this, event);" ID="txttotalfixCostTVC" runat="server" CssClass="form-control"></asp:TextBox>
+                                                            <asp:RegularExpressionValidator ID="RegularExpressionValidator57" runat="server" ErrorMessage="Value required" ControlToValidate="txttotalfixCostTVC" ValidationGroup="FPC" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
+                                                        </td>
+                                                        <td>
+                                                            <asp:TextBox onpaste="return false" ClientIDMode="Static" onkeyup="RCTcalc()" oninput="validate(this)" autocomplete="off" MaxLength="10" onkeypress="return isNumberKey(this, event);" ID="txtToCostTVC" runat="server" CssClass="form-control"></asp:TextBox>
+                                                            <asp:RegularExpressionValidator ID="RegularExpressionValidator58" runat="server" ErrorMessage="Value required" ControlToValidate="txtToCostTVC" ValidationGroup="FPC" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
+                                                        </td>
+                                                        <td>
+                                                            <asp:TextBox onpaste="return false" ClientIDMode="Static" onkeyup="RCTcalc()" oninput="validate(this)" autocomplete="off" MaxLength="10" onkeypress="return isNumberKey(this, event);" ID="txtTFcostEXCLINTTTVC" runat="server" CssClass="form-control"></asp:TextBox>
+                                                            <asp:RegularExpressionValidator ID="RegularExpressionValidator59" runat="server" ErrorMessage="Value required" ControlToValidate="txtTFcostEXCLINTTTVC" ValidationGroup="FPC" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
+                                                        </td>
+                                                        <td>
+                                                            <asp:TextBox onpaste="return false" ClientIDMode="Static" onkeyup="RCTcalc()" oninput="validate(this)" autocomplete="off" MaxLength="10" onkeypress="return isNumberKey(this, event);" ID="txtToSaleTVC" runat="server" CssClass="form-control"></asp:TextBox>
+                                                            <asp:RegularExpressionValidator ID="RegularExpressionValidator60" runat="server" ErrorMessage="Value required" ControlToValidate="txtToSaleTVC" ValidationGroup="FPC" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
+                                                        </td>
+                                                        <td>
+                                                            <asp:TextBox onpaste="return false" ClientIDMode="Static" onkeyup="RCTcalc()" oninput="validate(this)" autocomplete="off" MaxLength="10" onkeypress="return isNumberKey(this, event);" ID="txtIDAOpertingProfTVC" runat="server" CssClass="form-control"></asp:TextBox>
+                                                            <asp:RegularExpressionValidator ID="RegularExpressionValidator61" runat="server" ErrorMessage="Value required" ControlToValidate="txtIDAOpertingProfTVC" ValidationGroup="FPC" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
+                                                        </td>
+                                                        <td>
+                                                            <asp:TextBox onpaste="return false" ClientIDMode="Static" onkeyup="RCTcalc()" oninput="validate(this)" autocomplete="off" MaxLength="10" onkeypress="return isNumberKey(this, event);" ID="txtNEtIncluIDTTVC" runat="server" CssClass="form-control"></asp:TextBox>
+                                                            <asp:RegularExpressionValidator ID="RegularExpressionValidator62" runat="server" ErrorMessage="Value required" ControlToValidate="txtNEtIncluIDTTVC" ValidationGroup="FPC" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
+                                                        </td>
+                                                        <td>
+                                                            <asp:TextBox onpaste="return false" ClientIDMode="Static" onkeyup="RCTcalc()" oninput="validate(this)" autocomplete="off" MaxLength="10" onkeypress="return isNumberKey(this, event);" ID="txtToSaleWithCFFTVC" runat="server" CssClass="form-control"></asp:TextBox>
+                                                            <asp:RegularExpressionValidator ID="RegularExpressionValidator63" runat="server" ErrorMessage="Value required" ControlToValidate="txtToSaleWithCFFTVC" ValidationGroup="FPC" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
+                                                        </td>
+                                                        <td>
+                                                            <asp:TextBox onpaste="return false" ClientIDMode="Static" onkeyup="RCTcalc()" oninput="validate(this)" autocomplete="off" MaxLength="10" onkeypress="return isNumberKey(this, event);" ID="txtOPLOssProfitCFFTVC" runat="server" CssClass="form-control"></asp:TextBox>
+                                                            <asp:RegularExpressionValidator ID="RegularExpressionValidator64" runat="server" ErrorMessage="Value required" ControlToValidate="txtOPLOssProfitCFFTVC" ValidationGroup="FPC" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
+                                                        </td>
+                                                        <td>
+                                                            <asp:TextBox onpaste="return false" ClientIDMode="Static" onkeyup="RCTcalc()" oninput="validate(this)" autocomplete="off" MaxLength="10" onkeypress="return isNumberKey(this, event);" ID="txtNETprofitLossTVC" runat="server" CssClass="form-control"></asp:TextBox>
+                                                            <asp:RegularExpressionValidator ID="RegularExpressionValidator65" runat="server" ErrorMessage="Value required" ControlToValidate="txtNETprofitLossTVC" ValidationGroup="FPC" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </fieldset>
+                                </fieldset>
+                                <div class="col-md-2 pull-right">
+                                    <div class="form-group">
+                                        <asp:Button ID="btnReceipt" runat="server" Style="margin-top: 19px;" CssClass="btn btn-primary btn-block" Text="Save" ValidationGroup="FPC" OnClick="btnReceipt_Click"></asp:Button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="CapUtilisation" runat="server">
+                                <fieldset>
+                                    <legend>CAPACITY UTILISATION</legend>
+                                    <fieldset>
+                                        <legend>11.0 CAPACITY UTILISATION IN %AGE</legend>
+                                        <div class="col-md-12">
+                                            <div class="table table-responsive">
+                                                <table class="table table-bordered">
+                                                    <tr>
+                                                        <th colspan="5">PROCESSING CAPACITY :-</th>
+                                                        <th colspan="2">CHILLING CAPACITY:-</th>
+                                                        <th colspan="3">BCF MANUFACTURING CAPACITY :-</th>
+                                                        <th colspan="2">SMP MANUFACTURING :-</th>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>THROUGHPUT (IN KGs) WITHOUT WC</th>
+                                                        <th>THROUGHPUT (IN KGs)</th>
+                                                        <th>THROUGHPUT (IN LTs)</th>
+                                                        <th>THROUGHPUT PER DAY</th>
+                                                        <th>CAPACITY UTILSATION (IN %AGE)</th>
+                                                        <th>ALL CCs THROUGHPUT</th>
+                                                        <th>CAPACITY UTILSATION (IN %AGE)</th>
+                                                        <th>BCF SALE CFF</th>
+                                                        <th>BCF PROD. CFF</th>
+                                                        <th>CAPACITY UTILSATION (IN %AGE)</th>
+                                                        <th>SMP PRODN. IN MTs</th>
+                                                        <th>CAPACITY UTILSATION (IN %AGE)</th>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <asp:TextBox ID="txtthruoputwithoutWC_PC" runat="server" onpaste="return false" ClientIDMode="Static" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" CssClass="form-control"></asp:TextBox>
+                                                            <asp:RegularExpressionValidator ID="RegularExpressionValidator29" runat="server" ErrorMessage="Value required" ControlToValidate="txtthruoputwithoutWC_PC" ValidationGroup="CU" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
+                                                        </td>
+                                                        <td>
+                                                            <asp:TextBox ID="txtthroughpuINKGS_PC" runat="server" onkeyup="CapacityUti()" onpaste="return false" ClientIDMode="Static" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" CssClass="form-control"></asp:TextBox>
+                                                            <asp:RegularExpressionValidator ID="RegularExpressionValidator30" runat="server" ErrorMessage="Value required" ControlToValidate="txtthroughpuINKGS_PC" ValidationGroup="CU" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
+                                                        </td>
+                                                        <td>
+                                                            <asp:TextBox ID="txtthroughpuINLTS_PC" runat="server" onpaste="return false" ClientIDMode="Static" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" CssClass="form-control"></asp:TextBox>
+                                                            <asp:RegularExpressionValidator ID="RegularExpressionValidator31" runat="server" ErrorMessage="Value required" ControlToValidate="txtthroughpuINLTS_PC" ValidationGroup="CU" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
+                                                        </td>
+                                                        <td>
+                                                            <asp:TextBox ID="txtthroughputPERDAY_PC" runat="server" onpaste="return false" ClientIDMode="Static" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" CssClass="form-control"></asp:TextBox>
+                                                            <asp:RegularExpressionValidator ID="RegularExpressionValidator32" runat="server" ErrorMessage="Value required" ControlToValidate="txtthroughputPERDAY_PC" ValidationGroup="CU" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
+                                                        </td>
+                                                        <td>
+                                                            <asp:TextBox ID="txtcapacityutilisationINKGS_PC" runat="server" onpaste="return false" ClientIDMode="Static" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" CssClass="form-control"></asp:TextBox>
+                                                            <asp:RegularExpressionValidator ID="RegularExpressionValidator33" runat="server" ErrorMessage="Value required" ControlToValidate="txtcapacityutilisationINKGS_PC" ValidationGroup="CU" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
+                                                        </td>
+                                                        <td>
+                                                            <asp:TextBox ID="txtAllCCsthruoput_CC" onkeyup="CapUtiCC()" runat="server" onpaste="return false" ClientIDMode="Static" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" CssClass="form-control"></asp:TextBox>
+                                                            <asp:RegularExpressionValidator ID="RegularExpressionValidator34" runat="server" ErrorMessage="Value required" ControlToValidate="txtAllCCsthruoput_CC" ValidationGroup="CU" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
+                                                        </td>
+                                                        <td>
+                                                            <asp:TextBox ID="txtcapacityuti_CC" runat="server" onpaste="return false" ClientIDMode="Static" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" CssClass="form-control"></asp:TextBox>
+                                                            <asp:RegularExpressionValidator ID="RegularExpressionValidator35" runat="server" ErrorMessage="Value required" ControlToValidate="txtcapacityuti_CC" ValidationGroup="CU" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
+                                                        </td>
+                                                        <td>
+                                                            <asp:TextBox ID="txtbcfsale_BMC" runat="server" onpaste="return false" ClientIDMode="Static" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" CssClass="form-control"></asp:TextBox>
+                                                            <asp:RegularExpressionValidator ID="RegularExpressionValidator36" runat="server" ErrorMessage="Value required" ControlToValidate="txtbcfsale_BMC" ValidationGroup="CU" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
+                                                        </td>
+                                                        <td>
+                                                            <asp:TextBox ID="txtbcfProdCFF_BMC" runat="server" onkeyup="CapacityUtiSMP()" onpaste="return false" ClientIDMode="Static" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" CssClass="form-control"></asp:TextBox>
+                                                            <asp:RegularExpressionValidator ID="RegularExpressionValidator37" runat="server" ErrorMessage="Value required" ControlToValidate="txtbcfProdCFF_BMC" ValidationGroup="CU" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
+                                                        </td>
+                                                        <td>
+                                                            <asp:TextBox ID="txtcapacityuti_BMC" runat="server" onpaste="return false" ClientIDMode="Static" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" CssClass="form-control"></asp:TextBox>
+                                                            <asp:RegularExpressionValidator ID="RegularExpressionValidator38" runat="server" ErrorMessage="Value required" ControlToValidate="txtcapacityuti_BMC" ValidationGroup="CU" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
+                                                        </td>
+                                                        <td>
+                                                            <asp:TextBox ID="txtSMPProd_SMP" runat="server" onpaste="return false" ClientIDMode="Static" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" CssClass="form-control"></asp:TextBox>
+                                                            <asp:RegularExpressionValidator ID="RegularExpressionValidator39" runat="server" ErrorMessage="Value required" ControlToValidate="txtSMPProd_SMP" ValidationGroup="CU" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
+                                                        </td>
+                                                        <td>
+                                                            <asp:TextBox ID="txtcapacityuti_SMP" runat="server" onpaste="return false" ClientIDMode="Static" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" CssClass="form-control"></asp:TextBox>
+                                                            <asp:RegularExpressionValidator ID="RegularExpressionValidator40" runat="server" ErrorMessage="Value required" ControlToValidate="txtcapacityuti_SMP" ValidationGroup="CU" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                        </div>
 
+                                    </fieldset>
+                                </fieldset>
+                                <div class="col-md-2 pull-right">
+                                    <div class="form-group">
+                                        <asp:Button ID="btnCapUtilisation" runat="server" Style="margin-top: 19px;" ValidationGroup="CU" CssClass="btn btn-primary btn-block" Text="Save" OnClick="btnCapUtilisation_Click"></asp:Button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="materialbalancing" runat="server">
+                                <fieldset>
+                                    <legend>MATERIAL BALANCING</legend>
+                                    <fieldset>
+                                        <legend>12.0 MATERIAL BALANCING :</legend>
+                                        <table style="width: 100%" class="table table-bordered">
+                                            <tr>
+                                                <th colspan="7">MILK PROCUREMENT : (In Kgs)</th>
+                                                <th colspan="4">TOTAL INPUT :</th>
+                                            </tr>
+                                            <tr>
+                                                <th>DCS MILK COW</th>
+                                                <th>DCS MILK BUFF</th>
+                                                <th>DCS MILK TOTAL</th>
+                                                <th>FAT</th>
+                                                <th>SNF</th>
+                                                <th>FAT%</th>
+                                                <th>SNF%</th>
+                                                <th>QUANTITY IN KGs</th>
+                                                <th>FAT IN KGs</th>
+                                                <th>SNF IN KGs</th>
+                                                <th>VALUE IN Rs.</th>
+                                            </tr>
+                                            <tr>
+                                                <%--there is only one table in database for both table available here--%>
+                                                <td>
+                                                    <asp:TextBox onpaste="return false" onkeyup="CalMB()" ClientIDMode="Static" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtdcsmilkcow_MP" runat="server" CssClass="form-control"></asp:TextBox>
+                                                    <asp:RegularExpressionValidator ID="RegularExpressionValidator6" runat="server" ErrorMessage="Value required" ControlToValidate="txtdcsmilkcow_MP" ValidationGroup="MB" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
+                                                </td>
+                                                <td>
+                                                    <asp:TextBox onpaste="return false" onkeyup="CalMB()" ClientIDMode="Static" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtdcsmilkbuff_MP" runat="server" CssClass="form-control"></asp:TextBox>
+                                                    <asp:RegularExpressionValidator ID="RegularExpressionValidator11" runat="server" ErrorMessage="Value required" ControlToValidate="txtdcsmilkbuff_MP" ValidationGroup="MB" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
+                                                </td>
+                                                <td>
+                                                    <asp:TextBox onpaste="return false" ClientIDMode="Static" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtdcsmilktotal_MP" runat="server" CssClass="form-control"></asp:TextBox>
+                                                    <asp:RegularExpressionValidator ID="RegularExpressionValidator12" runat="server" ErrorMessage="Value required" ControlToValidate="txtdcsmilktotal_MP" ValidationGroup="MB" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
+                                                </td>
+                                                <td>
+                                                    <asp:TextBox onpaste="return false" onkeyup="CalMB()" ClientIDMode="Static" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtfat_MP" runat="server" CssClass="form-control"></asp:TextBox>
+                                                    <asp:RegularExpressionValidator ID="RegularExpressionValidator13" runat="server" ErrorMessage="Value required" ControlToValidate="txtfat_MP" ValidationGroup="MB" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
+                                                </td>
+                                                <td>
+                                                    <asp:TextBox onpaste="return false" onkeyup="CalMB()" ClientIDMode="Static" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtsnf_MP" runat="server" CssClass="form-control"></asp:TextBox>
+                                                    <asp:RegularExpressionValidator ID="RegularExpressionValidator14" runat="server" ErrorMessage="Value required" ControlToValidate="txtsnf_MP" ValidationGroup="MB" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
+                                                </td>
+                                                <td>
+                                                    <asp:TextBox onpaste="return false" ClientIDMode="Static" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtfatpercent_MP" runat="server" CssClass="form-control"></asp:TextBox>
+                                                    <asp:RegularExpressionValidator ID="RegularExpressionValidator15" runat="server" ErrorMessage="Value required" ControlToValidate="txtfatpercent_MP" ValidationGroup="MB" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
+                                                </td>
+                                                <td>
+                                                    <asp:TextBox onpaste="return false" ClientIDMode="Static" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtsnfpercent_MP" runat="server" CssClass="form-control"></asp:TextBox>
+                                                    <asp:RegularExpressionValidator ID="RegularExpressionValidator16" runat="server" ErrorMessage="Value required" ControlToValidate="txtsnfpercent_MP" ValidationGroup="MB" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
+                                                </td>
+                                                <td>
+                                                    <asp:TextBox onpaste="return false" ClientIDMode="Static" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtquantityinkgs_TI" runat="server" CssClass="form-control"></asp:TextBox>
+                                                    <asp:RegularExpressionValidator ID="RegularExpressionValidator17" runat="server" ErrorMessage="Value required" ControlToValidate="txtquantityinkgs_TI" ValidationGroup="MB" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
+                                                </td>
+                                                <td>
+                                                    <asp:TextBox onpaste="return false" ClientIDMode="Static" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtfatinkgs_TI" onkeyup="CalMBInOut()" runat="server" CssClass="form-control"></asp:TextBox>
+                                                    <asp:RegularExpressionValidator ID="RegularExpressionValidator18" runat="server" ErrorMessage="Value required" ControlToValidate="txtfatinkgs_TI" ValidationGroup="MB" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
+                                                </td>
+                                                <td>
+                                                    <asp:TextBox onpaste="return false" ClientIDMode="Static" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtsnfinkgs_TI" onkeyup="CalMBInOut()" runat="server" CssClass="form-control"></asp:TextBox>
+                                                    <asp:RegularExpressionValidator ID="RegularExpressionValidator19" runat="server" ErrorMessage="Value required" ControlToValidate="txtsnfinkgs_TI" ValidationGroup="MB" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
+                                                </td>
+                                                <td>
+                                                    <asp:TextBox onpaste="return false" ClientIDMode="Static" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtvalueinrs_TI" runat="server" CssClass="form-control"></asp:TextBox>
+                                                    <asp:RegularExpressionValidator ID="RegularExpressionValidator20" runat="server" ErrorMessage="Value required" ControlToValidate="txtvalueinrs_TI" ValidationGroup="MB" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                        <table style="width: 100%" class="table table-bordered">
+                                            <tr>
+                                                <th colspan="4">TOTAL OUTPUT :</th>
+                                                <th colspan="4">MATERIAL GAIN (-)/LOSS (+)</th>
+                                            </tr>
+                                            <tr>
+                                                <th>QUANTITY IN KGs</th>
+                                                <th>FAT IN KGs</th>
+                                                <th>SNF IN KGs</th>
+                                                <th>VALUE IN Rs.</th>
+                                                <th>FAT IN KGs</th>
+                                                <th>SNF IN KGs</th>
+                                                <th>FAT %AGE</th>
+                                                <th>SNF %AGE</th>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <asp:TextBox onpaste="return false" ClientIDMode="Static" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtquantityinkgs_TO" runat="server" CssClass="form-control"></asp:TextBox>
+                                                    <asp:RegularExpressionValidator ID="RegularExpressionValidator21" runat="server" ErrorMessage="Value required" ControlToValidate="txtquantityinkgs_TO" ValidationGroup="MB" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
+                                                </td>
+
+                                                <td>
+                                                    <asp:TextBox onpaste="return false" ClientIDMode="Static" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtfatinkgs_TO" onkeyup="CalMBInOut()" runat="server" CssClass="form-control"></asp:TextBox>
+                                                    <asp:RegularExpressionValidator ID="RegularExpressionValidator22" runat="server" ErrorMessage="Value required" ControlToValidate="txtfatinkgs_TO" ValidationGroup="MB" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
+                                                </td>
+                                                <td>
+                                                    <asp:TextBox onpaste="return false" ClientIDMode="Static" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtsnfinKgs_TO" onkeyup="CalMBInOut()" runat="server" CssClass="form-control"></asp:TextBox>
+                                                    <asp:RegularExpressionValidator ID="RegularExpressionValidator23" runat="server" ErrorMessage="Value required" ControlToValidate="txtsnfinKgs_TO" ValidationGroup="MB" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
+                                                </td>
+                                                <td>
+                                                    <asp:TextBox onpaste="return false" ClientIDMode="Static" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtValueinrs_To" runat="server" CssClass="form-control"></asp:TextBox>
+                                                    <asp:RegularExpressionValidator ID="RegularExpressionValidator24" runat="server" ErrorMessage="Value required" ControlToValidate="txtValueinrs_To" ValidationGroup="MB" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
+                                                </td>
+
+                                                <td>
+                                                    <asp:TextBox onpaste="return false" ClientIDMode="Static" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtfatinkgs_MG" runat="server" CssClass="form-control"></asp:TextBox>
+                                                    <asp:RegularExpressionValidator ID="RegularExpressionValidator25" runat="server" ErrorMessage="Value required" ControlToValidate="txtfatinkgs_MG" ValidationGroup="MB" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
+                                                </td>
+                                                <td>
+                                                    <asp:TextBox onpaste="return false" ClientIDMode="Static" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtsngfinkgs_MG" runat="server" CssClass="form-control"></asp:TextBox>
+                                                    <asp:RegularExpressionValidator ID="RegularExpressionValidator26" runat="server" ErrorMessage="Value required" ControlToValidate="txtsngfinkgs_MG" ValidationGroup="MB" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
+                                                </td>
+                                                <td>
+                                                    <asp:TextBox onpaste="return false" ClientIDMode="Static" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtfatpercentage_MG" runat="server" CssClass="form-control"></asp:TextBox>
+                                                    <asp:RegularExpressionValidator ID="RegularExpressionValidator27" runat="server" ErrorMessage="Value required" ControlToValidate="txtfatpercentage_MG" ValidationGroup="MB" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
+                                                </td>
+                                                <td>
+                                                    <asp:TextBox onpaste="return false" ClientIDMode="Static" oninput="validate(this)" autocomplete="off" MaxLength="8" onkeypress="return isNumberKey(this, event);" ID="txtsnfpercentage_MG" runat="server" CssClass="form-control"></asp:TextBox>
+                                                    <asp:RegularExpressionValidator ID="RegularExpressionValidator28" runat="server" ErrorMessage="Value required" ControlToValidate="txtsnfpercentage_MG" ValidationGroup="MB" ValidationExpression="(?:\d*\.\d{1,2}|\d+)$"></asp:RegularExpressionValidator>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </fieldset>
+                                </fieldset>
+                                <div class="col-md-2 pull-right">
+                                    <div class="form-group">
+                                        <asp:Button ID="btnmaterialbalancing" runat="server" Style="margin-top: 19px;" CssClass="btn btn-primary btn-block" Text="Save" OnClick="btnmaterialbalancing_Click" ValidationGroup="MB"></asp:Button>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
+
                     </div>
                 </div>
             </div>
-        </section>
+    </div>
+    </section>
     </div>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentFooter" runat="Server">
+    <script type="text/javascript">
+
+        function noDays() {
+            let daysInMonth = '0';
+            let month = document.getElementById('<%=ddlmonth.ClientID %>').value;
+            let year = document.getElementById('<%=ddlYear.ClientID %>').value;
+            if (month != '0' & year != '0')
+                daysInMonth = new Date(year, month, 0).getDate();
+            return daysInMonth;
+
+        }
+        function getSum() {
+            let sum = 0
+            for (let i = 0; i < arguments.length; i++) {
+
+                if (arguments[i] === '')
+                    arguments[i] = '0';
+                if (arguments[i] === '.')
+                    arguments[i] = '0';
+                sum += parseFloat(arguments[i]);
+            }
+            return sum.toFixed(2);
+        }
+    </script>
     <script type="text/javascript">
         // =========  MATERIAL BALANCING =====
         function CalMB() {
@@ -2730,10 +2772,11 @@
                 DCSf = '0';
             if (DCSf === '.')
                 DCSf = '0';
-            let tolt = parseFloat(DCSo) - parseFloat(DCSf);
+            let tolt = parseFloat(DCSo) - parseFloat(DCSf).toFixed(2);
             if (isNaN(tolt))
                 tolt = "0";
-            document.getElementById('<%=txtdcsclosedtemp.ClientID %>').value = tolt.toFixed(2);
+            document.getElementById('<%=txtdcsclosedtemp.ClientID %>').value = tolt;
+            document.getElementById('<%=txtdcsselingbcf.ClientID %>').value = tolt;
         }
         function FOcalc() {
 
@@ -2782,22 +2825,69 @@
                                                                                 document.getElementById('<%=txtTaandtransportPAC.ClientID %>').value,
                                                                                 document.getElementById('<%=txtcontractlabourPAC.ClientID %>').value,
                                                                                 document.getElementById('<%=txtotherexpansesPAC.ClientID %>').value);
-            document.getElementById('<%=txttotalcostAiactivites.ClientID %>').value = getSum(document.getElementById('<%=txtsalaryandwagesAiActivites.ClientID %>').value,
+
+            let totalcostAiactivites = getSum(document.getElementById('<%=txtsalaryandwagesAiActivites.ClientID %>').value,
                                                                                 document.getElementById('<%=txttransportAiActivites.ClientID %>').value,
                                                                                 document.getElementById('<%=txtLn2ConsumedAiAcitivites.ClientID %>').value,
                                                                                 document.getElementById('<%=txtLn2transportAiactivites.ClientID %>').value,
                                                                                 document.getElementById('<%=txtsemenandstrawesAiactivites.ClientID %>').value,
-                                                                                document.getElementById('<%=txtotherdirectcostAiactivites.ClientID %>').value,
-                                                                                document.getElementById('<%=txtlessincomeAiactivites.ClientID %>').value);
+                                                                                document.getElementById('<%=txtotherdirectcostAiactivites.ClientID %>').value);
+            let lessincomeAiactivites = document.getElementById('<%=txtlessincomeAiactivites.ClientID %>').value;
+            if (totalcostAiactivites === "")
+                totalcostAiactivites = "0";
+            if (totalcostAiactivites === ".")
+                totalcostAiactivites = "0";
+            if (lessincomeAiactivites === "")
+                lessincomeAiactivites = "0";
+            if (lessincomeAiactivites === ".")
+                lessincomeAiactivites = "0";
+            let tttotalcostAiactivites = (parseFloat(totalcostAiactivites) - parseFloat(lessincomeAiactivites)).toFixed(2);
+            if (tttotalcostAiactivites === "")
+                tttotalcostAiactivites = "0";
+            if (tttotalcostAiactivites === ".")
+                tttotalcostAiactivites = "0";
+            document.getElementById('<%=txttotalcostAiactivites.ClientID %>').value = tttotalcostAiactivites;
+
+
             document.getElementById('<%=txtFPCtotalcost.ClientID %>').value = getSum(document.getElementById('<%=txtFPCsalryandwages.ClientID %>').value,
                                                                                 document.getElementById('<%=txtFPCotherdirectcost.ClientID %>').value);
             document.getElementById('<%=txtAHCtotalCost.ClientID %>').value = getSum(document.getElementById('<%=txtAHCsalaryandwages.ClientID %>').value,
                                                                                 document.getElementById('<%=txtAHCotherdirectcost.ClientID %>').value);
-            document.getElementById('<%=txtTotalCost.ClientID %>').value = getSum(document.getElementById('<%=txtTEcostsalaryandwages.ClientID %>').value,
-                                                                                document.getElementById('<%=txtTEcostotherdirectcost.ClientID %>').value,
-                                                                                document.getElementById('<%=txtTEcostlessincome.ClientID %>').value);
-            document.getElementById('<%=txttotalcostOTI.ClientID %>').value = getSum(document.getElementById('<%=txtsalaryandwagesOTI.ClientID %>').value,
-                                                                                document.getElementById('<%=txtotherincmecostOTI.ClientID %>').value);
+
+            let tTotalCost = getSum(document.getElementById('<%=txtTEcostsalaryandwages.ClientID %>').value,
+                                                                                document.getElementById('<%=txtTEcostotherdirectcost.ClientID %>').value);
+            let tTEcostlessincome = document.getElementById('<%=txtTEcostlessincome.ClientID %>').value;
+            if (tTotalCost === "")
+                tTotalCost = "0";
+            if (tTotalCost === ".")
+                tTotalCost = "0";
+            if (tTEcostlessincome === "")
+                tTEcostlessincome = "0";
+            if (tTEcostlessincome === ".")
+                tTEcostlessincome = "0";
+            let txTEcostlessincome = (parseFloat(tTotalCost) - parseFloat(tTEcostlessincome)).toFixed(2);
+            if (txTEcostlessincome === "")
+                txTEcostlessincome = "0";
+            if (txTEcostlessincome === ".")
+                txTEcostlessincome = "0";
+            document.getElementById('<%=txtTotalCost.ClientID %>').value = txTEcostlessincome;
+            //====================================================================================
+            let ttotalcostOTI = getSum(document.getElementById('<%=txtsalaryandwagesOTI.ClientID %>').value,
+                                document.getElementById('<%=txtotherincmecostOTI.ClientID %>').value);
+            let tOIcostlessincome = document.getElementById('<%=txtOIcostlessincome.ClientID %>').value;
+            if (ttotalcostOTI === "")
+                ttotalcostOTI = "0";
+            if (ttotalcostOTI === ".")
+                ttotalcostOTI = "0";
+            if (tOIcostlessincome === "")
+                tOIcostlessincome = "0";
+            if (tOIcostlessincome === ".")
+                tOIcostlessincome = "0";
+            let tttotalcostOTI = (parseFloat(ttotalcostOTI) - parseFloat(tOIcostlessincome)).toFixed(2);
+            if (tttotalcostOTI === ".")
+                tttotalcostOTI = "0";
+            document.getElementById('<%=txttotalcostOTI.ClientID %>').value = tttotalcostOTI;
+            //===============================================
             document.getElementById('<%=txtFOGrandTotal.ClientID %>').value = getSum(document.getElementById('<%=txtAHCtotalCost.ClientID %>').value,
                                                                                 document.getElementById('<%=txtFPCtotalcost.ClientID %>').value,
                                                                                 document.getElementById('<%=txtTotalCost.ClientID %>').value,
@@ -2827,15 +2917,55 @@
                                                                         document.getElementById('<%=txtforproduct_Commused.ClientID %>').value);
         }
         // ================== MILK PROCUREMENT AND SALE =======================================
+
+
+            document.getElementById('<%=txtTotalMilkSale_Monthly.ClientID %>').value = getSum(document.getElementById('<%=txtLocalMILK_MOnthly.ClientID %>').value,
+                                                                                            document.getElementById('<%=txtSMGmilk_Monthly.ClientID %>').value,
+                                                                                document.getElementById('<%=txtNMGOTH_MOnthly.ClientID %>').value);
+
+            document.getElementById('<%=txtTotalMilkSale_Cummulat.ClientID %>').value = getSum(document.getElementById('<%=txtLocalMilk_Cummulat.ClientID %>').value,
+                                                                                            document.getElementById('<%=txtSMGmilk_Cummulat.ClientID %>').value,
+                                                                                document.getElementById('<%=txtNMGOTH_Cummulat.ClientID %>').value);
+        }
+        function MPKGPD() {
+
+            let MILKPROC_monthly = getSum(document.getElementById('<%=txtDCSmilkRMRD.ClientID %>').value,
+                                          document.getElementById('<%=txtDCSmilkCCS.ClientID %>').value,
+                                          document.getElementById('<%=txtOTHER.ClientID %>').value)
+            let totalMILKPROC_monthly = (parseFloat(MILKPROC_monthly) / parseFloat(noofDays())).toFixed(2);
+            document.getElementById('<%=txtMILKPROC_monthly.ClientID %>').value = totalMILKPROC_monthly;
+
+            let hfTotalMP = document.getElementById('<%=hfTotalMP.ClientID %>').value;
+            let hidallDay = document.getElementById('<%=hfDay.ClientID %>').value;
+
+            if (hfTotalMP === "")
+                hfTotalMP = "0";
+            if (hfTotalMP === ".")
+                hfTotalMP = "0";
+            if (hidallDay === "")
+                hidallDay = "0";
+            if (hidallDay === ".")
+                hidallDay = "0";
+
+            let hidfTotal = ((parseFloat(hfTotalMP) + parseFloat(MILKPROC_monthly)) / parseFloat(hidallDay)).toFixed(2);
+            if (isNaN(hidfTotal))
+                hidfTotal = "0";
+            document.getElementById('<%=txtMILKPROC_Cummulat.ClientID %>').value = hidfTotal;
+
+
+        }
         function MPcalc() {
+
             document.getElementById('<%=txttotalMilkProc.ClientID %>').value = getSum(document.getElementById('<%=txtDCSmilkRMRD.ClientID %>').value,
                                                                                        document.getElementById('<%=txtDCSmilkCCS.ClientID %>').value,
                                                                                        document.getElementById('<%=txtSMGMILK.ClientID %>').value,
                                                                                        document.getElementById('<%=txtNMGmilk.ClientID %>').value,
                                                                                        document.getElementById('<%=txtOTHER.ClientID %>').value);
+            MPKGPD();
         }
         function LMScalc() {
-            document.getElementById('<%=txttotalmilksale.ClientID %>').value = getSum(document.getElementById('<%=txtwholemilk.ClientID %>').value,
+
+            let totalmilksale = getSum(document.getElementById('<%=txtwholemilk.ClientID %>').value,
                                                                                         document.getElementById('<%=txtfullcreammilk.ClientID %>').value,
                                                                                         document.getElementById('<%=txtstdmilk.ClientID %>').value,
                                                                                         document.getElementById('<%=txttonedmilk.ClientID %>').value,
@@ -2846,21 +2976,284 @@
                                                                                         document.getElementById('<%=txtcowmilk.ClientID %>').value,
                                                                                         document.getElementById('<%=txtsanchilitemilk.ClientID %>').value,
                                                                                         document.getElementById('<%=txtchahamilk.ClientID %>').value);
+            document.getElementById('<%=txttotalmilksale.ClientID %>').value = totalmilksale;
+            let LocalMILK_MOnthly = (parseFloat(totalmilksale) / parseFloat(noofDays())).toFixed(2);
+            if (isNaN(LocalMILK_MOnthly))
+                LocalMILK_MOnthly = "0";
+
+            document.getElementById('<%=txtLocalMILK_MOnthly.ClientID %>').value = LocalMILK_MOnthly;
+
+            let Hideftotalmilksale = document.getElementById('<%=hftotalmilksale.ClientID %>').value;
+            let hfallDay = document.getElementById('<%=hfDay.ClientID %>').value;
+            if (Hideftotalmilksale === "")
+                Hideftotalmilksale = "0";
+            if (Hideftotalmilksale === ".")
+                Hideftotalmilksale = "0";
+            if (hfallDay === "")
+                hfallDay = "0";
+            if (hfallDay === ".")
+                hfallDay = "0";
+            let hfTotal = ((parseFloat(Hideftotalmilksale) + parseFloat(totalmilksale)) / parseFloat(hfallDay)).toFixed(2);
+            if (isNaN(hfTotal))
+                hfTotal = "0";
+            document.getElementById('<%=txtLocalMilk_Cummulat.ClientID %>').value = hfTotal;
+            TMScalMPS();
+        }
+        //============   SMG   ==========================================================
+        function SMGHideField(totalsmg) {
+            let SMGmilk_Monthly = (parseFloat(totalsmg) / parseFloat(noofDays())).toFixed(2);
+            if (isNaN(SMGmilk_Monthly))
+                SMGmilk_Monthly = "0";
+            document.getElementById('<%=txtSMGmilk_Monthly.ClientID %>').value = SMGmilk_Monthly;
+
+            let hidfSMS_TotalSMGSale = document.getElementById('<%=hfSMS_TotalSMGSale.ClientID %>').value;
+            let hidfallDay = document.getElementById('<%=hfDay.ClientID %>').value;
+            if (hidfSMS_TotalSMGSale === "")
+                hidfSMS_TotalSMGSale = "0";
+            if (hidfSMS_TotalSMGSale === ".")
+                hidfSMS_TotalSMGSale = "0";
+            if (hidfallDay === "")
+                hidfallDay = "0";
+            if (hidfallDay === ".")
+                hidfallDay = "0";
+            let SMGmilk_Cummulat = ((parseFloat(totalsmg) + parseFloat(hidfSMS_TotalSMGSale)) / parseFloat(hidfallDay)).toFixed(2);
+            if (isNaN(SMGmilk_Cummulat))
+                SMGmilk_Cummulat = "0";
+            document.getElementById('<%=txtSMGmilk_Cummulat.ClientID %>').value = SMGmilk_Cummulat;
+            TMScalMPS();
         }
         function SMGcalc() {
-            document.getElementById('<%=txtTotalsmgsale_SMG.ClientID %>').value = getSum(document.getElementById('<%=txtwholemilk_SMG.ClientID %>').value,
-                                                                                        document.getElementById('<%=txtskimmilk_SMG.ClientID %>').value,
-                                                                                        document.getElementById('<%=txtOther_SMG.ClientID %>').value);
+            let wholemilk_SMG = document.getElementById('<%=txtwholemilk_SMG.ClientID %>').value;
+            let skimmilk_SMG = document.getElementById('<%=txtskimmilk_SMG.ClientID %>').value;
+            let txtOther_SMG = document.getElementById('<%=txtOther_SMG.ClientID %>').value;
+            if (wholemilk_SMG === "")
+                wholemilk_SMG = "0";
+            if (wholemilk_SMG === ".")
+                wholemilk_SMG = "0";
+            let totalwholemilk_SMG = (parseFloat(wholemilk_SMG) / 1.03).toFixed(2);
+            if (totalwholemilk_SMG === "")
+                totalwholemilk_SMG = "0";
+            if (totalwholemilk_SMG === ".")
+                totalwholemilk_SMG = "0";
+            document.getElementById('<%=txtwholemilk_SMG.ClientID %>').value = totalwholemilk_SMG;
+            let Totalsmgsale_SMG = getSum(totalwholemilk_SMG, skimmilk_SMG, txtOther_SMG)
+            document.getElementById('<%=txtTotalsmgsale_SMG.ClientID %>').value = Totalsmgsale_SMG;
+            SMGHideField(Totalsmgsale_SMG);
+        }
+        function SMGcalc1() {
+            let wholemilk_SMG1 = document.getElementById('<%=txtwholemilk_SMG.ClientID %>').value;
+            let skimmilk_SMG1 = document.getElementById('<%=txtskimmilk_SMG.ClientID %>').value;
+            let txtOther_SMG1 = document.getElementById('<%=txtOther_SMG.ClientID %>').value;
+            if (skimmilk_SMG1 === "")
+                skimmilk_SMG1 = "0";
+            if (skimmilk_SMG1 === ".")
+                skimmilk_SMG1 = "0";
+            let totlskimmilk_SMG = (parseFloat(skimmilk_SMG1) / 1.03).toFixed(2);
+            if (totlskimmilk_SMG === "")
+                totlskimmilk_SMG = "0";
+            if (totlskimmilk_SMG === ".")
+                totlskimmilk_SMG = "0";
+            document.getElementById('<%=txtskimmilk_SMG.ClientID %>').value = totlskimmilk_SMG;
+            let Totalsmgsale_SMG1 = getSum(wholemilk_SMG1, totlskimmilk_SMG, txtOther_SMG1);
+            document.getElementById('<%=txtTotalsmgsale_SMG.ClientID %>').value = Totalsmgsale_SMG1;
+            SMGHideField(Totalsmgsale_SMG1);
+        }
+        function SMGcalc2() {
+            let wholemilk_SMG2 = document.getElementById('<%=txtwholemilk_SMG.ClientID %>').value;
+            let skimmilk_SMG2 = document.getElementById('<%=txtskimmilk_SMG.ClientID %>').value;
+            let txtOther_SMG2 = document.getElementById('<%=txtOther_SMG.ClientID %>').value;
+            if (txtOther_SMG2 === "")
+                txtOther_SMG2 = "0";
+            if (txtOther_SMG2 === ".")
+                txtOther_SMG2 = "0";
+            let totltxtOther_SMG2 = (parseFloat(txtOther_SMG2) / 1.03).toFixed(2);
+            if (totltxtOther_SMG2 === "")
+                totltxtOther_SMG2 = "0";
+            if (totltxtOther_SMG2 === ".")
+                totltxtOther_SMG2 = "0";
+            document.getElementById('<%=txtOther_SMG.ClientID %>').value = totltxtOther_SMG2;
+            let Totalsmgsale_SMG2 = getSum(wholemilk_SMG2, skimmilk_SMG2, totltxtOther_SMG2);
+            document.getElementById('<%=txtTotalsmgsale_SMG.ClientID %>').value = Totalsmgsale_SMG2;
+            SMGHideField(Totalsmgsale_SMG2);
+        }
+        //===================  NMG  =================================================================
+        function NMGHideField() {
+            let Total_NMS_OS = getSum(document.getElementById('<%=txtTotalNMGsale_NMG.ClientID %>').value,
+                               document.getElementById('<%=txtwholmilkinLit_OSALE.ClientID %>').value,
+                               document.getElementById('<%=txtskimmilkinLit_OSALE.ClientID %>').value);
+
+            let NMGOTH_MOnthly = (parseFloat(Total_NMS_OS) / parseFloat(noofDays())).toFixed(2);
+            if (isNaN(NMGOTH_MOnthly))
+                NMGOTH_MOnthly = "0";
+            document.getElementById('<%=txtNMGOTH_MOnthly.ClientID %>').value = NMGOTH_MOnthly;
+
+            let hidfTotal_NMS_OS = document.getElementById('<%=hfTotal_NMS_OS.ClientID %>').value;
+            let hidefallDay = document.getElementById('<%=hfDay.ClientID %>').value;
+            if (hidfTotal_NMS_OS === "")
+                hidfTotal_NMS_OS = "0";
+            if (hidfTotal_NMS_OS === ".")
+                hidfTotal_NMS_OS = "0";
+            if (hidefallDay === "")
+                hidefallDay = "0";
+            if (hidefallDay === ".")
+                hidefallDay = "0";
+            let NMGOTH_Cummulat = ((parseFloat(Total_NMS_OS) + parseFloat(hidfTotal_NMS_OS)) / parseFloat(hidefallDay)).toFixed(2);
+            if (isNaN(NMGOTH_Cummulat))
+                NMGOTH_Cummulat = "0";
+            document.getElementById('<%=txtNMGOTH_Cummulat.ClientID %>').value = NMGOTH_Cummulat;
+            TMScalMPS();
         }
         function NMGcalc() {
-            document.getElementById('<%=txtTotalNMGsale_NMG.ClientID %>').value = getSum(document.getElementById('<%=txtwholemilk_NMG.ClientID %>').value,
-                                                                                        document.getElementById('<%=txtskimmilk_NMG.ClientID %>').value,
-                                                                                        document.getElementById('<%=txtOther_NMG.ClientID %>').value);
+            let wholemilk_NMG = document.getElementById('<%=txtwholemilk_NMG.ClientID %>').value;
+            let txtskimmilk_NMG = document.getElementById('<%=txtskimmilk_NMG.ClientID %>').value;
+            let txtOther_NMG = document.getElementById('<%=txtOther_NMG.ClientID %>').value;
+            if (wholemilk_NMG === "")
+                wholemilk_NMG = "0";
+            if (wholemilk_NMG === ".")
+                wholemilk_NMG = "0";
+            let totlwholemilk_NMG = (parseFloat(wholemilk_NMG) / 1.03).toFixed(2);
+            if (totlwholemilk_NMG === "")
+                totlwholemilk_NMG = "0";
+            if (totlwholemilk_NMG === ".")
+                totlwholemilk_NMG = "0";
+            document.getElementById('<%=txtwholemilk_NMG.ClientID %>').value = totlwholemilk_NMG;
+            document.getElementById('<%=txtTotalNMGsale_NMG.ClientID %>').value = getSum(totlwholemilk_NMG, txtskimmilk_NMG, txtOther_NMG);
+            NMGHideField();
         }
+        function NMGcalc1() {
+            let wholemilk_NMG1 = document.getElementById('<%=txtwholemilk_NMG.ClientID %>').value;
+            let txtskimmilk_NMG1 = document.getElementById('<%=txtskimmilk_NMG.ClientID %>').value;
+            let txtOther_NMG1 = document.getElementById('<%=txtOther_NMG.ClientID %>').value;
+            if (txtskimmilk_NMG1 === "")
+                txtskimmilk_NMG1 = "0";
+            if (txtskimmilk_NMG1 === ".")
+                wholemilk_NMG = "0";
+            let totltxtskimmilk_NMG1 = (parseFloat(txtskimmilk_NMG1) / 1.03).toFixed(2);
+            if (totltxtskimmilk_NMG1 === "")
+                totltxtskimmilk_NMG1 = "0";
+            if (totltxtskimmilk_NMG1 === ".")
+                totltxtskimmilk_NMG1 = "0";
+            document.getElementById('<%=txtskimmilk_NMG.ClientID %>').value = totltxtskimmilk_NMG1;
+            document.getElementById('<%=txtTotalNMGsale_NMG.ClientID %>').value = getSum(wholemilk_NMG1, totltxtskimmilk_NMG1, txtOther_NMG1);
+            NMGHideField();
+        }
+        function NMGcalc2() {
+            let wholemilk_NMG2 = document.getElementById('<%=txtwholemilk_NMG.ClientID %>').value;
+            let txtskimmilk_NMG2 = document.getElementById('<%=txtskimmilk_NMG.ClientID %>').value;
+            let txtOther_NMG2 = document.getElementById('<%=txtOther_NMG.ClientID %>').value;
+            if (txtOther_NMG2 === "")
+                txtOther_NMG2 = "0";
+            if (txtOther_NMG2 === ".")
+                txtOther_NMG2 = "0";
+            let totltxtOther_NMG2 = (parseFloat(txtOther_NMG2) / 1.03).toFixed(2);
+            if (totltxtOther_NMG2 === "")
+                totltxtOther_NMG2 = "0";
+            if (totltxtOther_NMG2 === ".")
+                totltxtOther_NMG2 = "0";
+            document.getElementById('<%=txtOther_NMG.ClientID %>').value = totltxtOther_NMG2;
+            document.getElementById('<%=txtTotalNMGsale_NMG.ClientID %>').value = getSum(wholemilk_NMG2, txtskimmilk_NMG2, totltxtOther_NMG2);
+            NMGHideField();
+        }
+        //===============  OS  ======================================================================================================
         function OScalc() {
-            document.getElementById('<%=txttotalBulkSale_OSALE.ClientID %>').value = getSum(document.getElementById('<%=txtwholmilkinLit_OSALE.ClientID %>').value,
-                                                                                         document.getElementById('<%=txtskimmilkinLit_OSALE.ClientID %>').value,
-                                                                                        document.getElementById('<%=txtOther_OSALE.ClientID %>').value);
+            let wholmilkinLit_OSALE = document.getElementById('<%=txtwholmilkinLit_OSALE.ClientID %>').value;
+            let skimmilkinLit_OSALE = document.getElementById('<%=txtskimmilkinLit_OSALE.ClientID %>').value;
+            let Other_OSALE = document.getElementById('<%=txtOther_OSALE.ClientID %>').value;
+
+            if (wholmilkinLit_OSALE === "")
+                wholmilkinLit_OSALE = "0";
+            if (wholmilkinLit_OSALE === ".")
+                wholmilkinLit_OSALE = "0";
+            let totlwholmilkinLit_OSALE = (parseFloat(wholmilkinLit_OSALE) / 1.03).toFixed(2);
+            if (totlwholmilkinLit_OSALE === "")
+                totlwholmilkinLit_OSALE = "0";
+            if (totlwholmilkinLit_OSALE === ".")
+                totlwholmilkinLit_OSALE = "0";
+            document.getElementById('<%=txtwholmilkinLit_OSALE.ClientID %>').value = totlwholmilkinLit_OSALE;
+            document.getElementById('<%=txttotalBulkSale_OSALE.ClientID %>').value = getSum(totlwholmilkinLit_OSALE, skimmilkinLit_OSALE, Other_OSALE);
+            NMGHideField();
+        }
+        function OScalc1() {
+            let wholmilkinLit_OSALE1 = document.getElementById('<%=txtwholmilkinLit_OSALE.ClientID %>').value;
+            let skimmilkinLit_OSALE1 = document.getElementById('<%=txtskimmilkinLit_OSALE.ClientID %>').value;
+            let Other_OSALE1 = document.getElementById('<%=txtOther_OSALE.ClientID %>').value;
+
+            if (skimmilkinLit_OSALE1 === "")
+                skimmilkinLit_OSALE1 = "0";
+            if (skimmilkinLit_OSALE1 === ".")
+                skimmilkinLit_OSALE1 = "0";
+            let totlskimmilkinLit_OSALE1 = (parseFloat(skimmilkinLit_OSALE1) / 1.03).toFixed(2);
+            if (totlskimmilkinLit_OSALE1 === "")
+                totlskimmilkinLit_OSALE1 = "0";
+            if (totlskimmilkinLit_OSALE1 === ".")
+                totlskimmilkinLit_OSALE1 = "0";
+            document.getElementById('<%=txtskimmilkinLit_OSALE.ClientID %>').value = totlskimmilkinLit_OSALE1;
+            document.getElementById('<%=txttotalBulkSale_OSALE.ClientID %>').value = getSum(wholmilkinLit_OSALE1, totlskimmilkinLit_OSALE1, Other_OSALE1);
+            NMGHideField();
+        }
+        function OScalc2() {
+            let wholmilkinLit_OSALE2 = document.getElementById('<%=txtwholmilkinLit_OSALE.ClientID %>').value;
+            let skimmilkinLit_OSALE2 = document.getElementById('<%=txtskimmilkinLit_OSALE.ClientID %>').value;
+            let Other_OSALE2 = document.getElementById('<%=txtOther_OSALE.ClientID %>').value;
+
+            if (Other_OSALE2 === "")
+                Other_OSALE2 = "0";
+            if (Other_OSALE2 === ".")
+                Other_OSALE2 = "0";
+            let totlOther_OSALE2 = (parseFloat(Other_OSALE2) / 1.03).toFixed(2);
+            if (totlOther_OSALE2 === "")
+                totlOther_OSALE2 = "0";
+            if (totlOther_OSALE2 === ".")
+                totlOther_OSALE2 = "0";
+            document.getElementById('<%=txtOther_OSALE.ClientID %>').value = totlOther_OSALE2;
+            document.getElementById('<%=txttotalBulkSale_OSALE.ClientID %>').value = getSum(wholmilkinLit_OSALE2, skimmilkinLit_OSALE2, totlOther_OSALE2);
+        }
+        //==============================================================================
+        function GMPcalc() {
+            noofDays();
+            let hidfMP_TillMonthGMPMS = document.getElementById('<%=hfMP_TillMonthGMPMS.ClientID %>').value;
+            let hidfLMS_TillMonthGMPMS = document.getElementById('<%=hfLMS_TillMonthGMPMS.ClientID %>').value;
+            let hidfallDay = document.getElementById('<%=hfDay.ClientID %>').value;
+            if (hidfMP_TillMonthGMPMS === "")
+                hidfMP_TillMonthGMPMS = "0";
+            if (hidfMP_TillMonthGMPMS === ".")
+                hidfMP_TillMonthGMPMS = "0";
+            if (hidfLMS_TillMonthGMPMS === "")
+                hidfLMS_TillMonthGMPMS = "0";
+            if (hidfLMS_TillMonthGMPMS === ".")
+                hidfLMS_TillMonthGMPMS = "0";
+            let MILKproKGPD_KG_Monthly = document.getElementById('<%=txtMILKproKGPD_KG_Monthly.ClientID %>').value;
+            if (MILKproKGPD_KG_Monthly === "")
+                MILKproKGPD_KG_Monthly = "0";
+            if (MILKproKGPD_KG_Monthly === ".")
+                MILKproKGPD_KG_Monthly = "0";
+            let MILKproKGPD_Monthly = (parseFloat(MILKproKGPD_KG_Monthly) / parseFloat(noofDays())).toFixed(2);
+            if (isNaN(MILKproKGPD_Monthly))
+                MILKproKGPD_Monthly = "0";
+            document.getElementById('<%=txtMILKproKGPD_Monthly.ClientID %>').value = MILKproKGPD_Monthly;
+
+            let MILKprocKGPD_Cummulative = ((parseFloat(MILKproKGPD_KG_Monthly) + parseFloat(hidfMP_TillMonthGMPMS)) / parseFloat(hidfallDay)).toFixed(2);
+            if (isNaN(MILKprocKGPD_Cummulative))
+                MILKprocKGPD_Cummulative = "0";
+            document.getElementById('<%=txtMILKprocKGPD_Cummulative.ClientID %>').value = MILKprocKGPD_Cummulative;
+
+            let LocalMILKLPD_Ltr_Monthly = document.getElementById('<%=txtLocalMILKLPD_Ltr_Monthly.ClientID %>').value;
+            if (LocalMILKLPD_Ltr_Monthly === "")
+                LocalMILKLPD_Ltr_Monthly = "0";
+            if (LocalMILKLPD_Ltr_Monthly === ".")
+                LocalMILKLPD_Ltr_Monthly = "0";
+            let LocalMILKLPD_Monthly = (parseFloat(LocalMILKLPD_Ltr_Monthly) / parseFloat(noofDays())).toFixed(2);
+            if (isNaN(LocalMILKLPD_Monthly))
+                LocalMILKLPD_Monthly = "0";
+            document.getElementById('<%=txtLocalMILKLPD_Monthly.ClientID %>').value = LocalMILKLPD_Monthly;
+
+            let LocalmilkLPD_Cummulative = ((parseFloat(LocalMILKLPD_Ltr_Monthly) + parseFloat(hidfLMS_TillMonthGMPMS)) / parseFloat(hidfallDay)).toFixed(2);
+            if (isNaN(LocalmilkLPD_Cummulative))
+                LocalmilkLPD_Cummulative = "0";
+            document.getElementById('<%=txtLocalmilkLPD_Cummulative.ClientID %>').value = LocalmilkLPD_Cummulative;
+
+
+
         }
         // =============== PROCESSING AND PRODUCTS MAKING ========================
         function PPMcalc() {
@@ -2974,6 +3367,7 @@
                                                                                         document.getElementById('<%=txtSMGMILKPT.ClientID %>').value,
                                                                                         document.getElementById('<%=txtNMGMILKpt.ClientID %>').value);
         }
+
         function getSum() {
             let sum = 0
             for (let i = 0; i < arguments.length; i++) {
@@ -2987,7 +3381,15 @@
             return sum.toFixed(2);
         }
 
+        function noofDays() {
+            let daysInMonth = '0';
+            let month = document.getElementById('<%=ddlmonth.ClientID %>').value;
+            let year = document.getElementById('<%=ddlYear.ClientID %>').value;
+            if (month != '0' & year != '0')
+                daysInMonth = new Date(year, month, 0).getDate();
+            return daysInMonth;
 
+        }
 
     </script>
 

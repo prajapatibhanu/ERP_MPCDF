@@ -7,6 +7,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
+
 public partial class mis_Mis_Reports_MPRU_MonthlyEntryFrom : System.Web.UI.Page
 {
     APIProcedure objdb = new APIProcedure();
@@ -40,6 +41,7 @@ public partial class mis_Mis_Reports_MPRU_MonthlyEntryFrom : System.Web.UI.Page
             txtTotalCost.Attributes.Add("readonly", "readonly");
             txttotalcostOTI.Attributes.Add("readonly", "readonly");
             txtFOGrandTotal.Attributes.Add("readonly", "readonly");
+            txtdcsselingbcf.Attributes.Add("readonly", "readonly");
 
             //============MPS ==================
             txttotalMilkProc.Attributes.Add("readonly", "readonly");
@@ -47,6 +49,22 @@ public partial class mis_Mis_Reports_MPRU_MonthlyEntryFrom : System.Web.UI.Page
             txtTotalsmgsale_SMG.Attributes.Add("readonly", "readonly");
             txtTotalNMGsale_NMG.Attributes.Add("readonly", "readonly");
             txttotalBulkSale_OSALE.Attributes.Add("readonly", "readonly");
+
+            txtMILKPROC_monthly.Attributes.Add("readonly", "readonly");
+            txtMILKPROC_Cummulat.Attributes.Add("readonly", "readonly");
+            txtLocalMILK_MOnthly.Attributes.Add("readonly", "readonly");
+            txtLocalMilk_Cummulat.Attributes.Add("readonly", "readonly");
+            txtTotalMilkSale_Monthly.Attributes.Add("readonly", "readonly");
+            txtTotalMilkSale_Cummulat.Attributes.Add("readonly", "readonly");
+            txtSMGmilk_Monthly.Attributes.Add("readonly", "readonly");
+            txtSMGmilk_Cummulat.Attributes.Add("readonly", "readonly");
+            txtNMGOTH_MOnthly.Attributes.Add("readonly", "readonly");
+            txtNMGOTH_Cummulat.Attributes.Add("readonly", "readonly");
+
+            txtMILKproKGPD_Monthly.Attributes.Add("readonly", "readonly");
+            txtMILKprocKGPD_Cummulative.Attributes.Add("readonly", "readonly");
+            txtLocalMILKLPD_Monthly.Attributes.Add("readonly", "readonly");
+            txtLocalmilkLPD_Cummulative.Attributes.Add("readonly", "readonly");
             //====== R ==========================
             txtTOTAL_forMilk.Attributes.Add("readonly", "readonly");
             txtTOTAL_forproduct.Attributes.Add("readonly", "readonly");
@@ -64,6 +82,7 @@ public partial class mis_Mis_Reports_MPRU_MonthlyEntryFrom : System.Web.UI.Page
             txtTotal_LI.Attributes.Add("readonly", "readonly");
             txtTotal_Provi.Attributes.Add("readonly", "readonly");
             txtFPTotal.Attributes.Add("readonly", "readonly");
+            txtalltotal.Attributes.Add("readonly", "readonly");
             //=========== CAPACITY UTILISATION=================
             txtthroughpuINLTS_PC.Attributes.Add("readonly", "readonly");
             txtthroughputPERDAY_PC.Attributes.Add("readonly", "readonly");
@@ -74,6 +93,7 @@ public partial class mis_Mis_Reports_MPRU_MonthlyEntryFrom : System.Web.UI.Page
             //==============Receipts==================
             txtTotalSaleTR.Attributes.Add("readonly", "readonly");
             txtNetRecieptsTR.Attributes.Add("readonly", "readonly");
+            txtopeningStocksTR.Attributes.Add("readonly", "readonly");
             //======= MATERIAL BALANCING =========
             txtfatinkgs_MG.Attributes.Add("readonly", "readonly");
             txtsngfinkgs_MG.Attributes.Add("readonly", "readonly");
@@ -104,6 +124,7 @@ public partial class mis_Mis_Reports_MPRU_MonthlyEntryFrom : System.Web.UI.Page
                 ddlYear.DataBind();
             }
             ddlYear.Items.Insert(0, new ListItem("Select", "0"));
+
         }
         catch (Exception ex)
         {
@@ -126,10 +147,31 @@ public partial class mis_Mis_Reports_MPRU_MonthlyEntryFrom : System.Web.UI.Page
         materialbalancing.Visible = false;
         RawMaterialCost.Visible = false;
 
+
         if (ddlmonth.SelectedValue != "0" && ddlYear.SelectedValue != "0" && ddlform.SelectedValue != "0")
         {
 
+            //ds = objdb.ByProcedure("USP_GetServerDatetime",
+            //       new string[] { "flag" },
+            //         new string[] { "1" }, "dataset");
+            //if (ds.Tables[0].Rows.Count > 0)
+            //{
 
+            //    string myStringfromdat = "01/" + ddlmonth.SelectedValue + "/" + ddlYear.SelectedValue;
+            //    string myStringcurrentdate = ds.Tables[0].Rows[0]["currentDate"].ToString();
+            //    DateTime Prevcurrentdate = DateTime.ParseExact(myStringfromdat, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+            //    DateTime date = DateTime.ParseExact(myStringfromdat, "01/" + ddlmonth.SelectedValue + "/" + ddlYear.SelectedValue, CultureInfo.CurrentCulture);
+            //    DateTime d1 = date.AddMonths(-1);
+
+            //    if (Prevcurrentdate.Month == d1.Month || Prevcurrentdate.Month == date.Month)
+            //    {
+            //        btnAdministration.Visible = false;
+            //    }
+            //    else
+            //    {
+            //        btnAdministration.Visible = true;
+            //    }
+            //}
             if (ddlform.SelectedValue == "1")
             { //raghav
                 #region FO.Visible
@@ -267,6 +309,7 @@ public partial class mis_Mis_Reports_MPRU_MonthlyEntryFrom : System.Web.UI.Page
                                 txtTotalCost.Text = ds.Tables[9].Rows[0]["OI_TotalCost"].ToString();
                                 txtsalaryandwagesOTI.Text = ds.Tables[9].Rows[0]["OI_SalaryAndWages"].ToString();
                                 txtotherincmecostOTI.Text = ds.Tables[9].Rows[0]["OI_OtherDirectCost"].ToString();
+                                txtOIcostlessincome.Text = ds.Tables[9].Rows[0]["OI_LessIncome"].ToString();
                                 txttotalcostOTI.Text = ds.Tables[9].Rows[0]["OIC_TotalCost"].ToString();
                                 txtFOGrandTotal.Text = ds.Tables[9].Rows[0]["GrandtoatalPAC"].ToString();
                             }
@@ -294,6 +337,37 @@ public partial class mis_Mis_Reports_MPRU_MonthlyEntryFrom : System.Web.UI.Page
                 {
                     if (ddlmonth.SelectedValue != "0" && ddlYear.SelectedValue != "0")
                     {
+                        int lyear = Convert.ToInt32(ddlYear.SelectedValue);
+                        if (Convert.ToInt32(ddlmonth.SelectedValue) < 4)
+                        {
+                            lyear += 1;
+                        }
+                        string fDate = "01/" + ddlmonth.SelectedValue + "/" + lyear + "";
+                        DateTime forday = DateTime.ParseExact(fDate, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+                        DateTime lastDate = new DateTime(forday.Year, forday.Month, 1).AddMonths(1).AddDays(-1);
+                        string day = lastDate.ToString("dd");
+
+                        string strt = "01/04/" + ddlYear.SelectedValue + "";
+                        DateTime start = DateTime.ParseExact(strt, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+                        string en = "" + day + "/" + ddlmonth.SelectedValue + "/" + ddlYear.SelectedValue + "";
+                        DateTime end = DateTime.ParseExact(en, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+                        TimeSpan difference = end - start;
+                        string alldays = difference.Days.ToString();
+                        int dy = Convert.ToInt32(alldays) + 1;
+                        ViewState["days"] = dy.ToString();
+
+                        ds = objdb.ByProcedure("SP_MonthlyCosting_MilkProcurementSale",
+                            new string[] { "Flag", "Office_ID", "Entry_Year", "Entry_Month" },
+                            new string[] { "3", objdb.Office_ID(), ddlYear.SelectedValue, ddlmonth.SelectedValue }, "dataset");
+                        ViewState["GtotalMPS"] = ds.Tables[0].Rows[0]["TotalMP"].ToString();
+                        hfTotalMP.Value = ds.Tables[0].Rows[0]["TotalMP"].ToString();
+                        hftotalmilksale.Value = ds.Tables[0].Rows[0]["TotalMilkSaleLMS"].ToString();
+                        hfSMS_TotalSMGSale.Value = ds.Tables[0].Rows[0]["SMS_TotalSMGSale"].ToString();
+                        hfTotal_NMS_OS.Value = ds.Tables[0].Rows[0]["Total_NMS_OS"].ToString();
+                        hfMP_TillMonthGMPMS.Value = ds.Tables[0].Rows[0]["MP_TillMonthGMPMS"].ToString();
+                        hfLMS_TillMonthGMPMS.Value = ds.Tables[0].Rows[0]["LMS_TillMonthGMPMS"].ToString();
+                        hfDay.Value = dy.ToString();
+                        ds.Clear();
                         ds = objdb.ByProcedure("SP_MonthlyCosting_MilkProcurementSale",
                             new string[] { "Flag", "Office_ID", "Entry_Year", "Entry_Month" },
                             new string[] { "2", objdb.Office_ID(), ddlYear.SelectedValue, ddlmonth.SelectedValue }, "dataset");
@@ -306,6 +380,8 @@ public partial class mis_Mis_Reports_MPRU_MonthlyEntryFrom : System.Web.UI.Page
                                 txtMILKprocKGPD_Cummulative.Text = ds.Tables[0].Rows[0]["MP_TillMonth"].ToString();
                                 txtLocalMILKLPD_Monthly.Text = ds.Tables[0].Rows[0]["LMS_InTheMonth"].ToString();
                                 txtLocalmilkLPD_Cummulative.Text = ds.Tables[0].Rows[0]["LMS_TillMonth"].ToString();
+                                txtMILKproKGPD_KG_Monthly.Text = ds.Tables[0].Rows[0]["MILKproKGPD_KG_Monthly"].ToString();
+                                txtLocalMILKLPD_Ltr_Monthly.Text = ds.Tables[0].Rows[0]["LocalMILKLPD_Ltr_Monthly"].ToString();
                             }
                             if (ds != null && ds.Tables[1].Rows.Count > 0)
                             {
@@ -376,6 +452,7 @@ public partial class mis_Mis_Reports_MPRU_MonthlyEntryFrom : System.Web.UI.Page
                     ds.Clear();
                 }
                 #endregion
+
             }
             if (ddlform.SelectedValue == "3")
             {
@@ -740,6 +817,11 @@ public partial class mis_Mis_Reports_MPRU_MonthlyEntryFrom : System.Web.UI.Page
                                 txtFPOther.Text = ds.Tables[2].Rows[0]["Other"].ToString();
                                 txtFPTotal.Text = ds.Tables[2].Rows[0]["Total"].ToString();
                             }
+                            if (ds != null && ds.Tables[3].Rows.Count > 0)
+                            {
+                                txtalltotal.Text = ds.Tables[3].Rows[0]["grandtotal"].ToString();
+                              
+                            }
                         }
                     }
                 }
@@ -775,7 +857,7 @@ public partial class mis_Mis_Reports_MPRU_MonthlyEntryFrom : System.Web.UI.Page
                                 txtTotalSaleTR.Text = ds.Tables[0].Rows[0]["TotalSale"].ToString();
                                 txtCommoditiesTR.Text = ds.Tables[0].Rows[0]["TotalCommoditiesUsed"].ToString();
                                 txtcommditiesPurchTR.Text = ds.Tables[0].Rows[0]["CommoditiesPurchReturns"].ToString();
-                                txtopeningStocksTR.Text = ds.Tables[0].Rows[0]["OpeningStocks"].ToString();
+
                                 txtClosingStocksTR.Text = ds.Tables[0].Rows[0]["ClosingStocks"].ToString();
                                 txtOtherIncomeTR.Text = ds.Tables[0].Rows[0]["OtherIncome"].ToString();
                                 txtNetRecieptsTR.Text = ds.Tables[0].Rows[0]["TotalNetReceipts"].ToString();
@@ -783,6 +865,10 @@ public partial class mis_Mis_Reports_MPRU_MonthlyEntryFrom : System.Web.UI.Page
                                 txtbeforDEFERDTR.Text = ds.Tables[0].Rows[0]["SD_BeforeDeffered"].ToString();
                                 txtbeforDEPRECIATIONTR.Text = ds.Tables[0].Rows[0]["SD_BeforeDepreciation"].ToString();
                                 txtNETINCLUDEPTR.Text = ds.Tables[0].Rows[0]["SD_NetIncluDep"].ToString();
+                            }
+                            if (ds != null && ds.Tables[2].Rows.Count > 0)
+                            {
+                                txtopeningStocksTR.Text = ds.Tables[2].Rows[0]["lstopen"].ToString();
                             }
                             if (ds != null && ds.Tables[1].Rows.Count > 0)
                             {
@@ -966,7 +1052,7 @@ public partial class mis_Mis_Reports_MPRU_MonthlyEntryFrom : System.Web.UI.Page
         txtfemalegeneral.Text = ""; txtfemaleschedulcaste.Text = ""; txtfemaletribe.Text = ""; txtfemalebackword.Text = ""; txtfemaletotal.Text = ""; txtmembers.Text = ""; txtnonmerbers.Text = ""; txttotalPourers.Text = "";
         txtGeneral.Text = ""; txtSceduledcaste.Text = ""; txtscheduletribe.Text = ""; txtbackworsclasses.Text = ""; txtmembershiptotal.Text = ""; txtlandlesslabour.Text = ""; txtmarginalfarmer.Text = ""; txtsmallfarmer.Text = ""; txtlargefarmer.Text = ""; txtothers.Text = ""; txttotal.Text = "";
         txtTEcostsalaryandwages.Text = ""; txtTEcostotherdirectcost.Text = ""; txtTEcostlessincome.Text = ""; txtTotalCost.Text = ""; txtsalaryandwagesOTI.Text = ""; txtotherincmecostOTI.Text = ""; txttotalcostOTI.Text = "";
-        txtsalarywagesPAC.Text = ""; txtFOGrandTotal.Text = "";
+        txtsalarywagesPAC.Text = ""; txtFOGrandTotal.Text = ""; txtOIcostlessincome.Text = "";
     }
     protected void btnFO_Click(object sender, EventArgs e)
     { //raghav
@@ -1079,7 +1165,7 @@ public partial class mis_Mis_Reports_MPRU_MonthlyEntryFrom : System.Web.UI.Page
             if (txtotherincmecostOTI.Text == "") { txtotherincmecostOTI.Text = "0"; }
             if (txttotalcostOTI.Text == "") { txttotalcostOTI.Text = "0"; }
             if (txtFOGrandTotal.Text == "") { txtFOGrandTotal.Text = "0"; }
-
+            if (txtOIcostlessincome.Text == "") { txtOIcostlessincome.Text = "0"; }
             if (msg == "")
             {
                 ds = objdb.ByProcedure("SP_MonthlyCostingFarmerOrgnization", new string[] { "flag", "EntryYear", "EntryMonth", "AHCSalaryAndWages", "AHCOtherDirectCost", "AHCTotalCost", "FodderSalaryAndWages", "FodderOtherDirectCost", "FodderTotalCost", 
@@ -1092,7 +1178,7 @@ public partial class mis_Mis_Reports_MPRU_MonthlyEntryFrom : System.Web.UI.Page
                        "General", "ScheduleCaste", "ScheduleTribe", "OtherBackwordClass", "Total", "MilkPourerMembers", "MilkPourerNonMembers", "MilkPourerTotal",
                         "General_TMO", "Schedule_Caste_TMO", "Scheduled_Tribe_TMO", "OtherBackwordClasses_TMO", "GSSO_Total_TMO", "LandlessLaboures_TMO", "MargionalFarmers_TMO", "SamllFarmers_TMO", "LargeFarmers_TMO", "Others_TMO", "LMSLO_Total",
                         "TEC_SalaryAndWages", "TEC_OtherDirectCost", "TEC_LessIncome", "OI_TotalCost", "OI_SalaryAndWages", "OI_OtherDirectCost", "OIC_TotalCost","GrandtoatalPAC",
-                        "Office_ID", "CreatedBy", "CreatedIP" },
+                        "Office_ID", "CreatedBy", "CreatedIP","OI_LessIncome" },
                     new string[] { "1", ddlYear.SelectedValue, ddlmonth.SelectedValue, txtAHCsalaryandwages.Text, txtAHCotherdirectcost.Text, txtAHCtotalCost.Text, txtFPCsalryandwages.Text, txtFPCotherdirectcost.Text, txtFPCtotalcost.Text,
                     txtAIcentersingle.Text,txtAIcentercluster.Text,txtAIcentertotal.Text,txtAIperformSinglecow.Text,txtAIperformBuff1.Text,txtAIperformclustercow.Text,txtAIPerformBuff2.Text,txtAItotalCow.Text,txtAItotalBuff.Text,txtAiperformedtotal.Text,
                     txtcalvborntotalcow.Text,txtcalvbornbuff.Text,txtanimalhusfirstAid.Text,txtaniamlhusAHWcase.Text,txtcattlefiedsold.Text,txtdcsselingbcf.Text,txtmmsalebydcs.Text,txtcattinducproject.Text,txtcattinducselffinance.Text,txtcattleinductotal.Text,
@@ -1103,7 +1189,7 @@ public partial class mis_Mis_Reports_MPRU_MonthlyEntryFrom : System.Web.UI.Page
                     txtfemalegeneral.Text,txtfemaleschedulcaste.Text,txtfemaletribe.Text,txtfemalebackword.Text,txtfemaletotal.Text,txtmembers.Text,txtnonmerbers.Text,txttotalPourers.Text,
                     txtGeneral.Text,txtSceduledcaste.Text,txtscheduletribe.Text,txtbackworsclasses.Text,txtmembershiptotal.Text,txtlandlesslabour.Text,txtmarginalfarmer.Text,txtsmallfarmer.Text,txtlargefarmer.Text,txtothers.Text,txttotal.Text,
                     txtTEcostsalaryandwages.Text,txtTEcostotherdirectcost.Text,txtTEcostlessincome.Text,txtTotalCost.Text,txtsalaryandwagesOTI.Text,txtotherincmecostOTI.Text,txttotalcostOTI.Text,txtFOGrandTotal.Text,
-                    objdb.Office_ID(),objdb.createdBy(),objdb.GetLocalIPAddress()}, "dataset");
+                    objdb.Office_ID(),objdb.createdBy(),objdb.GetLocalIPAddress(),txtOIcostlessincome.Text}, "dataset");
                 if (ds != null && ds.Tables[0].Rows.Count > 0)
                 {
                     if (ds.Tables[0].Rows[0]["Msg"].ToString() == "ok")
@@ -1136,6 +1222,8 @@ public partial class mis_Mis_Reports_MPRU_MonthlyEntryFrom : System.Web.UI.Page
         {
             lblMsg.Text = "";
             // GMPMS
+            if (txtMILKproKGPD_KG_Monthly.Text == "") { txtMILKproKGPD_KG_Monthly.Text = "0"; }
+            if (txtLocalMILKLPD_Ltr_Monthly.Text == "") { txtLocalMILKLPD_Ltr_Monthly.Text = "0"; }
             if (txtMILKproKGPD_Monthly.Text == "") { txtMILKproKGPD_Monthly.Text = "0"; }
             if (txtMILKprocKGPD_Cummulative.Text == "") { txtMILKprocKGPD_Cummulative.Text = "0"; }
             if (txtLocalMILKLPD_Monthly.Text == "") { txtLocalMILKLPD_Monthly.Text = "0"; }
@@ -1204,13 +1292,13 @@ public partial class mis_Mis_Reports_MPRU_MonthlyEntryFrom : System.Web.UI.Page
                 if (ddlform.SelectedValue == "2")
                 {
                     ds = objdb.ByProcedure("SP_MonthlyCosting_MilkProcurementSale",
-                        new string[] { "Flag", "MP_InTheMonth_GMPMS", "MP_TillMonth_GMPMS", "LMS_InTheMonth_GMPMS", "LMS_TillMonth_GMPMS",
+                        new string[] { "Flag", "MP_InTheMonth_GMPMS", "MP_TillMonth_GMPMS", "LMS_InTheMonth_GMPMS", "LMS_TillMonth_GMPMS","MILKproKGPD_KG_Monthly","LocalMILKLPD_Ltr_Monthly",
                                 "WholeMilk_LMS","FullCreamMilk_LMS","STDMilk_LMS","TonedMilk_LMS","DTMilk_LMS","SkimMilk_LMS", "RawChilldMilk_LMS","ChaiSpecialMilk_LMS", "CowMilk_LMS", "SanchiLiteMilk_LMS","ChahaMilk_LMS", "TotalMilkSale_LMS",
                                     "DCSMilkRMRD_MP","DCSMilkCCs_MP", "SMGMilk_MP","NMGMilk_MP","Other_MP","TotalMilkProc_MP", 
                                     "MP_InTheMonth_MPKGPD","MP_TillMonth_MPKGPD","LMS_InTheMonth_MPKGPD","LMS_TillMonth_MPKGPD", "TMS_InTheMonth_MPKGPD","TMS_TillMonth_MPKGPD","SMS_InTheMonth_MPKGPD","SMS_TillMonth_MPKGPD", "NOS_InTheMonth_MPKGPD","NOS_TillMonth_MPKGPD",
                                     "SMS_WholeMilk_SMS","SMS_SkimMilk_SMS","SMS_Other_SMS","SMS_TotalSMGSale_SMS", "NMS_WholeMilk_SMS", "NMS_SkimMilk_SMS","NMS_Other_SMS", "NMS_TotalNMGSale_SMS","OS_WholeMilkInLit_SMS","OS_SkimMilkInLit_SMS", "OS_Other_SMS","OS_TotalBULKSale_SMS", 
                                     "CreatedBy", "CreatedIP","Office_ID","Entry_Month","Entry_Year"}
-                    , new string[] { "1", txtMILKproKGPD_Monthly.Text, txtMILKprocKGPD_Cummulative.Text, txtLocalMILKLPD_Monthly.Text, txtLocalmilkLPD_Cummulative.Text,
+                    , new string[] { "1", txtMILKproKGPD_Monthly.Text, txtMILKprocKGPD_Cummulative.Text, txtLocalMILKLPD_Monthly.Text, txtLocalmilkLPD_Cummulative.Text,txtMILKproKGPD_KG_Monthly.Text,txtLocalMILKLPD_Ltr_Monthly.Text,
                                txtwholemilk.Text,txtfullcreammilk.Text,txtstdmilk.Text,txttonedmilk.Text,txtdtmilk.Text,txtskimmilk.Text,txtrawchilldmilk.Text,txtchaispecimilk.Text,txtcowmilk.Text,txtsanchilitemilk.Text,txtchahamilk.Text,txttotalmilksale.Text,
                                 txtDCSmilkRMRD.Text,txtDCSmilkCCS.Text,txtSMGMILK.Text,txtNMGmilk.Text,txtOTHER.Text,txttotalMilkProc.Text,
                                 txtMILKPROC_monthly.Text,txtMILKPROC_Cummulat.Text,txtLocalMILK_MOnthly.Text,txtLocalMilk_Cummulat.Text,txtTotalMilkSale_Monthly.Text,txtTotalMilkSale_Cummulat.Text,txtSMGmilk_Monthly.Text,txtSMGmilk_Cummulat.Text,txtNMGOTH_MOnthly.Text,txtNMGOTH_Cummulat.Text,
@@ -1244,6 +1332,8 @@ public partial class mis_Mis_Reports_MPRU_MonthlyEntryFrom : System.Web.UI.Page
     protected void clrTxt_MPS()
     {
         //GMPMS
+        txtMILKproKGPD_KG_Monthly.Text = "";
+        txtLocalMILKLPD_Ltr_Monthly.Text = "";
         txtMILKproKGPD_Monthly.Text = "";
         txtMILKprocKGPD_Cummulative.Text = "";
         txtLocalMILKLPD_Monthly.Text = "";
@@ -2356,6 +2446,59 @@ public partial class mis_Mis_Reports_MPRU_MonthlyEntryFrom : System.Web.UI.Page
     protected void ddlform_SelectedIndexChanged(object sender, EventArgs e)
     {
         lblMsg.Text = "";
+
+        //if (Convert.ToInt16(ddlmonth.SelectedValue) == DateTime.Now.Month || Convert.ToInt16(ddlmonth.SelectedValue) == ((DateTime.Now.Month) - 1)  && Convert.ToInt16(ddlYear.SelectedValue) == DateTime.Now.Year)
+        //{
+
+        //    btnAdministration.Visible = true;
+        //    btnCapUtilisation.Visible = true;
+        //    btnFO.Visible = true;
+        //    btnMarketing.Visible = true;
+        //    btnmaterialbalancing.Visible = true;
+        //    btnMOP.Visible = true;
+        //    btnPackagingAndCC.Visible = true;
+        //    btnPMandSale.Visible = true;
+        //    btnPPMaking.Visible = true;
+        //    btnReceipt.Visible = true;
+        //    btnrecombination.Visible = true;
+        //    btnroematerial.Visible = true;
+
+        //}
+        if (Convert.ToInt16(ddlmonth.SelectedValue) == DateTime.Now.Month || Convert.ToInt16(ddlmonth.SelectedValue) == (DateTime.Now.Month) - 1)
+        {
+            if (Convert.ToInt16(ddlYear.SelectedValue) == DateTime.Now.Year)
+            {
+                btnAdministration.Visible = true;
+                btnCapUtilisation.Visible = true;
+                btnFO.Visible = true;
+                btnMarketing.Visible = true;
+                btnmaterialbalancing.Visible = true;
+                btnMOP.Visible = true;
+                btnPackagingAndCC.Visible = true;
+                btnPMandSale.Visible = true;
+                btnPPMaking.Visible = true;
+                btnReceipt.Visible = true;
+                btnrecombination.Visible = true;
+                btnroematerial.Visible = true;
+            }
+        }
+
+
+        else
+        {
+            btnAdministration.Visible = false;
+            btnCapUtilisation.Visible = false;
+            btnFO.Visible = false;
+            btnMarketing.Visible = false;
+            btnmaterialbalancing.Visible = false;
+            btnMOP.Visible = false;
+            btnPackagingAndCC.Visible = false;
+            btnPMandSale.Visible = false;
+            btnPPMaking.Visible = false;
+            btnReceipt.Visible = false;
+            btnrecombination.Visible = false;
+            btnroematerial.Visible = false;
+        }
         openingForm();
     }
 }
