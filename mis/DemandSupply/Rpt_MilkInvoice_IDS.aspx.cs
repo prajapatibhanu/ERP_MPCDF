@@ -228,8 +228,8 @@ public partial class mis_DemandSupply_Rpt_MilkInvoice_IDS : System.Web.UI.Page
                     ssid = SSRDId[0].ToString();
                 }
                 ds1 = objdb.ByProcedure("USP_Trn_MilkOrProductInvoiceDetail",
-                         new string[] { "flag", "FromDate", "ToDate", "ItemCat_id", "AreaId", "SuperStockistId", "Office_ID", "DelivaryShift_id","IsActive" },
-                           new string[] { "7", fromdat, todat, objdb.GetMilkCatId(), ddlLocation.SelectedValue, ssid.ToString(), objdb.Office_ID(),ddlShift.SelectedValue ,"1"}, "dataset");
+                         new string[] { "flag", "FromDate", "ToDate", "ItemCat_id", "AreaId", "SuperStockistId", "Office_ID", "DelivaryShift_id", "IsActive" },
+                           new string[] { "7", fromdat, todat, objdb.GetMilkCatId(), ddlLocation.SelectedValue, ssid.ToString(), objdb.Office_ID(), ddlShift.SelectedValue, "1" }, "dataset");
             }
             else
             {
@@ -244,8 +244,8 @@ public partial class mis_DemandSupply_Rpt_MilkInvoice_IDS : System.Web.UI.Page
                     InstId = InstRDId[0].ToString();
                 }
                 ds1 = objdb.ByProcedure("USP_Trn_MilkOrProductInvoiceDetail",
-                         new string[] { "flag", "FromDate", "ToDate", "ItemCat_id", "AreaId", "OrganizationId", "Office_ID","IsActive" },
-                           new string[] { "9", fromdat, todat, objdb.GetMilkCatId(), ddlLocation.SelectedValue, InstId.ToString(), objdb.Office_ID(),"1" }, "dataset");
+                         new string[] { "flag", "FromDate", "ToDate", "ItemCat_id", "AreaId", "OrganizationId", "Office_ID", "IsActive" },
+                           new string[] { "9", fromdat, todat, objdb.GetMilkCatId(), ddlLocation.SelectedValue, InstId.ToString(), objdb.Office_ID(), "1" }, "dataset");
             }
             if (ds1.Tables[0].Rows.Count != 0)
             {
@@ -490,7 +490,7 @@ public partial class mis_DemandSupply_Rpt_MilkInvoice_IDS : System.Web.UI.Page
 
                 sb.Append("</tr>");
                 sb.Append("<tr>");
-                if(objdb.Office_ID()=="6")
+                if (objdb.Office_ID() == "6")
                 {
                     sb.Append("<td colspan='5'>Delivery Note</td>");
                 }
@@ -498,11 +498,11 @@ public partial class mis_DemandSupply_Rpt_MilkInvoice_IDS : System.Web.UI.Page
                 {
                     sb.Append("<td colspan='5'>Dispatch Document No.</td>");
                 }
-               
+
                 if (objdb.Office_ID() == "6")
                 {
                     sb.Append("<td colspan='6'>Shift : <b>" + dsInvo.Tables[0].Rows[0]["ShiftName"].ToString() + "</b></td>");
-                    
+
                 }
                 else
                 {
@@ -661,7 +661,7 @@ public partial class mis_DemandSupply_Rpt_MilkInvoice_IDS : System.Web.UI.Page
                 sb.Append("</tr>");
                 sb.Append("<tr>");
                 sb.Append("<td  rowspan ='2' colspan='9' >Tax Amount (In Words)&nbsp;&nbsp;:&nbsp;&nbsp;<b>INR " + TTaxAmount + "</b></br></br>Remark : " + dsInvo.Tables[0].Rows[0]["CreatedRemark"].ToString() + "</br></br>Declaration:</br>We declare that tis invoice shows the actual price of the goods</br> described and that all particulars are true and correct.</td>");
-             
+
                 //sb.Append("<td colspan='6' rowspan ='2' style='border-top:1px solid black; border-left:1px solid black;'>for Bhopal Sah.Dugdha Sangh - (From 1-Jul-2017)</br></br></br></br></br><span style='padding-left:300px; padding-top:1100px;'>Authorised Signatory</span></td>");
                 if (objdb.Office_ID() == "6")
                 {
@@ -808,7 +808,7 @@ public partial class mis_DemandSupply_Rpt_MilkInvoice_IDS : System.Web.UI.Page
                 sb.Append("<tr>");
                 if (objdb.Office_ID() == "6")
                 {
-                 //   sb.Append("<td colspan='3'></td>");
+                    //   sb.Append("<td colspan='3'></td>");
                 }
                 else
                 {
@@ -816,7 +816,7 @@ public partial class mis_DemandSupply_Rpt_MilkInvoice_IDS : System.Web.UI.Page
                 }
                 if (objdb.Office_ID() == "6")
                 {
-                   // sb.Append("<td colspan='4'></td>");
+                    // sb.Append("<td colspan='4'></td>");
                 }
                 else
                 {
@@ -955,5 +955,30 @@ public partial class mis_DemandSupply_Rpt_MilkInvoice_IDS : System.Web.UI.Page
     protected void ddlShift_SelectedIndexChanged(object sender, EventArgs e)
     {
 
+    }
+    protected void btnMultiInvoice_Click(object sender, EventArgs e)
+    {
+
+        if (Page.IsValid)
+        {
+            GetDatatableHeaderDesign();
+            List<String> Invoice = new List<String>();
+           
+            if (GridView1.Rows.Count > 0)
+            {
+                foreach (GridViewRow row in GridView1.Rows)
+                {
+                    CheckBox cbx = (CheckBox)row.FindControl("chkSelect");
+                    LinkButton linkButton = (LinkButton)row.FindControl("lnkInvoice");
+                    if (cbx.Checked == true)
+                    {
+                        Invoice.Add(Convert.ToString(linkButton.CommandArgument));
+                    }
+                }
+                Session["MultiInvoice"] = Invoice;
+                Response.Redirect("../DemandSupply/Rpt_Multi_MilkInvoice_UDS.aspx");
+            }
+
+        }
     }
 }
