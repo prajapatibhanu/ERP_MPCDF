@@ -100,17 +100,18 @@
                                                 <tr>
                                                     <td><b>Whole Milk recived from Processing</b></td>
                                                     <td>
-                                                        <asp:TextBox ID="txtWMRQtyInKg" CssClass="form-control" onkeypress="return validateDec(this,event)" onblur="CalculateWholeMilk();" ClientIDMode="Static" runat="server"></asp:TextBox></td>
+                                                       <%-- <asp:TextBox ID="txtWMRQtyInKg" CssClass="form-control" onkeypress="return validateDec(this,event)" onblur="CalculateWholeMilk();" ClientIDMode="Static" runat="server"></asp:TextBox></td>--%>
+                                                     <asp:TextBox ID="txtWMRQtyInKg" CssClass="form-control" onkeypress="return validateDec(this,event)" Enabled="false" ClientIDMode="Static" runat="server"></asp:TextBox></td>
                                                     <td>
                                                        <%--<asp:TextBox ID="txtWMRFatPer" CssClass="form-control" Text="3.1" onblur="CalculateWholeMilk();" onkeypress="return validateDec(this,event)" ClientIDMode="Static" runat="server"></asp:TextBox></td>--%>
-                                                        <asp:TextBox ID="txtWMRFatPer" CssClass="form-control" onkeypress="return validateDec(this,event)" ClientIDMode="Static" runat="server"></asp:TextBox></td>
+                                                        <asp:TextBox ID="txtWMRFatPer" CssClass="form-control" onkeypress="return validateDec(this,event)" Enabled="false" ClientIDMode="Static" runat="server"></asp:TextBox></td>
                                                     <td>
-                                                        <asp:TextBox ID="txtWMRFatInKg" CssClass="form-control" onkeypress="return validateDec(this,event)" ClientIDMode="Static" runat="server"></asp:TextBox></td>
+                                                        <asp:TextBox ID="txtWMRFatInKg" CssClass="form-control" onkeypress="return validateDec(this,event)" Enabled="false" ClientIDMode="Static" runat="server"></asp:TextBox></td>
                                                     <td>
                                                         <%--<asp:TextBox ID="txtWMRSNFPer" CssClass="form-control" Text="8.5" onblur="CalculateWholeMilk();" onkeypress="return validateDec(this,event)" ClientIDMode="Static" runat="server"></asp:TextBox></td>--%>
-                                                    <asp:TextBox ID="txtWMRSNFPer" CssClass="form-control"  onkeypress="return validateDec(this,event)" ClientIDMode="Static" runat="server"></asp:TextBox></td>
+                                                    <asp:TextBox ID="txtWMRSNFPer" CssClass="form-control"  onkeypress="return validateDec(this,event)" Enabled="false" ClientIDMode="Static" runat="server"></asp:TextBox></td>
                                                     <td>
-                                                        <asp:TextBox ID="txtWMRSNFInKg" CssClass="form-control" onkeypress="return validateDec(this,event)" ClientIDMode="Static" runat="server"></asp:TextBox></td>
+                                                        <asp:TextBox ID="txtWMRSNFInKg" CssClass="form-control" onkeypress="return validateDec(this,event)" Enabled="false" ClientIDMode="Static" runat="server"></asp:TextBox></td>
                                                 </tr>
                                                 <tr>
                                                     <td><b>CSP</b></td>

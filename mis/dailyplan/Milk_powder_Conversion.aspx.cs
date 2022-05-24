@@ -417,6 +417,7 @@ public partial class mis_dailyplan_Milk_powder_Conversion : System.Web.UI.Page
                             txtWMRFatPer.Text = Math.Round(((decimal.Parse(txtWMRFatInKg.Text) * 100) / decimal.Parse(txtWMRQtyInKg.Text)),2).ToString();
                             txtWMRSNFPer.Text = Math.Round(((decimal.Parse(txtWMRSNFInKg.Text) * 100) / decimal.Parse(txtWMRQtyInKg.Text)),2).ToString();
                         }
+                        Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "CalculateTotalInQty();", true);
                     }
                     
                 }

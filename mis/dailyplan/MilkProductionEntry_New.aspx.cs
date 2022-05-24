@@ -590,7 +590,7 @@ public partial class mis_dailyplan_MilkProductionEntry_New : System.Web.UI.Page
                     DropDownList ddlrcvdfrmothrUnion = (DropDownList)rows.FindControl("ddlrcvdfrmothrUnion");
 
                     DropDownList ddl2 = (DropDownList)rows.FindControl("ddlrcvdfrmothrUnionMilkType");
-                    FillUnion(ddlrcvdfrmothrUnion);
+                    FillUnionandParty(ddlrcvdfrmothrUnion);
                     FillMilkType(ddl2);
                     ddlrcvdfrmothrUnion.SelectedValue = lblOffice_ID.Text;
                     ddl2.SelectedValue = lblMilkTypeID.Text;
@@ -741,8 +741,8 @@ public partial class mis_dailyplan_MilkProductionEntry_New : System.Web.UI.Page
     {
         Fdate = Convert.ToDateTime(txtDate.Text, cult).ToString("yyyy/MM/dd");
         DataSet dsRR_Child = objdb.ByProcedure("SpProductionProduct_Milk_InOut_RRSheetNew",
-            new string[] { "flag", "Office_ID", "Date", "Shift_Id", "ProductSection_ID", "Ghee_RR", "Cream_RR", "Butter_RR", "SMP_RR" },
-            new string[] { "1", objdb.Office_ID(), Fdate, ddlShift.SelectedValue, "2", objdb.LooseGheeItemTypeId_ID(), objdb.LooseCreamItemTypeId_ID(), objdb.LooseButterItemTypeId_ID(), objdb.LooseSMPItemTypeId_ID() }, "dataset");
+            new string[] { "flag", "Office_ID", "Date", "Shift_Id", "ProductSection_ID", "Ghee_RR", "Cream_RR", "Butter_RR", "SMP_RR" ,"WMP_RR"},
+            new string[] { "1", objdb.Office_ID(), Fdate, ddlShift.SelectedValue, "2", objdb.LooseGheeItemTypeId_ID(), objdb.LooseCreamItemTypeId_ID(), objdb.LooseButterItemTypeId_ID(), objdb.LooseSMPItemTypeId_ID(), "250" }, "dataset");
 
         if (dsRR_Child != null && dsRR_Child.Tables[0].Rows.Count > 0)
         {
@@ -846,6 +846,24 @@ public partial class mis_dailyplan_MilkProductionEntry_New : System.Web.UI.Page
         {
             ds = objdb.ByProcedure("USP_MilkProductionEntry_New", new string[] { "flag", "Office_ID", "OfficeType_ID" },
                       new string[] { "6", objdb.Office_ID(), objdb.OfficeType_ID() }, "dataset");
+
+            ddl.DataSource = ds.Tables[0];
+            ddl.DataTextField = "Office_Name";
+            ddl.DataValueField = "Office_ID";
+            ddl.DataBind();
+            ddl.Items.Insert(0, new ListItem("SELECT", "0"));
+        }
+        catch (Exception ex)
+        {
+            lblMsg.Text = objdb.Alert("fa-ban", "alert-danger", "Sorry!", ex.Message.ToString());
+        }
+    }
+    protected void FillUnionandParty(DropDownList ddl)
+    {
+        try
+        {
+            ds = objdb.ByProcedure("USP_MilkProductionEntry_New", new string[] { "flag", "Office_ID", "OfficeType_ID" },
+                      new string[] { "12", objdb.Office_ID(), objdb.OfficeType_ID() }, "dataset");
 
             ddl.DataSource = ds.Tables[0];
             ddl.DataTextField = "Office_Name";
@@ -2896,6 +2914,7 @@ public partial class mis_dailyplan_MilkProductionEntry_New : System.Web.UI.Page
         dt.Columns.Add(new DataColumn("SNF", typeof(string)));
         dt.Columns.Add(new DataColumn("FatInKg", typeof(string)));
         dt.Columns.Add(new DataColumn("SnfInKg", typeof(string)));
+        
 
 
         dr = dt.NewRow();
@@ -2911,6 +2930,7 @@ public partial class mis_dailyplan_MilkProductionEntry_New : System.Web.UI.Page
         dr["SNF"] = string.Empty;
         dr["FatInKg"] = string.Empty;
         dr["SnfInKg"] = string.Empty;
+       
 
         dt.Rows.Add(dr);
 
@@ -2928,7 +2948,7 @@ public partial class mis_dailyplan_MilkProductionEntry_New : System.Web.UI.Page
         DropDownList ddl2 = (DropDownList)gvrcvdfrmothrUnion.Rows[0].Cells[2].FindControl("ddlrcvdfrmothrUnionMilkType");
         //DropDownList ddl2 = (DropDownList)Gridview1.Rows[0].Cells[2].FindControl("ddlStyle");
         FillMilkType(ddl2);
-        FillUnion(ddl1);
+        FillUnionandParty(ddl1);
 
     }
     private void AddRecvdFromOtherUnionNewRowToGrid()
@@ -2945,6 +2965,8 @@ public partial class mis_dailyplan_MilkProductionEntry_New : System.Web.UI.Page
                 {
                     //extract the TextBox values
                     DropDownList ddlrcvdfrmothrUnion = (DropDownList)gvrcvdfrmothrUnion.Rows[rowIndex].Cells[1].FindControl("ddlrcvdfrmothrUnion");
+                   
+
                     //  DropDownList ddlSt = (DropDownList)Gridview1.Rows[rowIndex].Cells[2].FindControl("ddlStyle");
                     if (ddlrcvdfrmothrUnion.SelectedIndex != 0)
                     {
@@ -2962,6 +2984,7 @@ public partial class mis_dailyplan_MilkProductionEntry_New : System.Web.UI.Page
 
 
                         dtCurrentTable.Rows[i - 1]["Office_ID"] = ddlrcvdfrmothrUnion.SelectedValue;
+                      
                         //dtCurrentTable.Rows[i - 1]["Column2"] = ddlSt.SelectedItem.Text;
                         dtCurrentTable.Rows[i - 1]["Office_Name"] = ddlrcvdfrmothrUnion.SelectedItem.Text;
                         dtCurrentTable.Rows[i - 1]["MilkTypeID"] = ddlrcvdfrmothrUnionMilkType.SelectedValue;
@@ -2972,6 +2995,7 @@ public partial class mis_dailyplan_MilkProductionEntry_New : System.Web.UI.Page
                         dtCurrentTable.Rows[i - 1]["SNF"] = SNF_Per.Text;
                         dtCurrentTable.Rows[i - 1]["FatInKg"] = FatInKg.Text;
                         dtCurrentTable.Rows[i - 1]["SnfInKg"] = SNFInkg.Text;
+                        
 
 
                         rowIndex++;
@@ -3021,6 +3045,7 @@ public partial class mis_dailyplan_MilkProductionEntry_New : System.Web.UI.Page
                     for (int i = 0; i < dt.Rows.Count; i++)
                     {
                         DropDownList ddlrcvdfrmothrUnion = (DropDownList)gvrcvdfrmothrUnion.Rows[rowIndex].Cells[1].FindControl("ddlrcvdfrmothrUnion");
+                        //string[] OfficeType = ddlrcvdfrmothrUnion.SelectedValue.Split('_');
                         DropDownList ddlrcvdfrmothrUnionMilkType = (DropDownList)gvrcvdfrmothrUnion.Rows[rowIndex].Cells[2].FindControl("ddlrcvdfrmothrUnionMilkType");
                         TextBox QtyInLtr = (TextBox)gvrcvdfrmothrUnion.Rows[rowIndex].Cells[4].FindControl("txtrcvdfrmothrUnionQuantityInLtr");
                         TextBox QtyInKg = (TextBox)gvrcvdfrmothrUnion.Rows[rowIndex].Cells[3].FindControl("txtrcvdfrmothrUnionQuantityInKg");
@@ -3030,7 +3055,7 @@ public partial class mis_dailyplan_MilkProductionEntry_New : System.Web.UI.Page
                         TextBox SNFInkg = (TextBox)gvrcvdfrmothrUnion.Rows[rowIndex].Cells[8].FindControl("txtrcvdfrmothrUnionSNFInKg");
 
 
-                        FillUnion(ddlrcvdfrmothrUnion);
+                        FillUnionandParty(ddlrcvdfrmothrUnion);
                         FillMilkType(ddlrcvdfrmothrUnionMilkType);
                         if (i < dt.Rows.Count - 1)
                         {
@@ -3095,7 +3120,7 @@ public partial class mis_dailyplan_MilkProductionEntry_New : System.Web.UI.Page
                         TextBox SNFInkg = (TextBox)gvrcvdfrmothrUnion.Rows[rowIndex].Cells[8].FindControl("txtrcvdfrmothrUnionSNFInKg");
 
 
-                        FillUnion(ddlrcvdfrmothrUnion);
+                        FillUnionandParty(ddlrcvdfrmothrUnion);
                         FillMilkType(ddlrcvdfrmothrUnionMilkType);
                         if (i < dt.Rows.Count)
                         {
@@ -3146,9 +3171,11 @@ public partial class mis_dailyplan_MilkProductionEntry_New : System.Web.UI.Page
         dt.Columns.Add("Snf_Per", typeof(string));
         dt.Columns.Add("KgFat", typeof(string));
         dt.Columns.Add("KgSnf", typeof(string));
+        dt.Columns.Add("Office_Type", typeof(string));
         foreach (GridViewRow row in gvrcvdfrmothrUnion.Rows)
         {
             DropDownList ddlrcvdfrmothrUnion = (DropDownList)row.FindControl("ddlrcvdfrmothrUnion");
+            string[] OfficeType = ddlrcvdfrmothrUnion.SelectedValue.Split('_');
             DropDownList ddlrcvdfrmothrUnionMilkType = (DropDownList)row.FindControl("ddlrcvdfrmothrUnionMilkType");
             TextBox txtrcvdfrmothrUnionQuantityInLtr = (TextBox)row.FindControl("txtrcvdfrmothrUnionQuantityInLtr");
             TextBox txtrcvdfrmothrUnionQuantityInKg = (TextBox)row.FindControl("txtrcvdfrmothrUnionQuantityInKg");
@@ -3159,7 +3186,8 @@ public partial class mis_dailyplan_MilkProductionEntry_New : System.Web.UI.Page
             if (txtrcvdfrmothrUnionQuantityInLtr.Text != "" && txtrcvdfrmothrUnionQuantityInKg.Text != "" && txtrcvdfrmothrUnionQuantityInLtr.Text != "0.00" && txtrcvdfrmothrUnionQuantityInKg.Text != "0.00")
             {
                 dr = dt.NewRow();
-                dr[0] = ddlrcvdfrmothrUnion.SelectedValue;
+                //dr[0] = ddlrcvdfrmothrUnion.SelectedValue;
+                dr[0] = OfficeType[0];
                 dr[1] = ddlrcvdfrmothrUnionMilkType.SelectedValue;
                 dr[2] = txtrcvdfrmothrUnionQuantityInLtr.Text;
                 dr[3] = txtrcvdfrmothrUnionQuantityInKg.Text;
@@ -3167,7 +3195,7 @@ public partial class mis_dailyplan_MilkProductionEntry_New : System.Web.UI.Page
                 dr[5] = txtrcvdfrmothrUnionSnf_Per.Text;
                 dr[6] = txtrcvdfrmothrUnionFATInKg.Text;
                 dr[7] = txtrcvdfrmothrUnionSnfInKg.Text;
-
+                dr[8] = OfficeType[1];
                 dt.Rows.Add(dr);
 
             }
@@ -9348,6 +9376,7 @@ public partial class mis_dailyplan_MilkProductionEntry_New : System.Web.UI.Page
                                                           "type_Production_Milk_InProcess_CanesCollection",
                                                           "type_Production_Milk_InProcess_IssueforIceCream",
                                                           "type_Production_Milk_InProcess_CCWiseGoatMilkProcurement",
+                                                          
                                                           //"type_Production_Milk_InProcess_Issueofgoatmilk"
                                                      },
                                         new DataTable[] { dtOpening, 
@@ -9372,6 +9401,7 @@ public partial class mis_dailyplan_MilkProductionEntry_New : System.Web.UI.Page
                                                             dtCanesColl,
                                                             dtIssuetoIceCream,
                                                             dtCCWGMP,
+                                                            
                                                             //dtIssueofgoatmilk
                                           },
                                                           "TableSave");

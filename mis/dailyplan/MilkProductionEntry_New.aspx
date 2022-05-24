@@ -448,6 +448,7 @@
                                                             <ItemTemplate>
                                                                 <asp:DropDownList ID="ddlrcvdfrmothrUnion" runat="server" CssClass="form-control select2"></asp:DropDownList>
                                                                 <asp:Label ID="lblOffice_ID" Text='<%# Eval("Office_ID") %>' runat="server" CssClass="hidden"></asp:Label>
+                                                              
                                                             </ItemTemplate>
                                                         </asp:TemplateField>
                                                         <asp:TemplateField HeaderText="MilkType" HeaderStyle-Width="15%">

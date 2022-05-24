@@ -974,8 +974,8 @@ public partial class mis_dailyplan_RptDailyDisposalSheet_New : System.Web.UI.Pag
                 }
                 Fdate = Convert.ToDateTime(txtDate.Text, cult).ToString("yyyy/MM/dd");
                 DataSet dsRR_Child = objdb.ByProcedure("SpProductionProduct_Milk_InOut_RRSheetNew",
-                new string[] { "flag", "Office_ID", "Date", "Shift_Id", "ProductSection_ID", "Ghee_RR", "Cream_RR", "Butter_RR", "SMP_RR" },
-                new string[] { "1", objdb.Office_ID(), Fdate, ddlShift.SelectedValue, "2", objdb.LooseGheeItemTypeId_ID(), objdb.LooseCreamItemTypeId_ID(), objdb.LooseButterItemTypeId_ID(), objdb.LooseSMPItemTypeId_ID() }, "dataset");
+                new string[] { "flag", "Office_ID", "Date", "Shift_Id", "ProductSection_ID", "Ghee_RR", "Cream_RR", "Butter_RR", "SMP_RR","WMP_RR" },
+                new string[] { "1", objdb.Office_ID(), Fdate, ddlShift.SelectedValue, "2", objdb.LooseGheeItemTypeId_ID(), objdb.LooseCreamItemTypeId_ID(), objdb.LooseButterItemTypeId_ID(), objdb.LooseSMPItemTypeId_ID(),"250" }, "dataset");
 
                 if (dsRR_Child != null && dsRR_Child.Tables[0].Rows.Count > 0)
                 {

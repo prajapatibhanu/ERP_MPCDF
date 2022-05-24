@@ -161,6 +161,7 @@ public partial class mis_dailyplan_TypeWiseFinalProdandManuDetails : System.Web.
             string ItemTypeName = "";
             string Date = "";
 			decimal OpeningBalance = 0;
+            
             decimal TotalReturn = 0;
             decimal TotalManufactured = 0;
             decimal TotalSample = 0;
@@ -199,7 +200,11 @@ public partial class mis_dailyplan_TypeWiseFinalProdandManuDetails : System.Web.
                     {
 						if (ds.Tables[0].Rows[i]["Date"].ToString() == txtFDate.Text)
                         {
-                            OpeningBalance += decimal.Parse(ds.Tables[0].Rows[i]["OpeningBalance"].ToString());
+                            OpeningBalance += decimal.Parse(ds.Tables[0].Rows[i]["OpeningBalanceT"].ToString());
+                            //if(ds.Tables[0].Rows[i]["PackingSize"].ToString().Contains("GM"))
+                            //{
+                            //    
+                            //}
                         }
                           sb.Append("<tr>");
                             sb.Append("<td>" + ds.Tables[0].Rows[i]["Date"].ToString() + "</td>");
@@ -218,15 +223,15 @@ public partial class mis_dailyplan_TypeWiseFinalProdandManuDetails : System.Web.
                        
                     }
 
-					TotalReturn = ds.Tables[0].AsEnumerable().Sum(row => row.Field<decimal>("Return"));
-                    TotalManufactured = ds.Tables[0].AsEnumerable().Sum(row => row.Field<decimal>("Manufactured"));
-                    TotalSample = ds.Tables[0].AsEnumerable().Sum(row => row.Field<decimal>("Sample"));
-                    TotalDispatch = ds.Tables[0].AsEnumerable().Sum(row => row.Field<decimal>("Dispatch"));
+					TotalReturn = ds.Tables[0].AsEnumerable().Sum(row => row.Field<decimal>("ReturnT"));
+                    TotalManufactured = ds.Tables[0].AsEnumerable().Sum(row => row.Field<decimal>("ManufacturedT"));
+                    TotalSample = ds.Tables[0].AsEnumerable().Sum(row => row.Field<decimal>("SampleT"));
+                    TotalDispatch = ds.Tables[0].AsEnumerable().Sum(row => row.Field<decimal>("DispatchT"));
 
                     ClosingBalance = OpeningBalance + TotalReturn + TotalManufactured - TotalSample - TotalDispatch;
-
+                    
                     sb.Append("<tr>");
-                    sb.Append("<td colspan='3'>Total</td>");
+                    sb.Append("<td colspan='3'><b>Total In Kg</b></td>");
                     sb.Append("<td>" + OpeningBalance.ToString() + "</td>");
                     sb.Append("<td>" + TotalReturn.ToString() + "</td>");
                     sb.Append("<td>" + TotalManufactured.ToString() + "</td>");

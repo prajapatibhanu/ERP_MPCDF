@@ -248,6 +248,11 @@ public partial class mis_dailyplan_DateWiseMilkSheetSummaryRpt : System.Web.UI.P
                 sb.Append("<td><b>" + (TOFFatInKg -TIFFatInKg)  + "</b></td>");
                 sb.Append("<td><b>" + (TOFSnfInKg - TIFSnfInKg) + "</b></td>");
                 sb.Append("</tr>");
+                sb.Append("<td><b>VARIATION %<span style='color:red'>(only 0.5% should be accepatable)</span></b></td>");
+                sb.Append("<td></td>");
+                sb.Append("<td><b>" + Math.Round(((TOFFatInKg - TIFFatInKg) / TIFFatInKg), 2) + "</b></td>");
+                sb.Append("<td><b>" + Math.Round(((TOFSnfInKg - TIFSnfInKg) / TIFSnfInKg), 2) + "</b></td>");
+                sb.Append("</tr>");
                 sb.Append("<tr>");
                 sb.Append("</tr>");
                 sb.Append("</table>");
