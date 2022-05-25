@@ -3149,7 +3149,19 @@ public partial class mis_Finance_VoucherSaleCredit : System.Web.UI.Page
                     // DataTable dt_GridViewLedger = (DataTable)ViewState["LedgerAmount"];
                     DataTable dt_GridViewLedger = new DataTable();
                     dt_GridViewLedger = ds.Tables[3];
-                    dt_GridViewLedger.DefaultView.Sort = "RowNo DESC";
+
+                    DataTable tblFiltered = dt_GridViewLedger.AsEnumerable()
+                              .Where(r => r.Field<string>("LedgerName") == "Round off")
+                              .CopyToDataTable();
+                    int rn = tblFiltered.Rows[0].Field<int>("RowNo");
+                    if (rn == 6)
+                    {
+                        dt_GridViewLedger.DefaultView.Sort = "LedgerTx_OrderBy ASC";
+                    }
+                    else
+                    {
+                        dt_GridViewLedger.DefaultView.Sort = "RowNo DESC";
+                    }
                     GridViewLedger.DataSource = dt_GridViewLedger;
                     GridViewLedger.DataBind();
                     //GridViewLedger.DataSource = ds.Tables[3];
