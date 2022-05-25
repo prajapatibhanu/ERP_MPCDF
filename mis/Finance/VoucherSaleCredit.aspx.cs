@@ -19,6 +19,7 @@ public partial class mis_Finance_VoucherSaleCredit : System.Web.UI.Page
             {
                 if (Session["Emp_ID"] != null)
                 {
+                    CreateCrCostCentreDataSet();
                     itemdetail.Enabled = false;
                     ViewState["Emp_ID"] = Session["Emp_ID"].ToString();
                     ViewState["Office_ID"] = Session["Office_ID"].ToString();
@@ -30,6 +31,7 @@ public partial class mis_Finance_VoucherSaleCredit : System.Web.UI.Page
                     ViewState["Tcs"] = "39751";
                     ViewState["Tds"] = "68033";
                     ViewState["VoucherTx_ID"] = "0";
+                    ViewState["CNO"] = "0";
                     CreateCostCentreTable();
                     ViewState["EditVoucherTx_Amount"] = "0.00";
                     ViewState["CrCostCentre"] = "No";
@@ -44,7 +46,6 @@ public partial class mis_Finance_VoucherSaleCredit : System.Web.UI.Page
                     FillItem();
                     FillWareHouse();
                     AddItem("NA");
-                    CreateCrCostCentreTable();
                     chkitem_CheckedChanged(sender, e);
                     txtUnitName.Attributes.Add("readonly", "readonly");
                     // txtAmount.Attributes.Add("readonly", "readonly");
@@ -68,7 +69,7 @@ public partial class mis_Finance_VoucherSaleCredit : System.Web.UI.Page
                         if (Action == "2")
                         {
                             FillDetail();
-							string ValidStatus = ValidDate();
+                            string ValidStatus = ValidDate();
                             if (ValidStatus == "No")
                             {
                                 Response.Redirect("~/mis/Login.aspx");
@@ -908,6 +909,7 @@ public partial class mis_Finance_VoucherSaleCredit : System.Web.UI.Page
             decimal SGSTAmt = 0;
             decimal IGSTAmt = 0;
             DataTable dt_GridViewLedger = new DataTable();
+            DataColumn RowNo1 = dt_GridViewLedger.Columns.Add("RowNo", typeof(int));
             dt_GridViewLedger.Columns.Add(new DataColumn("LedgerID", typeof(string)));
             dt_GridViewLedger.Columns.Add(new DataColumn("LedgerName", typeof(string)));
             dt_GridViewLedger.Columns.Add(new DataColumn("Amount", typeof(string)));
@@ -923,6 +925,9 @@ public partial class mis_Finance_VoucherSaleCredit : System.Web.UI.Page
             dt_GridViewLedger.Columns.Add(new DataColumn("Taxbility", typeof(string)));
             dt_GridViewLedger.Columns.Add(new DataColumn("CostCenter", typeof(string)));
 
+            RowNo1.AutoIncrement = true;
+            RowNo1.AutoIncrementSeed = 1;
+            RowNo1.AutoIncrementStep = 1;
             gridRows = GridViewLedger.Rows.Count;
             if (gridRows > 5)
             {
@@ -930,6 +935,7 @@ public partial class mis_Finance_VoucherSaleCredit : System.Web.UI.Page
                 {
 
                     Label lblID = (Label)GridViewLedger.Rows[rowIndex].Cells[0].FindControl("lblID");
+                    Label lblRowNo = (Label)GridViewLedger.Rows[rowIndex].Cells[0].FindControl("lblRowNo");
                     Label lblLedgerName = (Label)GridViewLedger.Rows[rowIndex].Cells[0].FindControl("lblLedgerName");
                     Label lblHSNCode = (Label)GridViewLedger.Rows[rowIndex].Cells[0].FindControl("lblHSNCode");
                     Label lblCGSTPer = (Label)GridViewLedger.Rows[rowIndex].Cells[0].FindControl("lblCGSTPer");
@@ -949,7 +955,7 @@ public partial class mis_Finance_VoucherSaleCredit : System.Web.UI.Page
                     else
                     {
                         status = "1";
-                        dt_GridViewLedger.Rows.Add(lblID.Text, lblLedgerName.Text, txtAmount.Text, lblHSNCode.Text, lblCGSTPer.Text, lblSGSTPer.Text, lblIGSTPer.Text, lblCGSTAmt.Text, lblSGSTAmt.Text, lblIGSTAmt.Text, status, lblGSTApplicable.Text, lblTaxbility.Text,lblCostCenter.Text);
+                        dt_GridViewLedger.Rows.Add(lblRowNo.Text, lblID.Text, lblLedgerName.Text, txtAmount.Text, lblHSNCode.Text, lblCGSTPer.Text, lblSGSTPer.Text, lblIGSTPer.Text, lblCGSTAmt.Text, lblSGSTAmt.Text, lblIGSTAmt.Text, status, lblGSTApplicable.Text, lblTaxbility.Text, lblCostCenter.Text);
                         foreach (DataRow dr in dt_GridViewLedger.Rows) // search whole table
                         {
                             if (dr["LedgerName"].ToString() == "CGST") // if id==2
@@ -978,26 +984,26 @@ public partial class mis_Finance_VoucherSaleCredit : System.Web.UI.Page
                     decimal SGST = dt_GridViewItem.AsEnumerable().Sum(row => row.Field<decimal>("SGSTAmt")) + dt_GridViewLedger.AsEnumerable().Sum(row => row.Field<decimal>("SGSTAmt"));
                     decimal IGST = dt_GridViewItem.AsEnumerable().Sum(row => row.Field<decimal>("IGSTAmt")) + dt_GridViewLedger.AsEnumerable().Sum(row => row.Field<decimal>("IGSTAmt"));
 
-                    dt_GridViewLedger.Rows.Add(ViewState["CGST"].ToString(), "CGST", CGST.ToString(), HSN_Code, CGST_Per, SGST_Per, IGST_Per, CGSTAmt, SGSTAmt, IGSTAmt, status, null, null,"No");
-                    dt_GridViewLedger.Rows.Add(ViewState["SGST"].ToString(), "SGST", SGST.ToString(), HSN_Code, CGST_Per, SGST_Per, IGST_Per, CGSTAmt, SGSTAmt, IGSTAmt, status, null, null, "No");
-                    dt_GridViewLedger.Rows.Add(ViewState["IGST"].ToString(), "IGST", IGST.ToString(), HSN_Code, CGST_Per, SGST_Per, IGST_Per, CGSTAmt, SGSTAmt, IGSTAmt, status, null, null, "No");
+                    dt_GridViewLedger.Rows.Add(6, ViewState["CGST"].ToString(), "CGST", CGST.ToString(), HSN_Code, CGST_Per, SGST_Per, IGST_Per, CGSTAmt, SGSTAmt, IGSTAmt, status, null, null, "No");
+                    dt_GridViewLedger.Rows.Add(5, ViewState["SGST"].ToString(), "SGST", SGST.ToString(), HSN_Code, CGST_Per, SGST_Per, IGST_Per, CGSTAmt, SGSTAmt, IGSTAmt, status, null, null, "No");
+                    dt_GridViewLedger.Rows.Add(4, ViewState["IGST"].ToString(), "IGST", IGST.ToString(), HSN_Code, CGST_Per, SGST_Per, IGST_Per, CGSTAmt, SGSTAmt, IGSTAmt, status, null, null, "No");
 
-                    dt_GridViewLedger.Rows.Add(ViewState["Tcs"].ToString(), "TCS", "0", HSN_Code, "0", "0", "0", "0", "0", "0", status, null, null, "No");
-                    dt_GridViewLedger.Rows.Add(ViewState["Tds"].ToString(), "TDS", "0", HSN_Code, "0", "0", "0", "0", "0", "0", status, null, null, "No");
+                    dt_GridViewLedger.Rows.Add(3, ViewState["Tcs"].ToString(), "TCS", "0", HSN_Code, "0", "0", "0", "0", "0", "0", status, null, null, "No");
+                    dt_GridViewLedger.Rows.Add(2, ViewState["Tds"].ToString(), "TDS", "0", HSN_Code, "0", "0", "0", "0", "0", "0", status, null, null, "No");
                 }
                 else
                 {
                     decimal CGST = dt_GridViewLedger.AsEnumerable().Sum(row => row.Field<decimal>("CGSTAmt"));
                     decimal SGST = dt_GridViewLedger.AsEnumerable().Sum(row => row.Field<decimal>("SGSTAmt"));
                     decimal IGST = dt_GridViewLedger.AsEnumerable().Sum(row => row.Field<decimal>("IGSTAmt"));
-                    dt_GridViewLedger.Rows.Add(ViewState["CGST"].ToString(), "CGST", CGST.ToString(), HSN_Code, CGST_Per, SGST_Per, IGST_Per, CGSTAmt, SGSTAmt, IGSTAmt, status, null, null, "No");
-                    dt_GridViewLedger.Rows.Add(ViewState["SGST"].ToString(), "SGST", SGST.ToString(), HSN_Code, CGST_Per, SGST_Per, IGST_Per, CGSTAmt, SGSTAmt, IGSTAmt, status, null, null, "No");
-                    dt_GridViewLedger.Rows.Add(ViewState["IGST"].ToString(), "IGST", IGST.ToString(), HSN_Code, CGST_Per, SGST_Per, IGST_Per, CGSTAmt, SGSTAmt, IGSTAmt, status, null, null, "No");
+                    dt_GridViewLedger.Rows.Add(6, ViewState["CGST"].ToString(), "CGST", CGST.ToString(), HSN_Code, CGST_Per, SGST_Per, IGST_Per, CGSTAmt, SGSTAmt, IGSTAmt, status, null, null, "No");
+                    dt_GridViewLedger.Rows.Add(5, ViewState["SGST"].ToString(), "SGST", SGST.ToString(), HSN_Code, CGST_Per, SGST_Per, IGST_Per, CGSTAmt, SGSTAmt, IGSTAmt, status, null, null, "No");
+                    dt_GridViewLedger.Rows.Add(4, ViewState["IGST"].ToString(), "IGST", IGST.ToString(), HSN_Code, CGST_Per, SGST_Per, IGST_Per, CGSTAmt, SGSTAmt, IGSTAmt, status, null, null, "No");
 
-                    dt_GridViewLedger.Rows.Add(ViewState["Tcs"].ToString(), "TCS", "0", HSN_Code, "0", "0", "0", "0", "0", "0", status, null, null, "No");
-                    dt_GridViewLedger.Rows.Add(ViewState["Tds"].ToString(), "TDS", "0", HSN_Code, "0", "0", "0", "0", "0", "0", status, null, null, "No");
+                    dt_GridViewLedger.Rows.Add(3, ViewState["Tcs"].ToString(), "TCS", "0", HSN_Code, "0", "0", "0", "0", "0", "0", status, null, null, "No");
+                    dt_GridViewLedger.Rows.Add(2, ViewState["Tds"].ToString(), "TDS", "0", HSN_Code, "0", "0", "0", "0", "0", "0", status, null, null, "No");
                 }
-                dt_GridViewLedger.Rows.Add(ViewState["RoundOff"].ToString(), "Round off", "0", HSN_Code, CGST_Per, SGST_Per, IGST_Per, CGSTAmt, SGSTAmt, IGSTAmt, status, null, null, "No");
+                dt_GridViewLedger.Rows.Add(1, ViewState["RoundOff"].ToString(), "Round off", "0", HSN_Code, CGST_Per, SGST_Per, IGST_Per, CGSTAmt, SGSTAmt, IGSTAmt, status, null, null, "No");
             }
             else
             {
@@ -1008,25 +1014,25 @@ public partial class mis_Finance_VoucherSaleCredit : System.Web.UI.Page
                     decimal CGST = dt_GridViewItem.AsEnumerable().Sum(row => row.Field<decimal>("CGSTAmt")) + dt_GridViewLedger.AsEnumerable().Sum(row => row.Field<decimal>("CGSTAmt"));
                     decimal SGST = dt_GridViewItem.AsEnumerable().Sum(row => row.Field<decimal>("SGSTAmt")) + dt_GridViewLedger.AsEnumerable().Sum(row => row.Field<decimal>("SGSTAmt"));
                     decimal IGST = dt_GridViewItem.AsEnumerable().Sum(row => row.Field<decimal>("IGSTAmt")) + dt_GridViewLedger.AsEnumerable().Sum(row => row.Field<decimal>("IGSTAmt"));
-                    dt_GridViewLedger.Rows.Add(ViewState["CGST"].ToString(), "CGST", CGST.ToString(), HSN_Code, CGST_Per, SGST_Per, IGST_Per, CGSTAmt, SGSTAmt, IGSTAmt, status, null, null, "No");
-                    dt_GridViewLedger.Rows.Add(ViewState["SGST"].ToString(), "SGST", SGST.ToString(), HSN_Code, CGST_Per, SGST_Per, IGST_Per, CGSTAmt, SGSTAmt, IGSTAmt, status, null, null, "No");
-                    dt_GridViewLedger.Rows.Add(ViewState["IGST"].ToString(), "IGST", IGST.ToString(), HSN_Code, CGST_Per, SGST_Per, IGST_Per, CGSTAmt, SGSTAmt, IGSTAmt, status, null, null, "No");
-                    dt_GridViewLedger.Rows.Add(ViewState["Tcs"].ToString(), "TCS", "0", HSN_Code, "0", "0", "0", "0", "0", "0", status, null, null, "No");
-                    dt_GridViewLedger.Rows.Add(ViewState["Tds"].ToString(), "TDS", "0", HSN_Code, "0", "0", "0", "0", "0", "0", status, null, null, "No");
+                    dt_GridViewLedger.Rows.Add(6, ViewState["CGST"].ToString(), "CGST", CGST.ToString(), HSN_Code, CGST_Per, SGST_Per, IGST_Per, CGSTAmt, SGSTAmt, IGSTAmt, status, null, null, "No");
+                    dt_GridViewLedger.Rows.Add(5, ViewState["SGST"].ToString(), "SGST", SGST.ToString(), HSN_Code, CGST_Per, SGST_Per, IGST_Per, CGSTAmt, SGSTAmt, IGSTAmt, status, null, null, "No");
+                    dt_GridViewLedger.Rows.Add(4, ViewState["IGST"].ToString(), "IGST", IGST.ToString(), HSN_Code, CGST_Per, SGST_Per, IGST_Per, CGSTAmt, SGSTAmt, IGSTAmt, status, null, null, "No");
+                    dt_GridViewLedger.Rows.Add(3, ViewState["Tcs"].ToString(), "TCS", "0", HSN_Code, "0", "0", "0", "0", "0", "0", status, null, null, "No");
+                    dt_GridViewLedger.Rows.Add(2, ViewState["Tds"].ToString(), "TDS", "0", HSN_Code, "0", "0", "0", "0", "0", "0", status, null, null, "No");
                 }
                 else
                 {
                     decimal CGST = dt_GridViewLedger.AsEnumerable().Sum(row => row.Field<decimal>("CGSTAmt"));
                     decimal SGST = dt_GridViewLedger.AsEnumerable().Sum(row => row.Field<decimal>("SGSTAmt"));
                     decimal IGST = dt_GridViewLedger.AsEnumerable().Sum(row => row.Field<decimal>("IGSTAmt"));
-                    dt_GridViewLedger.Rows.Add(ViewState["CGST"].ToString(), "CGST", CGST.ToString(), HSN_Code, CGST_Per, SGST_Per, IGST_Per, CGSTAmt, SGSTAmt, IGSTAmt, status, null, null, "No");
-                    dt_GridViewLedger.Rows.Add(ViewState["SGST"].ToString(), "SGST", SGST.ToString(), HSN_Code, CGST_Per, SGST_Per, IGST_Per, CGSTAmt, SGSTAmt, IGSTAmt, status, null, null, "No");
-                    dt_GridViewLedger.Rows.Add(ViewState["IGST"].ToString(), "IGST", IGST.ToString(), HSN_Code, CGST_Per, SGST_Per, IGST_Per, CGSTAmt, SGSTAmt, IGSTAmt, status, null, null, "No");
+                    dt_GridViewLedger.Rows.Add(6, ViewState["CGST"].ToString(), "CGST", CGST.ToString(), HSN_Code, CGST_Per, SGST_Per, IGST_Per, CGSTAmt, SGSTAmt, IGSTAmt, status, null, null, "No");
+                    dt_GridViewLedger.Rows.Add(5, ViewState["SGST"].ToString(), "SGST", SGST.ToString(), HSN_Code, CGST_Per, SGST_Per, IGST_Per, CGSTAmt, SGSTAmt, IGSTAmt, status, null, null, "No");
+                    dt_GridViewLedger.Rows.Add(4, ViewState["IGST"].ToString(), "IGST", IGST.ToString(), HSN_Code, CGST_Per, SGST_Per, IGST_Per, CGSTAmt, SGSTAmt, IGSTAmt, status, null, null, "No");
 
-                    dt_GridViewLedger.Rows.Add(ViewState["Tcs"].ToString(), "TCS", SGST.ToString(), HSN_Code, CGST_Per, SGST_Per, IGST_Per, CGSTAmt, SGSTAmt, IGSTAmt, status, null, null, "No");
-                    dt_GridViewLedger.Rows.Add(ViewState["Tds"].ToString(), "TDS", IGST.ToString(), HSN_Code, CGST_Per, SGST_Per, IGST_Per, CGSTAmt, SGSTAmt, IGSTAmt, status, null, null, "No");
+                    dt_GridViewLedger.Rows.Add(3, ViewState["Tcs"].ToString(), "TCS", SGST.ToString(), HSN_Code, CGST_Per, SGST_Per, IGST_Per, CGSTAmt, SGSTAmt, IGSTAmt, status, null, null, "No");
+                    dt_GridViewLedger.Rows.Add(2, ViewState["Tds"].ToString(), "TDS", IGST.ToString(), HSN_Code, CGST_Per, SGST_Per, IGST_Per, CGSTAmt, SGSTAmt, IGSTAmt, status, null, null, "No");
                 }
-                dt_GridViewLedger.Rows.Add(ViewState["RoundOff"].ToString(), "Round off", "0", HSN_Code, CGST_Per, SGST_Per, IGST_Per, CGSTAmt, SGSTAmt, IGSTAmt, status, null, null, "No");
+                dt_GridViewLedger.Rows.Add(1, ViewState["RoundOff"].ToString(), "Round off", "0", HSN_Code, CGST_Per, SGST_Per, IGST_Per, CGSTAmt, SGSTAmt, IGSTAmt, status, null, null, "No");
             }
 
             //if (dt_GridViewItem.Rows.Count > 0)
@@ -1142,75 +1148,91 @@ public partial class mis_Finance_VoucherSaleCredit : System.Web.UI.Page
     {
         try
         {
-            
+
             int LedgerStatus = 0;
             lblMsg.Text = "";
             if (ddlLedger.SelectedIndex > 0 && txtLedgerAmt.Text != "")
             {
-             int rowIndex = 0;
-             int gridRows = GridViewLedger.Rows.Count;
-             if (gridRows > 0)
-             {
-                 for (rowIndex = 0; rowIndex < gridRows; rowIndex++)
-                 {
-                     Label lblLedgerID = (Label)GridViewLedger.Rows[rowIndex].Cells[0].FindControl("lblID");
-                     if (ddlLedger.SelectedIndex > 0)
-                     {
-                         if (lblLedgerID.Text == ddlLedger.SelectedValue.ToString())
-                         {
-                             LedgerStatus = 1;
-                         }
-                         else
-                         {
+                //int rowIndex = 0;
+                //int gridRows = GridViewLedger.Rows.Count;
+                //if (gridRows > 0)
+                //{
+                //    for (rowIndex = 0; rowIndex < gridRows; rowIndex++)
+                //    {
+                //        Label lblLedgerID = (Label)GridViewLedger.Rows[rowIndex].Cells[0].FindControl("lblID");
+                //        if (ddlLedger.SelectedIndex > 0)
+                //        {
+                //            if (lblLedgerID.Text == ddlLedger.SelectedValue.ToString())
+                //            {
+                //                LedgerStatus = 1;
+                //            }
+                //            else
+                //            {
 
 
-                         }
-                     }
+                //            }
+                //        }
 
-                 }
-             }
-                
-                if (LedgerStatus == 0)
+                //    }
+                //}
+
+                //  if (LedgerStatus == 0)
+                //  {
+                ds = objdb.ByProcedure("SpFinLedgerMaster", new string[] { "flag", "Ledger_ID", "Office_ID" }, new string[] { "21", ddlLedger.SelectedValue, ViewState["Office_ID"].ToString() }, "dataset");
                 {
-                    ds = objdb.ByProcedure("SpFinLedgerMaster", new string[] { "flag", "Ledger_ID", "Office_ID" }, new string[] { "21", ddlLedger.SelectedValue, ViewState["Office_ID"].ToString() }, "dataset");
+                    if (ds != null && ds.Tables.Count > 0)
                     {
-                        if (ds != null && ds.Tables.Count > 0)
+                        if (ds.Tables[0].Rows.Count > 0)
                         {
-                            if (ds.Tables[0].Rows.Count > 0)
+                            if (ds.Tables[0].Rows[0]["CostCentre"].ToString() == "Yes")
                             {
-                                if (ds.Tables[0].Rows[0]["CostCentre"].ToString() == "Yes")
-                                {
-                                    ViewState["CrCostCentre"] = ds.Tables[0].Rows[0]["CostCentre"].ToString();                               
-                                    lblCostCentreModal.Text = "";
-                                    ddlCategory.ClearSelection();
-                                    ddlSubCategory.Items.Clear();
-                                    //ViewState["Amount"] = txtLedgerAmt.Text;
-									 ViewState["Amount"] = Math.Abs(Convert.ToDecimal(txtLedgerAmt.Text)).ToString();
-                                    txtCostCentreAmount.Text = ViewState["Amount"].ToString();
-                                    
+                                GridCostCentreDetail.DataSource = null;
+                                GridCostCentreDetail.DataBind();
+                                CreateCrCostCentreTable();
+                                ViewState["CrCostCentre"] = ds.Tables[0].Rows[0]["CostCentre"].ToString();
+                                lblCostCentreModal.Text = "";
+                                ddlCategory.ClearSelection();
+                                ddlSubCategory.Items.Clear();
+                                //ViewState["Amount"] = txtLedgerAmt.Text;
+                                ViewState["Amount"] = Math.Abs(Convert.ToDecimal(txtLedgerAmt.Text)).ToString();
+                                txtCostCentreAmount.Text = ViewState["Amount"].ToString();
 
-                                    Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "ShowCostCentreModal();", true);
-                                }
-                                else
+
+                                Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "ShowCostCentreModal();", true);
+                            }
+                            else
+                            {
+                                int CNO = 0;
+
+                                DataTable dt1 = new DataTable();
+                                dt1.Columns.Add("RowNo", typeof(int));
+                                foreach (GridViewRow rows in GridViewLedger.Rows)
                                 {
-                                    ViewState["CrCostCentre"] = "No";
-                                    FillLedgerAmount("0");
-                                    Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "CalculateGrandTotal();", true);
-                                    ViewState["GrandTotal"] = lblGrandTotal.Text;
-                                    //btnAcceptEnable();
-                                    ddlLedger.ClearSelection();
-                                    txtLedgerAmt.Text = "";
+                                    Label rowno = (Label)rows.FindControl("lblRowNo");
+                                    dt1.Rows.Add(rowno.Text);
                                 }
+
+                                int minLavel = Convert.ToInt32(dt1.Compute("max([RowNo])", string.Empty));
+                                CNO = minLavel + 1;
+                                ViewState["CNO"] = CNO;
+                                ViewState["CrCostCentre"] = "No";
+                                FillLedgerAmount("0");
+                                Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "CalculateGrandTotal();", true);
+                                ViewState["GrandTotal"] = lblGrandTotal.Text;
+                                //btnAcceptEnable();
+                                ddlLedger.ClearSelection();
+                                txtLedgerAmt.Text = "";
                             }
                         }
                     }
+                }
 
-                    
-                }
-                else
-                {
-                    Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "alert('Ledger already exists');", true);
-                }
+
+                //}
+                //else
+                //{
+                //    Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "alert('Ledger already exists');", true);
+                //}
                 //FillLedgerAmount("0");
                 //ddlLedger.ClearSelection();
                 //txtLedgerAmt.Text = "";
@@ -1231,6 +1253,7 @@ public partial class mis_Finance_VoucherSaleCredit : System.Web.UI.Page
             {
                 string status = "0";
                 DataTable dt_GridViewLedger = new DataTable();
+                DataColumn RowNo = dt_GridViewLedger.Columns.Add("RowNo", typeof(int));
                 dt_GridViewLedger.Columns.Add(new DataColumn("LedgerID", typeof(string)));
                 dt_GridViewLedger.Columns.Add(new DataColumn("LedgerName", typeof(string)));
                 dt_GridViewLedger.Columns.Add(new DataColumn("Amount", typeof(string)));
@@ -1245,6 +1268,10 @@ public partial class mis_Finance_VoucherSaleCredit : System.Web.UI.Page
                 dt_GridViewLedger.Columns.Add(new DataColumn("GSTApplicable", typeof(string)));
                 dt_GridViewLedger.Columns.Add(new DataColumn("Taxbility", typeof(string)));
                 dt_GridViewLedger.Columns.Add(new DataColumn("CostCenter", typeof(string)));
+
+                RowNo.AutoIncrement = true;
+                RowNo.AutoIncrementSeed = 1;
+                RowNo.AutoIncrementStep = 1;
 
                 decimal CGST = 0;
                 decimal SGST = 0;
@@ -1294,7 +1321,7 @@ public partial class mis_Finance_VoucherSaleCredit : System.Web.UI.Page
                         SGSTAmt = Math.Round((Amount * SGST) / 100, 2);
                         IGSTAmt = Math.Round((Amount * IGST) / 100, 2);
                         HSN_Code = ds.Tables[0].Rows[0]["HSN_Code"].ToString();
-                        dt_GridViewLedger.Rows.Add(ddlLedger.SelectedValue.ToString(), ddlLedger.SelectedItem.ToString(), txtLedgerAmt.Text, HSN_Code, CGST, SGST, IGST, CGSTAmt, SGSTAmt, IGSTAmt, "1", GSTApplicable, Taxbility,ViewState["CrCostCentre"].ToString());
+                        dt_GridViewLedger.Rows.Add(ViewState["CNO"].ToString(), ddlLedger.SelectedValue.ToString(), ddlLedger.SelectedItem.ToString(), txtLedgerAmt.Text, HSN_Code, CGST, SGST, IGST, CGSTAmt, SGSTAmt, IGSTAmt, "1", GSTApplicable, Taxbility, ViewState["CrCostCentre"].ToString());
                         for (int rowIndex = 0; rowIndex < gridRows; rowIndex++)
                         {
 
@@ -1311,6 +1338,7 @@ public partial class mis_Finance_VoucherSaleCredit : System.Web.UI.Page
                             Label lblGSTApplicable = (Label)GridViewLedger.Rows[rowIndex].Cells[0].FindControl("lblGSTApplicable");
                             Label lblTaxbility = (Label)GridViewLedger.Rows[rowIndex].Cells[0].FindControl("lblTaxbility");
                             Label lblCostCenter = (Label)GridViewLedger.Rows[rowIndex].Cells[0].FindControl("lblCostCenter");
+                            Label lblRowNo = (Label)GridViewLedger.Rows[rowIndex].Cells[0].FindControl("lblRowNo");
                             if (lblID.Text == "1" || lblID.Text == "2" || lblID.Text == "3" || lblID.Text == "737" || lblID.Text == "39751" || lblID.Text == "68033")
                             {
                                 status = "0";
@@ -1319,7 +1347,7 @@ public partial class mis_Finance_VoucherSaleCredit : System.Web.UI.Page
                             {
                                 status = "1";
                             }
-                            dt_GridViewLedger.Rows.Add(lblID.Text, lblLedgerName.Text, txtAmount.Text, lblHSNCode.Text, lblCGSTPer.Text, lblSGSTPer.Text, lblIGSTPer.Text, lblCGSTAmt.Text, lblSGSTAmt.Text, lblIGSTAmt.Text, status, lblGSTApplicable.Text, lblTaxbility.Text, lblCostCenter.Text);
+                            dt_GridViewLedger.Rows.Add(lblRowNo.Text, lblID.Text, lblLedgerName.Text, txtAmount.Text, lblHSNCode.Text, lblCGSTPer.Text, lblSGSTPer.Text, lblIGSTPer.Text, lblCGSTAmt.Text, lblSGSTAmt.Text, lblIGSTAmt.Text, status, lblGSTApplicable.Text, lblTaxbility.Text, lblCostCenter.Text);
                         }
 
                         foreach (DataRow dr in dt_GridViewLedger.Rows) // search whole table
@@ -1346,7 +1374,7 @@ public partial class mis_Finance_VoucherSaleCredit : System.Web.UI.Page
                     }
                     else
                     {
-                        dt_GridViewLedger.Rows.Add(ddlLedger.SelectedValue.ToString(), ddlLedger.SelectedItem.ToString(), txtLedgerAmt.Text, HSN_Code, CGST, SGST, IGST, CGSTAmt, SGSTAmt, IGSTAmt, "1", GSTApplicable, Taxbility, ViewState["CrCostCentre"].ToString());
+                        dt_GridViewLedger.Rows.Add(ViewState["CNO"].ToString(), ddlLedger.SelectedValue.ToString(), ddlLedger.SelectedItem.ToString(), txtLedgerAmt.Text, HSN_Code, CGST, SGST, IGST, CGSTAmt, SGSTAmt, IGSTAmt, "1", GSTApplicable, Taxbility, ViewState["CrCostCentre"].ToString());
                         for (int rowIndex = 0; rowIndex < gridRows; rowIndex++)
                         {
 
@@ -1363,6 +1391,7 @@ public partial class mis_Finance_VoucherSaleCredit : System.Web.UI.Page
                             Label lblGSTApplicable = (Label)GridViewLedger.Rows[rowIndex].Cells[0].FindControl("lblGSTApplicable");
                             Label lblTaxbility = (Label)GridViewLedger.Rows[rowIndex].Cells[0].FindControl("lblTaxbility");
                             Label lblCostCenter = (Label)GridViewLedger.Rows[rowIndex].Cells[0].FindControl("lblCostCenter");
+                            Label lblRowNo = (Label)GridViewLedger.Rows[rowIndex].Cells[0].FindControl("lblRowNo");
                             if (lblID.Text == "1" || lblID.Text == "2" || lblID.Text == "3" || lblID.Text == "737" || lblID.Text == "39751" || lblID.Text == "68033")
                             {
                                 status = "0";
@@ -1371,11 +1400,18 @@ public partial class mis_Finance_VoucherSaleCredit : System.Web.UI.Page
                             {
                                 status = "1";
                             }
-                            dt_GridViewLedger.Rows.Add(lblID.Text, lblLedgerName.Text, txtAmount.Text, lblHSNCode.Text, lblCGSTPer.Text, lblSGSTPer.Text, lblIGSTPer.Text, lblCGSTAmt.Text, lblSGSTAmt.Text, lblIGSTAmt.Text, status, lblGSTApplicable.Text, lblTaxbility.Text, lblCostCenter.Text);
+                            dt_GridViewLedger.Rows.Add(lblRowNo.Text, lblID.Text, lblLedgerName.Text, txtAmount.Text, lblHSNCode.Text, lblCGSTPer.Text, lblSGSTPer.Text, lblIGSTPer.Text, lblCGSTAmt.Text, lblSGSTAmt.Text, lblIGSTAmt.Text, status, lblGSTApplicable.Text, lblTaxbility.Text, lblCostCenter.Text);
                         }
                         ViewState["LedgerAmount"] = dt_GridViewLedger;
                         GridViewLedger.DataSource = dt_GridViewLedger;
                         GridViewLedger.DataBind();
+                        if(Convert.ToString(ViewState["CrCostCentre"]) == "Yes")
+                        {
+                            DataSet dsCrConstCentre = (DataSet)ViewState["dsCrConstCentre"];
+                            dsCrConstCentre.Merge((DataTable)ViewState["CrCostCentreTable"]);
+                            ViewState["CrCostCentre"]="No";
+                        }
+                        
                     }
 
                 }
@@ -1404,12 +1440,13 @@ public partial class mis_Finance_VoucherSaleCredit : System.Web.UI.Page
                     Label lblGSTApplicable = (Label)GridViewLedger.Rows[rowIndex].Cells[0].FindControl("lblGSTApplicable");
                     Label lblCostCenter = (Label)GridViewLedger.Rows[rowIndex].Cells[0].FindControl("lblCostCenter");
                     Label lblTaxbility = (Label)GridViewLedger.Rows[rowIndex].Cells[0].FindControl("lblTaxbility");
-                    if (int.Parse(lblID.Text) == int.Parse(ID))
+                    Label lblRowNo = (Label)GridViewLedger.Rows[rowIndex].Cells[0].FindControl("lblRowNo");
+                    if (int.Parse(lblRowNo.Text) == int.Parse(ID))
                     {
                         for (int i = dt_GridViewLedger.Rows.Count - 1; i >= 0; i--)
                         {
                             DataRow dr = dt_GridViewLedger.Rows[i];
-                            if (dr["LedgerID"].ToString() == ID)
+                            if (dr["RowNo"].ToString() == ID)
                             {
                                 dr.Delete();
                             }
@@ -1436,17 +1473,32 @@ public partial class mis_Finance_VoucherSaleCredit : System.Web.UI.Page
                             }
 
                         }
-                        for (int i = dt_CrCostCentreTable.Rows.Count - 1; i >= 0; i--)
-                        {
-                            DataRow dr = dt_CrCostCentreTable.Rows[i];
-                            if (dr["Ledger_ID"].ToString() == ID)
-                            {
-                                dr.Delete();
-                            }
 
+                        DataSet dsCrConstCentre = (DataSet)ViewState["dsCrConstCentre"];
+                        DataSet dsCrConstCentreTemp = new DataSet();
+                        dsCrConstCentreTemp = dsCrConstCentre;
+                        for (int i = 0; i < dsCrConstCentreTemp.Tables.Count;
+
+
+                            i++)
+                        {
+                            if (dsCrConstCentreTemp.Tables[i].TableName == ID.ToString())
+                            {
+                                dsCrConstCentre.Tables.Remove(dsCrConstCentreTemp.Tables[i].TableName);
+                                //dsBillByBill.Tables[i].Merge(dsBillByBillTemp.Tables[i]);
+                            }
                         }
-                        dt_CrCostCentreTable.AcceptChanges();
-                        ViewState["CrCostCentreTable"] = dt_CrCostCentreTable;
+                        //for (int i = dt_CrCostCentreTable.Rows.Count - 1; i >= 0; i--)
+                        //{
+                        //    DataRow dr = dt_CrCostCentreTable.Rows[i];
+                        //    if (dr["Ledger_ID"].ToString() == ID)
+                        //    {
+                        //        dr.Delete();
+                        //    }
+
+                        //}
+                        //dt_CrCostCentreTable.AcceptChanges();
+                        //ViewState["CrCostCentreTable"] = dt_CrCostCentreTable;
 
                     }
 
@@ -1531,14 +1583,30 @@ public partial class mis_Finance_VoucherSaleCredit : System.Web.UI.Page
     protected void CreateCrCostCentreTable()
     {
         //DataTable dt_CostCentreTable = new DataTable();
-        //int CNO = 0;
-        //int count = GridViewLedgerDetail.Rows.Count;
+        int CNO = 0;
+
+        DataTable dt1 = new DataTable();
+        dt1.Columns.Add("RowNo", typeof(int));
+        foreach (GridViewRow rows in GridViewLedger.Rows)
+        {
+            Label rowno = (Label)rows.FindControl("lblRowNo");
+            dt1.Rows.Add(rowno.Text);
+        }
+
+        int minLavel = Convert.ToInt32(dt1.Compute("max([RowNo])", string.Empty));
+        CNO = minLavel + 1;
         //if (count > 0)
         //{
-        //    foreach (GridViewRow rows in GridViewLedgerDetail.Rows)
+        //    foreach (GridViewRow rows in GridViewLedger.Rows)
         //    {
-        //        Label rowno = (Label)rows.FindControl("lblRowNumber");
-        //        CNO = int.Parse(rowno.Text);
+        //        Label rowno = (Label)rows.FindControl("lblRowNo");
+        //        Label lblID = (Label)rows.FindControl("lblID");
+
+        //            if (lblID.Text != "1" || lblID.Text != "2" || lblID.Text != "3" || lblID.Text != "737"
+        //                || lblID.Text != "39751" || lblID.Text != "68033")
+        //            {
+        //                CNO = int.Parse(rowno.Text);
+        //            }
         //    }
         //    CNO = CNO + 1;
         //}
@@ -1546,7 +1614,10 @@ public partial class mis_Finance_VoucherSaleCredit : System.Web.UI.Page
         //{
         //    CNO = CNO + 1;
         //}
-        DataTable dt_CrCostCentreTable = new DataTable();
+
+        ViewState["CNO"] = CNO;
+        // DataTable dt_CrCostCentreTable = new DataTable();
+        DataTable dt_CrCostCentreTable = new DataTable(CNO.ToString());
         DataColumn RowNo = dt_CrCostCentreTable.Columns.Add("RowNo", typeof(string));
         dt_CrCostCentreTable.Columns.Add(new DataColumn("Ledger_ID", typeof(decimal)));
         dt_CrCostCentreTable.Columns.Add(new DataColumn("Category_ID", typeof(string)));
@@ -2072,7 +2143,7 @@ public partial class mis_Finance_VoucherSaleCredit : System.Web.UI.Page
             {
                 msg += "Enter Date. \\n";
             }
-			else
+            else
             {
                 string ValidStatus = ValidDate();
                 if (ValidStatus == "No")
@@ -2096,7 +2167,7 @@ public partial class mis_Finance_VoucherSaleCredit : System.Web.UI.Page
             {
                 msg += "Enter Narration. \\n";
             }
-			
+
             if (msg.Trim() == "")
             {
                 string LedgerId = ddlPartyName.SelectedValue.ToString();
@@ -2109,7 +2180,7 @@ public partial class mis_Finance_VoucherSaleCredit : System.Web.UI.Page
                     Status = Convert.ToInt32(ds11.Tables[0].Rows[0]["Status"].ToString());
 
                 }
-              
+
                 if (btnAccept.Text == "Accept" && ViewState["VoucherTx_ID"].ToString() == "0" && Status == 0)
                 {
                     GridViewRef.DataSource = new string[] { };
@@ -2149,9 +2220,8 @@ public partial class mis_Finance_VoucherSaleCredit : System.Web.UI.Page
                         else if (ds.Tables[0].Rows[0]["CostCentre"].ToString() == "Yes")
                         {
                             ViewState["CostCentre"] = ds.Tables[0].Rows[0]["CostCentre"].ToString();
-                            
+
                             CreateCostCentreTable();
-                            lblCostCentreModal.Text = "";
                             ddlCategory.ClearSelection();
                             ddlSubCategory.Items.Clear();
                             ViewState["Amount"] = lblGrandTotal.Text;
@@ -2313,7 +2383,7 @@ public partial class mis_Finance_VoucherSaleCredit : System.Web.UI.Page
                        ,txtVoucherTx_Narration.Text,lblGrandTotal.Text,Month.ToString(),Year.ToString(), ViewState["Office_ID"].ToString(),FinancialYear.ToString()
                         ,VoucherTx_IsActive,ViewState["Emp_ID"].ToString(),"Yes",SupplyTo,Location,TruckNo,TransporterName,MRNo,MRDate}, "dataset");
 
-                if (ds2!= null && ds2.Tables.Count > 0 && ds2.Tables[0].Rows.Count > 0)
+                if (ds2 != null && ds2.Tables.Count > 0 && ds2.Tables[0].Rows.Count > 0)
                 {
                     VoucherTx_ID = ds2.Tables[0].Rows[0]["VoucherTx_ID"].ToString();
                     int gridRows = GridViewItem.Rows.Count;
@@ -2374,6 +2444,7 @@ public partial class mis_Finance_VoucherSaleCredit : System.Web.UI.Page
                         Label lblGSTApplicable = (Label)GridViewLedger.Rows[rowIndex].Cells[0].FindControl("lblGSTApplicable");
                         Label lblTaxbility = (Label)GridViewLedger.Rows[rowIndex].Cells[0].FindControl("lblTaxbility");
                         Label lblCostCenter = (Label)GridViewLedger.Rows[rowIndex].Cells[0].FindControl("lblCostCenter");
+                        Label lblRowNo = (Label)GridViewLedger.Rows[rowIndex].Cells[0].FindControl("lblRowNo");
                         //if (txtAmount.Text.Contains("-"))
                         //{
                         //    LedgerTx_Amount = txtAmount.Text.Replace(@"-", string.Empty);
@@ -2386,7 +2457,9 @@ public partial class mis_Finance_VoucherSaleCredit : System.Web.UI.Page
                         // string LedgerTx_Amount = "-" + txtAmount.Text;
                         if (lblCostCenter.Text == "Yes")
                         {
-                            DataTable dt_CrCostCentreTable = (DataTable)ViewState["CrCostCentreTable"];
+                            DataSet dsCrConstCentre = (DataSet)ViewState["dsCrConstCentre"];
+                            DataTable dt_CrCostCentreTable = dsCrConstCentre.Tables[lblRowNo.Text];
+                            // DataTable dt_CrCostCentreTable = (DataTable)ViewState["CrCostCentreTable"];
                             int Count = dt_CrCostCentreTable.Rows.Count;
                             for (int i = 0; i < Count; i++)
                             {
@@ -2399,33 +2472,33 @@ public partial class mis_Finance_VoucherSaleCredit : System.Web.UI.Page
                                     string SubCategoryName = dr["SubCategoryName"].ToString();
                                     string AmountShow = dr["AmountShow"].ToString();
                                     string Amount = dr["Amount"].ToString();
-									if (txtAmount.Text.Contains("-"))
+                                    if (txtAmount.Text.Contains("-"))
                                     {
                                         Amount = "-" + Amount;
                                         AmountShow = "-" + AmountShow;
                                     }
                                     objdb.ByProcedure("SpFinCostCentretx", new string[] { "flag", "VoucherTx_ID", "Ledger_ID", "Voucher_Date", "Office_ID", "Category_ID", "SubCategory_ID", "Amount", "CostCentre_type", "LedgerTx_OrderBy", "UpdatedBy" },
-                              new string[] { "1", VoucherTx_ID, lblID.Text, Convert.ToDateTime(txtVoucherTx_Date.Text, cult).ToString("yyyy/MM/dd"), ViewState["Office_ID"].ToString(), Category_ID, SubCategory_ID, Amount, "CreditSale Voucher", "0", ViewState["Emp_ID"].ToString() }, "dataset");
+                              new string[] { "1", VoucherTx_ID, lblID.Text, Convert.ToDateTime(txtVoucherTx_Date.Text, cult).ToString("yyyy/MM/dd"), ViewState["Office_ID"].ToString(), Category_ID, SubCategory_ID, Amount, "CreditSale Voucher", lblRowNo.Text, ViewState["Emp_ID"].ToString() }, "dataset");
                                 }
                             }
-                            
+
                             objdb.ByProcedure("SpFinLedgerTx",
                                   new string[] { "flag", "Ledger_ID","LedgerTx_Type", "VoucherTx_ID", "VoucherTx_Type", "LedgerTx_Amount", "LedgerTx_Month", "LedgerTx_Year"
                             , "LedgerTx_FY", "Office_ID","LedgerTx_IsActive", "LedgerTx_InsertedBy","LedgerTx_OrderBy","LedgerTx_MaintainType","HSN_Code", "CGST_Per", "SGST_Per", "IGST_Per", "CGSTAmt", "SGSTAmt", "IGSTAmt", "GSTApplicable", "Taxbility" },
                                   new string[] { "0", lblID.Text,"Sub Ledger",VoucherTx_ID,VoucherTx_Type,LedgerTx_Amount ,Month.ToString(),Year.ToString()
-                            ,FinancialYear.ToString(),ViewState["Office_ID"].ToString() , LedgerTx_IsActive,ViewState["Emp_ID"].ToString(),"1","CostCentre",lblHSNCode.Text, lblCGSTPer.Text, lblSGSTPer.Text, lblIGSTPer.Text, lblCGSTAmt.Text, lblSGSTAmt.Text, lblIGSTAmt.Text, lblGSTApplicable.Text, lblTaxbility.Text}, "dataset");
+                            ,FinancialYear.ToString(),ViewState["Office_ID"].ToString() , LedgerTx_IsActive,ViewState["Emp_ID"].ToString(),lblRowNo.Text,"CostCentre",lblHSNCode.Text, lblCGSTPer.Text, lblSGSTPer.Text, lblIGSTPer.Text, lblCGSTAmt.Text, lblSGSTAmt.Text, lblIGSTAmt.Text, lblGSTApplicable.Text, lblTaxbility.Text}, "dataset");
                             //lblMsg.Text = objdb.Alert("fa-check", "alert-success", "Thank you!", "Operation Completed Successfully.");
                         }
                         else
                         {
                             objdb.ByProcedure("SpFinLedgerTx",
                         new string[] { "flag", "Ledger_ID", "LedgerTx_Type", "VoucherTx_ID", "VoucherTx_Type", "LedgerTx_Amount", "LedgerTx_Month", "LedgerTx_Year", "LedgerTx_FY", "Office_ID", "LedgerTx_IsActive", "LedgerTx_InsertedBy", "LedgerTx_OrderBy", "HSN_Code", "CGST_Per", "SGST_Per", "IGST_Per", "CGSTAmt", "SGSTAmt", "IGSTAmt", "GSTApplicable", "Taxbility" },
-                        new string[] { "0", lblID.Text, "Sub Ledger", VoucherTx_ID, VoucherTx_Type, LedgerTx_Amount, Month.ToString(), Year.ToString(), FinancialYear.ToString(), ViewState["Office_ID"].ToString(), LedgerTx_IsActive, ViewState["Emp_ID"].ToString(), (rowIndex + 1).ToString(), lblHSNCode.Text, lblCGSTPer.Text, lblSGSTPer.Text, lblIGSTPer.Text, lblCGSTAmt.Text, lblSGSTAmt.Text, lblIGSTAmt.Text, lblGSTApplicable.Text, lblTaxbility.Text }, "dataset");
+                        new string[] { "0", lblID.Text, "Sub Ledger", VoucherTx_ID, VoucherTx_Type, LedgerTx_Amount, Month.ToString(), Year.ToString(), FinancialYear.ToString(), ViewState["Office_ID"].ToString(), LedgerTx_IsActive, ViewState["Emp_ID"].ToString(), lblRowNo.Text, lblHSNCode.Text, lblCGSTPer.Text, lblSGSTPer.Text, lblIGSTPer.Text, lblCGSTAmt.Text, lblSGSTAmt.Text, lblIGSTAmt.Text, lblGSTApplicable.Text, lblTaxbility.Text }, "dataset");
                         }
-                        
 
-                        
-                       
+
+
+
 
                     }
                     int gridCessLedgerRow = GridViewCessLedger.Rows.Count;
@@ -2534,8 +2607,8 @@ public partial class mis_Finance_VoucherSaleCredit : System.Web.UI.Page
                     }
                     else if (Type == "CostCentre")
                     {
-                      //  objdb.ByProcedure("SpFinCostCentretx", new string[] { "flag", "VoucherTx_ID" },
-                      //new string[] { "3", VoucherTx_ID }, "dataset");
+                        //  objdb.ByProcedure("SpFinCostCentretx", new string[] { "flag", "VoucherTx_ID" },
+                        //new string[] { "3", VoucherTx_ID }, "dataset");
                         foreach (GridViewRow row in GridCostCentreDetail.Rows)
                         {
                             Label lblCategory_ID = (Label)row.FindControl("lblCategory_ID");
@@ -2546,7 +2619,7 @@ public partial class mis_Finance_VoucherSaleCredit : System.Web.UI.Page
                             Label lblAmount = (Label)row.FindControl("lblAmount");
 
                             objdb.ByProcedure("SpFinCostCentretx", new string[] { "flag", "VoucherTx_ID", "Ledger_ID", "Voucher_Date", "Office_ID", "Category_ID", "SubCategory_ID", "Amount", "CostCentre_type", "LedgerTx_OrderBy", "UpdatedBy" },
-                          new string[] { "1", VoucherTx_ID, ddlPartyName.SelectedValue, Convert.ToDateTime(txtVoucherTx_Date.Text, cult).ToString("yyyy/MM/dd"), ViewState["Office_ID"].ToString(), lblCategory_ID.Text, lblSubCategory_ID.Text,"-" + lblAmount.Text, "CreditSale Voucher", "0", ViewState["Emp_ID"].ToString() }, "dataset");
+                          new string[] { "1", VoucherTx_ID, ddlPartyName.SelectedValue, Convert.ToDateTime(txtVoucherTx_Date.Text, cult).ToString("yyyy/MM/dd"), ViewState["Office_ID"].ToString(), lblCategory_ID.Text, lblSubCategory_ID.Text, "-" + lblAmount.Text, "CreditSale Voucher", "1", ViewState["Emp_ID"].ToString() }, "dataset");
                         }
                         VoucherTx_Amount = "-" + VoucherTx_Amount;
                         objdb.ByProcedure("SpFinLedgerTx",
@@ -2572,6 +2645,7 @@ public partial class mis_Finance_VoucherSaleCredit : System.Web.UI.Page
 
                 lblMsg.Text = objdb.Alert("fa-check", "alert-success", "Thank you!", "Operation Completed Successfully.");
                 ClearData();
+                CreateCrCostCentreDataSet();
                 if (rbtPrint.SelectedValue.ToString() == "Yes")
                 {
                     rbtPrint.SelectedValue = "No";
@@ -2657,6 +2731,7 @@ public partial class mis_Finance_VoucherSaleCredit : System.Web.UI.Page
                     Label lblGSTApplicable = (Label)GridViewLedger.Rows[rowIndex].Cells[0].FindControl("lblGSTApplicable");
                     Label lblTaxbility = (Label)GridViewLedger.Rows[rowIndex].Cells[0].FindControl("lblTaxbility");
                     Label lblCostCenter = (Label)GridViewLedger.Rows[rowIndex].Cells[0].FindControl("lblCostCenter");
+                    Label lblRowNo = (Label)GridViewLedger.Rows[rowIndex].Cells[0].FindControl("lblRowNo");
                     //if (txtAmount.Text.Contains("-"))
                     //{
                     //    LedgerTx_Amount = txtAmount.Text.Replace(@"-", string.Empty);
@@ -2669,7 +2744,9 @@ public partial class mis_Finance_VoucherSaleCredit : System.Web.UI.Page
                     // string LedgerTx_Amount = "-" + txtAmount.Text;
                     if (lblCostCenter.Text == "Yes")
                     {
-                        DataTable dt_CrCostCentreTable = (DataTable)ViewState["CrCostCentreTable"];
+                        DataSet dsCrConstCentre = (DataSet)ViewState["dsCrConstCentre"];
+                        DataTable dt_CrCostCentreTable = dsCrConstCentre.Tables[lblRowNo.Text];
+                        //DataTable dt_CrCostCentreTable = (DataTable)ViewState["CrCostCentreTable"];
                         int Count = dt_CrCostCentreTable.Rows.Count;
                         for (int i = 0; i < Count; i++)
                         {
@@ -2682,13 +2759,13 @@ public partial class mis_Finance_VoucherSaleCredit : System.Web.UI.Page
                                 string SubCategoryName = dr["SubCategoryName"].ToString();
                                 string AmountShow = dr["AmountShow"].ToString();
                                 string Amount = dr["Amount"].ToString();
-								if (txtAmount.Text.Contains("-"))
+                                if (txtAmount.Text.Contains("-"))
                                 {
                                     Amount = "-" + Amount;
                                     AmountShow = "-" + AmountShow;
                                 }
                                 objdb.ByProcedure("SpFinCostCentretx", new string[] { "flag", "VoucherTx_ID", "Ledger_ID", "Voucher_Date", "Office_ID", "Category_ID", "SubCategory_ID", "Amount", "CostCentre_type", "LedgerTx_OrderBy", "UpdatedBy" },
-                          new string[] { "1", VoucherTx_ID, lblID.Text, Convert.ToDateTime(txtVoucherTx_Date.Text, cult).ToString("yyyy/MM/dd"), ViewState["Office_ID"].ToString(), Category_ID, SubCategory_ID, Amount, "CreditSale Voucher", "0", ViewState["Emp_ID"].ToString() }, "dataset");
+                          new string[] { "1", VoucherTx_ID, lblID.Text, Convert.ToDateTime(txtVoucherTx_Date.Text, cult).ToString("yyyy/MM/dd"), ViewState["Office_ID"].ToString(), Category_ID, SubCategory_ID, Amount, "CreditSale Voucher", lblRowNo.Text, ViewState["Emp_ID"].ToString() }, "dataset");
                             }
                         }
 
@@ -2696,14 +2773,14 @@ public partial class mis_Finance_VoucherSaleCredit : System.Web.UI.Page
                               new string[] { "flag", "Ledger_ID","LedgerTx_Type", "VoucherTx_ID", "VoucherTx_Type", "LedgerTx_Amount", "LedgerTx_Month", "LedgerTx_Year"
                             , "LedgerTx_FY", "Office_ID","LedgerTx_IsActive", "LedgerTx_InsertedBy","LedgerTx_OrderBy","LedgerTx_MaintainType","HSN_Code", "CGST_Per", "SGST_Per", "IGST_Per", "CGSTAmt", "SGSTAmt", "IGSTAmt", "GSTApplicable", "Taxbility" },
                               new string[] { "0", lblID.Text,"Sub Ledger",VoucherTx_ID,VoucherTx_Type,LedgerTx_Amount ,Month.ToString(),Year.ToString()
-                            ,FinancialYear.ToString(),ViewState["Office_ID"].ToString() , LedgerTx_IsActive,ViewState["Emp_ID"].ToString(),"1","CostCentre",lblHSNCode.Text, lblCGSTPer.Text, lblSGSTPer.Text, lblIGSTPer.Text, lblCGSTAmt.Text, lblSGSTAmt.Text, lblIGSTAmt.Text, lblGSTApplicable.Text, lblTaxbility.Text}, "dataset");
+                            ,FinancialYear.ToString(),ViewState["Office_ID"].ToString() , LedgerTx_IsActive,ViewState["Emp_ID"].ToString(),lblRowNo.Text,"CostCentre",lblHSNCode.Text, lblCGSTPer.Text, lblSGSTPer.Text, lblIGSTPer.Text, lblCGSTAmt.Text, lblSGSTAmt.Text, lblIGSTAmt.Text, lblGSTApplicable.Text, lblTaxbility.Text}, "dataset");
                         //lblMsg.Text = objdb.Alert("fa-check", "alert-success", "Thank you!", "Operation Completed Successfully.");
                     }
                     else
                     {
                         objdb.ByProcedure("SpFinLedgerTx",
                     new string[] { "flag", "Ledger_ID", "LedgerTx_Type", "VoucherTx_ID", "VoucherTx_Type", "LedgerTx_Amount", "LedgerTx_Month", "LedgerTx_Year", "LedgerTx_FY", "Office_ID", "LedgerTx_IsActive", "LedgerTx_InsertedBy", "LedgerTx_OrderBy", "HSN_Code", "CGST_Per", "SGST_Per", "IGST_Per", "CGSTAmt", "SGSTAmt", "IGSTAmt", "GSTApplicable", "Taxbility" },
-                    new string[] { "0", lblID.Text, "Sub Ledger", VoucherTx_ID, VoucherTx_Type, LedgerTx_Amount, Month.ToString(), Year.ToString(), FinancialYear.ToString(), ViewState["Office_ID"].ToString(), LedgerTx_IsActive, ViewState["Emp_ID"].ToString(), (rowIndex + 1).ToString(), lblHSNCode.Text, lblCGSTPer.Text, lblSGSTPer.Text, lblIGSTPer.Text, lblCGSTAmt.Text, lblSGSTAmt.Text, lblIGSTAmt.Text, lblGSTApplicable.Text, lblTaxbility.Text }, "dataset");
+                    new string[] { "0", lblID.Text, "Sub Ledger", VoucherTx_ID, VoucherTx_Type, LedgerTx_Amount, Month.ToString(), Year.ToString(), FinancialYear.ToString(), ViewState["Office_ID"].ToString(), LedgerTx_IsActive, ViewState["Emp_ID"].ToString(), lblRowNo.Text, lblHSNCode.Text, lblCGSTPer.Text, lblSGSTPer.Text, lblIGSTPer.Text, lblCGSTAmt.Text, lblSGSTAmt.Text, lblIGSTAmt.Text, lblGSTApplicable.Text, lblTaxbility.Text }, "dataset");
                     }
                     //objdb.ByProcedure("SpFinLedgerTx",
                     //new string[] { "flag", "Ledger_ID", "LedgerTx_Type", "VoucherTx_ID", "VoucherTx_Type", "LedgerTx_Amount", "LedgerTx_Month", "LedgerTx_Year", "LedgerTx_FY", "Office_ID", "LedgerTx_IsActive", "LedgerTx_InsertedBy", "LedgerTx_OrderBy", "HSN_Code", "CGST_Per", "SGST_Per", "IGST_Per", "CGSTAmt", "SGSTAmt", "IGSTAmt", "GSTApplicable", "Taxbility" },
@@ -2750,7 +2827,7 @@ public partial class mis_Finance_VoucherSaleCredit : System.Web.UI.Page
                 //}
                 objdb.ByProcedure("SpFinBillByBillTx", new string[] { "flag", "VoucherTx_ID" }, new string[] { "4", ViewState["VoucherTx_ID"].ToString() }, "dataset");
                 objdb.ByProcedure("SpFinChequeTx", new string[] { "flag", "VoucherTx_ID" }, new string[] { "2", ViewState["VoucherTx_ID"].ToString() }, "dataset");
-               
+
                 if (Type == "BillByBill")
                 {
 
@@ -2841,11 +2918,11 @@ public partial class mis_Finance_VoucherSaleCredit : System.Web.UI.Page
                         Label lblSubCategoryName = (Label)row.FindControl("lblSubCategoryName");
                         Label lblAmountShow = (Label)row.FindControl("lblAmountShow");
                         Label lblAmount = (Label)row.FindControl("lblAmount");
-                        
+
                         objdb.ByProcedure("SpFinCostCentretx", new string[] { "flag", "VoucherTx_ID", "Ledger_ID", "Voucher_Date", "Office_ID", "Category_ID", "SubCategory_ID", "Amount", "CostCentre_type", "LedgerTx_OrderBy", "UpdatedBy" },
-          new string[] { "1", VoucherTx_ID, ddlPartyName.SelectedValue, Convert.ToDateTime(txtVoucherTx_Date.Text, cult).ToString("yyyy/MM/dd"), ViewState["Office_ID"].ToString(), lblCategory_ID.Text, lblSubCategory_ID.Text, "-" + lblAmount.Text, "CreditSale Voucher", "0", ViewState["Emp_ID"].ToString() }, "dataset");
+          new string[] { "1", VoucherTx_ID, ddlPartyName.SelectedValue, Convert.ToDateTime(txtVoucherTx_Date.Text, cult).ToString("yyyy/MM/dd"), ViewState["Office_ID"].ToString(), lblCategory_ID.Text, lblSubCategory_ID.Text, "-" + lblAmount.Text, "CreditSale Voucher", "1", ViewState["Emp_ID"].ToString() }, "dataset");
                     }
-                   
+
                     objdb.ByProcedure("SpFinLedgerTx",
               new string[] { "flag", "Ledger_ID","LedgerTx_Type", "VoucherTx_ID", "VoucherTx_Type", "LedgerTx_Amount", "LedgerTx_Month", "LedgerTx_Year"
                             , "LedgerTx_FY", "Office_ID","LedgerTx_IsActive", "LedgerTx_InsertedBy","LedgerTx_OrderBy","LedgerTx_MaintainType" },
@@ -2862,6 +2939,9 @@ public partial class mis_Finance_VoucherSaleCredit : System.Web.UI.Page
                new string[] { "0", ddlPartyName.SelectedValue.ToString(),"Main Ledger",ViewState["VoucherTx_ID"].ToString(),VoucherTx_Type,VoucherTx_Amount ,Month.ToString(),Year.ToString()
                             ,FinancialYear.ToString(),ViewState["Office_ID"].ToString() , LedgerTx_IsActive,ViewState["Emp_ID"].ToString(),"1","None"}, "dataset");
                 }
+                
+                CreateCrCostCentreDataSet();
+                FillDetail();
                 lblMsg.Text = objdb.Alert("fa-check", "alert-success", "Thank you!", "Operation Completed Successfully.");
                 //ClearData();
                 if (rbtPrint.SelectedValue.ToString() == "Yes")
@@ -3069,8 +3149,11 @@ public partial class mis_Finance_VoucherSaleCredit : System.Web.UI.Page
                     // DataTable dt_GridViewLedger = (DataTable)ViewState["LedgerAmount"];
                     DataTable dt_GridViewLedger = new DataTable();
                     dt_GridViewLedger = ds.Tables[3];
-                    GridViewLedger.DataSource = ds.Tables[3];
+                    dt_GridViewLedger.DefaultView.Sort = "RowNo DESC";
+                    GridViewLedger.DataSource = dt_GridViewLedger;
                     GridViewLedger.DataBind();
+                    //GridViewLedger.DataSource = ds.Tables[3];
+                    //GridViewLedger.DataBind();
                     ViewState["LedgerAmount"] = dt_GridViewLedger;
                 }
                 if (ds.Tables[5].Rows.Count > 0)
@@ -3095,8 +3178,9 @@ public partial class mis_Finance_VoucherSaleCredit : System.Web.UI.Page
                 btnAccept.Enabled = true;
                 lnkPreviousVoucher.Visible = false;
             }
+
             ds = objdb.ByProcedure("SpFinCostCentretx", new string[] { "flag", "VoucherTx_ID" },
-              new string[] { "5", ViewState["VoucherTx_ID"].ToString() }, "dataset");
+              new string[] { "6", ViewState["VoucherTx_ID"].ToString() }, "dataset");
             //if (ds != null && ds.Tables[0].Rows.Count > 0)
             //{
 
@@ -3108,16 +3192,47 @@ public partial class mis_Finance_VoucherSaleCredit : System.Web.UI.Page
             //}
             if (ds != null && ds.Tables.Count > 0)
             {
-                if(ds.Tables[0].Rows.Count > 0)
+                if (ds.Tables[0].Rows.Count > 0)
                 {
                     GridCostCentreViewDetail.DataSource = ds;
                     GridCostCentreViewDetail.DataBind();
                 }
                 if (ds.Tables[1].Rows.Count > 0)
                 {
-                    DataTable dt_CrCostCentreTable = (DataTable)ViewState["CrCostCentreTable"];
-                   dt_CrCostCentreTable = ds.Tables[1];
-                   ViewState["CrCostCentreTable"] = dt_CrCostCentreTable;
+                    // DataTable dt_CrCostCentreTable = (DataTable)ViewState["CrCostCentreTable"];
+                    //dt_CrCostCentreTable = ds.Tables[1];
+                    //ViewState["CrCostCentreTable"] = dt_CrCostCentreTable;
+
+                    DataSet dsCrConstCentre = (DataSet)ViewState["dsCrConstCentre"];
+                    int rowcount = ds.Tables[1].Rows.Count;
+                    int pretno = 0;
+                    for (int i = 0; i < rowcount; i++)
+                    {
+                        string Ledger_ID = ds.Tables[1].Rows[i]["Ledger_ID"].ToString();
+                        string Category_ID = ds.Tables[1].Rows[i]["Category_ID"].ToString();
+                        string CategoryName = ds.Tables[1].Rows[i]["CategoryName"].ToString();
+                        string SubCategory_ID = ds.Tables[1].Rows[i]["SubCategory_ID"].ToString();
+                        string SubCategoryName = ds.Tables[1].Rows[i]["SubCategoryName"].ToString();
+                        string AmountShow = ds.Tables[1].Rows[i]["AmountShow"].ToString();
+                        string Amount = ds.Tables[1].Rows[i]["Amount"].ToString();
+                        string TNO = ds.Tables[1].Rows[i]["LedgerTx_OrderBy"].ToString();
+
+
+
+                        DataTable dt_CrCostCentreTable = new DataTable(TNO.ToString());
+                        DataColumn RowNo = dt_CrCostCentreTable.Columns.Add("RowNo", typeof(string));
+                        dt_CrCostCentreTable.Columns.Add(new DataColumn("Ledger_ID", typeof(decimal)));
+                        dt_CrCostCentreTable.Columns.Add(new DataColumn("Category_ID", typeof(string)));
+                        dt_CrCostCentreTable.Columns.Add(new DataColumn("CategoryName", typeof(string)));
+                        dt_CrCostCentreTable.Columns.Add(new DataColumn("SubCategory_ID", typeof(string)));
+                        dt_CrCostCentreTable.Columns.Add(new DataColumn("SubCategoryName", typeof(string)));
+                        dt_CrCostCentreTable.Columns.Add(new DataColumn("AmountShow", typeof(decimal)));
+                        dt_CrCostCentreTable.Columns.Add(new DataColumn("Amount", typeof(decimal)));
+
+                        dt_CrCostCentreTable.Rows.Add(null, Ledger_ID, Category_ID, CategoryName, SubCategory_ID, SubCategoryName, AmountShow, Amount);
+                        dsCrConstCentre.Merge(dt_CrCostCentreTable);
+                        ViewState["dsCrConstCentre"] = dsCrConstCentre;
+                    }
                 }
                 BillByBillDetail.Visible = false;
                 pnlChequeDetail.Visible = false;
@@ -3177,7 +3292,7 @@ public partial class mis_Finance_VoucherSaleCredit : System.Web.UI.Page
     }
     protected void txtVoucherTx_Date_TextChanged(object sender, EventArgs e)
     {
-		string ValidStatus = ValidDate();
+        string ValidStatus = ValidDate();
         if (ValidStatus == "No")
         {
 
@@ -3192,43 +3307,43 @@ public partial class mis_Finance_VoucherSaleCredit : System.Web.UI.Page
         }
         else
         {
-        if (ViewState["VoucherTx_ID"].ToString() == "0")
-        {
-            FillVoucherNo();
-            Fill_TCD_TDS_Rate();
-        }
-        else
-        {
-            string sDate = (Convert.ToDateTime(txtVoucherTx_Date.Text, cult).ToString("yyyy/MM/dd")).ToString();
-            DateTime datevalue = (Convert.ToDateTime(sDate.ToString()));
-            int Month = int.Parse(datevalue.Month.ToString());
-            int Year = int.Parse(datevalue.Year.ToString());
-            int FY = Year;
-            string FinancialYear = Year.ToString();
-            string LFY = FinancialYear.Substring(FinancialYear.Length - 2);
-            FinancialYear = "";
-            if (Month <= 3)
+            if (ViewState["VoucherTx_ID"].ToString() == "0")
             {
-                FY = Year - 1;
-                FinancialYear = FY.ToString() + "-" + LFY.ToString();
-            }
-            else
-            {
-
-                FinancialYear = FY.ToString() + "-" + (int.Parse(LFY) + 1).ToString();
-            }
-            if (ViewState["FY"].ToString() == FinancialYear.ToString())
-            {
-                //FillVoucherNo();
+                FillVoucherNo();
                 Fill_TCD_TDS_Rate();
             }
             else
             {
-                Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "alert('Date selection should be according to Financial Year(" + ViewState["FY"].ToString() + ")');", true);
-                txtVoucherTx_Date.Text = ViewState["VoucherTx_Date"].ToString();
+                string sDate = (Convert.ToDateTime(txtVoucherTx_Date.Text, cult).ToString("yyyy/MM/dd")).ToString();
+                DateTime datevalue = (Convert.ToDateTime(sDate.ToString()));
+                int Month = int.Parse(datevalue.Month.ToString());
+                int Year = int.Parse(datevalue.Year.ToString());
+                int FY = Year;
+                string FinancialYear = Year.ToString();
+                string LFY = FinancialYear.Substring(FinancialYear.Length - 2);
+                FinancialYear = "";
+                if (Month <= 3)
+                {
+                    FY = Year - 1;
+                    FinancialYear = FY.ToString() + "-" + LFY.ToString();
+                }
+                else
+                {
+
+                    FinancialYear = FY.ToString() + "-" + (int.Parse(LFY) + 1).ToString();
+                }
+                if (ViewState["FY"].ToString() == FinancialYear.ToString())
+                {
+                    //FillVoucherNo();
+                    Fill_TCD_TDS_Rate();
+                }
+                else
+                {
+                    Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "alert('Date selection should be according to Financial Year(" + ViewState["FY"].ToString() + ")');", true);
+                    txtVoucherTx_Date.Text = ViewState["VoucherTx_Date"].ToString();
+                }
             }
         }
-		}
 
     }
     protected void GridViewBillByBillDetail_RowDeleting(object sender, GridViewDeleteEventArgs e)
@@ -3561,7 +3676,7 @@ public partial class mis_Finance_VoucherSaleCredit : System.Web.UI.Page
                     Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "ShowCostCentreModal();", true);
                 }
             }
-            
+
         }
         else
         {
@@ -3610,8 +3725,8 @@ public partial class mis_Finance_VoucherSaleCredit : System.Web.UI.Page
     }
     protected void AddCostCentre()
     {
-        
-        DataTable dt_CostCentreTable = (DataTable)ViewState["CostCentreTable"];
+
+        DataTable dt_CostCentreTable = (DataTable)ViewState["CrCostCentreTable"];
         int status = 0;
         decimal CostCentreAmount = 0;
         foreach (GridViewRow row in GridCostCentreDetail.Rows)
@@ -3628,14 +3743,14 @@ public partial class mis_Finance_VoucherSaleCredit : System.Web.UI.Page
             if (Convert.ToDecimal(ViewState["Amount"].ToString()) > Convert.ToDecimal(txtCostCentreAmount.Text) || Convert.ToDecimal(ViewState["Amount"].ToString()) == Convert.ToDecimal(txtCostCentreAmount.Text))
             {
                 ViewState["Amount"] = Convert.ToDecimal(ViewState["Amount"]) - Convert.ToDecimal(txtCostCentreAmount.Text);
-                dt_CostCentreTable.Rows.Add(null, ddlLedger.SelectedValue.ToString(), ddlCategory.SelectedValue.ToString(), ddlCategory.SelectedItem.Text, ddlSubCategory.SelectedValue.ToString(), ddlSubCategory.SelectedItem.Text, Convert.ToDecimal(txtCostCentreAmount.Text).ToString("0.00"), Convert.ToDecimal(txtCostCentreAmount.Text).ToString("0.00"));
-                
-                ViewState["CostCentreTable"] = dt_CostCentreTable;
+               // dt_CostCentreTable.Rows.Add(null, ddlLedger.SelectedValue.ToString(), ddlCategory.SelectedValue.ToString(), ddlCategory.SelectedItem.Text, ddlSubCategory.SelectedValue.ToString(), ddlSubCategory.SelectedItem.Text, Convert.ToDecimal(txtCostCentreAmount.Text).ToString("0.00"), Convert.ToDecimal(txtCostCentreAmount.Text).ToString("0.00"));
+
+               // ViewState["CostCentreTable"] = dt_CostCentreTable;
                 DataTable dt_CrCostCentreTable = (DataTable)ViewState["CrCostCentreTable"];
                 dt_CrCostCentreTable.Rows.Add(null, ddlLedger.SelectedValue.ToString(), ddlCategory.SelectedValue.ToString(), ddlCategory.SelectedItem.Text, ddlSubCategory.SelectedValue.ToString(), ddlSubCategory.SelectedItem.Text, Convert.ToDecimal(txtCostCentreAmount.Text).ToString("0.00"), Convert.ToDecimal(txtCostCentreAmount.Text).ToString("0.00"));
                 //dt_CrCostCentreTable.Merge(dt_CostCentreTable);
                 ViewState["CrCostCentreTable"] = dt_CrCostCentreTable;
-                GridCostCentreDetail.DataSource = dt_CostCentreTable;
+                GridCostCentreDetail.DataSource = dt_CrCostCentreTable;
                 GridCostCentreDetail.DataBind();
 
                 ddlCategory.ClearSelection();
@@ -3648,8 +3763,8 @@ public partial class mis_Finance_VoucherSaleCredit : System.Web.UI.Page
                 }
                 else
                 {
-                    CreateCostCentreTable();
-                    FillLedgerAmount("0");
+                   // CreateCostCentreTable();
+                     FillLedgerAmount("0");
                     Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "CalculateGrandTotal();", true);
                     ViewState["GrandTotal"] = lblGrandTotal.Text;
                     //btnAcceptEnable();
@@ -3674,30 +3789,34 @@ public partial class mis_Finance_VoucherSaleCredit : System.Web.UI.Page
     {
         try
         {
-            if(e.CommandName == "ViewRecord")
+            if (e.CommandName == "ViewRecord")
             {
-                string LedgerID = e.CommandArgument.ToString();
-                DataTable dt_CrCostCentreTable = (DataTable)ViewState["CrCostCentreTable"];
-                DataView dv = new DataView();
+                DataSet dsCrConstCentre = (DataSet)ViewState["dsCrConstCentre"];
 
-                dv = dt_CrCostCentreTable.DefaultView;
-                dv.RowFilter = "Ledger_ID = '" + LedgerID + "'";
-                DataTable dt = dv.ToTable();
-                gvCostCentreDetail.DataSource = dt;
+                gvCostCentreDetail.DataSource = dsCrConstCentre.Tables[e.CommandArgument.ToString()];
                 gvCostCentreDetail.DataBind();
+                //string LedgerID = e.CommandArgument.ToString();
+                //DataTable dt_CrCostCentreTable = (DataTable)ViewState["CrCostCentreTable"];
+                //DataView dv = new DataView();
+
+                //dv = dt_CrCostCentreTable.DefaultView;
+                //dv.RowFilter = "Ledger_ID = '" + LedgerID + "'";
+                //DataTable dt = dv.ToTable();
+                //gvCostCentreDetail.DataSource = dt;
+                //gvCostCentreDetail.DataBind();
                 Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "ShowCrCostCentreModal();", true);
 
-                
-                
+
+
             }
         }
         catch (Exception ex)
         {
-            
+
             throw;
         }
     }
-	protected string ValidDate()
+    protected string ValidDate()
     {
         string validDays = "No";
         if (txtVoucherTx_Date.Text != "")
@@ -3728,5 +3847,12 @@ public partial class mis_Finance_VoucherSaleCredit : System.Web.UI.Page
             }
         }
         return validDays;
+    }
+
+    protected void CreateCrCostCentreDataSet()
+    {
+        DataSet dsCrConstCentre = new DataSet();
+        ViewState["dsCrConstCentre"] = dsCrConstCentre;
+
     }
 }

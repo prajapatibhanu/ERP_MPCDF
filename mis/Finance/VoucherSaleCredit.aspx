@@ -343,7 +343,7 @@
                                                         </div>
                                                     </div>
                                                     <!-- Ledger/Amount Detail GridView-->
-                                                    <asp:GridView ID="GridViewLedger" runat="server" DataKeyNames="LedgerID" ClientIDMode="Static" class="table table-bordered customCSS" AutoGenerateColumns="False" ShowHeader="false" OnRowDeleting="GridViewLedger_RowDeleting" OnRowCommand="GridViewLedger_RowCommand">
+                                                    <asp:GridView ID="GridViewLedger" runat="server" DataKeyNames="RowNo" ClientIDMode="Static" class="table table-bordered customCSS" AutoGenerateColumns="False" ShowHeader="false" OnRowDeleting="GridViewLedger_RowDeleting" OnRowCommand="GridViewLedger_RowCommand">
                                                         <Columns>
                                                             <%-- <asp:TemplateField HeaderText="Action" ShowHeader="False"  ItemStyle-Width="50">                                                                                                                        
                                                             <ItemTemplate>
@@ -353,7 +353,7 @@
                                                             <asp:TemplateField HeaderText="Ledger" ShowHeader="False">
                                                                 <ItemTemplate>
                                                                     <asp:LinkButton ID="Delete" Visible='<%# Eval("Status").ToString() =="1" ? true:false %>' runat="server" CssClass="label " CausesValidation="False" CommandName="Delete" Style="color: red;" Text="" OnClientClick="return confirm('The Ledger will be deleted. Are you sure want to continue?');"><i class="fa fa-trash"></i></asp:LinkButton>
-                                                                      <asp:LinkButton ID="lnkView" CommandName="ViewRecord" runat="server"  CssClass="btn btn-default" Style="padding: 3px;" CommandArgument='<%# Eval("LedgerID").ToString()%>' MaxLength="12" Visible='<%# Eval("CostCenter").ToString()=="Yes"?true:false%>'>View</asp:LinkButton>
+                                                                      <asp:LinkButton ID="lnkView" CommandName="ViewRecord" runat="server"  CssClass="btn btn-default" Style="padding: 3px;" CommandArgument='<%# Eval("RowNo").ToString()%>' MaxLength="12" Visible='<%# Eval("CostCenter").ToString()=="Yes"?true:false%>'>View</asp:LinkButton>
                                                                     <asp:Label ID="lblLedgerName" CssClass="paddingLR" runat="server" Text='<%# Eval("LedgerName").ToString()%>'></asp:Label>
                                                                     <asp:Label ID="lblID" CssClass="hidden" runat="server" Text='<%# Eval("LedgerID").ToString()%>'></asp:Label>
                                                                     <asp:Label ID="lblHSNCode" CssClass="hidden" runat="server" Text='<%# Eval("HSN_Code").ToString()%>'></asp:Label>
@@ -366,6 +366,7 @@
                                                                     <asp:Label ID="lblGSTApplicable" CssClass="hidden" runat="server" Text='<%# Eval("GSTApplicable").ToString()%>'></asp:Label>
                                                                     <asp:Label ID="lblTaxbility" CssClass="hidden" runat="server" Text='<%# Eval("Taxbility").ToString()%>'></asp:Label>
                                                                     <asp:Label ID="lblCostCenter" CssClass="hidden" runat="server" Text='<%# Eval("CostCenter").ToString()%>'></asp:Label>
+                                                                     <asp:Label ID="lblRowNo" CssClass="hidden" runat="server" Text='<%# Eval("RowNo").ToString()%>'></asp:Label>
                                                                 </ItemTemplate>
                                                             </asp:TemplateField>
                                                             <asp:TemplateField HeaderText="Amount" ShowHeader="False" ItemStyle-Width="50%">
