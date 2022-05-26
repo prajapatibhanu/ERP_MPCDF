@@ -1505,6 +1505,22 @@ public partial class mis_Finance_VoucherSaleCredit : System.Web.UI.Page
 
 
                 }
+                DataTable tblFiltered = dt_GridViewLedger.AsEnumerable()
+                              .Where(r => r.Field<string>("LedgerName") == "Round off")
+                              .CopyToDataTable();
+                int rn = tblFiltered.Rows[0].Field<int>("RowNo");
+                if (rn == 6)
+                {
+                    dt_GridViewLedger.DefaultView.Sort = "LedgerTx_OrderBy ASC";
+                }
+                else if (rn > 6)
+                {
+                    dt_GridViewLedger.DefaultView.Sort = "LedgerTx_OrderBy ASC";
+                }
+                else
+                {
+                    dt_GridViewLedger.DefaultView.Sort = "RowNo DESC";
+                }
                 GridViewLedger.DataSource = dt_GridViewLedger;
                 GridViewLedger.DataBind();
 
@@ -3155,6 +3171,10 @@ public partial class mis_Finance_VoucherSaleCredit : System.Web.UI.Page
                               .CopyToDataTable();
                     int rn = tblFiltered.Rows[0].Field<int>("RowNo");
                     if (rn == 6)
+                    {
+                        dt_GridViewLedger.DefaultView.Sort = "LedgerTx_OrderBy ASC";
+                    }
+                    else if (rn > 6)
                     {
                         dt_GridViewLedger.DefaultView.Sort = "LedgerTx_OrderBy ASC";
                     }
