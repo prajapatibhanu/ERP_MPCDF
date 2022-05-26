@@ -60,7 +60,7 @@ public partial class mis_Finance_EditRights : System.Web.UI.Page
         {
 
             ddlOffice.Items.Insert(0, new ListItem("Select", "0"));
-            ds = objdb.ByProcedure("SpFinEditRight", new string[] { "flag" }, new string[] { "5" }, "dataset");
+            ds = objdb.ByProcedure("SpFinEditRight", new string[] { "flag" }, new string[] { "6" }, "dataset");
             if (ds.Tables.Count > 0 && ds.Tables[0].Rows.Count > 0)
             {
                 ddlOffice.DataSource = ds;

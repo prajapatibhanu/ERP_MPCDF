@@ -190,9 +190,21 @@ public partial class mis_Payroll_PayRollPayBillMonth_BankWise : System.Web.UI.Pa
                 int Count1 = ds5.Tables[0].Rows.Count;
                 sb.Append("<tr>");
                 sb.Append("<td style='border:1px solid black;width:50px'><b>S.No</b></td>");
-                sb.Append("<td style='border:1px solid black;width:200px'><b>EMPLOYEE CODE & NAME</b></td>");
+                if (ddlOffice.SelectedValue == "6")
+                {
+                    sb.Append("<td style='border:1px solid black;width:60px'><b>EMPLOYEE CODE</b></td>");
+                    sb.Append("<td style='border:1px solid black;width:180px'><b>EMPLOYEE NAME</b></td>");
+                }
+                else
+                {
+                    sb.Append("<td style='border:1px solid black;width:200px'><b>EMPLOYEE CODE & NAME</b></td>");
+                }
                 sb.Append("<td style='border:1px solid black;width:50px'><b>DESIGNATION</b></td>");
                 sb.Append("<td style='border:1px solid black;width:50px'><b>Bank A/C</b></td>");
+                if (ddlOffice.SelectedValue== "6")
+                {
+                    sb.Append("<td style='border:1px solid black;width:50px'><b>IFSC Code</b></td>");
+                }
                 sb.Append("<td style='border:1px solid black;width:50px'><b>AMOUNT(Rs)</b></td>");
                 sb.Append("</tr>");
                 sb.Append("</thead>");
@@ -202,16 +214,38 @@ public partial class mis_Payroll_PayRollPayBillMonth_BankWise : System.Web.UI.Pa
 
                     sb.Append("<tr>");
                     sb.Append("<td style='border:1px solid black;text-align: left;'>" + (i + 1).ToString() + "</b></td>");
-                    sb.Append("<td style='border:1px solid black;text-align: left;'>" + ds5.Tables[0].Rows[i]["SalaryEmp_No"] + "-" + ds5.Tables[0].Rows[i]["Emp_Name"] + "</td>");
+                    if (ddlOffice.SelectedValue == "6")
+                    {
+                        sb.Append("<td style='border:1px solid black;text-align: left;'>" + ds5.Tables[0].Rows[i]["SalaryEmp_No"] + "</td>");
+                        sb.Append("<td style='border:1px solid black;text-align: left;'>" + ds5.Tables[0].Rows[i]["Emp_Name"] + "</td>");
+                    }
+                    else
+                    {
+                        sb.Append("<td style='border:1px solid black;text-align: left;'>" + ds5.Tables[0].Rows[i]["SalaryEmp_No"] + "-" + ds5.Tables[0].Rows[i]["Emp_Name"] + "</td>");
+                    }
+                   
                     sb.Append("<td style='border:1px solid black;text-align: left;'>" + ds5.Tables[0].Rows[i]["Designation_Name"] + "</td>");
                     sb.Append("<td style='border:1px solid black;text-align: left;'>" + ds5.Tables[0].Rows[i]["Bank_AccountNo"] + "</td>");
+                    if (ddlOffice.SelectedValue == "6")
+                    {
+                        sb.Append("<td style='border:1px solid black;text-align: left;'>" + ds5.Tables[0].Rows[i]["Bank_IfscCode"] + "</td>");
+                    }
                     sb.Append("<td style='border:1px solid black;text-align: center;'>" + ds5.Tables[0].Rows[i]["Salary_NetSalary"] + "</td>");
                     sb.Append("</tr>");
                 }
 
                 sb.Append("<tr>");
-                sb.Append("<td colspan='4' style='border:1px solid black;border:1px solid black;text-align:right;'><b>Total</b></td>");
-                sb.Append("<td style='border:1px solid black;border:1px solid black;text-align: center;'><b>" + Convert.ToDecimal(ds5.Tables[0].AsEnumerable().Sum(r => r.Field<decimal?>("Salary_NetSalary") ?? 0)) + "</b></td>");
+                if(ddlOffice.SelectedValue=="6")
+                {
+                    sb.Append("<td colspan='6' style='border:1px solid black;border:1px solid black;text-align:right;'><b>Total</b></td>");
+                    sb.Append("<td style='border:1px solid black;border:1px solid black;text-align: center;'><b>" + Convert.ToDecimal(ds5.Tables[0].AsEnumerable().Sum(r => r.Field<decimal?>("Salary_NetSalary") ?? 0)) + "</b></td>");
+                }
+                else
+                {
+                    sb.Append("<td colspan='4' style='border:1px solid black;border:1px solid black;text-align:right;'><b>Total</b></td>");
+                    sb.Append("<td style='border:1px solid black;border:1px solid black;text-align: center;'><b>" + Convert.ToDecimal(ds5.Tables[0].AsEnumerable().Sum(r => r.Field<decimal?>("Salary_NetSalary") ?? 0)) + "</b></td>");
+                }
+              
                 sb.Append("</tr>");
                 sb.Append("</tbody>");
                 sb.Append("</table>");
